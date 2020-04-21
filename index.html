@@ -6,37 +6,43 @@
 			padding: 0;
 			margin: 0;
 		}
+		/*1. 头部 */
 		.topBar{
 			width: 100%;
 			height: 100px;
-			/* border-bottom: 2px solid #62A3C4; */
 		}
+		/* 头部中间区域 */
 		.center{
-			width: 800px;
+			width: 1000px;
 			padding-top: 45px;
 			margin: auto;
 		}
+		/* 中间区域左部分：设置浮动 */
 		.left{
-			/* 微观调整 */
 			float: left;
-			padding: 0 10px;
-		}
-		.left .title{
+			/* 左部分字体大小 */
 			font-size: 17px;
+			/*左部分整体向右移动*/
+			/* padding: 0 10px; */
 		}
-		.left .discription{
-			font-size: 12px;
-			color: #5A5B5C;
-		}
+		/* 中间区域右部分：设置浮动 */
 		.right{
 			float: right;
+			/* 去除margin-top影响 */
 			margin: 0;
 		}
 		li{
+			/* 局部单位向左排齐 */
 			float: left;
+			/*去除li样式*/
 			list-style: none;
 			padding: 0 5px;
 		}
+		/* hover在li颜色设置之上时,为什么没有反应 */
+		/* .right a:hover{
+					color: #EA4335;
+		} */
+		/*li的各种颜色*/
 		.right .remember a{
 			color: #4285F4;
 		}
@@ -50,17 +56,20 @@
 			color: #EA4335;
 		}
 		a{
+			/*去除超链接下划线样式*/
 			text-decoration: none;
-			/* color: */
 		}
-		a:hover{
-			color: #62A3C4;
+		.right a:hover{
+			color: #EA4335;
 		}
+		
+		
 		.blueline{
 			width: 100%;
 			height: 2px;
 			background-color: #62A3C4;
 		}
+		
 	</style>
 	<head>
 		<meta charset="utf-8">
@@ -84,5 +93,75 @@
 			</div>
 		</div>
 		<div class="blueline"></div>
+		<div class="content"></div>
+		<div class="story01">
+			<div class="title">职业生涯规划</div>
+			<div class="label">
+				<a href="" class="time">Novemeber8,2018</a>
+				<a href="" class="type">大学</a>
+				<a href="" class="isay">规划、情感、感叹</a>
+			</div>
+			<div class="pragraph">
+				今天是十一月八号，开学已经两个月。
+				这两个月过的就如松散状态的“高中生活”。为什么我会这么讲？
+				现在的我们遵循着固定的课表，上着固定的课程，讨论中也会带有对学习的苦痛；
+				上完固定的课程淘去附加的各类活动，确实我们有着大把的空闲时间，在这一时刻看来它是松散的。
+				所以我认为这两个月的生活是一个探索和适应的过程。
+				由一顿饭选择的去处，由一次跑步来到的操场，由一堂课遇到的老师......探索由这些事而起；
+				一次次路过强化了对学校建筑的印象，一顿顿平常重复了很久的菜单，一堂堂每周存在的烦恼......正慢慢去适应这些事情。
+			</div>
+		</div>
+		<hr>
+		<div class="story02">
+			<div class="title">军训日记</div>
+			<div class="label">
+				<a href="" class="time">Septempber8,2018</a>
+				<a href="" class="type">大学</a>
+				<a href="" class="isay">情感、紧张、繁琐、矛盾、回忆</a>
+			</div>
+			<div class="pragraph">
+				军训已四天-感想9月13日
+				<br>
+				思想上，从高中军训的慵懒中脱开。不再看到懒懒散散的教学；不再有身体上的充沛活力。留下的是疲惫的身体，紧张的神经，美好总是短暂的的感叹。但两时间段却有相似之处，陌生的面孔，短暂地交谈。
+				<!-- <br><br>
+				军训已五天-9月14日星期五
+				<br>
+				今天早上学校体检，领取完试瓶后，前面两个女生因为体检表上没有贴照片所以匆匆回去拿了，我的前面闪了两个位置 -->
+				<!-- <br>
+				军训已六天-9月15日星期六
+				<br>
+				今天遇见几件烦心事，但同样有高兴的事情
+				<br>
+				军训已七天-9月16日星期天
+				<br>
+				一切痛苦归于自身。
+				<br>
+				军训已八天-9月17日星期一
+				<br>
+				退出方队
+				<br> -->
+			</div>
+		</div>
+		<!-- <hr style="border-style: dotted;"> -->
+		<div class="story03">
+					<div class="title">寄出的信</div>
+					<div class="label">
+						<a href="" class="time">Septempber19,2018</a>
+						<a href="" class="type">大学</a>
+						<a href="" class="isay">信、教官、军训、回忆</a>
+					</div>
+					<div class="pragraph">
+						尊敬的连长：
+						<br>
+						我是地信二班同学王朋坤，在临军训结束还有三天之际写此封信。我认为你给我们留下的印象用尊敬的来描述更好些。
+						<!-- <br>
+						在方队里我自己感觉到一种压力，一种不受外界力量驱所动的压力。连长比我们任何人承受的压力要大，方阵的表演的好坏可能会关系到很多。离开方阵对我来说，真的是一种释放，不是怕做更多的训练，不是想寻求更多的休息。
+						<br>
+						连长来自四季如春的云南，我也很喜欢这个省份，那里景色应该很漂亮，空气应该很好吧而我的家乡在北方，有很多民族聚集在云南，我的同学也在云南，他是在昆明上大学，他说有时间去找他来玩。
+						<br>
+						军训快要结束了，也希望在我们军训后能度过一个愉快的假期。
+						<br> -->
+					</div>
+				</div>
 	</body>
 </html>
