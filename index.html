@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
+	<link rel="stylesheet" href="css/font-awesome.css">
 	<style>
 
 		body{
 			padding: 0;
 			margin: 0;
+			font-size: 16px;
 		}
 		/*1. 头部 */
 		.topBar{
@@ -21,15 +23,16 @@
 		.left{
 			float: left;
 			/* 左部分字体大小 */
-			font-size: 17px;
+			font-size: 28px;
 			/*左部分整体向右移动*/
-			/* padding: 0 10px; */
+		
 		}
 		/* 中间区域右部分：设置浮动 */
 		.right{
 			float: right;
 			/* 去除margin-top影响 */
 			margin: 0;
+			padding-top: 10px;
 		}
 		li{
 			/* 局部单位向左排齐 */
@@ -72,8 +75,7 @@
 		
 		
 		.content{
-			/* color: #5a5b5c; */
-			font-size: 13px;
+			
 		}
 		.center02{
 			padding-top: 20px;
@@ -87,6 +89,11 @@
 			/* line-height: 1.75; */
 			padding: 15px 0;
 		}
+		
+		.pragraph{
+			/* font-size: 13px; */
+			
+		}
 		.label{
 			padding: 5px 0;
 		}
@@ -94,15 +101,17 @@
 			padding-right: 10px;
 			text-decoration: none;
 			font-weight: 150;
-			font-size: 12px;
 		}
 		.hrStyle{
 			/* outline-style: dotted; */
 			/* padding: 5px 0px; */
 			margin: 20px 0;
-			border-style: dotted ;
+			border-style: solid;
+			border-width: 1px;
+			border-color: #62A3C4
 			/* 如何改变dotted的分布规律 */
 		}
+		
 	</style>
 	<head>
 		<meta charset="utf-8">
@@ -128,7 +137,45 @@
 		<!-- 主体内容 -->
 		<div class="content">
 			<div class="center02">
-				<div class="story01">
+				<!-- story04 -->
+				<div class="story04">
+					<div class="title02">日常小事</div>
+					<div class="label"	>	
+					 <!-- <i class="fa fa-camera-retro fa-lg"></i> -->
+					  <!-- <i class="fa fa-code-branch fa-lg"></i> -->
+					<a href="" class="time">April22,2020</a>
+					<i class="fa">&#xf02c</i>
+					<a href="" class="type">日常</a>
+					<i class="fa">&#xf0ac</i>
+					<a href="" class="isay">大学、家、疫情、村庄建设</a>
+					</div>			
+					<div class="pragraph">	
+						<p>
+							<span>明白了项目构建和外部类的使用的关系，类的使用是在项目构建的基础上进行的；</span>
+							<span>以后可以将我理头发前后的照片保存起来，10年后肯定值得回忆；</span>
+							<span>理发时我想起来从前特害怕带电线的电推，当时麻麻的特害怕突然会跑电，还好现在普遍用充电式电推；</span>
+							<span>极不情愿的剃头就这样结束了；通往我家门口的水泥路可能快要铺了，大队在忙活宣传这个，胡同里面的路啊~ 就这样前前后后耗费了一上午的时间！</span>
+						</p>
+						<!-- <p>
+							开学好像有了消息，不过可笑的是以后每天要打两次卡，一次在钉钉上，一次在学校微信小程序上；不知道该如何形容那两个辅导员。
+						</p>
+						<p>
+							<span>今天总结完后，竟然如此平淡，然而我心里面依旧想着如何应对刘凌佳有关论文的询问，</span>
+							<span>像是明明知道一块终究会砸到我的头上，我还一直惊慌受挫一样；</span>
+							<span>人与人的交流就应该豪爽、斩钉截铁些，是或不是、行或不行、可行或不可行都要明明白白、大大方方的思考和说出来。</span>
+						</p> -->
+							
+							
+							
+						
+					</div>
+					<!-- 尾格式 -->
+					<p>[……]</p>
+					<a href="">read more</a>			
+				</div>
+				
+				<!-- story03 -->
+				<div class="story03">
 					<div class="title02">职业生涯规划</div>
 					<div class="label">
 						<a href="" class="time">Novemeber8,2018</a>
@@ -148,6 +195,7 @@
 					<a href="">read more</a>
 				</div>
 				<hr class="hrStyle">
+				<!-- story02 -->
 				<div class="story02">
 					<div class="title02">军训日记</div>
 					<div class="label">
@@ -181,8 +229,8 @@
 					<a href="">read more</a>
 				</div>
 				<hr class="hrStyle">
-				<!-- <hr style="border-style: dotted;"> -->
-				<div class="story03">
+				<!-- story01 -->
+				<div class="story01">
 					<div class="title02">寄出的信</div>
 					<div class="label"	>
 					<a href="" class="time">Septempber19,2018</a>
@@ -205,10 +253,10 @@
 						<a href="">read more</a>			
 					</div>
 				</div>
-				
+			</div>
 		</div>
 		<div class="footer">
-			音乐故事
+			<!-- 音乐故事 -->
 		</div>
 	</body>
 </html>
