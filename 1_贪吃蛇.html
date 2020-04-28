@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!-- 重要 -->
+<html lang="zh">
+<head>
+    <title>Canvas tutorial</title>
+	<meta charset="UTF-8" />
+    <style type="text/css">
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+	<script type="text/javascript">
+		window.onload= function(){//后面执行
+			// console.log("666");
+			// console.log(666);
+			function draw(x,y){
+			    var canvas = document.getElementById('tutorial');
+			    if(!canvas.getContext) return;
+			    var ctx = canvas.getContext("2d");
+			    ctx.fillStyle = "rgb(200,0,0)";
+			    //绘制矩形
+			    ctx.fillRect (0+x, 50+y, 10, 40);
+				
+			}
+			function clear01(){
+				var canvas = document.getElementById("tutorial");
+				if(canvas.getContext){
+					var ctx = canvas.getContext("2d");
+					ctx.fillStyle = "#FFFFFF";
+					ctx.fillRect(0, 0, 300, 300);
+				}
+			}
+			//初始状态
+			var x=0,y=0;
+			draw(x,y);
+			// 按钮事件
+			var btn01 = document.getElementById("up");
+			var btn02 = document.getElementById("down");
+			var btn03 = document.getElementById("left");
+			var btn04 = document.getElementById("right");
+			// 按钮事件
+			btn01.onclick = function(){
+				clear01();
+				y=y-10;
+				draw(x,y);
+				
+			}
+			btn02.onclick = function(){
+				clear01();
+				y=y+10;
+				draw(x,y);
+			}
+			btn03.onclick = function(){
+				clear01();
+				x=x-10;
+				draw(x,y);
+			}
+			btn04.onclick = function(){
+				clear01();
+				x=x+10;
+				draw(x,y);
+			}
+		}
+	</script>
+</head>
+<body>
+<canvas id="tutorial" width="300" height="300"></canvas>
+<br>
+<button id="up">上</button>
+<button id="down">下</button>
+<br>
+<button id="left">左</button>
+<button id="right">右</button>
+<script type="text/javascript">
+   
+</script>
+</body>
+</html>
+
+
