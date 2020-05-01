@@ -130,15 +130,15 @@
 				// 按钮事件
 				btn01.onclick = function() { //上
 					clear01(); //清除			
-					if (arrX.length > 1) { //是否成立
+					if (arrX.length >= 1) { //是否成立
 						var temp = -1; //标识
-						if (arrX[0] == arrxAdd[0] && (arrY[0] - 1) == arryAdd[0]) {
+						if (arrX[0] == arrxAdd[0] && (arrY[0] - 1) == arryAdd[0]) {//y蛇头移动一个位置后与食物位置比较
 							temp = 1;
 							var tempX = arrX[arrX.lengh - 1];
 							var tempY = arrY[arrY.lengh - 1];
+							// alert("test");
 						}
-
-						if (arrX.length >= 2) {
+						if (arrX.length >= 2) {//除蛇头外的位置前进一个单位
 							for (var i = arrX.lengh; i > 0; i--) {
 								arrX[i - 1] = arrX[i - 2];
 								arrY[i - 1] = arrY[i - 2];
@@ -146,10 +146,11 @@
 						}
 
 					}
-					arrY[0] += -1;
+					arrY[0] += -1;//蛇头前进一个单位
 					if (temp == 1) {
-						arrX[arrX.length] = tempX;
-						arrY[arrX.length] = tempY;
+						arrX[arrX.length] = 7;
+						arrY[arrX.length] = 7;
+						alert(arrX[arrX.length]);
 						//消除arrxAdd、arryAdd
 						// alert("test");
 					}
@@ -161,12 +162,13 @@
 				}
 				btn02.onclick = function() { //下
 					clear01();
-					if (arrX.length > 1) { //是否成立
+					if (arrX.length >= 1) { //是否成立
 						var temp = -1;
-						if (arrX[0] == arrxAdd[0] && (arrY[0] + 1) == arryAdd[0]) {
+						if (arrX == arrxAdd[0] && (arrY+1) == arryAdd[0]) {
 							temp = 1;
 							var tempX = arrX[arrX.lengh - 1];
 							var tempY = arrY[arrY.lengh - 1];
+							// alert("test");
 						}
 						if (arrX.length >= 2) {
 							for (var i = arrX.lengh; i > 0; i--) {
@@ -177,10 +179,10 @@
 					}
 					arrY[0] += 1;
 					if (temp == 1) {
-						arrX[arrX.length] = tempX;
-						arrY[arrX.length] = tempY;
+						arrX[arrX.length] = 7;
+						arrY[arrX.length] = 7;
 						//消除arrxAdd、arryAdd
-						// alert("test");
+						alert(arrX[arrX.length]);
 					}
 					border();
 					draw(arrX, arrY);
@@ -189,12 +191,13 @@
 				btn03.onclick = function() { //左
 					// alert("test");
 					clear01();
-					if (arrX.length > 1) { //是否成立
+					if (arrX.length >= 1) { //是否成立
 						var temp = -1;
 						if ((arrX[0] - 1) == arrxAdd[0] && arrY[0] == arryAdd[0]) {
 							temp = 1;
 							var tempX = arrX[arrX.lengh - 1];
 							var tempY = arrY[arrY.lengh - 1];
+							// alert("test");
 						}
 					
 						if (arrX.length >= 2) {
@@ -208,8 +211,9 @@
 					// alert("test2");
 					arrX[0] -= 1;
 					if (temp == 1) { //添加
-						arrX[arrX.length] = tempX;
-						arrY[arrX.length] = tempY;
+						arrX[arrX.length] = 7;
+						arrY[arrX.length] = 7;
+						alert(arrX[arrX.length]);
 						//消除arrxAdd、arryAdd
 					}
 					border();
@@ -218,7 +222,7 @@
 				}
 				btn04.onclick = function() { //右
 					clear01();
-					if (arrX.length > 1) { //是否成立
+					if (arrX.length >= 1) { //是否成立
 						var temp = -1;
 						if ((arrX[0] + 1) == arrxAdd[0] && arrY[0] == arryAdd[0]) {
 							temp = 1;
@@ -237,8 +241,10 @@
 					// alert("test2");
 					arrX[0] += 1;
 					if (temp == 1) { //添加
-						arrX[arrX.length] = tempX;
-						arrY[arrX.length] = tempY;
+						arrX[arrX.length] = 7;
+						arrY[arrX.length] = 7;
+						alert(arrX[arrX.length]);
+						
 						//消除arrxAdd、arryAdd
 					}
 					border();
