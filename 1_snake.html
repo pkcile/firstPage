@@ -3,46 +3,57 @@
 <html lang="zh">
 	<head>
 		<title>Canvas tutorial</title>
+		<!-- 采用utf-8编码格式 -->
 		<meta charset="UTF-8" />
+		<!-- 视图设置 -->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 		<style type="text/css">
 			body {
+				/* 去除样式 */
 				width: 100%;
 				margin: 0;
 				padding: 0;
+				/* 主题背景 */
 				background-color: #abc;
 			}
 
 			/* 画布的样式 */
 			canvas {
+				/* 设置为块元素 */
 				display: block;
+				/* 画布居中效果 */
 				margin: 20px auto;
+				/* 去除边界样式 */
 				border: none;
 			}
 
 			/* 按钮的样式 */
 			.centerButton {
+				/* 按钮的范围 */
 				width: 100px;
+				/* 按钮整体居中 */
 				margin: 0 auto;
 			}
-
+			/* 按钮 */
 			button {
+				/* 将按钮设置为块模型 */
 				display: block;
 				width: 80px;
 				height: 60px;
+				/* 按钮的颜色 */
 				background-color: #ccc;
 			}
-
+			/* 向上的按钮 */
 			#up {
 				margin-bottom: 10px;
 			}
-
+			/* 设置左按钮定位 */
 			.floatButton01 {
 				position: relative;
 				left: -90px;
 				top: -60px;
 			}
-
+			/* 设置右按钮定位 */
 			.floatButton02 {
 				position: relative;
 				left: 90px;
@@ -266,16 +277,14 @@
 		</script>
 	</head>
 	<body>
+		<!-- 画布 -->
 		<canvas id="tutorial" width="404px" height="404px"></canvas>
+		<!-- 按钮 -->
 		<div class="centerButton">
 			<button id="up">上</button>
 			<button id="down">下</button>
 			<button id="left" class="floatButton01">左</button>
 			<button id="right" class="floatButton02">右</button>
 		</div>
-
-		<script type="text/javascript">
-
-		</script>
 	</body>
 </html>
