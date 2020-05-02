@@ -129,8 +129,8 @@
 				//食物x、y坐标初始化
 				var arrxAdd = new Array();
 				var arryAdd = new Array();
-				arrxAdd[0] = 5;
-				arryAdd[0] = 5;
+				arrxAdd[0] = 0;
+				arryAdd[0] = 2;
 				//蛇、食物初始化
 				draw(arrX, arrY);
 				draw(arrxAdd, arryAdd);
@@ -148,14 +148,13 @@
 						var temp = -1; //标识
 						if (arrX[0] == arrxAdd[0] && (arrY[0] - 1) == arryAdd[0]) {//y蛇头移动一个位置后与食物位置比较
 							temp = 1;
-							tempX = arrX[arrX.lengh - 1];//记录蛇最后一个位置
-							tempY = arrY[arrY.lengh - 1];
+							tempX = arrX[arrX.length - 1];//记录蛇最后一个位置
+							tempY = arrY[arrY.length - 1];
 						}
 						if (arrX.length >= 2) {//除蛇头外的位置前进一个单位
-							for (var i = arrX.lengh; i > 0; i--) {
+							for (var i = arrX.length; i > 0; i--) {
 								arrX[i - 1] = arrX[i - 2];
 								arrY[i - 1] = arrY[i - 2];
-								alert(tempX);
 							}
 						}
 
@@ -165,7 +164,8 @@
 					if (temp == 1) {
 						arrX[arrX.length] = tempX;
 						arrY[arrX.length] = tempY;
-						alert(arrX[arrX.length-1]);
+						arrxAdd.pop();
+						arrYAdd.pop();
 						//消除arrxAdd、arryAdd
 					}
 					border();
@@ -175,30 +175,39 @@
 				}
 				btn02.onclick = function() { //下
 					clear01();
-					var  tempX,tempY;//定义末尾点
+				    var tempX=-1,tempY=-1;//定义末尾点
 					var temp = -1;
+					// console.log(arrX.length);//点数
+					// for(var i=0;i<arrX.length;i++){
+					// 	console.log(arrX[i]+"&"+arrY[i]+"\n");//为什么arrY[i]的值不清楚
+					// }
+					// console.log("arrY:"+arrY[arrX.length-1]);
+					
 					if (arrX.length >= 1) { //是否成立
 						
 						if (arrX[0]== arrxAdd[0] && (arrY[0]+1) == arryAdd[0]) {
 							temp = 1;
-							tempX = arrX[arrX.lengh - 1];
-							tempY = arrY[arrY.lengh - 1];
+							tempX = arrX[arrX.length - 1];
+							tempY = arrY[arrY.length - 1];
+							// console.log("tempY:"+tempY);
+							// console.log("right");
 						}
-						if (arrX.length >= 2) {
-							for (var i = arrX.lengh; i > 0; i--) {
-								arrX[i - 1] = arrX[i - 2];
-								arrY[i - 1] = arrY[i - 2];
+						if (arrX.length > 1) {//除蛇头外的各个部分向前移动一个单位
+							for (var i = arrX.length-1; i >0; i--) {
+								arrX[i] = arrX[i -1];
+								arrY[i] = arrY[i -1];
+								// console.log("arrY:"+arrY[i]);
 							}
 						}
 					}
 					else return;
 					arrY[0] += 1;
-					if (temp == 1) {
+					console.log("arrY[0]"+arrY[0]);
+					if (temp == 1) {//添加食物
 						arrX[arrX.length] = tempX;
-						arrY[arrX.length] = tempY;
-						//消除arrxAdd、arryAdd
-						alert(arrX[arrX.length-1]);
-						alert(tempX);
+						arrY[arrY.length] = tempY;
+						arrxAdd.pop();
+						arrYAdd.pop();
 					}
 					border();
 					draw(arrX, arrY);
@@ -213,12 +222,12 @@
 					
 						if ((arrX[0] - 1) == arrxAdd[0] && arrY[0] == arryAdd[0]) {
 							temp = 1;
-							tempX = arrX[arrX.lengh - 1];
-							tempY = arrY[arrY.lengh - 1];
+							tempX = arrX[arrX.length - 1];
+							tempY = arrY[arrY.length - 1];
 						}
 					
 						if (arrX.length >= 2) {
-							for (var i = arrX.lengh; i > 0; i--) {
+							for (var i = arrX.length; i > 0; i--) {
 								arrX[i - 1] = arrX[i - 2];
 								arrY[i - 1] = arrY[i - 2];
 							}
@@ -231,7 +240,9 @@
 					if (temp == 1) { //添加
 						arrX[arrX.length] = tempX;
 						arrY[arrX.length] = tempY;
-						alert(arrX[arrX.length-1])
+						// alert(arrX[arrX.length-1])
+						arrxAdd.pop();
+						arrYAdd.pop();
 						//消除arrxAdd、arryAdd
 						alert(tempX);
 					}
@@ -247,12 +258,12 @@
 					
 						if ((arrX[0] + 1) == arrxAdd[0] && arrY[0] == arryAdd[0]) {
 							temp = 1;
-							tempX = arrX[arrX.lengh - 1];
-							tempY = arrY[arrY.lengh - 1];
+							tempX = arrX[arrX.length - 1];
+							tempY = arrY[arrY.length - 1];
 						}
 
 						if (arrX.length >= 2) {
-							for (var i = arrX.lengh; i > 0; i--) {
+							for (var i = arrX.length; i > 0; i--) {
 								arrX[i - 1] = arrX[i - 2];
 								arrY[i - 1] = arrY[i - 2];
 							}
@@ -265,8 +276,10 @@
 					if (temp == 1) { //添加
 						arrX[arrX.length] = tempX;
 						arrY[arrX.length] = tempY;
-						alert(arrX[arrX.length-1])
-						alert(tempX);
+						// alert(arrX[arrX.length-1])
+						// alert(tempX);
+						arrxAdd.pop();
+						arrYAdd.pop();
 						//消除arrxAdd、arryAdd
 					}
 					border();
