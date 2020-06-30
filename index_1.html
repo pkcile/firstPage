@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+	<!-- <link rel="stylesheet" href="css/font-awesome.css"> -->
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1,maximum-scale=1">
+		<link rel="shortcut icon" href="./img/link.ico" type="image/x-icon" />
+		<title>pkcile</title>
+		<style>
+			body{
+				padding: 0;
+				margin: 0;
+				font-size: 16px;
+				/* 禁止复制test */
+				/* 可用于图片禁止拖拽 */
+				/* user-select: none;
+				-webkit-touch-callout: none;
+				-webkit-user-select: none;
+				-khtml-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none; */
+			}
+			/*1. 头部 */
+			.topBar{
+				width: 100%;
+				height: 100px;
+			}
+			/* 头部中间区域 */
+			.center{
+				padding-top: 45px;
+				width: 1000px;
+				margin: 0 auto ;
+			}
+			/* 中间区域左部分：设置浮动 */
+			.left{
+				float: left;
+				/* 左部分字体大小 */
+				font-size: 28px;
+				/*左部分整体向右移动*/
+			
+			}
+			/* 中间区域右部分：设置浮动 */
+			.right{
+				float: right;
+				/* 去除margin-top影响 */
+				margin: 0;
+				padding-top: 10px;
+			}
+			li{
+				/* 局部单位向左排齐 */
+				float: left;
+				/*去除li样式*/
+				list-style: none;
+				padding: 0 5px;
+			}
+			
+			a{
+				/*去除超链接下划线样式*/
+				text-decoration: none;
+				color: #abc;
+				font-weight: 900;
+			}
+			.right a:hover{
+				color: #EA4335;
+			}
+			
+			
+			.blueline{
+				width: 100%;
+				height: 2px;
+				background-color: #62A3C4;
+			}
+			.content{
+				/* background-image: url(./img/bg_01.jpg); */
+			}
+			
+			.center02{
+				padding-top: 20px;
+				width: 1000px;
+				margin: 0 auto ;
+			}
+			.title02{
+				font-size: 20px;
+				font-weight: 600;
+				padding: 15px 0;
+			}
+			
+			.label{
+				padding: 5px 0;
+			}
+			.label a{
+				padding-right: 15px;
+			}
+			.hrStyle{
+				/* outline-style: dotted; */
+				margin: 20px 0;
+				border-style: solid;
+				border-width: 1px;
+				border-color: #62A3C4
+				/* 如何改变dotted的分布规律？ */
+			}
+			
+		</style>
+		<script>
+			console.log(666);
+		</script>
+	</head>
+	<body>
+		<!-- 头部 -->
+		<div class="topBar">
+			<div class="center">
+				<div class="left">
+					<div class="title01">pkcile</div>
+				</div>
+				<ul class="right">
+					<li class="remember"><a href="">回忆</a></li>
+					<li class="record"><a href="">记录</a></li>
+					<li class="study"><a href="./html/1_study/0_studyList.html">学习</a></li>
+					<li class="about"><a href="">关于我</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- 割线 -->
+		<div class="blueline"></div>
+		<!-- 主体内容 -->
+		<div class="content">
+			<div class="center02">
+				<!-- story04 -->
+				<div class="story04">
+					<div class="title02">日常小事</div>
+					<div class="label"	>	
+					<a href="" class="time">April22,2020</a>
+					<!-- <i class="fa">&#xf02c</i> -->
+					<a href="" class="type">日常</a>
+					<!-- <i class="fa">&#xf0ac</i> -->
+					<a href="" class="isay">大学、家、疫情、村庄建设</a>
+					</div>			
+					<div class="pragraph">	
+						<p>
+							<span>以后可以将我理头发前后的照片保存起来，10年后肯定值得回忆；</span>
+						</p>		
+					</div>
+					<!-- 尾格式 -->
+					<p>[……]</p>
+					<a href="">read more</a>			
+				</div>
+				
+				<!-- story03 -->
+				<div class="story03">
+					<div class="title02">职业生涯规划</div>
+					<div class="label">
+						<a href="" class="time">Novemeber8,2018</a>
+						<a href="" class="type">大学</a>
+						<a href="" class="isay">规划、情感、感叹</a>
+					</div>
+					<div class="pragraph">
+						这两个月过的就如松散状态的“高中生活”。为什么我会这么讲？
+						现在的我们遵循着固定的课表，上着固定的课程，讨论中也会带有对学习的苦痛；
+					</div>
+					<p>[……]</p>
+					<a href="">read more</a>
+				</div>
+				<hr class="hrStyle">
+				<!-- story02 -->
+				<div class="story02">
+					<div class="title02">军训日记</div>
+					<div class="label">
+						<a href="" class="time">Septempber8,2018</a>
+						<a href="" class="type">大学</a>
+						<a href="" class="isay">情感、紧张、繁琐、矛盾、回忆</a>
+					</div>
+					<div class="pragraph">
+						军训已八天-9月17日星期一
+						<br>
+						退出方队
+						<br>
+					</div>
+					<p>[……]</p>
+					<a href="">read more</a>
+				</div>
+				<hr class="hrStyle">
+				<!-- story01 -->
+				<div class="story01">
+					<div class="title02">寄出的信</div>
+					<div class="label"	>
+					<a href="" class="time">Septempber19,2018</a>
+					<a href="" class="type">大学</a>
+					<a href="" class="isay">信、教官、军训、回忆</a>
+					</div>			
+						<div class="pragraph">
+							尊敬的连长：
+							<br>
+							连长来自四季如春的云南，我也很喜欢这个省份，那里景色应该很漂亮，空气应该很好吧；
+						</div>
+						<p>[……]</p>
+						<a href="">read more</a>			
+					</div>
+				</div>
+			</div>
+		<div class="footer">
+			<!-- 音乐故事 -->
+		</div>
+	</body>
+</html>
