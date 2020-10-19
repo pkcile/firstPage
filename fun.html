@@ -1,0 +1,43 @@
+<html>
+<head>
+<style>
+</style>
+<script type="text/javascript">
+
+function log(msg)
+{
+  var textArea;
+
+  textArea = document.getElementById("logArea");
+  textArea.value = msg + "\n" + textArea.value;
+}
+
+function clearLog()
+{
+  var textArea;
+
+  textArea = document.getElementById("logArea");
+  textArea.value = "";
+}
+
+</script>
+
+<script type="text/javascript" src="./assets/js/blobsallad.js">
+</script>
+
+<style type="text/css">
+  canvas { }
+</style>
+
+</head>
+
+<body onload="init();">
+<div class="center_fun">
+  <canvas id="blob" width="600" height="400"></canvas><br>
+</div>
+
+
+<a href="javascript:stop()">pause simulation</a>
+<a href="javascript:start()">resume simulation</a>
+</body>
+</head>
