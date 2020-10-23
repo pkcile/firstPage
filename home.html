@@ -9,6 +9,17 @@
     <title>pkcile</title>
 </head>
 <body>
-    <h2>欢迎来到我的个人空间/welcome to you</h2>
+    <span id="welcome_zh">欢迎你的到来</span>
+    <span id="welcome_en" style="display: none;">welcome your coming</span>
+    <button id="language_control">英语转换</button>
 </body>
+<script>
+    // 语言转换
+    var btn_change = document.getElementById("language_control");
+    btn_change.onclick = function(){
+       var lang_1 = document.getElementById("welcome_zh");
+       lang_1.style = "display: 'none'";
+    }
+
+</script>
 </html>
