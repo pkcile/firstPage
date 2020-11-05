@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 测试-1 */
+        .test1{
+            width: 40px;
+            height: 40px;
+            float: left;
+            background-color: #bbffaa;
+        }
+        /* 测试-2 */
+        .test2{
+            width: 40px;
+            height: 40px;
+            float: left;
+            background-color: #bbb;
+        }
+        /* 鼠标移入效果 */
+        .test1:hover, .test2:hover{
+            background-color: yellow;
+        }
+        /* 清除高度塌陷 */
+        .test3{
+            overflow: hidden;
+        }
+        /* 内容－１ */
+        .red-test{
+            height: 200px;
+            width: 200px;
+            background-color: red;
+        }
+        /* 内容－２ */
+        .blue-test{
+            height: 200px;
+            width: 200px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="test3">
+       <div class="test1" id="test1">test1</div>
+       <div class="test2" id="test2">test2</div>
+    </div>
+    <div class="red-test" id="red-test">1</div>
+    <div class="blue-test" id="blue-test" style="display: none;">2</div>
+</body>
+<script>
+    var test1 = document.getElementById("test1");
+    var test2 = document.getElementById("test2");
+    test1.onclick = function(){
+        var red_test = document.getElementById("red-test");
+        var blue_test = document.getElementById("blue-test");
+        red_test.style.display = "block";
+        blue_test.style.display = "none";
+    }
+    test2.onclick = function(){
+        var blue_test = document.getElementById("blue-test");
+        var red_test = document.getElementById("red-test");
+        blue_test.style.display = "block";
+        red_test.style.display = "none";
+    }
+</script>
+</html>
