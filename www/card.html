@@ -7,11 +7,11 @@
 	<!-- 重置样式表 -->
 	<link rel="stylesheet" type="text/css" href="./css/reset.css" />
 	<!-- font-awesome -->
-	<link rel="stylesheet" href="./css/fa/css/all.css">
+	<!-- <link rel="stylesheet" href="./css/fa/css/all.css"> -->
 	<!-- alibaba -->
 	<link rel="stylesheet" href="./css/ali/iconfont.css">
 	<!-- inner_card -->
-	<link rel="stylesheet" href="./css/inner_card.css">
+	<link rel="stylesheet" href="./css/card_show.css">
 	<script>
 		window.onload = function () {
 				// 实验链接 -隐藏
@@ -35,11 +35,6 @@
 			}
 	</script>
 	<style type="text/css">
-		body {
-			background: #F7F8FA;
-			margin: 0;
-			padding: 0;
-		}
 		.center_nav {
 			width: 1100px;
 			margin: 10px auto;
@@ -55,7 +50,7 @@
 			width: 100%;
 			height: 40px;
 			background-color: #bfa;
-			border-bottom: 2px dotted #aaa;
+			/* border-bottom: 2px dotted #aaa; */
 		}
 		.teach-header-item{
 			cursor: pointer;
@@ -89,13 +84,13 @@
 		}
 		/* 实验手册 */
 		.teach-detail{
-			background-color: #cbf3ff;
+			
 		}
 		/* 实验手册-目录 */
 		.teach-detail-content{
 			height: 1000px;
 			width: 200px;
-			background-color: #cbf3ff;
+			/* background-color: #cbf3ff; */
 			position: fixed;
 			top:30px;
 			left:0px;
@@ -110,27 +105,66 @@
 			padding: 5px;
 		}
 		/* 实验手册-内容 */
-		.teach-detail-main{
-			height: 100%;
-			background-color: #bbc;
-			/* position: relative; */
-		}
-		.teach-detail-main-item{
-			padding: 5px;
-		}
-		.teach-detail-main-item-header{
-			padding: 5px;
-			font-weight: 500;
 
-		}
-		.teach-detail-main-item-descript{
-			padding: 5px;
-		}
-		.teach-detail-main-item-detail{
-			padding: 0 0 5px 5px;
+		/* test */
+
+		.card-teach-header {
+            margin: 10px;
+            background-color: #F5F5F5;
+            padding: 10px;
+
+        }
+
+        /* 教程内容卡片 */
+        .card-teach-detail-main-step {
+            border: 1px solid #DDDDDD;
+            margin: 10px;
+			line-height: 23px;
 			/* 字间距 */
 			letter-spacing: .02em;
-		}
+        }
+
+        /* 卡片标题 */
+        .card-detail-card-header{
+            background-color: #F5F5F5;
+            padding: 10px;
+            color: #1a73e8;
+            font-weight: 500;
+            font-size: 17px;
+        }
+
+        /* 卡片子内容 */
+        .card-detail-item {
+            padding: 5px 0 5px 5px;
+        }
+
+        .card-detail-item-header {
+            /* background-color: rgba(9, 22, 22, .5); */
+            font-weight: 700;
+            color: rgb(102, 102, 102);
+            font-size: 14px;
+
+        }
+
+        img {
+            width: 1000px;
+        }
+
+        a{
+            text-decoration: none;
+        }
+        a:link {
+            color: #1A73E8;
+        }
+        a:visited {
+            color: blueviolet;
+        }
+        a:hover {
+            color: #1A73E8;
+        }
+        a:active {
+            color: #1A73E8;
+        }
 		
 	</style>
 </head>
@@ -179,24 +213,160 @@
 					<div class="teach-detail-content-item">3.重装系统</div>
 				</div>
 				<div class="teach-detail-main">
-					<div class="teach-detail-main-item">
-						<div class="teach-detail-main-item-header">1.U盘启动盘的制作</div>
-						<div class="teach-detail-main-item-group">
-							<div class="teach-detail-main-item-descript">下载U盘启动制作工具</div>
-							<div class="teach-detail-main-item-detail">
-								下载链接 <a href="https://www.baidu.com" target="blank"><i class="iconfont">&#xe68f;</i></a>
+					<!-- 教程内容卡片 -->
+					<div class="teach-card">
+						<div class="card-teach-header">
+							安装windows系统
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<a href="">[步骤截图]</a>
+						</div>
+						<div class="card-teach-detail-main-step">
+							<div class="card-detail-card-header" id="card-detail-card-header">
+								步骤1：U盘启动盘制作
 							</div>
-							<div class="teach-detail-main-item-comment">
-								<ul>
-									<li>大白菜官方网址链接<i>test</i></li>
-								</ul>
+							<div class="card-detail-item">
+								<div class="card-detail-item-header">
+									1.U盘启动盘制作工具下载
+								</div>
+								<div class="card-detail-card-group">
+									<div class="card-detail-card-descript">
+										1.1 进入大白菜官网
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										<a href="http://www.winbaicai.com/ ">[链接]</a>
+									</div>
+									<div class="card-detail-card-detail" style="display: none;">
+										<div class="card-detail-card-detail-img"><img src="" alt=""></div>
+									</div>
+								</div>
+								<div class="card-detail-card-group">
+									<div class="card-detail-card-descript">
+										1.2 选择装机版UEFI下载
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										<a href="http://down.winbaicai.com:88/DaBaiCai_v6.0_2009.zip ">[链接]</a>
+									</div>
+									<div class="card-detail-card-detail">
+										<div class="card-detail-card-detail-img"></div>
+									</div>
+								</div>
+							</div>
+							<div class="card-detail-item">
+								<div class="card-detail-item-header">
+									2.打开程序，一键制作成USB启动盘
+								</div>
+								<div class="card-detail-card-group">
+									<div class="card-detail-card-descript">
+										2.1 插入U盘后，按照默认模式，直接一键制作成USB启动盘即可
+									</div>
+									<div class="card-detail-card-detail" style="display: none;">
+										<div class="card-detail-card-detail-img"><img src="" alt=""></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="card-teach-detail-main-step">
+							<div class="card-detail-card-header" id="card-detail-card-header">
+								步骤2：下载系统镜像
+							</div>
+							<div class="card-detail-item">
+								<div class="card-detail-item-header">
+									1.下载windows10操作系统
+								</div>
+								<div class="card-detail-card-group">
+									<div class="card-detail-card-descript">
+										1.1 进入MSDN，I Tell You官网
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										<a href="https://msdn.itellyou.cn/">[链接]</a>
+									</div>
+									<div class="card-detail-card-detail" style="display: none;">
+										<div class="card-detail-card-detail-img"><img src="" alt=""></div>
+									</div>
+								</div>
+								<div class="card-detail-card-group">
+									<div class="card-detail-card-descript">
+										1.2 选择windows10操作系统
+										&nbsp;&nbsp;&nbsp;
+										<a
+											href="ed2k://|file|cn_windows_10_consumer_editions_version_1909_updated_jan_2020_x64_dvd_47161f17.iso|5417457664|274FEBA5BF0C874C291674182FA9C851|/">[迅雷链接]</a>
+									</div>
+									<div class="card-detail-card-detail">
+										<div class="card-detail-card-detail-img"></div>
+									</div>
+								</div>
+							</div>
+							<div class="card-detail-item">
+								<div class="card-etail-item-header">
+									2.将下载好的windows10文件复制到U盘
+								</div>
+								<div class="card-detail-card-group">
+									<div class="card-detail-card-descript">
+										2.1.将下载好的windows10文件复制到U盘即可
+									</div>
+									<div class="card-detail-card-detail" style="display: none;">
+										<div class="card-detail-card-detail-img"><img src="" alt=""></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="card-teach-detail-main-step">
+							<div class="card-detail-card-header" id="card-detail-card-header">
+								步骤3：重装系统
+							</div>
+							<div class="card-detail-item">
+								<div class="card-detail-item-header">
+									1.进入BIOS启动选项
+								</div>
+								<div class="card-detail-card-group">
+									<div class="card-detail-card-descript">
+										1.1 电脑关机后，电脑插入U盘
+									</div>
+									<div class="card-detail-card-detail" style="display: none;">
+										<div class="card-detail-card-detail-img"><img src="" alt=""></div>
+									</div>
+								</div>
+								<div class="card-detail-card-group">
+									<div class="card-detail-card-descript">
+										1.2 查询你的电脑对应的启动快捷键
+									</div>
+									<div class="card-detail-card-detail">
+										<div class="card-detail-card-detail-img"></div>
+									</div>
+								</div>
+								<div class="card-detail-card-group">
+									<div class="card-detail-card-descript">
+										1.3 开机，待电脑进入系统前，连续点击键盘中的启动快捷键
+									</div>
+									<div class="card-detail-card-detail">
+										<div class="card-detail-card-detail-img"></div>
+									</div>
+								</div>
+								<div class="card-detail-card-group">
+									<div class="card-detail-card-descript">
+										1.4 进入启动首选项后，选择你的U盘
+									</div>
+									<div class="card-detail-card-detail">
+										<div class="card-detail-card-detail-img"></div>
+									</div>
+								</div>
+							</div>
+							<div class="card-detail-item">
+								<div class="card-detail-item-header">
+									2.重装系统
+								</div>
+								<div class="card-detail-card-group">
+									<div class="card-detail-card-descript">
+			
+									</div>
+									<div class="card-detail-card-detail" style="display: none;">
+										<div class="card-detail-card-detail-img"><img src="" alt=""></div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="inner" style="display: none;">
+		<div class="inner">
 			<div class="lab-gly-experiment-summary">
 				<!-- 背景色 -->
 				<div class="logo-mask"
