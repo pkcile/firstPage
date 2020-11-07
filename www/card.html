@@ -14,22 +14,22 @@
 	<link rel="stylesheet" href="./css/inner_card.css">
 	<script>
 		window.onload = function () {
-				// 实验链接隐藏
+				// 实验链接 -隐藏
 				var lab_overview_link = document.getElementById("lab-overview-link");
 				var lab_book_link = document.getElementById("lab-book-link");
 				// 点击第一个导航链接
 				lab_overview_link.onclick = function() {
 					var teach_overview = document.getElementById("teach-overview");
 					var teach_detail = document.getElementById("teach-detail");
-					teach_overview.style = "display: block";
-					teach_detail.style = "display: none";
+					teach_overview.style.display = "block";
+					teach_detail.style.display = "none";
 				}
 				// 点击第二个导航链接
 				lab_book_link.onclick = function() {
 					var teach_overview = document.getElementById("teach-overview");
 					var teach_detail = document.getElementById("teach-detail");
-					teach_overview.style = "display: none";
-					teach_detail.style = "display: block";
+					teach_overview.style.display = "none";
+					teach_detail.style.display = "block";
 				}
 
 			}
@@ -149,6 +149,24 @@
 						实验内容
 					</div>
 					<div class="teach-overview-item-main">
+						安装Windows10操作系统
+					</div>
+				</div>
+				<div class="teach-overview-item">
+					<div class="teach-overview-item-head">
+						实验资源
+					</div>
+					<div class="teach-overview-item-main">
+						一台X64/86电脑
+						<br>
+						一个闲置U盘，建议8G及以上内存
+					</div>
+				</div>
+				<div class="teach-overview-item">
+					<div class="teach-overview-item-head">
+						软件环境
+					</div>
+					<div class="teach-overview-item-main">
 						云服务器（Cloud Virtual Machine，CVM）为您提供安全可靠的弹性计算服务。 只需几分钟，您就可以在云端获取和启用 CVM，来实现您的计算需求。本实验将免费为你提供一台 CentOS 系统的 CVM，让你完成 CVM 的初体验。
 					</div>
 				</div>
@@ -156,55 +174,24 @@
 			<div class="teach-detail" id="teach-detail"  style="display: none;">
 				<div class="teach-detail-content">
 					<div class="teach-detail-content-head">目录</div>
-					<div class="teach-detail-content-item">1.使用WebIDE体验</div>
-					<div class="teach-detail-content-item">2.自由体验CVM</div>
-					<div class="teach-detail-content-item">3.体验完成</div>
+					<div class="teach-detail-content-item">1.U盘启动盘的制作</div>
+					<div class="teach-detail-content-item">2.将Windows10系统复制到U盘</div>
+					<div class="teach-detail-content-item">3.重装系统</div>
 				</div>
 				<div class="teach-detail-main">
 					<div class="teach-detail-main-item">
-						<div class="teach-detail-main-item-header">1.使用WebIDE体验</div>
-						<div class="teach-detail-main-item-descript">使用文件浏览器</div>
-						<div class="teach-detail-main-item-detail">在 WebIDE 的左侧是文件浏览器，您可以通过文件浏览器操作 CVM 上的文件。</div>
-					</div>
-					<div class="teach-detail-main-item">
-						<div class="teach-detail-main-item-header">1.使用WebIDE体验</div>
-						<div class="teach-detail-main-item-descript">使用文件浏览器</div>
-						<div class="teach-detail-main-item-detail">在 WebIDE 的左侧是文件浏览器，您可以通过文件浏览器操作 CVM 上的文件。</div>
-					</div>
-					<div class="teach-detail-main-item">
-						<div class="teach-detail-main-item-header">1.使用WebIDE体验</div>
-						<div class="teach-detail-main-item-descript">使用文件浏览器</div>
-						<div class="teach-detail-main-item-detail">在 WebIDE 的左侧是文件浏览器，您可以通过文件浏览器操作 CVM 上的文件。</div>
-					</div>
-					<div class="teach-detail-main-item">
-						<div class="teach-detail-main-item-header">1.使用WebIDE体验</div>
-						<div class="teach-detail-main-item-descript">使用文件浏览器</div>
-						<div class="teach-detail-main-item-detail">在 WebIDE 的左侧是文件浏览器，您可以通过文件浏览器操作 CVM 上的文件。</div>
-					</div>
-					<div class="teach-detail-main-item">
-						<div class="teach-detail-main-item-header">1.使用WebIDE体验</div>
-						<div class="teach-detail-main-item-descript">使用文件浏览器</div>
-						<div class="teach-detail-main-item-detail">在 WebIDE 的左侧是文件浏览器，您可以通过文件浏览器操作 CVM 上的文件。</div>
-					</div>
-					<div class="teach-detail-main-item">
-						<div class="teach-detail-main-item-header">1.使用WebIDE体验</div>
-						<div class="teach-detail-main-item-descript">使用文件浏览器</div>
-						<div class="teach-detail-main-item-detail">在 WebIDE 的左侧是文件浏览器，您可以通过文件浏览器操作 CVM 上的文件。</div>
-					</div>
-					<div class="teach-detail-main-item">
-						<div class="teach-detail-main-item-header">1.使用WebIDE体验</div>
-						<div class="teach-detail-main-item-descript">使用文件浏览器</div>
-						<div class="teach-detail-main-item-detail">在 WebIDE 的左侧是文件浏览器，您可以通过文件浏览器操作 CVM 上的文件。</div>
-					</div>
-					<div class="teach-detail-main-item">
-						<div class="teach-detail-main-item-header">1.使用WebIDE体验</div>
-						<div class="teach-detail-main-item-descript">使用文件浏览器</div>
-						<div class="teach-detail-main-item-detail">在 WebIDE 的左侧是文件浏览器，您可以通过文件浏览器操作 CVM 上的文件。</div>
-					</div>
-					<div class="teach-detail-main-item">
-						<div class="teach-detail-main-item-header">1.使用WebIDE体验</div>
-						<div class="teach-detail-main-item-descript">使用文件浏览器</div>
-						<div class="teach-detail-main-item-detail">在 WebIDE 的左侧是文件浏览器，您可以通过文件浏览器操作 CVM 上的文件。</div>
+						<div class="teach-detail-main-item-header">1.U盘启动盘的制作</div>
+						<div class="teach-detail-main-item-group">
+							<div class="teach-detail-main-item-descript">下载U盘启动制作工具</div>
+							<div class="teach-detail-main-item-detail">
+								下载链接 <a href="https://www.baidu.com" target="blank"><i class="iconfont">&#xe68f;</i></a>
+							</div>
+							<div class="teach-detail-main-item-comment">
+								<ul>
+									<li>大白菜官方网址链接<i>test</i></li>
+								</ul>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
