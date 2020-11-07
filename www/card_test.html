@@ -1,57 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body{
+        body {
             background-color: #FFFFFF;
         }
-        .center{
+
+        .center {
             width: 1000px;
             margin: 0 auto;
         }
-        a:hover{
+
+        a:hover {
             color: red;
         }
-        /* 教程内容卡片 */
-        .teach-detail-main-step{
-            border: 2px solid #DDDDDD;
+
+        .teach-header {
             margin: 10px;
-        }
-        /* 卡片标题 */
-        .detail-card-header{
             background-color: #F5F5F5;
-            padding: 8px 0;
-            color: #3A87AD;
-            font-weight: 500;
-            font-size: 16px;
-        }
-        /* 卡片子内容 */
-        .detail-item{
-            padding: 5px 0 5px 5px;
-        }
-        .detail-item-header{
-            /* background-color: rgba(9, 22, 22, .5); */
-            font-weight: 600;
-            color:  rgba(9, 22, 22, .4);
+            padding: 10px;
 
         }
-        img{
+
+        /* 教程内容卡片 */
+        .teach-detail-main-step {
+            border: 1px solid #DDDDDD;
+            margin: 10px;
+        }
+
+        /* 卡片标题 */
+        .detail-card-header {
+            background-color: #F5F5F5;
+            padding: 10px;
+            color: #1a73e8;
+            font-weight: 500;
+            font-size: 17px;
+        }
+
+        /* 卡片子内容 */
+        .detail-item {
+            padding: 5px 0 5px 5px;
+        }
+
+        .detail-item-header {
+            /* background-color: rgba(9, 22, 22, .5); */
+            font-weight: 700;
+            color: rgb(102, 102, 102);
+            font-size: 14px;
+
+        }
+
+        img {
             width: 1000px;
         }
+
+        a{
+            text-decoration: none;
+        }
+        a:link {
+            color: #1A73E8;
+        }
+        a:visited {
+            color: blueviolet;
+        }
+        a:hover {
+            color: #1A73E8;
+        }
+        a:active {
+            color: #1A73E8;
+        }
+
+        /* 选定的链接 */
     </style>
 </head>
+
 <body>
 
     <div class="center">
-            <!-- 教程内容卡片 -->
+        <!-- 教程内容卡片 -->
         <div class="teach-card">
+            <div class="teach-header">
+                安装windows系统
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="">[步骤截图]</a>
+            </div>
             <div class="teach-detail-main-step">
                 <div class="detail-card-header" id="detail-card-header-1">
                     步骤1：U盘启动盘制作
-                    <a href="">[步骤截图]</a>  
                 </div>
                 <div class="detail-item">
                     <div class="detail-item-header">
@@ -59,7 +98,9 @@
                     </div>
                     <div class="detail-card-group">
                         <div class="detail-card-descript">
-                            1.1 进入大白菜官网 <a href="http://www.winbaicai.com/ ">[链接]</a>  
+                            1.1 进入大白菜官网
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a href="http://www.winbaicai.com/ ">[链接]</a>
                         </div>
                         <div class="detail-card-detail" style="display: none;">
                             <div class="detail-card-detail-img"><img src="" alt=""></div>
@@ -67,17 +108,18 @@
                     </div>
                     <div class="detail-card-group">
                         <div class="detail-card-descript">
-                            1.2 选择装机版UEFI下载 
-                            <a href="http://down.winbaicai.com:88/DaBaiCai_v6.0_2009.zip ">[链接]</a> 
+                            1.2 选择装机版UEFI下载
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a href="http://down.winbaicai.com:88/DaBaiCai_v6.0_2009.zip ">[链接]</a>
                         </div>
                         <div class="detail-card-detail">
                             <div class="detail-card-detail-img"></div>
                         </div>
                     </div>
-                </div>  
+                </div>
                 <div class="detail-item">
                     <div class="detail-item-header">
-                        2.打开程序，一键制作成USB启动盘  
+                        2.打开程序，一键制作成USB启动盘
                     </div>
                     <div class="detail-card-group">
                         <div class="detail-card-descript">
@@ -87,12 +129,11 @@
                             <div class="detail-card-detail-img"><img src="" alt=""></div>
                         </div>
                     </div>
-                </div>  
+                </div>
             </div>
             <div class="teach-detail-main-step">
                 <div class="detail-card-header" id="detail-card-header-1">
                     步骤2：下载系统镜像
-                    <a href="">[步骤截图]</a>  
                 </div>
                 <div class="detail-item">
                     <div class="detail-item-header">
@@ -100,7 +141,9 @@
                     </div>
                     <div class="detail-card-group">
                         <div class="detail-card-descript">
-                            1.1 进入MSDN，I Tell You官网 <a href="https://msdn.itellyou.cn/">[链接]</a>  
+                            1.1 进入MSDN，I Tell You官网
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a href="https://msdn.itellyou.cn/">[链接]</a>
                         </div>
                         <div class="detail-card-detail" style="display: none;">
                             <div class="detail-card-detail-img"><img src="" alt=""></div>
@@ -109,13 +152,15 @@
                     <div class="detail-card-group">
                         <div class="detail-card-descript">
                             1.2 选择windows10操作系统
-                            <a href="ed2k://|file|cn_windows_10_consumer_editions_version_1909_updated_jan_2020_x64_dvd_47161f17.iso|5417457664|274FEBA5BF0C874C291674182FA9C851|/">[迅雷链接]</a> 
+                            &nbsp;&nbsp;&nbsp;
+                            <a
+                                href="ed2k://|file|cn_windows_10_consumer_editions_version_1909_updated_jan_2020_x64_dvd_47161f17.iso|5417457664|274FEBA5BF0C874C291674182FA9C851|/">[迅雷链接]</a>
                         </div>
                         <div class="detail-card-detail">
                             <div class="detail-card-detail-img"></div>
                         </div>
                     </div>
-                </div>  
+                </div>
                 <div class="detail-item">
                     <div class="detail-item-header">
                         2.将下载好的windows10文件复制到U盘
@@ -128,12 +173,11 @@
                             <div class="detail-card-detail-img"><img src="" alt=""></div>
                         </div>
                     </div>
-                </div>  
+                </div>
             </div>
             <div class="teach-detail-main-step">
                 <div class="detail-card-header" id="detail-card-header-1">
                     步骤3：重装系统
-                    <a href="">[步骤截图]</a>  
                 </div>
                 <div class="detail-item">
                     <div class="detail-item-header">
@@ -165,29 +209,30 @@
                     </div>
                     <div class="detail-card-group">
                         <div class="detail-card-descript">
-                            1.4 进入启动首选项后，选择你的U盘 
+                            1.4 进入启动首选项后，选择你的U盘
                         </div>
                         <div class="detail-card-detail">
                             <div class="detail-card-detail-img"></div>
                         </div>
                     </div>
-                </div>  
+                </div>
                 <div class="detail-item">
                     <div class="detail-item-header">
                         2.重装系统
                     </div>
                     <div class="detail-card-group">
                         <div class="detail-card-descript">
-                            
+
                         </div>
                         <div class="detail-card-detail" style="display: none;">
                             <div class="detail-card-detail-img"><img src="" alt=""></div>
                         </div>
                     </div>
-                </div>  
+                </div>
             </div>
         </div>
-      
+
     </div>
 </body>
+
 </html>
