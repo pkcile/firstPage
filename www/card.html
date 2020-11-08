@@ -3,15 +3,18 @@
 
 <head>
 	<meta charset="utf-8">
-	<title></title>
+	<title>teach</title>
 	<!-- 重置样式表 -->
 	<link rel="stylesheet" type="text/css" href="./css/reset.css" />
 	<!-- font-awesome -->
-	<!-- <link rel="stylesheet" href="./css/fa/css/all.css"> -->
+	<link rel="stylesheet" href="./css/fa/css/all.css">
 	<!-- alibaba -->
 	<link rel="stylesheet" href="./css/ali/iconfont.css">
-	<!-- inner_card -->
-	<link rel="stylesheet" href="./css/card_show.css">
+	<!-- card_show -->
+	<link rel="stylesheet" href="./css/show/card_show.css">
+	<!-- card_teach -->
+	<link rel="stylesheet" href="./css/teach/card_teach.css">
+	<link rel="stylesheet" href="./css/teach/teach_main.css">
 	<script>
 		window.onload = function () {
 				// 实验链接 -隐藏
@@ -35,144 +38,12 @@
 			}
 	</script>
 	<style type="text/css">
+		/* 页面主体居中 */
 		.center_nav {
 			width: 1100px;
 			margin: 10px auto;
 		}
-		/* 教程页面 */
-		.teach-item{
-			width: 100%;
-			background-color: white;
-			
-		}
-		/* 教程头部标题 */
-		.teach-header{
-			width: 100%;
-			height: 40px;
-			background-color: #F5F5F5;
-			margin: 10px;
-			padding: 10px;
-			/* border-bottom: 2px dotted #aaa; */
-		}
-		.teach-header-item{
-			cursor: pointer;
-			width: 100px;
-			line-height: 40px;
-			float: left;
-			/* background-color: blue; */
-		}
-		.teach-header-item:hover{
-			background-color: rgba(144, 122, 10, .2);
-		}
-		/* 教程概述 */
-		.teach-overview{
-			background-color: rgba(144, 122, 10, .2);
-			margin: 10px;
-			padding: 5px;
-		}
-		.teach-overview-item{
-			padding: 10px 0;
-		}
-		.teach-overview-item-head{
-			font-weight: 600;
-			font-size: 16px;
-			padding: 5px;
-		}
-		.teach-overview-item-main{
-			font-weight: 500;
-			font-size: 16px;
-			padding: 5px;
-			line-height: 23px;
-			/* 字间距 */
-			letter-spacing: .02em;
-		}
-		/* 实验手册 */
-		.teach-detail{
-			
-		}
-		/* 实验手册-目录 */
-		.teach-detail-content{
-			height: 1000px;
-			width: 200px;
-			position: fixed;
-			top:0px;
-			left:0px;
-			margin: 10px;
-			background-color: #F5F5F5;
-
-		}
-		.teach-detail-content-head{
-			padding: 10px;
-			margin: 5px 0;
-			font-weight: 600;
-
-		}
-		.teach-detail-content-item{
-			padding: 10px;
-			cursor: pointer;
-		}
-		/* 实验手册-内容 */
-
-		/* test */
-
-		.card-teach-header {
-            margin: 10px;
-            background-color: #F5F5F5;
-            padding: 10px;
-
-        }
-
-        /* 教程内容卡片 */
-        .card-teach-detail-main-step {
-            border: 1px solid #DDDDDD;
-            margin: 10px;
-			line-height: 23px;
-			/* 字间距 */
-			letter-spacing: .02em;
-        }
-
-        /* 卡片标题 */
-        .card-detail-card-header{
-            background-color: #F5F5F5;
-            padding: 10px;
-            color: #1a73e8;
-            font-weight: 500;
-            font-size: 17px;
-        }
-
-        /* 卡片子内容 */
-        .card-detail-item {
-            padding: 5px 0 5px 5px;
-        }
-
-        .card-detail-item-header {
-            /* background-color: rgba(9, 22, 22, .5); */
-            font-weight: 700;
-            color: rgb(102, 102, 102);
-            font-size: 14px;
-
-        }
-
-        img {
-            width: 1000px;
-        }
-
-        a{
-            text-decoration: none;
-        }
-        a:link {
-            color: #1A73E8;
-        }
-        a:visited {
-            color: blueviolet;
-        }
-        a:hover {
-            color: #1A73E8;
-        }
-        a:active {
-            color: #1A73E8;
-        }
-		
+	
 	</style>
 </head>
 
@@ -223,13 +94,17 @@
 					<!-- 教程内容卡片 -->
 					<div class="teach-card">
 						<div class="card-teach-header">
-							安装windows系统
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							<a href="">[步骤截图]</a>
+							<div class="card-teach-header-item">
+								安装windows系统
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<a href="">[步骤截图]</a>
+							</div>
 						</div>
 						<div class="card-teach-detail-main-step">
 							<div class="card-detail-card-header" id="card-detail-card-header">
-								步骤1：U盘启动盘制作
+								<div class="card-detail-card-header-item">
+									步骤1：U盘启动盘制作
+								</div>
 							</div>
 							<div class="card-detail-item">
 								<div class="card-detail-item-header">
@@ -272,7 +147,9 @@
 						</div>
 						<div class="card-teach-detail-main-step">
 							<div class="card-detail-card-header" id="card-detail-card-header">
-								步骤2：下载系统镜像
+								<div class="card-detail-card-header-item">
+									步骤2：下载系统镜像
+								</div>
 							</div>
 							<div class="card-detail-item">
 								<div class="card-detail-item-header">
@@ -316,7 +193,9 @@
 						</div>
 						<div class="card-teach-detail-main-step">
 							<div class="card-detail-card-header" id="card-detail-card-header">
-								步骤3：重装系统
+								<div class="card-detail-card-header-item">
+									步骤3：重装系统
+								</div>
 							</div>
 							<div class="card-detail-item">
 								<div class="card-detail-item-header">

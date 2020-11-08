@@ -1,0 +1,76 @@
+	/* 教程页面主体1 */
+    .teach-item{
+        background-color: white;
+        
+    }
+    /* 教程头部标题1-1 */
+    .teach-header{
+        width: 1100px;
+        background-color: #F5F5F5;
+        margin: 10px;
+        /* 开启BFC */
+        overflow: hidden;
+        border: 1px solid #DDDDDD;
+    }
+    .teach-header-item{
+        line-height: 40px;
+        cursor: pointer;
+        width: 100px;
+        float: left;
+        padding: 10px 10px 10px 30px;
+    }
+    .teach-header-item:hover{
+        background-color: rgba(144, 122, 10, .1);
+    }
+    /* 教程概述1-2-1 */
+    .teach-overview{
+        width: 1100px;
+        /* #E9E4CE */
+        background-color: #F5F5F5;
+        margin: 10px;
+    }
+    .teach-overview-item{
+        padding: 10px;
+    }
+    .teach-overview-item-head{
+        font-weight: 600;
+        font-size: 16px;
+        padding: 5px;
+    }
+    .teach-overview-item-main{
+        font-weight: 500;
+        font-size: 16px;
+        padding: 5px;
+        line-height: 23px;
+        /* 字间距 */
+        letter-spacing: .02em;
+    }
+    /* 实验手册1-2-2 */
+    .teach-detail{
+        
+    }
+    /* 实验手册-目录1-2-2-1 */
+    .teach-detail-content{
+        height: 1000px;
+        width: 200px;
+        position: fixed;
+        top:0px;
+        left:0px;
+        margin: 10px;
+        background-color: #F5F5F5;
+
+    }
+    .teach-detail-content-head{
+        padding: 10px;
+        margin: 5px 0;
+        font-weight: 600;
+
+    }
+    .teach-detail-content-item{
+        padding: 10px;
+        cursor: pointer;
+    }
+    /* 实验手册-内容1-2-2-2 */
+    .teach-detail-main{
+        width: 1100px;
+    }

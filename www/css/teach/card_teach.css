@@ -1,0 +1,66 @@
+.teach-card{
+    width: 1100px;
+}
+/* test */
+/* 教程卡片标题 */
+.card-teach-header {
+    width: 100%;
+    margin: 10px;
+    background-color: #F5F5F5;
+    font-size: 16px;
+    border: 1px solid #DDDDDD;
+}
+.card-teach-header-item{
+    padding: 13px;
+}
+/* 教程内容卡片 */
+.card-teach-detail-main-step {
+    width: 100%;
+    border: 1px solid #DDDDDD;
+    margin: 10px;
+    line-height: 23px;
+    /* 字间距 */
+    letter-spacing: .02em;
+}
+/* 卡片标题 */
+.card-detail-card-header{
+    width: 100%;
+    background-color: #F5F5F5;
+    /* padding: 10px; */
+    color: #1a73e8;
+    font-weight: 500;
+    font-size: 15px;
+}
+/* 卡片子内容 */
+.card-detail-item {
+    padding: 5px 0 5px 5px;
+}
+.card-detail-item-header{
+    /* background-color: rgba(9, 22, 22, .5); */
+    font-weight: 700;
+    color: rgb(102, 102, 102);
+    font-size: 14px;
+}
+
+.card-detail-card-header-item{
+    padding: 10px;
+}
+
+img {
+    width: 1100px;
+}
+a{
+    text-decoration: none;
+}
+a:link {
+    color: #1A73E8;
+}
+a:visited {
+    color: blueviolet;
+}
+a:hover {
+    color: #1A73E8;
+}
+a:active {
+    color: #1A73E8;
+}
