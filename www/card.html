@@ -49,7 +49,9 @@
 		.teach-header{
 			width: 100%;
 			height: 40px;
-			background-color: #bfa;
+			background-color: #F5F5F5;
+			margin: 10px;
+			padding: 10px;
 			/* border-bottom: 2px dotted #aaa; */
 		}
 		.teach-header-item{
@@ -65,6 +67,8 @@
 		/* 教程概述 */
 		.teach-overview{
 			background-color: rgba(144, 122, 10, .2);
+			margin: 10px;
+			padding: 5px;
 		}
 		.teach-overview-item{
 			padding: 10px 0;
@@ -90,19 +94,22 @@
 		.teach-detail-content{
 			height: 1000px;
 			width: 200px;
-			/* background-color: #cbf3ff; */
 			position: fixed;
-			top:30px;
+			top:0px;
 			left:0px;
+			margin: 10px;
+			background-color: #F5F5F5;
 
 		}
 		.teach-detail-content-head{
-			padding: 5px;
+			padding: 10px;
+			margin: 5px 0;
 			font-weight: 600;
 
 		}
 		.teach-detail-content-item{
-			padding: 5px;
+			padding: 10px;
+			cursor: pointer;
 		}
 		/* 实验手册-内容 */
 
@@ -171,7 +178,7 @@
 
 <body>
 	<div class="center_nav">
-		
+		<!-- 教程页 -->
 		<div class="teach-item">
 			<div class="teach-header">
 				<div class="teach-header-item" id="lab-overview-link">实验概述</div>
@@ -209,7 +216,7 @@
 				<div class="teach-detail-content">
 					<div class="teach-detail-content-head">目录</div>
 					<div class="teach-detail-content-item">1.U盘启动盘的制作</div>
-					<div class="teach-detail-content-item">2.将Windows10系统复制到U盘</div>
+					<div class="teach-detail-content-item">2.下载系统镜像</div>
 					<div class="teach-detail-content-item">3.重装系统</div>
 				</div>
 				<div class="teach-detail-main">
@@ -217,7 +224,7 @@
 					<div class="teach-card">
 						<div class="card-teach-header">
 							安装windows系统
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 							<a href="">[步骤截图]</a>
 						</div>
 						<div class="card-teach-detail-main-step">
@@ -274,7 +281,7 @@
 								<div class="card-detail-card-group">
 									<div class="card-detail-card-descript">
 										1.1 进入MSDN，I Tell You官网
-										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 										<a href="https://msdn.itellyou.cn/">[链接]</a>
 									</div>
 									<div class="card-detail-card-detail" style="display: none;">
@@ -294,7 +301,7 @@
 								</div>
 							</div>
 							<div class="card-detail-item">
-								<div class="card-etail-item-header">
+								<div class="card-detail-item-header">
 									2.将下载好的windows10文件复制到U盘
 								</div>
 								<div class="card-detail-card-group">
@@ -366,6 +373,7 @@
 				</div>
 			</div>
 		</div>
+		<!-- 卡片展示页 -->
 		<div class="inner">
 			<div class="lab-gly-experiment-summary">
 				<!-- 背景色 -->
@@ -438,78 +446,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="inner" style="display: none;">
-			<div class="lab-gly-experiment-summary">
-				<!-- 背景色 -->
-				<div class="logo-mask"
-					style="background: #BDEDFC; background: linear-gradient(90deg, #cbf3ff, #baefff);"></div>
-				<!-- 背景图片 -->
-				<div class="logo-bg"></div>
-				<!-- logo图 -->
-				<div class="logo-container">
-					<div class="logo"></div>
-				</div>
-				<!-- 信息 -->
-				<div class="info-container">
-					<h3 class="title">
-						体验 CentOS 系统 CVM
-					</h3>
-					<p class="owner">
-						腾讯云
-					</p>
-					<div class="desc">
-						<div class="desc-item">
-							<i class="iconfont icon-signal ">&#xe61c;</i>
-							<span>入门</span>
-						</div>
-						<div class="desc-item">
-							<i class="iconfont icon-time1">&#xe8ad;</i>
-							<span>1h</span>
-						</div>
-						<div class="desc-item">
-							<i class="iconfont icon-persons">&#xe68f;</i>
-							<span>120.5k</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="inner" style="display: none;">
-			<div class="lab-gly-experiment-summary">
-				<!-- 背景色 -->
-				<div class="logo-mask"
-					style="background: #BDEDFC; background: linear-gradient(90deg, #cbf3ff, #baefff);"></div>
-				<!-- 背景图片 -->
-				<div class="logo-bg"></div>
-				<!-- logo图 -->
-				<div class="logo-container">
-					<div class="logo"></div>
-				</div>
-				<!-- 信息 -->
-				<div class="info-container">
-					<h3 class="title">
-						体验 CentOS 系统 CVM
-					</h3>
-					<p class="owner">
-						腾讯云
-					</p>
-					<div class="desc">
-						<div class="desc-item">
-							<i class="iconfont icon-signal ">&#xe61c;</i>
-							<span>入门</span>
-						</div>
-						<div class="desc-item">
-							<i class="iconfont icon-time1">&#xe8ad;</i>
-							<span>1h</span>
-						</div>
-						<div class="desc-item">
-							<i class="iconfont icon-persons">&#xe68f;</i>
-							<span>120.5k</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+		
 
 	</div>
 
