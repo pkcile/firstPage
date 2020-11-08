@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>taiwan_copy</title>
+</head>
+<body>
+     <!-- header Start -->
+     <header class="header">
+        <div class="container">
+            <h1>
+                <a href=""><img src="./img/taiwan/logo.png"  alt="test_img" /></a>
+            </h1>
+            <!-- navigation Start -->
+            <nav class="navigation">
+                <!-- 靠右 -->
+                <ul>
+                    <li><a href="index.jsp" title="返回首页">回首页</a></li>
+                    <li><a href="sitemap.jsp" title="网站导航">网站导航</a></li>
+                    <li><a href="index_en.jsp" title="English version">English</a></li>
+                    <li><a href="survey.jsp" target="_blank" title="留言">留言</a></li>
+                    <li><a href="https://twinfo.ncl.edu.tw/tiqry/rss/95000705/hypage.cgi" class="rss" title="RSS订阅">RSS</a></li>
+                </ul>
+            </nav>
+            <!-- navigation End -->
+
+            <!-- font fucntion Start -->
+            <div class="font_size">
+                <span>文字大小：</span>
+                <ul>
+                    <li><a href="#" class="small" title="小字级">小</a></li>
+                    <li><a href="#" class="medium" title="中字级">中</a></li>
+                    <li><a href="#" class="large" title="大字级">大</a></li>
+                </ul>
+            </div>
+            <!-- font fucntion End -->
+
+            <!-- menu Start -->
+            <nav class="menu">
+                <ul>
+                    <li><a href="#" title="總統府及五院公報">中央公報</a>
+                        <ul>
+                            <li><a href="browse.jsp?p=C79007133" title="瀏覽總統府公報">總統府公報</a></li>
+                            <li><a href="browse.jsp?p=C95000705" title="瀏覽行政院公報">行政院公報</a></li>             
+                        </ul>
+                    </li>
+                    <li><a href="#" title="地方政府公報">地方公報</a>
+                        <ul>
+                            <li><a href="browse.jsp?p=L79001998" title="瀏覽臺北市政府公報">臺北市政府公報</a></li>
+                            <li><a href="browse.jsp?p=L02444146" title="瀏覽新北市政府公報">新北市政府公報</a></li>                      
+                            <li><a href="localbrowse.jsp" title="瀏覽所有地方公報">更多</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="gazbrowse.jsp" title="瀏覽所有公報">公報瀏覽</a>
+                    </li>
+                    <li><a href="#" title="公報主題分類">公報分類</a>
+                        <ul>
+                            <li><a href="subjectMain.jsp" title="研究人員模式">研究人員</a></li>
+                            <li><a href="subjectMain.jsp?p=2" title="一般民眾模式">一般民眾</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" title="公報相關網站">相關網站</a>
+                        <ul>
+                            <li><a href="webSites.jsp?p=01" title="中央機關公報網站">中央機關</a></li>
+                            <li><a href="webSites.jsp?p=02" title="地方政府公報網站">地方政府</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="intro.jsp" title="提供本網站沿革、使用說明、營運現況">系統簡介</a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- menu End -->
+
+            <!-- Search Start -->
+            <div class="search" style="display: none;">
+                <div class="search-box">
+                    <div class="form_grp form_inline">
+                        <form id="Form" name="tagForm" action="searchResult.jsp" method="post">
+                            <input type="hidden" name="dtd_id" value="12" />
+                            <input type="hidden" name="s_flag" value="0" />
+                            <label for="mustSameAsId">搜尋</label>
+                            <input name="q_key" id="mustSameAsId" type="text" placeholder="請輸入文字" accesskey="S">
+                            <input name="sendbtn" type="submit" title="查詢" value="查詢" class="submit-btn" />
+                        </form>
+                    </div>
+                    <div class="btn_grp">
+                        <!-- <input name="" type="submit" value="進階搜尋" /> -->
+                        <button onclick="location.href='adv_search.jsp'" onkeypress="location.href='adv_search.jsp'"
+                            title="可選欄位作進階查詢">進階搜尋</button>
+                    </div>
+                </div>
+                <div class="keywordHot">
+                    <h2>熱門關鍵字：</h2>
+                    <ul>
+
+                        <li><a href="searchResult.jsp?s_flag=0&q_key=%E8%80%83%E8%A9%A6"
+                                title="查詢%E8%80%83%E8%A9%A6">考試</a></li>
+
+                        <li><a href="searchResult.jsp?s_flag=0&q_key=%E9%98%B2%E7%96%AB"
+                                title="查詢%E9%98%B2%E7%96%AB">防疫</a></li>
+
+                        <li><a href="searchResult.jsp?s_flag=0&q_key=%E6%9D%91%E9%87%8C"
+                                title="查詢%E6%9D%91%E9%87%8C">村里</a></li>
+
+                        <li><a href="searchResult.jsp?s_flag=0&q_key=%E8%A4%92%E6%8F%9A"
+                                title="查詢%E8%A4%92%E6%8F%9A">褒揚</a></li>
+
+                        <li><a href="searchResult.jsp?s_flag=0&q_key=%E7%96%AB%E8%8B%97"
+                                title="查詢%E7%96%AB%E8%8B%97">疫苗</a></li>
+
+                    </ul>
+                </div>
+            </div>
+            <!-- Search End -->
+
+        </div>
+    </header>
+</body>
+</html>
