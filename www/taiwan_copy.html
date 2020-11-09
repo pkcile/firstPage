@@ -145,9 +145,6 @@
             min-width: 10em;
             text-align: left;
          }
-         .menu > ul > li > a{
-            color: #fff;
-         }
          .menu > ul > li > ul{
             display: block;
             overflow: visible;
@@ -159,8 +156,8 @@
             top: auto;
             list-style: none;
             text-align: left;
-            animation: showMenu .3s ease-out;
             font-size: .813em;
+            /* animation: showMenu .3s ease-out; */
             list-style-type: none;
          }
          .menu > ul > li a{
@@ -169,6 +166,9 @@
             min-height: 2em;
             line-height: 2em;
             color: #fff;
+         }
+         .menu > ul > li > ul > li:hover{
+            background-color: #5C3999;
          }
 
 
@@ -187,11 +187,11 @@
             <nav class="navigation">
                 <!-- 靠右 -->
                 <ul>
-                    <li><a href="index.jsp" title="返回首页">回首页</a></li>
-                    <li><a href="sitemap.jsp" title="网站导航">网站导航</a></li>
-                    <li><a href="index_en.jsp" title="English version">English</a></li>
+                    <li><a href="index.html" title="返回首页">回首页</a></li>
+                    <li><a href="sitemap.html" title="网站导航">网站导航</a></li>
+                    <li><a href="index_en.html" title="English version">English</a></li>
                     <li><a href="survey.jsp" target="_blank" title="留言">留言</a></li>
-                    <li><a href="https://twinfo.ncl.edu.tw/tiqry/rss/95000705/hypage.cgi" class="rss" title="RSS订阅">RSS</a></li>
+                    <li><a href="http://pkcile.cn/feed/rss.xml" class="rss" title="RSS订阅">RSS</a></li>
                 </ul>
             </nav>
             <!-- navigation End -->
@@ -220,12 +220,27 @@
                         <ul>
                             <li><a href="browse.jsp?p=L79001998" title="软件1">软件1</a></li>
                             <li><a href="browse.jsp?p=L02444146" title="软件2">软件2</a></li>                      
-                            <li><a href="localbrowse.jsp" title="更多">更多</a></li>
+                            <!-- <li><a href="localbrowse.jsp" title="更多">更多</a></li> -->
                         </ul>
                     </li>
                     <li><a href="#" title="经验分享">经验分享</a>
                         <ul>
                             <li><a href="subjectMain.jsp" title="git的基本使用">git的基本使用</a></li>
+                            <!--
+                                1.git的注册
+                                2.仓库的创建
+                                3.githhub Page的创建、及使用，个性化域名
+                                4.利用git对github/gitee的推送、常见的git命令、连接两个仓库、提高速度
+                                5.window平台，利用脚本来定时推送，更新内容
+
+                                1.服务器的购买
+                                2.域名的购买
+                                3.wordpress\论坛的使用
+
+
+
+                            
+                            -->
                             <li><a href="subjectMain.jsp?p=2" title="该网页的制作">该网页的制作</a></li>
                         </ul>
                     </li>
