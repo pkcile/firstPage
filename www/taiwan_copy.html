@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>taiwan_copy</title>
     <style>
+        body{
+            font-size: 1em;
+            font-weight: normal;
+            color: #222;
+            line-height: 1.45em;
+            font-family: Lato,"PingFang TC","Helvetica Neue",Helvetica,微软雅黑,Arial,sans-serif;
+            -webkit-text-size-adjust: none;
+        }
         body, h1, ul, li{
             margin: 0;
             padding: 0;
@@ -124,13 +132,43 @@
          /* 字体大小 End */
 
          /* menu Start */
-         .menu > ul > li > ul{
-             display: none;
-         }
-         .menu>ul>li{
-             display: inline-block;
-         }
+         .menu > ul {
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            font-size: 1.125em;
+            background-color: #9C47A2;
+         }   
          .menu > ul > li{
+            display: inline-block;
+            vertical-align: top;
+            min-width: 10em;
+            text-align: left;
+         }
+         .menu > ul > li > a{
+            color: #fff;
+         }
+         .menu > ul > li > ul{
+            display: block;
+            overflow: visible;
+            width: 180px;
+            background: rgba(0,0,0,0.8);
+            padding: 0;
+            z-index: 999999;
+            position: absolute;
+            top: auto;
+            list-style: none;
+            text-align: left;
+            animation: showMenu .3s ease-out;
+            font-size: .813em;
+            list-style-type: none;
+         }
+         .menu > ul > li a{
+            display: block;
+            padding: 0 1em;
+            min-height: 2em;
+            line-height: 2em;
+            color: #fff;
          }
 
 
