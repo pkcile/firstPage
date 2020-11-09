@@ -9,13 +9,12 @@
             margin: 0;
             padding: 0;
         }
-        .header, .container{
-            /* background: antiquewhite url('./img/taiwan/header_bg.png') no-repeat 200px top; */
-            /* background-color: #baf; */
-            background-size: auto 72px;
+        .header{
             position: relative;
-            top: 0;
-            left: 0;
+            z-index: 99;
+            background: #FFF url(./img/taiwan/header_bg.png) no-repeat 320px top;
+            background-size: auto 72px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
         }
         /* 标题 Start */
         .header h1{
@@ -23,12 +22,11 @@
             position: relative;
             left: 0;
             top: 0;
-            background-color: #bfa;
         }
         .header h1 img{
             display: block;
             height: 55px;
-            padding: 6px 10px 5px 10px;
+            padding: 6px 10px 7px 10px;
         }
          /* 标题 End */
 
@@ -83,7 +81,7 @@
         .font_size span{
             line-height: 2em;
             font-size: .875em;
-            background-color: #bb1;
+            /* background-color: #bb1; */
 
         }
         .font_size ul{
@@ -96,7 +94,7 @@
         .font_size ul li {
             display: block;
             background-color: #bbb;
-            /* width: 2em; */
+            width: 2em;
             line-height: 2em;
             font-size: .875em;
             float: left;
@@ -111,13 +109,36 @@
             background: #fff;
             color: #333;
         }
+        .font_size ul a:hover{
+            display: block;
+            text-align: center;
+            line-height: 2em;
+            border-radius: 50%;
+            background: #5C3999;
+            color: #fff;
+        }
         a{
+            color: #333;
             text-decoration: none;
         }
-         /* 字体大小 Start */
+         /* 字体大小 End */
+
+         /* menu Start */
+         .menu > ul > li > ul{
+             display: none;
+         }
+         .menu>ul>li{
+             display: inline-block;
+         }
+         .menu > ul > li{
+         }
+
+
+         /* menu End */
     </style>
 </head>
 <body>
+    <!-- 网站样式设计的再好，没有内容也空空如也 -->
      <!-- header Start -->
      <header class="header">
         <div class="container">
@@ -151,34 +172,30 @@
             <!-- menu Start -->
             <nav class="menu">
                 <ul>
-                    <li><a href="#" title="總統府及五院公報">中央公報</a>
+                    <li><a href="#" title="软件安装导航">软件安装导航</a>
                         <ul>
-                            <li><a href="browse.jsp?p=C79007133" title="瀏覽總統府公報">總統府公報</a></li>
-                            <li><a href="browse.jsp?p=C95000705" title="瀏覽行政院公報">行政院公報</a></li>             
+                            <li><a href="browse.jsp?p=C79007133" title="window安装">window安装</a></li>
+                            <li><a href="browse.jsp?p=C95000705" title="window安装">window安装</a></li>             
                         </ul>
                     </li>
-                    <li><a href="#" title="地方政府公報">地方公報</a>
+                    <li><a href="#" title="软件下载导航">软件下载导航</a>
                         <ul>
-                            <li><a href="browse.jsp?p=L79001998" title="瀏覽臺北市政府公報">臺北市政府公報</a></li>
-                            <li><a href="browse.jsp?p=L02444146" title="瀏覽新北市政府公報">新北市政府公報</a></li>                      
-                            <li><a href="localbrowse.jsp" title="瀏覽所有地方公報">更多</a></li>
+                            <li><a href="browse.jsp?p=L79001998" title="软件1">软件1</a></li>
+                            <li><a href="browse.jsp?p=L02444146" title="软件2">软件2</a></li>                      
+                            <li><a href="localbrowse.jsp" title="更多">更多</a></li>
                         </ul>
                     </li>
-                    <li><a href="gazbrowse.jsp" title="瀏覽所有公報">公報瀏覽</a>
-                    </li>
-                    <li><a href="#" title="公報主題分類">公報分類</a>
+                    <li><a href="#" title="经验分享">经验分享</a>
                         <ul>
-                            <li><a href="subjectMain.jsp" title="研究人員模式">研究人員</a></li>
-                            <li><a href="subjectMain.jsp?p=2" title="一般民眾模式">一般民眾</a></li>
+                            <li><a href="subjectMain.jsp" title="git的基本使用">git的基本使用</a></li>
+                            <li><a href="subjectMain.jsp?p=2" title="该网页的制作">该网页的制作</a></li>
                         </ul>
                     </li>
-                    <li><a href="#" title="公報相關網站">相關網站</a>
+                    <li><a href="#" title="其他">其他</a>
                         <ul>
-                            <li><a href="webSites.jsp?p=01" title="中央機關公報網站">中央機關</a></li>
-                            <li><a href="webSites.jsp?p=02" title="地方政府公報網站">地方政府</a></li>
+                            <li><a href="webSites.jsp?p=01" title="引用链接">引用链接</a></li>
+                            <li><a href="webSites.jsp?p=02" title="引用链接">引用链接</a></li>
                         </ul>
-                    </li>
-                    <li><a href="intro.jsp" title="提供本網站沿革、使用說明、營運現況">系統簡介</a>
                     </li>
                 </ul>
             </nav>
