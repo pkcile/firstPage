@@ -5,19 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>taiwan_copy</title>
     <style>
-        .header{
-            margin-top: 0px;
+        body, h1, ul, li{
+            margin: 0;
+            padding: 0;
+        }
+        .header, .container{
             /* background: antiquewhite url('./img/taiwan/header_bg.png') no-repeat 200px top; */
-            background-color: #baf;
+            /* background-color: #baf; */
             background-size: auto 72px;
             position: relative;
             top: 0;
             left: 0;
         }
+        /* 标题 Start */
         .header h1{
             height: 68px;
-            margin: 0;
-            padding: 0;
             position: relative;
             left: 0;
             top: 0;
@@ -26,33 +28,63 @@
         .header h1 img{
             display: block;
             height: 55px;
-            margin: 6px 10px 5px 10px;
+            padding: 6px 10px 5px 10px;
         }
+         /* 标题 End */
+
+        /* 导航条 Start */
         .navigation{
             position: absolute;
             top: 0;
             right: 0;
         }
         .navigation ul{
+            font-size: .875em;
             display: inline-block;
             vertical-align: middle;
-            margin: 0;
-            padding: 0;
             list-style: none;
         }
         .navigation ul li{
-            width: 4em;
             height: 2em;
             font-size: .875em;
             float: left;
             display: block;
             margin: 0 .2em;
+            /* padding: .3em .1em .3em .5em; */
         }
+    
+        .navigation ul li a{
+            display: inline-block;
+            padding: .3em .1em .3em .5em;
+            text-decoration: none;
+            background: url(img/taiwan/nav_libg.png) no-repeat left center;
+        }
+        .navigation ul li .rss{
+            background-color: #ec6100;
+            padding: 0 0.5em !important;
+            background: #ec6100;
+            color: #fff;
+            padding: 0.5em;
+            border-radius: 3px;
+            vertical-align: middle;
+            margin: .3em .2em 0;
+            font-size: .875em;
+            font-weight: bold
+        }
+         /* 导航条 End */
+
+        /* 字体大小 Start */
         .font_size{
             position: absolute;
             top: 2em;
             right: 3em;
             display: inline; 
+        }
+        .font_size span{
+            line-height: 2em;
+            font-size: .875em;
+            background-color: #bb1;
+
         }
         .font_size ul{
             display: inline-block;
@@ -62,13 +94,27 @@
             list-style: none;
         }
         .font_size ul li {
-            width: 2em;
-            height: 2em;
+            display: block;
+            background-color: #bbb;
+            /* width: 2em; */
+            line-height: 2em;
             font-size: .875em;
             float: left;
-            display: block;
             margin: 0 .2em;
+            border-radius: 50%;
         }
+        .font_size ul a{
+            display: block;
+            text-align: center;
+            line-height: 2em;
+            border-radius: 50%;
+            background: #fff;
+            color: #333;
+        }
+        a{
+            text-decoration: none;
+        }
+         /* 字体大小 Start */
     </style>
 </head>
 <body>
@@ -76,7 +122,7 @@
      <header class="header">
         <div class="container">
             <h1>
-                <a href=""><img src="./img/taiwan/logo.png"  alt="test_img" /></a>
+                <a href="javascript:;"><img src="./img/taiwan/logo.png"  alt="test_img" /></a>
             </h1>
             <!-- navigation Start -->
             <nav class="navigation">
