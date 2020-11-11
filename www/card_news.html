@@ -9,33 +9,100 @@
     <!-- add -->
     <link rel="stylesheet" href="./css/reset.css">
 </head>
+<style>
+    /* 卡片大小 */
+    .card_news{
+        width: 16em;
+        height: 30em;
+        background: #fff;
+        margin: 20px 20px;
+        border: 1px solid #D7D7D7;
+        cursor: pointer;
+    }
+    .card_news_inner{
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+    /* 卡片图片 */
+    .card_news_picture_inner{
+        width: 100%;
+        height: 10em;
+        background-image: url(https://d2v9ipibika81v.cloudfront.net/uploads/sites/252/DOS-Seal-Slideshow-750-2-1-1-2-1-750x450.jpg);
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    /* 卡片图片颜色 */
+    .card_news_bg_color{
+        width: 100%;
+        height: 9.6em;
+        position: absolute;
+        top: 0em;
+        /* z-index: 0; */
+        background-color: rgba(11, 22, 99, .0);
+    }
+    .card_news_bg_color:hover{
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+    /* 卡片标题 */
+    .card_news_title{
+        display: inline-block;
+        padding: 5px 5px 5px 5px;
+    }
+    /* 卡片标签 */
+    .category{
+        text-decoration: underline #7F9BB9 dotted;
+    }
+    .category:hover{
+        text-decoration: underline #0066FF solid;
+    }
+    /* 卡片日期 */
+    .card_news_date{
+        display: inline-block;
+        color: #8B8992;
+        padding: 5px 10px 10px 5px;
+    }
+    /* 卡片内容 */
+    .card_news_entry_summary p{
+        padding: 5px;
+
+        color: #858585;
+    }
+    
+</style>
 
 <body>
-    <article class="post type-post status-publish format-standard has-post-thumbnail hentry">
-        <div class="blogrollbox">
-            <a href="https://china.usembassy-china.org.cn/zh/u-s-citizens-voting-assistance-2020-zh/" class="darken">
-                <img src="https://d2v9ipibika81v.cloudfront.net/uploads/sites/252/DOS-Seal-Slideshow-750-2-1-1-2-1-750x450.jpg"
-                    class="img-responsive wp-post-image" alt="" title="DOS-Seal-Slideshow-750-2-1-1-2" style="opacity: 1;">
-            </a>
+    <div class="card_news">
+        <div class="card_news_inner">
+            <div class="card_news_picture opacity_test" >
+                <a href="javascript:;">
+                    <div class="card_news_picture_inner"></div>
+                </a>
+            </div>
+            <div class="card_news_bg_color"  title="老美鹰旗"></div>
+            <h2 class="card_news_title">
+                <a
+                    href="https://china.usembassy-china.org.cn/zh/u-s-citizens-voting-assistance-2020-zh/" >美国公民投票信息
+                </a>
+            </h2>
+            <p class="card_news_blog_meta">
+                <span class="card_news_date">16 九月, 2020 |</span>
+                <a href="https://china.usembassy-china.org.cn/zh/category/news-zh/"
+                rel="category tag" class="category">新闻</a>
+                , 
+                <a href="https://china.usembassy-china.org.cn/zh/category/press-releases-zh/"
+                    rel="category tag" class="category">新闻简报
+                </a>
+            </p>
+            <div class="card_news_entry_summary">
+                <p>联邦投票协助计划（FVAP）和国务院网站关于缺席投票是提供给在海外居住的美国人的最新的投票信息资源。请访问这些网站了解关于登记和投票的截至日期和步骤。</p>
+                <p>在海外居住的美国公民通常需要每年登记一次，即需要您邮寄联邦选举登记卡（FPCA）以便您有资格获得缺席选举的选票。联邦投票协助计划（FVAP）推荐每年1月份为11月的选举提交联邦选举登记卡。如需开始，请登陆联邦投票协助计划（FVAP）网站。</p>
+                <!-- <p>联邦投票协助计划 （FVAP）</p>
+                <p>联邦投票协助计划 （FVAP）</p>
+                <p>联邦投票协助计划 （FVAP）</p> -->
+            </div>
         </div>
-        <h2 class="entry-title">
-            <a
-                href="https://china.usembassy-china.org.cn/zh/u-s-citizens-voting-assistance-2020-zh/">美国公民投票信息
-            </a>
-        </h2>
-        <p class="blog-meta">
-            16 九月, 2020 | 
-            <a href="https://china.usembassy-china.org.cn/zh/category/news-zh/"
-            rel="category tag">新闻</a>
-            , 
-            <a href="https://china.usembassy-china.org.cn/zh/category/press-releases-zh/"
-                rel="category tag">新闻简报
-            </a>
-        </p>
-        <div class="entry-summary">
-            <p>联邦投票协助计划 （FVAP）</p>
-        </div>
-    </article>
+    </div>
 </body>
 
 </html>
