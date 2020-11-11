@@ -8,7 +8,58 @@
     <!-- add -->
     <link rel="stylesheet" href="./css/reset.css">
 </head>
+<style>
+    /* 下载卡片 */
+    .download_card{
+        width: 16em;
+        height: 18em;
+        background-color: #bfa;
+    }
+    .download_card_inner{
+        width: 100%;
+        height: 100%;
+        position: relative;
+
+    }
+    /* 卡片照片 */
+    .download_img_inner{
+        width: 100%;
+        height: 10em;
+        background-image: url(https://pc3.gtimg.com/softmgr/picture/web/banner/ac4f91ae41cda43113f855d70743e6a3.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    /* 卡片下载名称 */
+    .download_name{
+        display: inline-block;
+        line-height: 2em;
+
+    }
+    /* 卡片时间 */
+    .download_time{
+        display: inline-block;
+        line-height: 2em;
+        color: #8D9A92;
+    }
+    /* 卡片描述 */
+    .download_description{
+        padding: .3em;
+        color: #8D9A92;
+    }
+</style>
 <body>
-    
+    <div class="download_card">
+        <div class="download_card_inner">
+            <div class="download_img">
+                <div class="download_img_inner"></div>
+            </div>
+            <div class="download_information">
+                <div class="download_name">QQ</div>
+                <div class="download_time">2020-11-10</div>
+                <div class="download_description">免费的即时通讯平台，带来更多沟通</div>
+            </div>
+        </div>
+       
+    </div>
 </body>
 </html>
