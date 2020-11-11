@@ -1,10 +1,10 @@
 /* 卡片 */
 .inner {
     float: left;
+    margin: 1.7em .8em;
     width: 16em;
     height: 18em;
-    background: #fff;
-    margin: 1.25em 1.25em;
+    background: #fff; 
     border: .1em solid #D7D7D7;
     cursor: pointer;
 }

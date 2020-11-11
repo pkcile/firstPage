@@ -144,6 +144,9 @@ a{
     line-height: 2em;
     color: #fff;
  }
+ .menu > ul > li a:hover{
+     color: #FFFF99;
+ }
  .menu > ul > li > ul > li:hover{
     background-color: #5C3999;
  }

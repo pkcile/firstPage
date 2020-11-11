@@ -1,6 +1,6 @@
 	/* 教程页面主体1 */
     .teach-item{
-        background-color: white;
+        /* background-color: white; */
         
     }
     /* 教程头部标题1-1 */
@@ -57,9 +57,20 @@
         top:0px;
         left:0px;
         margin: 10px;
-        background-color: #F5F5F5;
+        background-color: rgba(245,245,245,.9);
         border-radius: 14px;
 
+    }
+    .teach-detail-content-close{
+        position: relative;
+        top: -35px;
+        right: -130px;
+    }
+    .teach-detail-content-close button{
+        border-style: none;
+        background-color: #A38AE2;
+        color: white;
+        border-radius: 10%;
     }
     .teach-detail-content-head{
         padding: 10px;

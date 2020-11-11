@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>teach</title>
+	<!-- 重置样式表 -->
+	<link rel="stylesheet" type="text/css" href="./css/reset.css" / charset="utf-8">
+	<!-- card_teach -->
+	<link rel="stylesheet" href="./css/teach/card_teach.css" charset="utf-8">
+	<link rel="stylesheet" href="./css/teach/teach_main.css" charset="utf-8">
+	<script>
+		window.onload = function () {
+				// 实验链接 -隐藏
+				var lab_overview_link = document.getElementById("lab-overview-link");
+				var lab_book_link = document.getElementById("lab-book-link");
+				// 点击第一个导航链接
+				lab_overview_link.onclick = function() {
+					var teach_overview = document.getElementById("teach-overview");
+					var teach_detail = document.getElementById("teach-detail");
+					teach_overview.style.display = "block";
+					teach_detail.style.display = "none";
+				}
+				// 点击第二个导航链接
+				lab_book_link.onclick = function() {
+					var teach_overview = document.getElementById("teach-overview");
+					var teach_detail = document.getElementById("teach-detail");
+					teach_overview.style.display = "none";
+					teach_detail.style.display = "block";
+				}
+
+			}
+	</script>
+	<style type="text/css">
+		body{
+			/* background-color: #E5DEFA; */
+			background-image: url(./img/bg.jpg);
+			background-repeat: no-repeat;
+			background-size: 100%;
+			/* 暴露出问题 */
+		}
+		/* 页面主体 */
+		.content {
+			max-width: 1100px;
+			min-width: 600px;
+			margin: 0 auto;
+		}
+
+		/* .leftBar{
+			float: left;
+			width: 0;
+		}
+		.rightBar{
+			float: right;
+			width: 270px;
+			margin-right: 20px;
+		}
+		.mainBar{
+			/* width: auto; */
+			width: 700px;
+			margin: 0 310px 0 20px;
+		}
+	 */
+	</style>
+</head>
+
+<body>
+	<div class="content">
+		<div class="leftBar"></div>
+		<div class="rightBar"></div>
+		<div class="mainBar">
+			<!-- 教程页 -->
+			<div class="teach-item">
+				<div class="teach-header">
+					<div class="teach-header-item" id="lab-overview-link">实验概述</div>
+					<div class="teach-header-item" id="lab-book-link">实验手册</div>
+				</div>
+				<div class="teach-overview" id="teach-overview">
+					<div class="teach-overview-item">
+						<div class="teach-overview-item-head">
+							实验内容
+						</div>
+						<div class="teach-overview-item-main">
+							安装Windows10操作系统
+						</div>
+					</div>
+					<div class="teach-overview-item">
+						<div class="teach-overview-item-head">
+							实验资源
+						</div>
+						<div class="teach-overview-item-main">
+							一台X64/86电脑
+							<br>
+							一个闲置U盘，建议8G及以上内存
+						</div>
+					</div>
+					<div class="teach-overview-item">
+						<div class="teach-overview-item-head">
+							软件环境
+						</div>
+						<div class="teach-overview-item-main">
+							云服务器（Cloud Virtual Machine，CVM）为您提供安全可靠的弹性计算服务。 只需几分钟，您就可以在云端获取和启用 CVM，来实现您的计算需求。本实验将免费为你提供一台 CentOS 系统的 CVM，让你完成 CVM 的初体验。
+						</div>
+					</div>
+				</div>
+				<div class="teach-detail" id="teach-detail"  style="display: none;">
+					<div class="teach-detail-content" id="teach-detail-content">
+						<div class="teach-detail-content-head">目录</div>
+						<div class="teach-detail-content-close">
+							<button id="content-close">关闭</button>
+						</div>
+						<div class="teach-detail-content-item">1.U盘启动盘的制作</div>
+						<div class="teach-detail-content-item">2.下载系统镜像</div>
+						<div class="teach-detail-content-item">3.重装系统</div>
+					</div>
+					<div class="teach-detail-main">
+						<!-- 教程内容卡片 -->
+						<div class="teach-card">
+							<div class="card-teach-header">
+								<div class="card-teach-header-item">
+									安装windows系统
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									<a href="">[步骤截图]</a>
+								</div>
+							</div>
+							<div class="card-teach-detail-main-step">
+								<div class="card-detail-card-header" >
+									<div class="card-detail-card-header-item">
+										步骤1：U盘启动盘制作
+									</div>
+								</div>
+								<div class="card-detail-card-main">
+									<div class="card-detail-item">
+										<div class="card-detail-item-header">
+											1.U盘启动盘制作工具下载
+										</div>
+										<div class="card-detail-card-group">
+											<div class="card-detail-card-descript">
+												1.1 进入大白菜官网
+												&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+												<a href="http://www.winbaicai.com/ ">[链接]</a>
+											</div>
+											<div class="card-detail-card-detail" style="display: none;">
+												<div class="card-detail-card-detail-img"><img src="" alt=""></div>
+											</div>
+										</div>
+										<div class="card-detail-card-group">
+											<div class="card-detail-card-descript">
+												1.2 选择装机版UEFI下载
+												&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+												<a href="http://down.winbaicai.com:88/DaBaiCai_v6.0_2009.zip ">[链接]</a>
+											</div>
+											<div class="card-detail-card-detail">
+												<div class="card-detail-card-detail-img"></div>
+											</div>
+										</div>
+									</div>
+									<div class="card-detail-item">
+										<div class="card-detail-item-header">
+											2.打开程序，一键制作成USB启动盘
+										</div>
+										<div class="card-detail-card-group">
+											<div class="card-detail-card-descript">
+												2.1 插入U盘后，按照默认模式，直接一键制作成USB启动盘即可
+											</div>
+											<div class="card-detail-card-detail" style="display: none;">
+												<div class="card-detail-card-detail-img"><img src="" alt=""></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							
+							</div>
+							<div class="card-teach-detail-main-step">
+								<div class="card-detail-card-header">
+									<div class="card-detail-card-header-item">
+										步骤2：下载系统镜像
+									</div>
+								</div>
+								<div class="card-detail-card-main">
+									<div class="card-detail-item">
+										<div class="card-detail-item-header">
+											1.下载windows10操作系统
+										</div>
+										<div class="card-detail-card-group">
+											<div class="card-detail-card-descript">
+												1.1 进入MSDN，I Tell You官网
+												&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+												<a href="https://msdn.itellyou.cn/">[链接]</a>
+											</div>
+											<div class="card-detail-card-detail" style="display: none;">
+												<div class="card-detail-card-detail-img"><img src="" alt=""></div>
+											</div>
+										</div>
+										<div class="card-detail-card-group">
+											<div class="card-detail-card-descript">
+												1.2 选择windows10操作系统
+												&nbsp;&nbsp;&nbsp;
+												<a
+													href="ed2k://|file|cn_windows_10_consumer_editions_version_1909_updated_jan_2020_x64_dvd_47161f17.iso|5417457664|274FEBA5BF0C874C291674182FA9C851|/">[迅雷链接]</a>
+											</div>
+											<div class="card-detail-card-detail">
+												<div class="card-detail-card-detail-img"></div>
+											</div>
+										</div>
+									</div>
+									<div class="card-detail-item">
+										<div class="card-detail-item-header">
+											2.将下载好的windows10文件复制到U盘
+										</div>
+										<div class="card-detail-card-group">
+											<div class="card-detail-card-descript">
+												2.1.将下载好的windows10文件复制到U盘即可
+											</div>
+											<div class="card-detail-card-detail" style="display: none;">
+												<div class="card-detail-card-detail-img"><img src="" alt=""></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							
+							</div>
+							<div class="card-teach-detail-main-step">
+								<div class="card-detail-card-header">
+									<div class="card-detail-card-header-item">
+										步骤3：重装系统
+									</div>
+								</div>
+								<div class="card-detail-card-main">
+									<div class="card-detail-item">
+										<div class="card-detail-item-header">
+											1.进入BIOS启动选项
+										</div>
+										<div class="card-detail-card-group">
+											<div class="card-detail-card-descript">
+												1.1 电脑关机后，电脑插入U盘
+											</div>
+											<div class="card-detail-card-detail" style="display: none;">
+												<div class="card-detail-card-detail-img"><img src="" alt=""></div>
+											</div>
+										</div>
+										<div class="card-detail-card-group">
+											<div class="card-detail-card-descript">
+												1.2 查询你的电脑对应的启动快捷键
+											</div>
+											<div class="card-detail-card-detail">
+												<div class="card-detail-card-detail-img"></div>
+											</div>
+										</div>
+										<div class="card-detail-card-group">
+											<div class="card-detail-card-descript">
+												1.3 开机，待电脑进入系统前，连续点击键盘中的启动快捷键
+											</div>
+											<div class="card-detail-card-detail">
+												<div class="card-detail-card-detail-img"></div>
+											</div>
+										</div>
+										<div class="card-detail-card-group">
+											<div class="card-detail-card-descript">
+												1.4 进入启动首选项后，选择你的U盘
+											</div>
+											<div class="card-detail-card-detail">
+												<div class="card-detail-card-detail-img"></div>
+											</div>
+										</div>
+									</div>
+									<div class="card-detail-item">
+										<div class="card-detail-item-header">
+											2.重装系统
+										</div>
+										<div class="card-detail-card-group">
+											<div class="card-detail-card-descript">
+					
+											</div>
+											<div class="card-detail-card-detail" style="display: none;">
+												<div class="card-detail-card-detail-img"><img src="" alt=""></div>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>	
+		</div>
+			
+	</div>
+
+</body>
+<script>
+	var number_content = 0;
+	//关闭目录
+	var content_close_button = document.getElementById("content-close");
+	content_close_button.onclick = function(){
+		var teach_detail_content = document.getElementById("teach-detail-content");
+		teach_detail_content.style.display = "none";
+	}
+	//打开关闭目录内容
+	var card_detail_content = document.getElementsByClassName("card-detail-card-header");
+	// alert(card_detail_content[0].innerHTML)
+	for(var i = 0; i < card_detail_content.length; i++) {
+        (function (arg) {
+            card_detail_content[i].onclick = function () { 
+				if(number_content % 2 == 0) {
+					var detail_card = document.getElementsByClassName("card-detail-card-main");
+					detail_card[arg].style.display = "none";
+				}
+				else {
+					var detail_card =  document.getElementsByClassName("card-detail-card-main");
+					detail_card[arg].style.display = "block";
+				}
+				number_content++;
+            }
+        })(i);
+    }
+</script>
+
+</html>

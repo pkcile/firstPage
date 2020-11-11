@@ -35,6 +35,7 @@
 /* 卡片子内容 */
 .card-detail-item {
     padding: 5px 0 5px 5px;
+    background-color: rgba(245,245,245, .9);
 }
 .card-detail-item-header{
     /* background-color: rgba(9, 22, 22, .5); */

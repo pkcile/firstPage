@@ -3,19 +3,22 @@
     width: 75%;
     float: left;
     background-color: #FFFFFF;
-    height: 1000px;
+    height: 1300px;
     overflow: hidden;
 
+}
+.main-top1 .main-top1-margin{
 }
 
 .main-top2 {
     width: 25%;
     float: left;
     background-color: #FDF0F1;
-    height: 1000px;
+    height: 1300px;
     /* border: 1px solid rebeccapurple; */
 
 }
+
 
 .test-css {
     width: 20em;
