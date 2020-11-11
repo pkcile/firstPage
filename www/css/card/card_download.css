@@ -1,10 +1,7 @@
-/* body{
-    background-color: #EDF1F7;
-} */
 /* 下载卡片 */
 .download_card{
     float: left;
-    margin: 1.7em 1.7em;
+    margin: 10px 25px 87px 25px;
     width: 220px;
     height: 203px;
     /* background-color: #bfa; */
