@@ -65,27 +65,27 @@
             <!-- menu Start -->
             <nav class="menu">
                 <ul>
-                    <li><a href="#" title="软件安装导航">软件安装导航</a>
-                        <ul>
+                    <li><a href="#" title="软件安装导航" class="menu-nav-item">软件安装导航</a>
+                        <ul class="menu-nav-item-list" style="display: none;">
                             <li><a href="javascript:;" title="window安装">window安装</a></li>
                             <li><a href="javascript:;" title="window安装">window安装</a></li>
                         </ul>
                     </li>
-                    <li><a href="#" title="软件下载导航">软件下载导航</a>
-                        <ul>
+                    <li><a href="#" title="软件下载导航" class="menu-nav-item">软件下载导航</a>
+                        <ul class="menu-nav-item-list" style="display: none;">
                             <li><a href="javascript:;" title="软件1">软件1</a></li>
                             <li><a href="javascript:;" title="软件2">软件2</a></li>
                             <!-- <li><a href="localbrowse.jsp" title="更多">更多</a></li> -->
                         </ul>
                     </li>
-                    <li><a href="#" title="经验分享">经验分享</a>
-                        <ul>
+                    <li><a href="#" title="经验分享" class="menu-nav-item">经验分享</a>
+                        <ul class="menu-nav-item-list" style="display: none;">
                             <li><a href="javascript:;" title="git的基本使用">git的基本使用</a></li>
                             <li><a href="javascript:;" title="该网页的制作">该网页的制作</a></li>
                         </ul>
                     </li>
-                    <li><a href="#" title="其他">其他</a>
-                        <ul>
+                    <li><a href="#" title="其他" class="menu-nav-item">其他</a>
+                        <ul class="menu-nav-item-list" style="display: none;">
                             <li><a href="javascript:;" title="引用链接">引用链接</a></li>
                             <li><a href="javascript:;" title="引用链接">引用链接</a></li>
                         </ul>
@@ -320,6 +320,22 @@
 </body>
 
 </html>
+<script>
+     var nav = document.getElementsByClassName("menu-nav-item");
+    // 闭包
+    for(var i = 0; i < nav.length; i++) {
+        (function (arg) {
+            nav[i].onmouseover = function () { 
+                var test =  document.querySelectorAll(".menu-nav-item-list");
+                test[arg].style.display = 'block';        
+            }
+            nav[i].onmouseout = function () { 
+                var test =  document.querySelectorAll(".download_information .download_hide span");
+                test[arg].style.position = 'static';        
+            }
+        })(i);
+    }
+</script>
 
 
 <!-- <script type="text/javascript" src="https://v1.cnzz.com/z_stat.php?id=1279424133&web_id=1279424133"></script> -->
