@@ -1,0 +1,25 @@
+  /* main Start */
+  .main-top1 {
+    width: 75%;
+    float: left;
+    background-color: #FFFFFF;
+    height: 1000px;
+    overflow: hidden;
+
+}
+
+.main-top2 {
+    width: 25%;
+    float: left;
+    background-color: #FDF0F1;
+    height: 1000px;
+    /* border: 1px solid rebeccapurple; */
+
+}
+
+.test-css {
+    width: 20em;
+    height: 30em;
+    background-color: #FF9;
+}
+/* main End */

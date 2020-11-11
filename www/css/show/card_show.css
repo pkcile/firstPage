@@ -100,3 +100,16 @@ p.owner {
     color: #D7D7D7;
     font-weight: 700;
 }
+
+/* 字体 Start */
+a{
+    text-decoration: none;
+    color: #000;
+}
+.info-container > .title{
+    color: #9C47A2;
+}
+.info-container > .title:hover{
+    color: #262577;
+}
+/* 字体 End */

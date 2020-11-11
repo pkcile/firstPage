@@ -1,0 +1,26 @@
+body {
+	font-size: 1em;
+	font-weight: normal;
+	color: #222;
+	line-height: 1.45em;
+	font-family: Lato, "PingFang TC", "Helvetica Neue", Helvetica, 微软雅黑, Arial, sans-serif;
+	-webkit-text-size-adjust: none;
+}
+
+/* 鼠标选中颜色设置 Start */
+span::selection {
+    background: #FF9;
+    color: #F00;
+}
+
+span::-moz-selection {
+    background: #FF9;
+    color: #F00;
+}
+
+span::-webkit-selection {
+    background: #FF9;
+    color: #F00;
+}
+/* 鼠标选中颜色设置 End */
+
