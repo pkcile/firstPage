@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<rss version="2.0"
-xmlns:g="http://base.google.com/ns/1.0" >
-<channel>
-<title>数据 Feed 的名称</title> <link>http://www.example.com</link> <description>内容说明</description> <item> <title>红色羊毛衫</title> <link> http://www.example.com/item1-info-page.html</link> <description>>这款毛衣舒适柔软，能让您在寒冷冬夜中倍感温暖。</description>
-<g:image_link>http://www.example.com/image1.jpg</g:image_link> <g:price>25</g:price> <g:condition>全新</g:condition> <g:id>1a</g:id>
-</item> </channel> > </rss>
