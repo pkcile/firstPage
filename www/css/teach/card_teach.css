@@ -55,14 +55,14 @@ a{
     text-decoration: none;
 }
 a:link {
-    color: #1A73E8;
+    color: #000;
 }
 a:visited {
-    color: blueviolet;
+    color: #000;
 }
 a:hover {
-    color: #1A73E8;
+    color: #2F73E8;
 }
 a:active {
-    color: #1A73E8;
+    color: #000;
 }

@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="./css/teach/teach_main.css" charset="utf-8">
 	<script>
 		window.onload = function () {
-				// 实验链接 -隐藏
+				// 实验链接-隐藏
 				var lab_overview_link = document.getElementById("lab-overview-link");
 				var lab_book_link = document.getElementById("lab-book-link");
 				// 点击第一个导航链接
@@ -56,7 +56,7 @@
 			margin-right: 20px;
 		}
 		.mainBar{
-			/* width: auto; */
+			width: auto; 
 			width: 700px;
 			margin: 0 310px 0 20px;
 		}
@@ -120,7 +120,7 @@
 								<div class="card-teach-header-item">
 									安装windows系统
 									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-									<a href="">[步骤截图]</a>
+									<a href="javascript:;"  id="process_picture">[步骤截图]</a>
 								</div>
 							</div>
 							<div class="card-teach-detail-main-step">
@@ -138,17 +138,17 @@
 											<div class="card-detail-card-descript">
 												1.1 进入大白菜官网
 												&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-												<a href="http://www.winbaicai.com/ ">[链接]</a>
+												<a href="http://www.winbaicai.com/">[链接]</a>
 											</div>
 											<div class="card-detail-card-detail" style="display: none;">
-												<div class="card-detail-card-detail-img"><img src="" alt=""></div>
+												<div class="card-detail-card-detail-img"><img src="./img/bg.jpg" alt=""></div>
 											</div>
 										</div>
 										<div class="card-detail-card-group">
 											<div class="card-detail-card-descript">
 												1.2 选择装机版UEFI下载
 												&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-												<a href="http://down.winbaicai.com:88/DaBaiCai_v6.0_2009.zip ">[链接]</a>
+												<a href="http://down.winbaicai.com:88/DaBaiCai_v6.0_2009.zip">[链接]</a>
 											</div>
 											<div class="card-detail-card-detail">
 												<div class="card-detail-card-detail-img"></div>
@@ -164,7 +164,7 @@
 												2.1 插入U盘后，按照默认模式，直接一键制作成USB启动盘即可
 											</div>
 											<div class="card-detail-card-detail" style="display: none;">
-												<div class="card-detail-card-detail-img"><img src="" alt=""></div>
+												<div class="card-detail-card-detail-img"><img src="./img/bg.jpg" alt=""></div>
 											</div>
 										</div>
 									</div>
@@ -189,7 +189,7 @@
 												<a href="https://msdn.itellyou.cn/">[链接]</a>
 											</div>
 											<div class="card-detail-card-detail" style="display: none;">
-												<div class="card-detail-card-detail-img"><img src="" alt=""></div>
+												<div class="card-detail-card-detail-img"><img src="./img/bg.jpg" alt=""></div>
 											</div>
 										</div>
 										<div class="card-detail-card-group">
@@ -213,7 +213,7 @@
 												2.1.将下载好的windows10文件复制到U盘即可
 											</div>
 											<div class="card-detail-card-detail" style="display: none;">
-												<div class="card-detail-card-detail-img"><img src="" alt=""></div>
+												<div class="card-detail-card-detail-img"><img src="./img/bg.jpg" alt=""></div>
 											</div>
 										</div>
 									</div>
@@ -236,7 +236,7 @@
 												1.1 电脑关机后，电脑插入U盘
 											</div>
 											<div class="card-detail-card-detail" style="display: none;">
-												<div class="card-detail-card-detail-img"><img src="" alt=""></div>
+												<div class="card-detail-card-detail-img"><img src="./img/bg.jpg" alt=""></div>
 											</div>
 										</div>
 										<div class="card-detail-card-group">
@@ -273,7 +273,7 @@
 					
 											</div>
 											<div class="card-detail-card-detail" style="display: none;">
-												<div class="card-detail-card-detail-img"><img src="" alt=""></div>
+												<div class="card-detail-card-detail-img"><img src="./img/bg.jpg" alt=""></div>
 											</div>
 										</div>
 									</div>
@@ -291,6 +291,7 @@
 </body>
 <script>
 	var number_content = 0;
+	var number_picture = 0;
 	//关闭目录
 	var content_close_button = document.getElementById("content-close");
 	content_close_button.onclick = function(){
@@ -314,7 +315,28 @@
 				number_content++;
             }
         })(i);
-    }
+	}
+	//过程截图展示
+		var process_picture = document.getElementById("process_picture");
+		process_picture.onclick = function () {
+			var picture_detail = document.getElementsByClassName("card-detail-card-detail");
+
+			if (number_picture % 2 == 0) {
+				for (var i = 0; i < picture_detail.length; i++) {
+					picture_detail[i].style.display = "block";
+					// alert(i);
+				}
+				number_picture++;
+			}
+			else {
+				for (var i = 0; i < picture_detail.length; i++) {
+					picture_detail[i].style.display = "none";
+					// alert(i);
+				}
+				number_picture++;
+			}
+		
+	}
 </script>
 
 </html>
