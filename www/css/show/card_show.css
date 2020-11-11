@@ -1,11 +1,11 @@
 /* 卡片 */
 .inner {
     float: left;
-    width: 253px;
-    height: 280px;
+    width: 16em;
+    height: 18em;
     background: #fff;
-    margin: 20px 20px;
-    border: 1px solid #D7D7D7;
+    margin: 1.25em 1.25em;
+    border: .1em solid #D7D7D7;
     cursor: pointer;
 }
 
@@ -19,14 +19,14 @@
 .logo-mask {
     position: absolute;
     width: 100%;
-    height: 144px;
+    height: 9em;
 }
 
 /* 背景图 */
 .logo-bg {
     position: absolute;
     width: 100%;
-    height: 144px;
+    height: 9em;
     background-image: url('../../img/png/card-bg.png');
 }
 
@@ -34,7 +34,7 @@
 .logo-container {
     /* position: absolute; */
     width: 100%;
-    height: 144px;
+    height: 9em;
     background-color: rgba(11, 22, 33, .4);
     z-index: 1;
 }
@@ -44,59 +44,59 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    width: 144px;
-    height: 80px;
+    width: 9em;
+    height: 5em;
     /* 提升层级 */
     position: relative;
-    left: 54px;
-    top: 32px;
+    left: 3.3em;
+    top: 2em;
 }
 
 /* 信息 */
 .info-container {
     width: 100%;
-    height: 136px;
+    height: 8.5em;
 }
 
 h3.title {
-    padding: 15px 5px 5px 5px;
+    padding: 1em 0.3em 0.3em 0.3em;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 1em;
 }
 
 p.owner {
-    padding: 5px 5px 5px 5px;
+    padding: 0.3em;
     font-weight: 300;
 }
 
 /* 图标信息位置 */
 .desc {
     width: 100%;
-    height: 30px;
+    height: 1.87em;
     /* background-color: #baefff; */
-    margin: 30px 0 100px 0;
+    margin: 1.87em 0 6.25em 0;
 }
 
 /* 图标单位间位置 */
 .desc .desc-item {
     float: left;
-    margin: 10px 10px 10px 14px;
+    margin: 0.85em 0.85em 0.85em 1em;
 }
 
 /* 图标 */
 .icon-signal {
-    font-size: 11px;
+    font-size: 0.68em;
     color: #D7D7D7;
 }
 
 .icon-persons {
-    line-height: 18px;
+    line-height: 1.13em;
     color: #D7D7D7;
     font-weight: 700;
 }
 
 .icon-time1 {
-    line-height: 20px;
+    line-height: 1.25em;
     color: #D7D7D7;
     font-weight: 700;
 }
