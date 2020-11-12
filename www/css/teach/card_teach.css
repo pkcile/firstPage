@@ -38,9 +38,8 @@
     background-color: rgba(245,245,245, .9);
 }
 .card-detail-item-header{
-    /* background-color: rgba(9, 22, 22, .5); */
-    font-weight: 700;
-    color: rgb(102, 102, 102);
+    font-weight: 500;
+    color: #000;
     font-size: 14px;
 }
 
@@ -48,9 +47,11 @@
     padding: 10px;
 }
 
+/* 截图 */
 img {
-    width: 1080px;
+    width: 1070px;
 }
+/* 链接样式 */
 a{
     text-decoration: none;
 }
