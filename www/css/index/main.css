@@ -22,4 +22,49 @@
     height: 100px;
     background-color: #FF9;
 }
+
+/* main右部分内容 */
+.main-top2-center{
+    width: 85%;
+    margin: 20px auto;
+}
+.main-top2-title{
+    font-weight: 600;
+    font-size: 1.2em;
+    line-height: 30px;
+    
+}
+.main-top2-title-line{
+    width: 40px;
+    height: 4px;
+    background-color: #F0848E;
+    margin: 0 0 10px 0;
+}
+ .main-top2-tools  li  ul{
+    display: block;
+    width: 100%;
+    /* height: ; */
+    padding: 5px 0 10px 15px;
+    border-bottom: 1px solid #F0848E;
+    color: #333333;
+}
+.main-top2-tools ul>:first-child{
+    /* color: red; */
+    padding: 5px 0;
+    font-weight: 600;
+
+}
+.main-top2-tools input{
+    width: 80%;
+    height: 30px;
+    margin: 5px auto;
+}
+.main-top2-tools button{
+    width: 30%;
+    padding: 8px;
+    background-color: #6949A3;
+    color: white;
+    border-radius: 10%;
+
+}
 /* main End */

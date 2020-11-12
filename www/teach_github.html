@@ -1,87 +1,89 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<title>github的使用</title>
-	<!-- 重置样式表 -->
-	<link rel="stylesheet" type="text/css" href="./css/reset.css" / charset="utf-8">
-	<!-- card_teach -->
-	<link rel="stylesheet" href="./css/teach/card_teach.css" charset="utf-8">
-	<link rel="stylesheet" href="./css/teach/teach_main.css" charset="utf-8">
-	<script>
-		window.onload = function () {
-				// 实验链接-隐藏
-				var lab_overview_link = document.getElementById("lab-overview-link");
-				var lab_book_link = document.getElementById("lab-book-link");
-				// 点击第一个导航链接
-				lab_overview_link.onclick = function() {
-					var teach_overview = document.getElementById("teach-overview");
-					var teach_detail = document.getElementById("teach-detail");
-					teach_overview.style.display = "block";
-					teach_detail.style.display = "none";
-				}
-				// 点击第二个导航链接
-				lab_book_link.onclick = function() {
-					var teach_overview = document.getElementById("teach-overview");
-					var teach_detail = document.getElementById("teach-detail");
-					teach_overview.style.display = "none";
-					teach_detail.style.display = "block";
-				}
 
-			}
-	</script>
-	<style type="text/css">
-		body{
-			background-image: url(./img/bg.jpg);
-			background-repeat: no-repeat;
-			background-size: 100%;
-			background-color: #29944C;
-		}
-		/* 页面主体 */
-		.content {
-			max-width: 1100px;
-			min-width: 600px;
-			margin: 0 auto;
-		}
-	</style>
+<head>
+    <meta charset="utf-8">
+    <title>github的使用</title>
+    <!-- 重置样式表 -->
+    <link rel="stylesheet" type="text/css" href="./css/reset.css" / charset="utf-8">
+    <!-- card_teach -->
+    <link rel="stylesheet" href="./css/teach/card_teach.css" charset="utf-8">
+    <link rel="stylesheet" href="./css/teach/teach_main.css" charset="utf-8">
+    <script>
+        window.onload = function () {
+            // 实验链接-隐藏
+            var lab_overview_link = document.getElementById("lab-overview-link");
+            var lab_book_link = document.getElementById("lab-book-link");
+            // 点击第一个导航链接
+            lab_overview_link.onclick = function () {
+                var teach_overview = document.getElementById("teach-overview");
+                var teach_detail = document.getElementById("teach-detail");
+                teach_overview.style.display = "block";
+                teach_detail.style.display = "none";
+            }
+            // 点击第二个导航链接
+            lab_book_link.onclick = function () {
+                var teach_overview = document.getElementById("teach-overview");
+                var teach_detail = document.getElementById("teach-detail");
+                teach_overview.style.display = "none";
+                teach_detail.style.display = "block";
+            }
+
+        }
+    </script>
+    <style type="text/css">
+        body {
+            background-image: url(./img/bg.jpg);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-color: #29944C;
+        }
+
+        /* 页面主体 */
+        .content {
+            max-width: 1100px;
+            min-width: 600px;
+            margin: 0 auto;
+        }
+    </style>
 </head>
 
 <body>
-	<div class="content">
-		<div class="mainBar">
-			<!-- 教程页 -->
-			<div class="teach-item">
-				<div class="teach-header">
-					<div class="teach-header-item" id="lab-overview-link">实验概述</div>
-					<div class="teach-header-item" id="lab-book-link">实验手册</div>
-				</div>
-				<div class="teach-overview" id="teach-overview">
-					<div class="teach-overview-item">
-						<div class="teach-overview-item-head">
-							实验内容
-						</div>
-						<div class="teach-overview-item-main">
-							github的使用案例
-						</div>
-					</div>
-					<div class="teach-overview-item">
-						<div class="teach-overview-item-head">
-							实验内容
-						</div>
-						<div class="teach-overview-item-main">
+    <div class="content">
+        <div class="mainBar">
+            <!-- 教程页 -->
+            <div class="teach-item">
+                <div class="teach-header">
+                    <div class="teach-header-item" id="lab-overview-link">实验概述</div>
+                    <div class="teach-header-item" id="lab-book-link">实验手册</div>
+                </div>
+                <div class="teach-overview" id="teach-overview">
+                    <div class="teach-overview-item">
+                        <div class="teach-overview-item-head">
+                            实验内容
+                        </div>
+                        <div class="teach-overview-item-main">
+                            github的使用案例
+                        </div>
+                    </div>
+                    <div class="teach-overview-item">
+                        <div class="teach-overview-item-head">
+                            实验内容
+                        </div>
+                        <div class="teach-overview-item-main">
                             <ul>
                                 <li>1.github发布静态网页</li>
                                 <li>2.将文件利用git托管到github</li>
                                 <li>3.本地同步在gitee和github上相同的项目</li>
                                 <li>4.利用bat脚本，定时同步本地仓库文件到github/gitee</li>
                             </ul>
-						</div>
-					</div>
-					<div class="teach-overview-item">
-						<div class="teach-overview-item-head">
-							实验说明
-						</div>
-						<div class="teach-overview-item-main">
+                        </div>
+                    </div>
+                    <div class="teach-overview-item">
+                        <div class="teach-overview-item-head">
+                            实验说明
+                        </div>
+                        <div class="teach-overview-item-main">
                             <ul>
                                 <li>
                                     1.github是一个很好用的存放代码的平台，可在线免费发布个人托管的网页并可定制域名
@@ -116,227 +118,364 @@
                                     <br>
                                 </li>
                             </ul>
-						</div>
-					</div>
-				</div>
-				<div class="teach-detail" id="teach-detail"  style="display: none;">
-					<div class="teach-detail-content" id="teach-detail-content">
-						<div class="teach-detail-content-head">目录</div>
-						<div class="teach-detail-content-close">
-							<button id="content-close">关闭</button>
-						</div>
-						<div class="teach-detail-content-item">1.发布网页</div>
-						<div class="teach-detail-content-item">2.git的使用</div>
+                            div.comm
+                        </div>
+                    </div>
+                </div>
+                <div class="teach-detail" id="teach-detail" style="display: none;">
+                    <div class="teach-detail-content" id="teach-detail-content">
+                        <div class="teach-detail-content-head">目录</div>
+                        <div class="teach-detail-content-close">
+                            <button id="content-close">关闭</button>
+                        </div>
+                        <div class="teach-detail-content-item">1.发布网页</div>
+                        <div class="teach-detail-content-item">2.git的使用</div>
                         <div class="teach-detail-content-item">3.github和gitee同步</div>
                         <div class="teach-detail-content-item">4.bat脚本同步</div>
-					</div>
-					<div class="teach-detail-main">
-						<!-- 教程内容卡片 -->
-						<div class="teach-card">
-							<div class="card-teach-header">
-								<div class="card-teach-header-item">
-									安装windows系统
-									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-									<a href="javascript:;"  id="process_picture">[步骤截图]</a>
-								</div>
-							</div>
-							<div class="card-teach-detail-main-step">
-								<div class="card-detail-card-header" >
-									<div class="card-detail-card-header-item">
-										步骤1：github发布静态网页
-									</div>
-								</div>
-								<div class="card-detail-card-main">
-									<div class="card-detail-item">
-										<div class="card-detail-item-header">
-											1.创建github账户，创建第一个仓库，将仓库设置为发布页
-										</div>
-										<div class="card-detail-card-group">
-											<div class="card-detail-card-descript">
-												1.1 创建github账户
-												&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-												<a href="http://www.winbaicai.com/">[链接]</a>
-											</div>
-											<div class="card-detail-card-detail" style="display: none;">
-												<div class="card-detail-card-detail-img"><img src="./img/bg.jpg" alt=""></div>
-											</div>
-										</div>
-										<div class="card-detail-card-group">
-											<div class="card-detail-card-descript">
-												1.2 创建第一个仓库
-												&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-												<a href="http://down.winbaicai.com:88/DaBaiCai_v6.0_2009.zip">[链接]</a>
-											</div>
-											<div class="card-detail-card-detail">
-												<div class="card-detail-card-detail-img"></div>
-											</div>
+                    </div>
+                    <div class="teach-detail-main">
+                        <!-- 教程内容卡片 -->
+                        <div class="teach-card">
+                            <div class="card-teach-header">
+                                <div class="card-teach-header-item">
+                                    安装windows系统
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <a href="javascript:;" id="process_picture">[步骤截图]</a>
+                                </div>
+                            </div>
+                            <div class="card-teach-detail-main-step">
+                                <div class="card-detail-card-header">
+                                    <div class="card-detail-card-header-item">
+                                        步骤1：github发布静态网页
+                                    </div>
+                                </div>
+                                <div class="card-detail-card-main-main">
+                                    <div class="card-detail-card-main">
+                                        <div class="card-detail-item">
+                                            <div class="card-detail-item-header">
+                                                1.创建github账户，创建第一个仓库，将仓库设置为发布页
+                                            </div>
+                                            <div class="card-detail-card-group">
+                                                <div class="card-detail-card-descript">
+                                                    1.1 创建github账户
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    <a href="https://github.com/" target="blank">[链接]</a>
+                                                </div>
+                                                <div class="card-detail-card-detail" style="display: none;">
+                                                    <div class="card-detail-card-detail-img"><img src="./img/card/2_github/1_1_1.png" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-detail-card-group">
+                                                <div class="card-detail-card-descript">
+                                                    1.2 创建第一个仓库
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    <!-- <a href="http://down.winbaicai.com:88/DaBaiCai_v6.0_2009.zip">[链接]</a> -->
+                                                </div>
+                                                <div class="card-detail-card-detail" style="display: none;">
+                                                    <div class="card-detail-card-detail-img">
+                                                        <div>1.2.1点击创建新仓库</div>
+                                                        <img src="./img/card/2_github/1_1_2_1.png" alt="">
+                                                        <div>1.2.2配置仓库参数</div>
+                                                        <img src="./img/card/2_github/1_1_2_2.png" alt="">
+                                                        <div>1.2.3仓库创建完成</div>
+                                                        <img src="./img/card/2_github/1_1_2_2.png" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-detail-card-group">
+                                                <div class="card-detail-card-descript">
+                                                    1.3 将仓库设置为发布页
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    <!-- <a href="http://down.winbaicai.com:88/DaBaiCai_v6.0_2009.zip">[链接]</a> -->
+                                                </div>
+                                                <div class="card-detail-card-detail" style="display: none;">
+                                                    <div class="card-detail-card-detail-img">
+                                                        <div>1.3.1进入设置</div>
+                                                        <img src="./img/card/2_github/1_1_3_setting.png" alt="">
+                                                        <div>1.3.2打开发布页并保存</div>
+                                                        <img src="./img/card/2_github/1_1_3_open.png" alt="">
+                                                        <div>1.3.3创建完成</div>
+                                                        <img src="./img/card/2_github/1_1_3_finish.png" alt="">
+                                                        <div>1.3.4测试成功</div>
+                                                        <img src="./img/card/2_github/1_1_3_success.png" alt="">
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="card-detail-card-group">
-											<div class="card-detail-card-descript">
-												1.3 将仓库设置为发布页
-												&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-												<a href="http://down.winbaicai.com:88/DaBaiCai_v6.0_2009.zip">[链接]</a>
-											</div>
-											<div class="card-detail-card-detail">
-												<div class="card-detail-card-detail-img"></div>
-											</div>
-										</div>
-									</div>
-								</div>
-							
-							</div>
-							<div class="card-teach-detail-main-step">
-								<div class="card-detail-card-header">
-									<div class="card-detail-card-header-item">
-										步骤2：将文件利用git托管到github
-									</div>
-								</div>
-								<div class="card-detail-card-main">
-									<div class="card-detail-item">
-										<div class="card-detail-item-header">
-											1.git的安装-默认安装，将github创建的第一个仓库同步到本地
-										</div>
-										<div class="card-detail-card-group">
-											<div class="card-detail-card-descript">
-												1.1 git的安装-默认安装
-												&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-												<a href="https://msdn.itellyou.cn/">[链接]</a>
-											</div>
-											<div class="card-detail-card-detail" style="display: none;">
-												<div class="card-detail-card-detail-img"><img src="./img/bg.jpg" alt=""></div>
-											</div>
+                                        <div class="card-detail-item">
+                                            <div class="card-detail-item-header">
+                                                2.发布页使用自定义域名，腾讯云购买域名，域名的配置
+                                            </div>
+                                            <div class="card-detail-card-group">
+                                                <div class="card-detail-card-descript">
+                                                    2.1 腾讯云购买域名
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    <a href="http://www.winbaicai.com/">[链接]</a>
+                                                </div>
+                                                <div class="card-detail-card-detail" style="display: none;">
+                                                    <div class="card-detail-card-detail-img"><img src="./img/bg.jpg" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-detail-card-group">
+                                                <div class="card-detail-card-descript">
+                                                    2.2 发布页添入购买的域名
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    <a href="http://down.winbaicai.com:88/DaBaiCai_v6.0_2009.zip">[链接]</a>
+                                                </div>
+                                                <div class="card-detail-card-detail">
+                                                    <div class="card-detail-card-detail-img"></div>
+                                                </div>
+                                            </div>
+                                            <div class="card-detail-card-group">
+                                                <div class="card-detail-card-descript">
+                                                    2.3 域名的配置
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    <a href="http://down.winbaicai.com:88/DaBaiCai_v6.0_2009.zip">[链接]</a>
+                                                </div>
+                                                <div class="card-detail-card-detail">
+                                                    <div class="card-detail-card-detail-img"></div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="card-detail-card-group">
-											<div class="card-detail-card-descript">
-												1.2 将github创建的第一个仓库同步到本地
-												&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-												<a href="https://msdn.itellyou.cn/">[链接]</a>
-											</div>
-											<div class="card-detail-card-detail" style="display: none;">
-												<div class="card-detail-card-detail-img"><img src="./img/bg.jpg" alt=""></div>
-											</div>
-										</div>
-									</div>
-								</div>
-							
-							</div>
-							<div class="card-teach-detail-main-step">
-								<div class="card-detail-card-header">
-									<div class="card-detail-card-header-item">
-										步骤3：本地同步在gitee和github上相同的项目
-									</div>
-								</div>
-								<div class="card-detail-card-main">
-									<div class="card-detail-item">
-										<div class="card-detail-item-header">
-											1.创建gitee账号，并将github的仓库文件复制到gitee上
-										</div>
-										<div class="card-detail-card-group">
-											<div class="card-detail-card-descript">
-												1.1 创建gitee账号
-											</div>
-											<div class="card-detail-card-detail" style="display: none;">
-												<div class="card-detail-card-detail-img"><img src="./img/bg.jpg" alt=""></div>
-											</div>
-										</div>
-										<div class="card-detail-card-group">
-											<div class="card-detail-card-descript">
-												1.2 并将github的仓库文件复制到gitee上
-											</div>
-											<div class="card-detail-card-detail">
-												<div class="card-detail-card-detail-img"></div>
-											</div>
-										</div>
-									</div>
-									<div class="card-detail-item">
-										<div class="card-detail-item-header">
-											2.git推送仓库设置为两个仓库，修改内容测试，同步测试
-										</div>
-										<div class="card-detail-card-group">
-											<div class="card-detail-card-descript">
-                                                2.1 git推送仓库设置修改
-											</div>
-											<div class="card-detail-card-detail" style="display: none;">
-												<div class="card-detail-card-detail-img"><img src="./img/bg.jpg" alt=""></div>
-											</div>
+                                    </div>
+                                </div>
+                                
+
+                            </div>
+                            <div class="card-teach-detail-main-step">
+                                <div class="card-detail-card-header">
+                                    <div class="card-detail-card-header-item">
+                                        步骤2：将文件利用git托管到github
+                                    </div>
+                                </div>
+                                <div class="card-detail-card-main-main">
+                                    <div class="card-detail-card-main">
+                                        <div class="card-detail-item">
+                                            <div class="card-detail-item-header">
+                                                1.git的安装-默认安装，将github创建的第一个仓库同步到本地
+                                            </div>
+                                            <div class="card-detail-card-group">
+                                                <div class="card-detail-card-descript">
+                                                    1.1 git的安装-默认安装
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    <a href="https://msdn.itellyou.cn/">[链接]</a>
+                                                </div>
+                                                <div class="card-detail-card-detail" style="display: none;">
+                                                    <div class="card-detail-card-detail-img"><img src="./img/bg.jpg" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-detail-card-group">
+                                                <div class="card-detail-card-descript">
+                                                    1.2 将github创建的第一个仓库同步到本地
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    <a href="https://msdn.itellyou.cn/">[链接]</a>
+                                                </div>
+                                                <div class="card-detail-card-detail" style="display: none;">
+                                                    <div class="card-detail-card-detail-img"><img src="./img/bg.jpg" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="card-detail-card-group">
-											<div class="card-detail-card-descript">
-                                                2.2 修改内容测试
-											</div>
-											<div class="card-detail-card-detail" style="display: none;">
-												<div class="card-detail-card-detail-img"><img src="./img/bg.jpg" alt=""></div>
-											</div>
+                                    </div>
+                                </div>
+                               
+
+                            </div>
+                            <div class="card-teach-detail-main-step">
+                                <div class="card-detail-card-header">
+                                    <div class="card-detail-card-header-item">
+                                        步骤3：本地同步在gitee和github上相同的项目
+                                    </div>
+                                </div>
+                                <div class="card-detail-card-main-main">
+                                    <div class="card-detail-card-main">
+                                        <div class="card-detail-item">
+                                            <div class="card-detail-item-header">
+                                                1.创建gitee账号，并将github的仓库文件复制到gitee上
+                                            </div>
+                                            <div class="card-detail-card-group">
+                                                <div class="card-detail-card-descript">
+                                                    1.1 创建gitee账号
+                                                </div>
+                                                <div class="card-detail-card-detail" style="display: none;">
+                                                    <div class="card-detail-card-detail-img"><img src="./img/bg.jpg" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-detail-card-group">
+                                                <div class="card-detail-card-descript">
+                                                    1.2 并将github的仓库文件复制到gitee上
+                                                </div>
+                                                <div class="card-detail-card-detail">
+                                                    <div class="card-detail-card-detail-img"></div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="card-detail-card-group">
-											<div class="card-detail-card-descript">
-                                                2.3 同步测试
-											</div>
-											<div class="card-detail-card-detail" style="display: none;">
-												<div class="card-detail-card-detail-img"><img src="./img/bg.jpg" alt=""></div>
-											</div>
-										</div>
-									</div>
-								</div>
-								
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>	
-		</div>
-			
-	</div>
+                                        <div class="card-detail-item">
+                                            <div class="card-detail-item-header">
+                                                2.git推送仓库设置为两个仓库，修改内容测试，同步测试
+                                            </div>
+                                            <div class="card-detail-card-group">
+                                                <div class="card-detail-card-descript">
+                                                    2.1 git推送仓库设置修改
+                                                </div>
+                                                <div class="card-detail-card-detail" style="display: none;">
+                                                    <div class="card-detail-card-detail-img"><img src="./img/bg.jpg" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-detail-card-group">
+                                                <div class="card-detail-card-descript">
+                                                    2.2 修改内容测试
+                                                </div>
+                                                <div class="card-detail-card-detail" style="display: none;">
+                                                    <div class="card-detail-card-detail-img"><img src="./img/bg.jpg" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-detail-card-group">
+                                                <div class="card-detail-card-descript">
+                                                    2.3 同步测试
+                                                </div>
+                                                <div class="card-detail-card-detail" style="display: none;">
+                                                    <div class="card-detail-card-detail-img"><img src="./img/bg.jpg" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                               
+
+                            </div>
+                            <div class="card-teach-detail-main-step">
+                                <div class="card-detail-card-header">
+                                    <div class="card-detail-card-header-item">
+                                        步骤4：利用bat脚本，定时同步本地仓库文件到github/gitee
+                                    </div>
+                                </div>
+                                <div class="card-detail-card-main-main">
+                                    <div class="card-detail-card-main">
+                                        <div class="card-detail-item">
+                                            <div class="card-detail-item-header">
+                                                1.创建bat脚本，放在指定位置，点击测试
+                                            </div>
+                                            <div class="card-detail-card-group">
+                                                <div class="card-detail-card-descript">
+                                                    1.1 创建bat脚本
+                                                </div>
+                                                <div class="card-detail-card-detail" style="display: none;">
+                                                    <div class="card-detail-card-detail-img"><img src="./img/bg.jpg" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-detail-card-group">
+                                                <div class="card-detail-card-descript">
+                                                    1.2 放在指定位置，点击测试
+                                                </div>
+                                                <div class="card-detail-card-detail">
+                                                    <div class="card-detail-card-detail-img"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-detail-item">
+                                            <div class="card-detail-item-header">
+                                                2.使用任务计划程序，创建任务，进行一系列参数设置
+                                            </div>
+                                            <div class="card-detail-card-group">
+                                                <div class="card-detail-card-descript">
+                                                    2.1 搜索框搜索：任务计划程序
+                                                </div>
+                                                <div class="card-detail-card-detail" style="display: none;">
+                                                    <div class="card-detail-card-detail-img"><img src="./img/bg.jpg" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-detail-card-group">
+                                                <div class="card-detail-card-descript">
+                                                    2.2 创建任务
+                                                </div>
+                                                <div class="card-detail-card-detail" style="display: none;">
+                                                    <div class="card-detail-card-detail-img"><img src="./img/bg.jpg" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-detail-card-group">
+                                                <div class="card-detail-card-descript">
+                                                    2.3 进行一系列参数设置
+                                                </div>
+                                                <div class="card-detail-card-detail" style="display: none;">
+                                                    <div class="card-detail-card-detail-img"><img src="./img/bg.jpg" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
 
 </body>
 <script>
-	var number_content = 0;
-	var number_picture = 0;
-	//关闭目录
-	var content_close_button = document.getElementById("content-close");
-	content_close_button.onclick = function(){
-		var teach_detail_content = document.getElementById("teach-detail-content");
-		teach_detail_content.style.display = "none";
-	}
-	//打开关闭目录内容
-	var card_detail_content = document.getElementsByClassName("card-detail-card-header");
-	// alert(card_detail_content[0].innerHTML)
-	for(var i = 0; i < card_detail_content.length; i++) {
+    var number_content = 0;
+    var number_picture = 0;
+    //关闭目录
+    var content_close_button = document.getElementById("content-close");
+    content_close_button.onclick = function () {
+        var teach_detail_content = document.getElementById("teach-detail-content");
+        teach_detail_content.style.display = "none";
+    }
+    //打开关闭目录内容
+    var card_detail_content = document.getElementsByClassName("card-detail-card-header");
+    // alert(card_detail_content[0].innerHTML)
+    for (var i = 0; i < card_detail_content.length; i++) {
         (function (arg) {
-            card_detail_content[i].onclick = function () { 
-				if(number_content % 2 == 0) {
-					var detail_card = document.getElementsByClassName("card-detail-card-main");
-					detail_card[arg].style.display = "none";
-				}
-				else {
-					var detail_card =  document.getElementsByClassName("card-detail-card-main");
-					detail_card[arg].style.display = "block";
-				}
-				number_content++;
+            card_detail_content[i].onclick = function () {
+                if (number_content % 2 == 0) {
+                    var detail_card = document.getElementsByClassName("card-detail-card-main");
+                    detail_card[arg].style.display = "none";
+                }
+                else {
+                    var detail_card = document.getElementsByClassName("card-detail-card-main");
+                    detail_card[arg].style.display = "block";
+                }
+                number_content++;
             }
         })(i);
-	}
-	//过程截图展示
-		var process_picture = document.getElementById("process_picture");
-		process_picture.onclick = function () {
-			var picture_detail = document.getElementsByClassName("card-detail-card-detail");
+    }
+    //过程截图展示
+    var process_picture = document.getElementById("process_picture");
+    process_picture.onclick = function () {
+        var picture_detail = document.getElementsByClassName("card-detail-card-detail");
 
-			if (number_picture % 2 == 0) {
-				for (var i = 0; i < picture_detail.length; i++) {
-					picture_detail[i].style.display = "block";
-					// alert(i);
-				}
-				number_picture++;
-			}
-			else {
-				for (var i = 0; i < picture_detail.length; i++) {
-					picture_detail[i].style.display = "none";
-					// alert(i);
-				}
-				number_picture++;
-			}
-		
-	}
+        if (number_picture % 2 == 0) {
+            for (var i = 0; i < picture_detail.length; i++) {
+                picture_detail[i].style.display = "block";
+                // alert(i);
+            }
+            number_picture++;
+        }
+        else {
+            for (var i = 0; i < picture_detail.length; i++) {
+                picture_detail[i].style.display = "none";
+                // alert(i);
+            }
+            number_picture++;
+        }
+
+    }
 </script>
 
 </html>

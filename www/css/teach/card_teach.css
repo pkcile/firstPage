@@ -35,12 +35,12 @@
 /* 卡片子内容 */
 .card-detail-item {
     padding: 5px 0 5px 5px;
-    background-color: rgba(245,245,245, .9);
+    background-color: rgba(245,245,245, 1);
 }
 .card-detail-item-header{
     font-weight: 500;
     color: #000;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .card-detail-card-header-item{
