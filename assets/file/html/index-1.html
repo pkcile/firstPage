@@ -6,8 +6,8 @@
 	<meta name="keywords" , content="pkcile,兜里有糖">
 	<meta name="author" content="pkcile">
 	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1,maximum-scale=1">
-	<link rel="shortcut icon" href="./assets/img/user/link.ico" type="image/x-icon" />
-	<link rel="stylesheet" href="./assets/css/font-awesome.css">
+	<!-- <link rel="shortcut icon" href="./assets/img/user/link.ico" type="image/x-icon" /> -->
+	<!-- <link rel="stylesheet" href="./assets/css/font-awesome.css"> -->
 	<title>pkcile</title>
 	<style>
 		body {
@@ -16,12 +16,12 @@
 			font-size: 16px;
 			/* 禁止复制test */
 			/* 可用于图片禁止拖拽 */
-			/* user-select: none;
-				-webkit-touch-callout: none;
-				-webkit-user-select: none;
-				-khtml-user-select: none;
-				-moz-user-select: none;
-				-ms-user-select: none; */
+			user-select: none;
+			-webkit-touch-callout: none;
+			-webkit-user-select: none;
+			-khtml-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
 		}
 
 		/*1. 头部 */
@@ -114,7 +114,23 @@
 		}
 	</style>
 	<script>
-		console.log(666);
+		window.onload = function () {
+			// console.log(document.getElementById("test"));
+			// console.log(666);
+			var div = document.createElement("div");
+			var div_child = document.createElement("div");
+			var div_text = document.createTextNode("test");
+			var div_text2 = document.createTextNode("test");
+			div.appendChild(div_text);
+			div.appendChild(div_child);
+			div_child.appendChild(div_text2);
+			// console.log(div.innerHTML);
+			var story = document.getElementById("list_story");
+			// console.log(document.getElementById("test"));
+			console.log(story);
+			story.appendChild(div);
+		}
+
 	</script>
 </head>
 
@@ -136,16 +152,16 @@
 	<!-- 割线 -->
 	<div class="blueline"></div>
 	<!-- 主体内容 -->
-	<div class="content">
-		<div class="center02">
+	<div class="content" id="test">
+		<div class="center02" id="list_story">
 			<!-- story04 -->
-			<div class="story04">
+			<div class="" style="display: none;">
 				<div class="title02">日常小事</div>
 				<div class="label">
 					<a href="" class="time">April22,2020</a>
-					<i class="fa">&#xf02c</i>
+					<i class="fa">✔</i>
 					<a href="" class="type">日常</a>
-					<i class="fa">&#xf0ac</i>
+					<i class="fa">✔</i>
 					<a href="" class="isay">大学、家、疫情、村庄建设</a>
 				</div>
 				<div class="pragraph">
@@ -157,9 +173,9 @@
 				<p>[……]</p>
 				<a href="">read more</a>
 			</div>
-			<hr class="hrStyle">
+			<hr class="hrStyle" style="display: none;">
 			<!-- story03 -->
-			<div class="story03">
+			<div class="" style="display: none;">
 				<div class="title02">职业生涯规划</div>
 				<div class="label">
 					<a href="" class="time">Novemeber8,2018</a>
@@ -175,9 +191,9 @@
 				<p>[……]</p>
 				<a href="">read more</a>
 			</div>
-			<hr class="hrStyle">
+			<hr class="hrStyle" style="display: none;">
 			<!-- story02 -->
-			<div class="story02">
+			<div class="" style="display: none;">
 				<div class="title02">军训日记</div>
 				<div class="label">
 					<a href="" class="time">Septempber8,2018</a>
@@ -195,9 +211,9 @@
 				<p>[……]</p>
 				<a href="">read more</a>
 			</div>
-			<hr class="hrStyle">
+			<hr class="hrStyle" style="display: none;">
 			<!-- story01 -->
-			<div class="story01">
+			<div class="">
 				<div class="title02">寄出的信</div>
 				<div class="label">
 					<a href="" class="time">Septempber19,2018</a>
@@ -217,7 +233,7 @@
 		</div>
 	</div>
 	<div class="footer">
-	<!-- 音乐故事 -->
+		<!-- 音乐故事 -->
 	</div>
 </body>
 
