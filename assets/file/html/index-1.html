@@ -115,20 +115,51 @@
 	</style>
 	<script>
 		window.onload = function () {
-			// console.log(document.getElementById("test"));
-			// console.log(666);
-			var div = document.createElement("div");
-			var div_child = document.createElement("div");
-			var div_text = document.createTextNode("test");
-			var div_text2 = document.createTextNode("test");
-			div.appendChild(div_text);
-			div.appendChild(div_child);
-			div_child.appendChild(div_text2);
-			// console.log(div.innerHTML);
-			var story = document.getElementById("list_story");
-			// console.log(document.getElementById("test"));
-			console.log(story);
-			story.appendChild(div);
+			// story卡片
+			//结构
+			var div_story = document.getElementById("list_story");
+			var div_story_li = document.createElement("div");
+			var div_story_title = document.createElement("div");
+			var div_story_label = document.createElement("div");
+			var div_story_label_time = document.createElement("a");
+			var div_story_label_type_fa = document.createElement("i");
+			var div_story_label_type = document.createElement("a");
+			var div_story_label_isay_fa = document.createElement("i");
+			var div_story_label_isay = document.createElement("a");
+			//添加结构
+			div_story.appendChild(div_story_li);
+			div_story_li.appendChild(div_story_title);
+			div_story_li.appendChild(div_story_label);
+			div_story_label.appendChild(div_story_label_time);
+			div_story_label.appendChild(div_story_label_type_fa);
+			div_story_label.appendChild(div_story_label_type);
+			div_story_label.appendChild(div_story_label_isay_fa);
+			div_story_label.appendChild(div_story_label_isay);
+			//添加class类
+			div_story_title.className = "title02";
+			div_story_label.className = "label";
+			div_story_label_time.className = "time";
+			div_story_label_type_fa.className = "fa";
+			div_story_label_type.className = "type";
+			div_story_label_isay_fa.className = "fa";
+			div_story_label_isay.className = "isay";
+			//添加content内容
+			var div_story_title_text = document.createTextNode("测试标题");
+			var div_story_label_time_text = document.createTextNode("April22,2020");
+			var div_story_label_type_fa_text = document.createTextNode("✔");
+			var div_story_label_type_text = document.createTextNode("日常");
+			var div_story_label_isay_fa_text = document.createTextNode("✔");
+			var div_story_label_isay_text = document.createTextNode("大学、家、疫情、村庄建设");
+			//结构添加content
+			div_story_title.appendChild(div_story_title_text);
+			div_story_label_time.appendChild(div_story_label_time_text);
+			div_story_label_type_fa.appendChild(div_story_label_type_fa_text);
+			div_story_label_type.appendChild(div_story_label_type_text);
+			div_story_label_isay_fa.appendChild(div_story_label_isay_fa_text);
+			div_story_label_isay.appendChild(div_story_label_isay_text);
+
+	
+			
 		}
 
 	</script>
