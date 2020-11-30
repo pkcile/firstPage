@@ -1,47 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Test</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-    </style>
-</head>
-
+<html>
 <body>
-
-    <!-- <button>检测浏览器是否支持获取地理位置信息</button> -->
-
-    <script>
-        // if ("geolocation" in navigator) {
-        //     /* 地理位置服务可用 */
-        //     alert("it is true");
-        // } else {
-        //     /* 地理位置服务不可用 */
-        //     alert("it is false");
-        // }
-        function getLocation() {
-            console.log(navigator.geolocation   );
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(showPosition);
-            }
-            else { x.innerHTML = "Geolocation is not supported by this browser."; }
-        }
-        function showPosition(position) {
-            lat=position.coords.latitude;
-            lon=position.coords.longitude;
-            console.log(lat);
-            alert(lat);
-        }
-        getLocation();
-    </script>
-
+<p id="demo">点击这个按钮，获得您的坐标：</p>
+<button onclick="getLocation()">试一下</button>
+<script>
+var x=document.getElementById("demo");
+function getLocation()
+  {
+  if (navigator.geolocation)
+    {
+    navigator.geolocation.getCurrentPosition(showPosition);
+    }
+  else{x.innerHTML="Geolocation is not supported by this browser.";}
+  }
+function showPosition(position)
+  {
+  x.innerHTML="Latitude: " + position.coords.latitude + 
+  "<br />Longitude: " + position.coords.longitude;	
+  }
+</script>
 </body>
-
 </html>
