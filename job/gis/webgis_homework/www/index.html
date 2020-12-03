@@ -667,11 +667,11 @@
         var test = 1;
         month = month + 1;
         // 两位数转换
-        month = transform_bit(month);
-        day = transform_bit(day);
-        hour = transform_bit(hour);
-        minute = transform_bit(minute);
-        second = transform_bit(second);
+        // month = transform_bit(month);
+        // day = transform_bit(day);
+        // hour = transform_bit(hour);
+        // minute = transform_bit(minute);
+        // second = transform_bit(second);
         //获取起始时间结点
         var time_start = document.getElementById("update-infor-start");
         //获取计算天数结点
@@ -681,6 +681,8 @@
         // 2020 8 10
         //粗略估计时间，以后精准估计，月差按30
         //天数判断
+
+        console.log(day);
         if(arr_time[2] > day) {
             month = month - 1;
             day = day + 30 - arr_time[2];
@@ -698,6 +700,7 @@
         }
         //年份判断
         year = year - arr_time[0];
+        console.log(day);
         //写入span标签
         time_last.innerHTML = year + "年" + month + "月" + day + "天";
     
