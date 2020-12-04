@@ -5,17 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>card_news</title>
-    <link rel="stylesheet" href="./css/show/card_show.css">
-    <!-- add -->
-    <link rel="stylesheet" href="./css/reset.css">
 </head>
 <style>
     /* 卡片大小 */
     .card_news{
         width: 16em;
-        height: 30em;
+        /* height: 30em; */
         background: #fff;
-        margin: 20px 20px;
+        margin: 20px auto;
         border: 1px solid #D7D7D7;
         cursor: pointer;
     }
@@ -45,9 +42,12 @@
         background-color: rgba(0, 0, 0, 0.3);
     }
     /* 卡片标题 */
+    h2.card_news_title{
+        height: 0px;
+    }
     .card_news_title{
         display: inline-block;
-        padding: 5px 5px 5px 5px;
+        padding: 2px 10px 2px 10px;
     }
     /* 卡片标签 */
     .category{
