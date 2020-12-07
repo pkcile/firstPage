@@ -7,6 +7,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <!-- <link rel="stylesheet" href="./style.json"> -->
     <style>
         body,
         html,
@@ -17,12 +18,71 @@
             margin: 0;
             font-family: "微软雅黑";
         }
+
+        /* 地图尾部标注 */
+        .BMap_cpyCtrl span {
+            display: none !important;
+        }
+
+        .anchorBL img {
+            display: none;
+        }
+
+        /* 调整比例尺位置 */
+        .BMap_scaleCtrl.BMap_noprint.anchorBL {
+            left: 20px !important;
+        }
+
+        /* 显示隐藏POI控件 */
+        ul li {
+            list-style: none;
+        }
+
+        .btn-wrap {
+            z-index: 999;
+            width: 226px;
+            position: fixed;
+            bottom: 30px;
+            left: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: rgba(265, 265, 265, 0.9);
+            box-shadow: 0 2px 6px 0 rgba(27, 142, 236, 0.5);
+        }
+
+        .btn {
+            width: 100px;
+            height: 30px;
+            float: left;
+            background-color: #fff;
+            color: rgba(27, 142, 236, 1);
+            font-size: 14px;
+            border: 1px solid rgba(27, 142, 236, 1);
+            border-radius: 5px;
+            margin: 0 5px 6px;
+            text-align: center;
+            line-height: 30px;
+        }
+
+        .btn:hover {
+            background-color: rgba(27, 142, 236, 0.8);
+            color: #fff;
+            cursor: pointer;
+        }
     </style>
-    <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=4ZdIV1KFQG8EqpNgn0c2OYdrVIGQnMTH"></script>
+    <!-- <script src="./style.json"></script> -->
+    <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=4ZdIV1KFQG8EqpNgn0c2OYdrVIGQnMTH">
+    </script>
     <!-- <script src="https://api.map.baidu.com/api?type=webgl&v=1.0&ak=4ZdIV1KFQG8EqpNgn0c2OYdrVIGQnMTH"></script> -->
 </head>
 
 <body>
+    <ul class="btn-wrap" style="z-index: 99;">
+        <li class="btn" onclick="showText()">显示POI文字</li>
+        <li class="btn" onclick="hideText()">隐藏POI文字</li>
+        <li class="btn" onclick="showIcon()">显示POI的Icon</li>
+        <li class="btn" onclick="hideIcon()">隐藏POI的Icon</li>
+    </ul>
     <div id="container"></div>
 </body>
 
@@ -40,31 +100,48 @@
     }
 
     function init() {
-        var static_point = new  BMapGL.Point(116.038525, 28.68618);
+        var static_point = new BMapGL.Point(116.038525, 28.68618);
         map = new BMapGL.Map('container'); // 创建Map实例
         map.enableScrollWheelZoom(); // 启用滚轮放大缩小
         map.centerAndZoom(static_point, 16);
+
+        //添加比例尺
+        var scaleCtrl = new BMapGL.ScaleControl();
+        map.addControl(scaleCtrl);
+        var zoomCtrl = new BMapGL.ZoomControl();
+        map.addControl(zoomCtrl);
+        var navi3DCtrl = new BMapGL.NavigationControl3D(); // 添加3D控件
+        map.addControl(navi3DCtrl);
+        //设置地图显示元素
+        map.setDisplayOptions({
+            poi: true //是否显示POI信息 
+        })
+        hideIcon();
+        //自定义样式
+        // map.setMapStyleV2({styleJson:styleJson});
+
+        //获取定位
         navigator.geolocation.getCurrentPosition(function (position) {
             // 坐标转换
-            ggPoint = new  BMapGL.Point(position.coords.longitude, position.coords.latitude);
+            ggPoint = new BMapGL.Point(position.coords.longitude, position.coords.latitude);
             // map.centerAndZoom(ggPoint, 16);
-            
+
             // 标注
-            // var marker = new BMapGL.Marker(ggPoint);
-            // map.addOverlay(marker);
-            // var label = new BMapGL.Label("转换后的百度坐标（不正确）",{offset:new BMapGL.Size(20,-10)});
-            // marker.setLabel(label); //添加百度label
+            var marker = new BMapGL.Marker(ggPoint);
+            map.addOverlay(marker);
+            var label = new BMapGL.Label("转换后的百度坐标（不正确）",{offset:new BMapGL.Size(20,-10)});
+            marker.setLabel(label); //添加百度label
             // console.log(ggPoint);
 
             // 坐标转换并显示
             convertor();
-        });     
-        
+        });
+
     }
-   
+
 
     //function1: 坐标转换
-    function convertor(){
+    function convertor() {
         console.log(ggPoint);
         var convertor = new BMap.Convertor();
         var pointArr = [];
@@ -73,19 +150,21 @@
         console.log(pointArr);
         console.log(map);
     }
-     //function1: 坐标转换完之后的回调函数
-     translateCallback = function (data){
-      if(data.status === 0) {
-        var marker = new BMapGL.Marker(data.points[0]);
-        map.addOverlay(marker);
-        var label = new BMapGL.Label("转换后的百度坐标（正确）",{offset:new BMapGL.Size(20,-10)});
-        marker.setLabel(label); //添加百度label
-        // map.centerAndZoom(data.points[0], 16);
-        // map.setCenter(data.points[0]);
-      
-      }
+    //function1: 坐标转换完之后的回调函数
+    translateCallback = function (data) {
+        if (data.status === 0) {
+            var marker = new BMapGL.Marker(data.points[0]);
+            map.addOverlay(marker);
+            var label = new BMapGL.Label("转换后的百度坐标（正确）", {
+                offset: new BMapGL.Size(20, -10)
+            });
+            marker.setLabel(label); //添加百度label
+            // map.centerAndZoom(data.points[0], 16);
+            // map.setCenter(data.points[0]);
+
+        }
     }
-    
+
 
     /*TEST*/
     // function position_get() {
@@ -98,8 +177,30 @@
     //     console.log(position);
     // }
 
-    
-    
+
+    function showText() {
+        map.setDisplayOptions({
+            poiText: true
+        })
+    }
+
+    function hideText() {
+        map.setDisplayOptions({
+            poiText: false
+        })
+    }
+
+    function showIcon() {
+        map.setDisplayOptions({
+            poiIcon: true
+        })
+    }
+
+    function hideIcon() {
+        map.setDisplayOptions({
+            poiIcon: false
+        })
+    }
 
     window.onload = loadJScript; // 异步加载地图
 </script>
