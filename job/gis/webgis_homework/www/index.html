@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="cn-zh">
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="webgis期中作业，个人网页制作尝试，测试，test" />
@@ -13,17 +13,17 @@
     <!-- 重置样式表 -->
     <link rel="stylesheet" type="text/css" href="./css/reset.css" />
     <!-- alibaba -->
-    <link rel="stylesheet" href="./css/ali/iconfont.css">
+    <!-- <link rel="stylesheet" href="./css/ali/iconfont.css"> -->
 
     <!-- index page -->
     <!-- body -->
     <link rel="stylesheet" href="./css/index/body.css">
     <!-- header -->
-    <link rel="stylesheet" href="./css/index/header.css">
+    <link id="body_header" rel="stylesheet" href="./css/index/header2.css">
     <!-- main -->
-    <link rel="stylesheet" href="./css/index/main.css">
+    <link id="body_main" rel="stylesheet" href="./css/index/main2.css">
     <!-- footer -->
-    <link rel="stylesheet" href="./css/index/footer.css">
+    <link id="body_footer" rel="stylesheet" href="./css/index/footer2.css">
 
     <!-- card -->
     <!--  teach card -->
@@ -34,7 +34,11 @@
     <link rel="stylesheet" href="./css/card/card_news.css">
 
     <style>
-       
+        .inner:hover{
+            /* background-color: #baefff; */
+            border: 1px solid blue;
+
+        }
     </style>
 
 </head>
@@ -49,7 +53,7 @@
             <!-- navigation Start -->
             <nav class="navigation">
                 <!-- 靠右 -->
-                <ul>
+                <ul id="navigation-font-size">
                     <li><a href="javascript:;" title="返回首页">返回首页</a></li>
                     <li><a href="javascript:;" title="网站导航">网站导航</a></li>
                     <!-- <li><a href="javascript:;" target="_blank" title="留言">留言</a></li> -->
@@ -63,9 +67,9 @@
             <div class="font_size">
                 <span>文字大小：</span>
                 <ul>
-                    <li><a href="#" class="small" title="小字级">小</a></li>
-                    <li><a href="#" class="medium" title="中字级">中</a></li>
-                    <li><a href="#" class="large" title="大字级">大</a></li>
+                    <li><a href="#" id="font-small" onclick="font_small_change()" title="小字级">小</a></li>
+                    <li><a href="#" id="font-medium" onclick="font_medium_change()" title="中字级">中</a></li>
+                    <li><a href="#" id="font-large" onclick="font_large_change()" title="大字级">大</a></li>
                 </ul>
             </div>
             <!-- font fucntion End -->
@@ -76,30 +80,48 @@
                     <li><a href="#" title="软件安装导航" class="menu-nav-item">软件教程</a>
                         <ul class="menu-nav-item-list" style="display: none;">
                             <li><a href="javascript:;" title="window安装">window安装与使用</a></li>
-                            <li><a href="javascript:;" title="window安装">github的使用</a></li>
                             <li><a href="javascript:;" title="window安装">wordpress安装与使用</a></li>
-                            <li><a href="javascript:;" title="window安装">RSS的使用</a></li>
+                           
                         </ul>
                     </li>
                     <li><a href="#" title="软件下载导航" class="menu-nav-item">软件下载</a>
                         <ul class="menu-nav-item-list" style="display: none;">
-                            <li><a href="javascript:;" title="软件1">git</a></li>
-                            <li><a href="javascript:;" title="软件2">Chrome</a></li>
-                            <li><a href="javascript:;" title="软件2">firefox</a></li>
-                            <li><a href="javascript:;" title="软件2">VScode</a></li>
+                            <li><a href="javascript:;" title="软件1">GIT系列工具下载</a></li>
+                            <li><a href="javascript:;" title="软件1">前端开发软件下载</a></li>
+                            <li><a href="javascript:;" title="软件2">开发环境软件下载</a></li>
+                            <li><a href="javascript:;" title="软件2">日常必备软件下载</a></li>
+                            <li><a href="javascript:;" title="软件2">图像视频压缩软件下载</a></li>
                             <!-- <li><a href="localbrowse.jsp" title="更多">更多</a></li> -->
                         </ul>
                     </li>
                     <li><a href="#" title="经验分享" class="menu-nav-item">经验分享</a>
                         <ul class="menu-nav-item-list" style="display: none;">
-                            <li><a href="javascript:;" title="git的基本使用">git的基本使用</a></li>
+                            <li><a href="javascript:;" title="window安装">git&github的使用</a></li>
+                            <li><a href="javascript:;" title="window安装">订阅RSS的使用</a></li>
+                            <li><a href="javascript:;" title="window安装">脚本语言的使用</a></li>
                             <li><a href="javascript:;" title="该网页的制作">该网页的制作</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" title="导航推荐" class="menu-nav-item">导航推荐</a>
+                        <ul class="menu-nav-item-list" style="display: none;">
+                            <!-- <li><a href="javascript:;" title="git的基本使用">git的基本使用</a></li>
+                            <li><a href="javascript:;" title="该网页的制作">该网页的制作</a></li> -->
                         </ul>
                     </li>
                     <li><a href="#" title="其他" class="menu-nav-item">引用汇总</a>
                         <ul class="menu-nav-item-list" style="display: none;">
-                            <li><a href="javascript:;" title="引用链接">引用链接</a></li>
-                            <li><a href="javascript:;" title="引用链接">引用链接</a></li>
+                            <li><a href="https://gaz.ncl.edu.tw/" title="引用链接">模仿链接1：台湾小清新</a></li>
+                            <li><a href="https://cloud.tencent.com/developer/labs" title="引用链接">模仿链接2：腾讯实验卡片</a></li>
+                            <li><a href="https://pc.qq.com" title="引用链接">模仿链接3：腾讯软件管家</a></li>
+                            <li><a href="http://alg.xjegi.com/CN/10.12118/j.issn.1000-6060.2020.04.01" title="引用链接">模仿链接4：干旱区地理</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" title="其他" class="menu-nav-item">留言测试</a>
+                        <ul class="menu-nav-item-list" style="display: none;">
+                            <li><a href="https://gaz.ncl.edu.tw/" title="引用链接">模仿链接1：台湾小清新</a></li>
+                            <li><a href="https://cloud.tencent.com/developer/labs" title="引用链接">模仿链接2：腾讯实验卡片</a></li>
+                            <li><a href="https://pc.qq.com" title="引用链接">模仿链接3：腾讯软件管家</a></li>
+                            <li><a href="http://alg.xjegi.com/CN/10.12118/j.issn.1000-6060.2020.04.01" title="引用链接">模仿链接4：干旱区地理</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -108,7 +130,6 @@
         </div>
     </div>
     <!-- header End -->
-
     <!-- main Start -->
     <div class="main" style="display: block;">
         <div class="main-top1">
@@ -118,8 +139,7 @@
                     <a href="./teach_windows.html">
                         <div class="lab-gly-experiment-summary">
                             <!-- 背景色 -->
-                            <div class="logo-mask"
-                                style="">
+                            <div class="logo-mask" style="">
                             </div>
                             <!-- 背景图片 -->
                             <div class="logo-bg"></div>
@@ -213,7 +233,7 @@
                                     RSS的使用（未）
                                 </h3>
                                 <p class="owner">
-                                   xml,feed
+                                    xml,feed
                                 </p>
                                 <div class="desc">
                                     <div class="desc-item">
@@ -250,7 +270,7 @@
                             <!-- 信息 -->
                             <div class="info-container">
                                 <h3 class="title">
-                                   wordpress的安装与使用(未)
+                                    wordpress的安装与使用(未)
                                 </h3>
                                 <p class="owner">
                                     wordpress
@@ -278,14 +298,16 @@
                 <div class="download_card">
                     <div class="download_card_inner">
                         <div class="download_img">
-                            <div class="download_img_inner" style="background-image: url(./img/software/git_1.png);"></div>
+                            <div class="download_img_inner" style="background-image: url(./img/software/git_1.png);">
+                            </div>
                             <!-- https://git-scm.com/images/branching-illustration@2x.png -->
                         </div>
                         <div class="download_information">
                             <div class="download_name">git</div>
                             <div class="download_time">2020-11-12</div>
                             <div class="download_description">一款免费、开源的分布式版本控制系统</div>
-                            <a href="https://dl.softmgr.qq.com/original/Development/Git-2.29.2-64-bit.exe" class="download_hide">
+                            <a href="https://dl.softmgr.qq.com/original/Development/Git-2.29.2-64-bit.exe"
+                                class="download_hide">
                                 <span>高速下载</span>
                             </a>
                         </div>
@@ -294,13 +316,15 @@
                 <div class="download_card">
                     <div class="download_card_inner">
                         <div class="download_img">
-                            <div class="download_img_inner"  style="background-image: url(./img/software/chrome_1.jpg);"></div>
+                            <div class="download_img_inner" style="background-image: url(./img/software/chrome_1.jpg);">
+                            </div>
                         </div>
                         <div class="download_information">
                             <div class="download_name">Chrome</div>
                             <div class="download_time">2020-11-10</div>
                             <div class="download_description">快，好用；安装插件需要上网方便</div>
-                            <a href="https://dl.softmgr.qq.com/original/Browser/86.0.4240.183_chrome_installer_64.exe" class="download_hide">
+                            <a href="https://dl.softmgr.qq.com/original/Browser/86.0.4240.183_chrome_installer_64.exe"
+                                class="download_hide">
                                 <span>高速下载</span>
                             </a>
                         </div>
@@ -309,13 +333,15 @@
                 <div class="download_card">
                     <div class="download_card_inner">
                         <div class="download_img">
-                            <div class="download_img_inner" style="background-image: url(./img/software/firefox_1.jpg);"></div>
+                            <div class="download_img_inner"
+                                style="background-image: url(./img/software/firefox_1.jpg);"></div>
                         </div>
                         <div class="download_information">
                             <div class="download_name">firefox</div>
                             <div class="download_time">2020-11-12</div>
                             <div class="download_description">开源免费，另上网方便</div>
-                            <a href="https://dl.softmgr.qq.com/original/Browser/Firefox_Setup_82.0.3_bzb64.exe" class="download_hide">
+                            <a href="https://dl.softmgr.qq.com/original/Browser/Firefox_Setup_82.0.3_bzb64.exe"
+                                class="download_hide">
                                 <span>高速下载</span>
                             </a>
                         </div>
@@ -324,13 +350,15 @@
                 <div class="download_card">
                     <div class="download_card_inner">
                         <div class="download_img">
-                            <div class="download_img_inner" style="background-image: url(./img/software/vscode_1.png);"></div>
+                            <div class="download_img_inner" style="background-image: url(./img/software/vscode_1.png);">
+                            </div>
                         </div>
                         <div class="download_information">
                             <div class="download_name">VScode</div>
                             <div class="download_time">2020-11-12</div>
                             <div class="download_description">开源好用的编辑器，插件丰富</div>
-                            <a href="https://dl.softmgr.qq.com/original/Development/VSCodeUserSetup-x64-1.51.0.exe" class="download_hide">
+                            <a href="https://dl.softmgr.qq.com/original/Development/VSCodeUserSetup-x64-1.51.0.exe"
+                                class="download_hide">
                                 <span>高速下载</span>
                             </a>
                         </div>
@@ -411,7 +439,8 @@
                             </a>
                         </p>
                         <div class="card_news_entry_summary">
-                            <p>联邦投票协助计划（FVAP）和国务院网站关于缺席投票是提供给在海外居住的美国人的最新的投票信息资源。请访问这些网站了解关于登记和投票的截至日期和步骤。</p </div>
+                            <p>联邦投票协助计划（FVAP）和国务院网站关于缺席投票是提供给在海外居住的美国人的最新的投票信息资源。请访问这些网站了解关于登记和投票的截至日期和步骤。
+                            </p </div>
                         </div>
                     </div>
                 </div>
@@ -437,12 +466,11 @@
                             </a>
                         </p>
                         <div class="card_news_entry_summary">
-                            <p>联邦投票协助计划（FVAP）和国务院网站关于缺席投票是提供给在海外居住的美国人的最新的投票信息资源。请访问这些网站了解关于登记和投票的截至日期和步骤。</p </div>
+                            <p>联邦投票协助计划（FVAP）和国务院网站关于缺席投票是提供给在海外居住的美国人的最新的投票信息资源。请访问这些网站了解关于登记和投票的截至日期和步骤。
+                            </p </div>
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </div>
         <div class="main-top2">
@@ -477,145 +505,101 @@
             </div>
         </div>
         <!-- main End -->
+    </div>
+    <!-- foot Start -->
+    <div class="foot" style="display: block;">
+        <div class="foot-container">
+            <div class="footer_logo">
+                <img src="./img/test.png" alt="" class="img-responsive">
+            </div>
+            <!-- foot infor Start -->
+            <div class="footer_info">
+                <ul class="infor-link">
+                    <li>
+                        <a href="http://pkcile.cn">
+                            <span class="infor-link-mysite">个人主页</span>
+                        </a>
+                    </li>
 
-        <!-- foot Start -->
-        <div class="foot" style="display: block;">
-            <div class="foot-container">
-                <div class="footer_logo">
-                    <img src="./img/taiwan/f_logo.png" alt="" class="img-responsive">
-                </div>
-                <!-- foot infor Start -->
-                <div class="footer_info">
-                    <ul class="infor-link">
-                        <li>
-                            <a href="http://pkcile.cn">
-                                <span class="infor-link-mysite">个人主页</span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="https://github.com/pkcile">
-                                <span class="infor-link-github">github主页</span>
-                            </a>
-                        </li>
-                    </ul>
-                    <!-- 个人信息 Start -->
-                    <ul class="infor-infor">
-                        <li>
-                            <span class="infor-name">王朋坤</span>
-                            <span class="infor-major infor-link-style">地理信息科学</span>
-                        </li>
-                        <li>
-                            <span class="infor-email">邮箱:</span>
-                            <span>
-                                <a href="mailto:wangpengkun2012@hotmail.com?subject=The%20subject%20of%20the%20email&body=hello%0D%0Awelcome%20to%20my%20site%0D%0A%0D%0A%0D%0A"
-                                    class="infor-emailName infor-link-style">wangpengkun2012@hotmail.com</a>
-                                <!--
+                    <li>
+                        <a href="https://github.com/pkcile">
+                            <span class="infor-link-github">github主页</span>
+                        </a>
+                    </li>
+                </ul>
+                <!-- 个人信息 Start -->
+                <ul class="infor-infor">
+                    <li>
+                        <span class="infor-name">王朋坤</span>
+                        <span class="infor-major infor-link-style">地理信息科学</span>
+                    </li>
+                    <li>
+                        <span class="infor-email">邮箱:</span>
+                        <span>
+                            <a href="mailto:wangpengkun2012@hotmail.com?subject=The%20subject%20of%20the%20email&body=hello%0D%0Awelcome%20to%20my%20site%0D%0A%0D%0A%0D%0A"
+                                class="infor-emailName infor-link-style">wangpengkun2012@hotmail.com</a>
+                            <!--
                                   &cc=pkcile@qq.com
                                   &bcc=pkcile@hotmail.com
                                   wangpengkun2012@hotmail.com
                              -->
 
-                            </span>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="infor-phoneName">手机:</span>
+                        <span class="infor-phone infor-link-style">18579164832</span>
+                    </li>
+                </ul>
+                <!-- 个人信息 End -->
+
+                <!-- 统计信息 Start -->
+                <ul class="infor-update">
+                    <li>
+                        <span class="update-title">页面初次提交时间:</span>
+                        <span class="update-infor" id="update-infor-start">2020-11-12</span>
+                    </li>
+                    <li>
+                        <span class="update-title">距今天:</span>
+                        <span class="update-infor" id="update-infor-last"></span>
+                    </li>
+                    <li>
+                        <span class="update-title">子页面页数:</span>
+                        <span class="update-infor">3</span>
+                    </li>
+                </ul>
+                <!-- 统计信息 End -->
+
+                <!-- 备案信息 Start-->
+                <ul class="infor-ICP">
+                    <li>
+                        <span class="ICP-title">备案号:</span>
+                        <a href="https://beian.miit.gov.cn/">
+                            <span class="ICP">冀ICP备2020027680号</span>
+                        </a>
+
+                    </li>
+                </ul>
+                <!-- 备案信息 End-->
+            </div>
+            <!-- foot infor End -->
+
+            <div class="footer_icon">
+                <div class="footer_theme">
+                    <span>主题：</span>
+                    <ul>
+                        <li><a href="#" class="footer_theme" onclick="footer_theme1()" title="主题1">原</a>
                         </li>
-                        <li>
-                            <span class="infor-phoneName">手机:</span>
-                            <span class="infor-phone infor-link-style">18579164832</span>
+                        <li><a href="#" class="footer_theme" onclick="footer_theme2()" title="主题2">深</a>
+                        </li>
+                        <li><a href="#" class="footer_theme" onclick="footer_theme3()" title="主题3">淡</a>
                         </li>
                     </ul>
-                    <!-- 个人信息 End -->
-
-                    <!-- 统计信息 Start -->
-                    <ul class="infor-update">
-                        <li>
-                            <span class="update-title">页面初次提交时间:</span>
-                            <span class="update-infor" id="update-infor-start">2020-11-12</span>
-                        </li>
-                        <li>
-                            <span class="update-title">距今天:</span>
-                            <span class="update-infor" id="update-infor-last"></span>
-                        </li>
-                        <li>
-                            <span class="update-title">子页面页数:</span>
-                            <span class="update-infor">3</span>
-                        </li>
-                    </ul>
-                    <!-- 统计信息 End -->
-
-                    <!-- 备案信息 Start-->
-                    <ul class="infor-ICP">
-                        <li>
-                            <span class="ICP-title">备案号:</span>
-                            <a href="https://beian.miit.gov.cn/">
-                                <span class="ICP">冀ICP备2020027680号</span>
-                            </a>
-
-                        </li>
-                    </ul>
-                    <!-- 备案信息 End-->
-                </div>
-                <!-- foot infor End -->
-
-                <div class="footer_icon">
-                    <div class="footer_theme">
-                        <span>主题：</span>
-                        <ul>
-                            <li><a href="#" class="footer_theme" title="主题1">浅</a></li>
-                            <li><a href="#" class="footer_theme" title="主题2">中</a></li>
-                            <li><a href="#" class="footer_theme" title="主题1">深</a></li>
-                        </ul>
-                    </div>
                 </div>
             </div>
         </div>
-        <!-- foot End -->
-<!-- 
-    -------测试-------
-
-    知识梳理：
-    1.::before
-    2.cookie
-    3.icon 
-    4.随机生成不同颜色背景
-    5.map映射
-    6.获取时间倒计时
-    7.适应移动端
-    8.RSS添加 
-    9.json的使用
-    10.ul的使用
-    11.em的使用
-    12.a标签title的作用
-    13.表格的使用
-    14.点击换样式文件
-    15.黄页：
-
-    内容：
-
-    1.git的注册
-    2.仓库的创建
-    3.githhub Page的创建、及使用，个性化域名
-    4.利用git对github/gitee的推送、常见的git命令、连接两个仓库、提高速度
-    5.window平台，利用脚本来定时推送，更新内容
-    6.windows使用技巧
-
-    1.服务器的购买
-    2.域名的购买
-    3.wordpress\论坛的使用  
-    
-    1em = 16px
-
-    news
-    四年一度的美国选举
-    闲暇时光
-    news老特准备下岗了
-    老特准备
-
-
-    
-    
-    
-
--->
+    </div>
+    <!-- foot End -->
 </body>
 
 </html>
@@ -636,26 +620,24 @@
                 number++;
 
             }
-
-
         })(i);
     }
 
     //footer infor-update 时间计算
     //位数转换
-    function transform_bit(two_bit) {
-        if ((two_bit / 10) < 1) {
+    // function transform_bit(two_bit) {
+    //     if ((two_bit / 10) < 1) {
 
-            two_bit = "0" + two_bit;
-            console.log("类型" + typeof (two_bit));
-        }
-        else {
-            console.log("失败");
-        }
-        console.log(two_bit);
-        return two_bit;
-    }
-    //显示
+    //         two_bit = "0" + two_bit;
+    //         console.log("类型" + typeof (two_bit));
+    //     } else {
+    //         console.log("失败");
+    //     }
+    //     console.log(two_bit);
+    //     return two_bit;
+    // }
+
+    //时间计算并显示
     function display() {
         var obj = new Date();
         var year = obj.getFullYear();
@@ -683,19 +665,17 @@
         //天数判断
 
         console.log(day);
-        if(arr_time[2] > day) {
+        if (arr_time[2] > day) {
             month = month - 1;
             day = day + 30 - arr_time[2];
-        }
-        else {
+        } else {
             day = day - arr_time[2];
         }
         //月份判断
-        if(arr_time[1] > month) {
+        if (arr_time[1] > month) {
             year = year - 1;
             month = month + 12 - arr_time[1];
-        }
-        else {
+        } else {
             month = month - arr_time[1];
         }
         //年份判断
@@ -703,7 +683,7 @@
         console.log(day);
         //写入span标签
         time_last.innerHTML = year + "年" + month + "月" + day + "天";
-    
+
     }
     display();
 
@@ -725,9 +705,93 @@
 
     //main-2 软件搜索
     var software_search = document.getElementById("software_search");
-    software_search.onclick = function(){
+    software_search.onclick = function () {
         var input_software_name = document.getElementById("input_software_name");
-        window.location.href="https://pc.qq.com/search.html#!keyword=" + input_software_name.value;
+        window.location.href = "https://pc.qq.com/search.html#!keyword=" + input_software_name.value;
+    }
+
+    // 点击调字体大小
+    function font_small_change() {
+        var navigation_font_size = document.getElementById("navigation-font-size");
+        navigation_font_size.style.fontSize = "1em";
+    }
+    function font_medium_change() {
+        var navigation_font_size = document.getElementById("navigation-font-size");
+        navigation_font_size.style.fontSize = "1.2em";
+    }
+    function font_large_change() {
+        var navigation_font_size = document.getElementById("navigation-font-size");
+        navigation_font_size.style.fontSize = "1.4em";
+    }
+
+    // 点击调样式
+    function footer_theme1() {
+        var link_theme1 = document.getElementById("body_header");
+        var link_theme2 = document.getElementById("body_main");
+        var link_theme3 = document.getElementById("body_footer");
+        link_theme1.href = './css/index/header1.css';
+    }
+    function footer_theme2() {
+        var link_theme1 = document.getElementById("body_header");
+        var link_theme2 = document.getElementById("body_main");
+        var link_theme3 = document.getElementById("body_footer");
+        link_theme1.href = './css/index/header2.css';
+    }
+    function footer_theme3() {
+        var link_theme1 = document.getElementById("body_header");
+        var link_theme2 = document.getElementById("body_main");
+        var link_theme3 = document.getElementById("body_footer");
+        link_theme1.href = './css/index/header3.css';
+        // link_theme2.href = '';
+        // link_theme3.href = '';
     }
 
 </script>
+
+
+<!---------测试-------
+
+    知识梳理：
+    1.::before
+    2.cookie
+    3.icon
+    4.随机生成不同颜色背景
+    5.map映射
+    6.获取时间倒计时
+    7.适应移动端
+    8.RSS添加
+    9.json的使用
+    10.ul的使用
+    11.em的使用
+    12.a标签title的作用
+    13.表格的使用
+    14.点击换样式文件
+    15.黄页：
+
+    内容：
+
+    1.git的注册
+    2.仓库的创建
+    3.githhub Page的创建、及使用，个性化域名
+    4.利用git对github/gitee的推送、常见的git命令、连接两个仓库、提高速度
+    5.window平台，利用脚本来定时推送，更新内容
+    6.windows使用技巧
+
+    1.服务器的购买
+    2.域名的购买
+    3.wordpress\论坛的使用
+
+    1em = 16px
+
+    news
+    四年一度的美国选举
+    闲暇时光
+    news老特准备下岗了
+    老特准备
+
+
+
+
+
+
+    -->

@@ -1,0 +1,84 @@
+  /* main Start */
+.main{
+      display: block;
+      overflow: hidden;
+      position: relative;
+  }
+.main-top1 {
+    width: 72%;
+    float: left;
+    background-color: #FFFFFF;
+    /* background-image: url('../../img/taiwan/gaz-main-bg.png'); */
+    background-repeat: no-repeat;
+
+}
+.main-top1-margin {
+    padding-left: 4px;
+}
+.main-top2 {
+    width: 28%;
+    float: left;
+    background-color: #FDF0F1;
+    position: relative;
+    height: 1300px;
+    /* border: 1px solid rebeccapurple; */
+
+}
+
+
+.test-css {
+    width: 100%;
+    height: 100px;
+    background-color: #FF9;
+}
+
+/* main右部分内容 */
+.main-top2-center{
+    width: 85%;
+    margin: 20px auto;
+}
+.main-top2-title{
+    font-weight: 600;
+    font-size: 1.2em;
+    line-height: 30px;
+    
+}
+.main-top2-title-line{
+    width: 40px;
+    height: 4px;
+    background-color: #F0848E;
+    margin: 0 0 10px 0;
+}
+ .main-top2-tools  li  ul{
+    display: block;
+    width: 100%;
+    /* height: ; */
+    padding: 5px 0 10px 15px;
+    border-bottom: 1px solid #F0848E;
+    color: #333333;
+}
+.main-top2-tools ul>:first-child{
+    /* color: red; */
+    padding: 5px 0;
+    font-weight: 600;
+
+}
+.main-top2-tools input{
+    width: 97%;
+    height: 2.5em;
+    margin: 5px auto;
+}
+button:focus{outline: 0;}
+.main-top2-tools button{
+    display: block;
+    width: 97%;
+    padding: 8px;
+    background-color: #6949A3;
+    color: white;
+    border-radius: .5em;
+    border-style: none;
+}
+.main-top2-tools button:hover{
+    background-color: rgb(38,37,119);
+}
+/* main End */

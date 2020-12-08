@@ -59,14 +59,14 @@
     height: 136px;
 }
 
-h3.title {
-    padding: 15px 5px 5px 5px;
+h3.title { 
+    padding: 11px 5px 5px 14px;
     font-weight: 500;
     font-size: 16px;
 }
 
 p.owner {
-    padding: 5px;
+    padding:  5px 0 0 15px;
     font-weight: 300;
 }
 
@@ -81,7 +81,7 @@ p.owner {
 /* 图标单位间位置 */
 .desc .desc-item {
     float: left;
-    margin: 10px 10px 10px 14px;
+    margin: 8px 20px 0px 20px;
 }
 
 /* 图标 */

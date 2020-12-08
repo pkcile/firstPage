@@ -1,7 +1,7 @@
 .foot {
     letter-spacing: .05em;
     line-height: 1.7em;
-   ;
+    overflow: hidden;
 }
 
 .footer_logo {

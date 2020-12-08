@@ -1,17 +1,26 @@
   /* main Start */
-  .main-top1 {
+.main{
+      display: block;
+      overflow: hidden;
+      position: relative;
+  }
+.main-top1 {
     width: 72%;
     float: left;
     background-color: #FFFFFF;
-    height: 1300px;
-    overflow: hidden;
+    /* background-image: url('../../img/taiwan/gaz-main-bg.png'); */
+    background-repeat: no-repeat;
 
+}
+.main-top1-margin {
+    padding-left: 4px;
 }
 .main-top2 {
     width: 28%;
     float: left;
-    background-color: #FDF0F1;
-    height: 1300px;
+    background-color: #EEEEFF;
+    position: relative;
+    height: 1000px;
     /* border: 1px solid rebeccapurple; */
 
 }
@@ -64,12 +73,12 @@ button:focus{outline: 0;}
     display: block;
     width: 97%;
     padding: 8px;
-    background-color: #6949A3;
+    background-color: rgb(38,37,119);
     color: white;
     border-radius: .5em;
     border-style: none;
 }
 .main-top2-tools button:hover{
-    background-color: rgb(38,37,119);
+    background-color:#00A457;
 }
 /* main End */

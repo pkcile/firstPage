@@ -7,3 +7,7 @@ https://developers.google.com/earth-engine/
 大白菜
 微软
 腾讯
+
+GIS
+当一个专业学的大而广，可能面临学不到适应社会的内容
+当一个专业学的局限而细致的，可能面临，这门领域不为所用的境遇

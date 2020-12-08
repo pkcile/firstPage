@@ -9,18 +9,18 @@ body {
 
 /* 鼠标选中颜色设置 Start */
 span::selection {
-    background: #FF9;
-    color: #F00;
+    background: #3390FF;
+    color: #fff;
 }
 
 span::-moz-selection {
-    background: #FF9;
-    color: #F00;
+    background: #3390FF;
+    color: #fff;
 }
 
 span::-webkit-selection {
-    background: #FF9;
-    color: #F00;
+    background: #3390FF;
+    color: #fff;
 }
 /* 鼠标选中颜色设置 End */
 

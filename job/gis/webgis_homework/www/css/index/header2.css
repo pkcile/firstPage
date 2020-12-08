@@ -1,0 +1,156 @@
+/* 头部深色样式 */
+.header{
+    position: relative;
+    z-index: 99;
+    /* background: #FFF url(../../img/test.png) no-repeat 50px top; */
+    background-size: auto 72px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    background-color: #EEEEFF;
+}
+/* 标题 Start */
+.header h1{
+    height: 68px;
+    position: relative;
+    left: 0;
+    top: 0;
+}
+.header h1 img{
+    display: block;
+    height: 55px;
+    padding: 6px 10px 7px 10px;
+}
+ /* 标题 End */
+
+/* 导航条 Start */
+.navigation{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+}
+.navigation ul{
+    font-size: 1em;
+    display: inline-block;
+    vertical-align: middle;
+    list-style: none;
+}
+.navigation ul li{
+    height: 2em;
+    font-size: .875em;
+    float: left;
+    display: block;
+    margin: 0 .2em;
+    /* padding: .3em .1em .3em .5em; */
+}
+
+.navigation ul li a{
+    display: inline-block;
+    padding: .3em .1em .3em .5em;
+    text-decoration: none;
+    /* background: url(../../img/taiwan/nav_libg.png) no-repeat left center; */
+}
+.navigation ul li .rss{
+    background-color: #262577;
+    padding: 0 0.5em !important;
+    background: #262577;
+    color: #fff;
+    padding: 0.5em;
+    border-radius: 3px;
+    vertical-align: middle;
+    margin: .3em .2em 0;
+    font-size: .875em;
+    font-weight: bold
+}
+ /* 导航条 End */
+
+/* 字体大小 Start */
+.font_size{
+    position: absolute;
+    top: 2em;
+    right: 3em;
+    display: inline; 
+}
+.font_size span{
+    line-height: 2em;
+    font-size: .875em;
+    /* background-color: #bb1; */
+
+}
+.font_size ul{
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.font_size ul li {
+    display: block;
+    background-color: #bbb;
+    width: 2em;
+    line-height: 2em;
+    font-size: .875em;
+    float: left;
+    margin: 0 .2em;
+    border-radius: 50%;
+}
+.font_size ul a{
+    display: block;
+    text-align: center;
+    line-height: 2em;
+    border-radius: 50%;
+    background: #fff;
+    color: #333;
+}
+.font_size ul a:hover{
+    background: #459DF5;
+    color: #fff;
+}
+a{
+    color: #333;
+    text-decoration: none;
+}
+ /* 字体大小 End */
+
+ /* menu Start */
+ .menu > ul {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-size: 1.125em;
+    background-color: #262577;
+ }   
+ .menu > ul > li{
+    display: inline-block;
+    vertical-align: top;
+    min-width: 10em;
+    text-align: left;
+ }
+ .menu > ul > li > ul{
+    display: block;
+    overflow: visible;
+    width: 180px;
+    background: rgba(0,0,0,0.7);
+    padding: 0;
+    z-index: 999999;
+    position: absolute;
+    top: auto;
+    list-style: none;
+    text-align: left;
+    font-size: .813em;
+    /* animation: showMenu .3s ease-out; */
+    list-style-type: none;
+ }
+ .menu > ul > li a{
+    display: block;
+    padding: 0 1em;
+    min-height: 2em;
+    line-height: 2em;
+    color: #fff;
+ }
+ .menu > ul > li a:hover{
+     color: #FFFF99;
+ }
+ .menu > ul > li > ul > li:hover{
+    background-color: #459DF5;
+ }
+ /* menu End */
