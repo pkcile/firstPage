@@ -85,9 +85,7 @@
 <body>
     <ul class="btn-wrap" style="z-index: 99;">
         <li class="btn function_disp_w_d" onclick="showText()">显示POI文字</li>
-        <li class="btn function_disp_w_d" onclick="hideText()">隐藏POI文字</li>
         <li class="btn function_disp_w_d" onclick="showIcon()">显示POI的Icon</li>
-        <li class="btn function_disp_w_d" onclick="hideIcon()">隐藏POI的Icon</li>
         <li class="btn" onclick="showPosition()">显示地点</li>
         <li class="btn" onclick="hidePosition()">隐藏地点</li>
         <li class="btn" onclick="showPositionLine">显示线路</li>
@@ -107,10 +105,15 @@
 <script>
     // var ggPoint = new BMap.Point(x,y);
     // 全局变量???
+    //位置信息
     var ggPoint;
     var map;
-    //存放餐厅点坐标
-    marker_canteen = [];
+    //餐厅点坐标
+    var marker_canteen = [];
+    //poi文字、poi图标
+    var i = [0, 0];
+    console.log(i[1]);
+
     console.log(marker_canteen);
     function loadJScript() {
         var script = document.createElement('script');
@@ -130,13 +133,13 @@
         map.addControl(scaleCtrl);
         var zoomCtrl = new BMapGL.ZoomControl();
         map.addControl(zoomCtrl);
-        var navi3DCtrl = new BMapGL.NavigationControl3D(); // 添加3D控件
+        // 添加3D控件
+        var navi3DCtrl = new BMapGL.NavigationControl3D(); 
         map.addControl(navi3DCtrl);
         //设置地图显示元素
         map.setDisplayOptions({
             poi: true //是否显示POI信息 
         })
-        hideIcon();
         //自定义样式
         // map.setMapStyleV2({styleJson:styleJson});
         //添加右键功能
@@ -197,6 +200,8 @@
 		// map.addControl(overView);          //添加默认缩略地图控件
 		// map.addControl(overViewOpen);   
 
+        //显示icon\文字
+        showIcon();
         //获取定位
         navigator.geolocation.getCurrentPosition(function (position) {
             // 坐标转换
@@ -217,7 +222,7 @@
     }
 
 
-    //function1: 坐标转换
+    // 坐标转换
     function convertor() {
         
         var convertor = new BMap.Convertor();
@@ -231,7 +236,6 @@
         console.log(ggPoint);
         // console.log(map);
     }
-    //function1: 坐标转换完之后的回调函数
     translateCallback = function (data) {
         if (data.status === 0) {
             var marker = new BMapGL.Marker(data.points[0]);
@@ -246,8 +250,7 @@
 
         }
     }
-
-
+   
     /*TEST*/
     // function position_get() {
     //     var test = [];
@@ -261,28 +264,35 @@
 
 
     function showText() {
-        map.setDisplayOptions({
-            poiText: true
-        })
+        if(i[0]%2 == 0) {
+                map.setDisplayOptions({
+                poiText: false
+            })
+        } 
+        else {
+                map.setDisplayOptions({
+                poiText: true
+            })
+        }
+        i[0]++;
+       
     }
-
-    function hideText() {
-        map.setDisplayOptions({
-            poiText: false
-        })
-    }
-
     function showIcon() {
-        map.setDisplayOptions({
-            poiIcon: true
-        })
+       
+        if(i[1]%2 == 0) {
+                map.setDisplayOptions({
+                poiIcon:false 
+            })
+        } 
+        else {
+                map.setDisplayOptions({
+                poiIcon: true
+            })
+        }
+        i[1]++;
     }
 
-    function hideIcon() {
-        map.setDisplayOptions({
-            poiIcon: false
-        })
-    }
+
     function showPosition() {
         marker_canteen[0] = 1;
         marker_canteen.push(new BMapGL.Marker(new BMapGL.Point(116.041137, 28.683057)));
@@ -303,6 +313,7 @@
         // alert(666);
 
     }
+
     function hidePosition() {
         marker_canteen = []; 
         map.clearOverlays();
