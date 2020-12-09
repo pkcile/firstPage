@@ -34,23 +34,20 @@
         }
 
         /* 显示隐藏POI控件 */
-        ul li,ul {
+        ul li {
             list-style: none;
-            padding: 0;
-            margin: 0;
         }
 
         .btn-wrap {
             z-index: 999;
-            width: 100%;
+            width: 226px;
             position: fixed;
-            top: 0px;
-            /* left: 10px; */
-            /* padding: 5px; */
+            bottom: 30px;
+            left: 10px;
+            padding: 10px;
             border-radius: 5px;
             background-color: rgba(265, 265, 265, 0.9);
             box-shadow: 0 2px 6px 0 rgba(27, 142, 236, 0.5);
-            /* margin: 15px; */
         }
 
         .btn {
@@ -62,7 +59,7 @@
             font-size: 14px;
             border: 1px solid rgba(27, 142, 236, 1);
             border-radius: 5px;
-            margin: 5px;
+            margin: 0 5px 6px;
             text-align: center;
             line-height: 30px;
         }
@@ -71,9 +68,6 @@
             background-color: rgba(27, 142, 236, 0.8);
             color: #fff;
             cursor: pointer;
-        }
-        .function_disp_w_d{
-            color: red;
         }
     </style>
     <!-- <script src="./style.json"></script> -->
@@ -84,21 +78,10 @@
 
 <body>
     <ul class="btn-wrap" style="z-index: 99;">
-        <li class="btn function_disp_w_d" onclick="showText()">显示POI文字</li>
-        <li class="btn function_disp_w_d" onclick="hideText()">隐藏POI文字</li>
-        <li class="btn function_disp_w_d" onclick="showIcon()">显示POI的Icon</li>
-        <li class="btn function_disp_w_d" onclick="hideIcon()">隐藏POI的Icon</li>
-        <li class="btn" onclick="showPosition()">显示地点</li>
-        <li class="btn" onclick="hidePosition()">隐藏地点</li>
-        <li class="btn" onclick="showPositionLine">显示线路</li>
+        <li class="btn" onclick="showText()">显示POI文字</li>
+        <li class="btn" onclick="hideText()">隐藏POI文字</li>
+        <li class="btn" onclick="showIcon()">显示POI的Icon</li>
         <li class="btn" onclick="hideIcon()">隐藏POI的Icon</li>
-        <li class="btn" onclick="hideIcon()">隐藏POI的Icon</li>
-        <!--
-             116.041137,28.683057 方荫楼
-             116.036857,28.68924 五食堂
-             116.037881,28.690136 一食堂
-             116.032747,28.687644 三食堂         
-        -->
     </ul>
     <div id="container"></div>
 </body>
@@ -109,9 +92,6 @@
     // 全局变量???
     var ggPoint;
     var map;
-    //存放餐厅点坐标
-    marker_canteen = [];
-    console.log(marker_canteen);
     function loadJScript() {
         var script = document.createElement('script');
         script.type = 'text/javascript';
@@ -147,32 +127,7 @@
                 callback: function () {
                     map.zoomIn();
                 }
-            }, 
-            {
-                text: '缩小一级',
-                callback: function () {
-                    map.zoomOut();
-                }
-            },
-            {
-                text: '缩小一级',
-                callback: function () {
-                    map.zoomOut();
-                }
-            },
-            {
-                text: '缩小一级',
-                callback: function () {
-                    map.zoomOut();
-                }
-            },
-            {
-                text: '缩小一级',
-                callback: function () {
-                    map.zoomOut();
-                }
-            },
-            {
+            }, {
                 text: '缩小一级',
                 callback: function () {
                     map.zoomOut();
@@ -183,19 +138,6 @@
             menu.addItem(new BMapGL.MenuItem(txtMenuItem[i].text, txtMenuItem[i].callback, 100));
         }
         map.addContextMenu(menu);
-
-        //添加控制
-        // var mapType1 = new BMapGL.MapTypeControl(
-		// {
-		// 	mapTypes: [BMAP_NORMAL_MAP,BMAP_HYBRID_MAP],
-		// 	anchor: BMAP_ANCHOR_TOP_LEFT
-        //     }
-        // );
-        // var overView = new BMap.OverviewMapControl();
-        // var overViewOpen = new BMap.OverviewMapControl({isOpen:true, anchor: BMAP_ANCHOR_BOTTOM_RIGHT});
-        // map.addControl(mapType1);          //2D图，混合图
-		// map.addControl(overView);          //添加默认缩略地图控件
-		// map.addControl(overViewOpen);   
 
         //获取定位
         navigator.geolocation.getCurrentPosition(function (position) {
@@ -219,23 +161,18 @@
 
     //function1: 坐标转换
     function convertor() {
-        
+        console.log(ggPoint);
         var convertor = new BMap.Convertor();
         var pointArr = [];
         pointArr.push(ggPoint);
-        console.log("ggPoint" + ggPoint);
         convertor.translate(pointArr, 1, 5, translateCallback);
         console.log(pointArr);
-        
-        console.log(pointArr);
-        console.log(ggPoint);
-        // console.log(map);
+        console.log(map);
     }
     //function1: 坐标转换完之后的回调函数
     translateCallback = function (data) {
         if (data.status === 0) {
             var marker = new BMapGL.Marker(data.points[0]);
-            ggPoint = data.points[0];
             map.addOverlay(marker);
             var label = new BMapGL.Label("转换后的百度坐标（正确）", {
                 offset: new BMapGL.Size(20, -10)
@@ -283,33 +220,6 @@
             poiIcon: false
         })
     }
-    function showPosition() {
-        marker_canteen[0] = 1;
-        marker_canteen.push(new BMapGL.Marker(new BMapGL.Point(116.041137, 28.683057)));
-        marker_canteen.push(new BMapGL.Marker(new BMapGL.Point(116.036857, 28.68924)));
-        marker_canteen.push(new BMapGL.Marker(new BMapGL.Point(116.037881, 28.690136)));
-        marker_canteen.push(new BMapGL.Marker(new BMapGL.Point(116.032747, 28.687644)));
-        console.log(marker_canteen);
-        // 在地图上添加点标记
-        // console.log(marker_canteen[1]);
-        // console.log(marker_canteen[1]);
-        for(var i = 0; i < marker_canteen.length; i++) {
-            map.addOverlay(marker_canteen[i]);
-        }
-       
-        // map.addOverlay(marker2);
-        // map.addOverlay(marker3);
-        // map.addOverlay(marker4);
-        // alert(666);
 
-    }
-    function hidePosition() {
-        marker_canteen = []; 
-        map.clearOverlays();
-
-            // map.addOverlay(marker);
-        map.addOverlay(new BMapGL.Marker(ggPoint));
-        // console.log(ggPoint);
-    }
     window.onload = loadJScript; // 异步加载地图
 </script>

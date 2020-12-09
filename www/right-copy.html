@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <meta charset="UTF-8">
+ <title></title>
+ <script src="https://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+  
+ <style type="text/css">
+.s-move-content-outer{border:1px black solid;width:200px;height:200px;position:relative;outline:none;user-select:none;/*overflow:hidden;*/;}
+ 
+.vpopmenu{
+    position:absolute;
+    width:200px;
+    border-radius:5px;
+    background-color:rgba(13,78,146,0.9);
+    border:rgb(13,78,146);
+    z-index:9999;
+    padding:2px;
+    display:none;
+}
+.vpopmenu>div{
+    padding:2px 2px 2px 30px;
+    height:24px;
+}
+.vpopmenu > div:hover {
+    background-color:rgba(245, 239, 89, 0.30);
+}
+ </style>
+ </head>
+ <body>
+ <div class="s-move-content-outer" tabIndex="1" >
+    <div class="s-move-content-header">div1</div>
+	<div>内容1</div>
+</div>
+ 
+<div id="r_menu" class="vpopmenu">
+    <div id="menu_create" onclick="createMenu();">新增</div>
+    <div id="menu_copy" onclick="copyMenu();">页内复制</div>
+	<div id="menu_copy" onclick="delMenu();">删除</div>
+</div>
+ </body>
+ <script type="text/javascript">
+bindMenu();
+var menu = document.getElementById("r_menu");
+function bindMenu(){
+	//给所有class=s-move-content-outer的div都加上右键菜单
+	var $BIPanel = $("div[class='s-move-content-outer']").contextmenu(function(ev) {
+		 var oEvent = ev || event;
+		 //自定义的菜单显示
+		 menu.style.display = "block";
+		 //让自定义菜单随鼠标的箭头位置移动
+		 menu.style.left = oEvent.clientX + "px";
+		 menu.style.top = oEvent.clientY + "px";
+		 //return false阻止系统自带的菜单，
+		 //return false必须写在最后，否则自定义的右键菜单也不会出现
+		 return false;  
+		
+	});
+}
+ 
+ //实现点击document，自定义菜单消失
+ document.onclick = function() { 
+	menu.style.display = "none";
+ }
+ </script>
+</html>

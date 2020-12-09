@@ -29,7 +29,7 @@
 .test-css {
     width: 100%;
     height: 100px;
-    background-color: #FF9;
+    background-color: #459DF5;
 }
 
 /* main右部分内容 */
@@ -46,7 +46,7 @@
 .main-top2-title-line{
     width: 40px;
     height: 4px;
-    background-color: #F0848E;
+    background-color: #459DF5;
     margin: 0 0 10px 0;
 }
  .main-top2-tools  li  ul{
@@ -54,7 +54,7 @@
     width: 100%;
     /* height: ; */
     padding: 5px 0 10px 15px;
-    border-bottom: 1px solid #F0848E;
+    border-bottom: 1px solid #459DF5;
     color: #333333;
 }
 .main-top2-tools ul>:first-child{
