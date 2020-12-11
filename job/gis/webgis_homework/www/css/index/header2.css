@@ -8,25 +8,34 @@
     background-color: #EEEEFF;
 }
 /* 标题 Start */
-.header h1{
-    height: 68px;
-    position: relative;
-    left: 0;
-    top: 0;
-}
-.header h1 img{
-    display: block;
-    height: 55px;
-    padding: 6px 10px 7px 10px;
+.navigator_test{
+    overflow: hidden;
+    /* background-color: #4A82FE; */
+    /* background-image: url('../../img/bg/shadow_light\ .png'), url('../../img/bg/pixels.png');
+    background-repeat: repeat-x, repeat; */
 }
  /* 标题 End */
 
 /* 导航条 Start */
+.navigator_left{
+    float: left;
+    width: 85%;
+    overflow: hidden;
+    /* background-color: #bfa; */
+    padding-bottom: 30px;
+}
+.navigator_right{
+    float: left;
+    width: 15%;
+    overflow: hidden;
+    /* background-color: #ffc; */
+}
+
 .navigation{
-    position: absolute;
+    /* position: absolute;
     top: 0;
-    left: 0;
-    padding: 10px;
+    left: 0; */
+    /* padding: 10px; */
 }
 .navigation ul{
     font-size: 1em;
@@ -40,7 +49,7 @@
     float: left;
     display: block;
     margin: 0 .2em;
-    /* padding: .3em .1em .3em .5em; */
+    padding: .3em .1em .3em .5em;
 }
 
 .navigation ul li a{
@@ -65,10 +74,10 @@
 
 /* 字体大小 Start */
 .font_size{
-    position: absolute;
-    top: 2em;
-    right: 3em;
-    display: inline; 
+    /* position: absolute; */
+    /* top: 2em;
+    right: 3em; */
+    /* display: inline;  */
 }
 .font_size span{
     line-height: 2em;

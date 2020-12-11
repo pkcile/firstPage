@@ -1,13 +1,13 @@
   /* main Start */
-.main{
+.main {
       display: block;
       overflow: hidden;
       position: relative;
+      /* background-color: #4A82FE; */
   }
 .main-top1 {
     width: 72%;
     float: left;
-    background-color: #FFFFFF;
     /* background-image: url('../../img/taiwan/gaz-main-bg.png'); */
     background-repeat: no-repeat;
 
