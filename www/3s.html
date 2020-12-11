@@ -10,19 +10,23 @@
     <!-- <link rel="stylesheet" href="./style.json"> -->
     <style>
         body,
-        html,
-        #container {
+        html{
             overflow: hidden;
             width: 100%;
             height: 100%;
             margin: 0;
             font-family: "微软雅黑";
         }
+        #container {
+           width: 100%;
+           height: 77%;
+        }
 
         /* 地图尾部标注 */
         .BMap_cpyCtrl span {
             display: none !important;
         }
+
         .anchorBL img {
             display: none;
         }
@@ -39,6 +43,7 @@
             padding: 0;
             margin: 0;
         }
+
         .btn-wrap {
             z-index: 999;
             width: 100%;
@@ -49,6 +54,7 @@
             box-shadow: 0 2px 6px 0 rgba(27, 142, 236, 0.5);
             /* margin: 15px; */
         }
+
         .btn {
             width: 100px;
             height: 30px;
@@ -62,28 +68,41 @@
             text-align: center;
             line-height: 30px;
         }
+
         .btn:hover {
             background-color: rgba(27, 142, 236, 0.8);
             color: #fff;
             cursor: pointer;
         }
+
         .function_disp_w_d {
             color: red;
         }
+
+        /* 地点描述 */
+        #descript_position{
+        height: 18%;
+        width: 100%;
+        background-color: #bfa;
+        }
+        /*地点汇总*/
+        #sum_position{
+        height: 5%;
+        width: 100%;
+        background-color: #fcd;
+        }
     </style>
-    <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=4ZdIV1KFQG8EqpNgn0c2OYdrVIGQnMTH"></script>
+    <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=4ZdIV1KFQG8EqpNgn0c2OYdrVIGQnMTH">
+    </script>
     <!-- <script src="https://api.map.baidu.com/api?type=webgl&v=1.0&ak=4ZdIV1KFQG8EqpNgn0c2OYdrVIGQnMTH"></script> -->
 </head>
 
 <body>
     <ul class="btn-wrap" style="z-index: 99;">
-        <li class="btn function_disp_w_d" onclick="showText()">显示POI文字</li>
-        <li class="btn function_disp_w_d" onclick="showIcon()">显示POI的Icon</li>
-        <li class="btn" onclick="showPosition()">显示地点</li>
-        <li class="btn" onclick="hidePosition()">隐藏地点</li>
-        <li class="btn" onclick="showPositionLine">显示线路</li>
-        <li class="btn" onclick="hideIcon()">隐藏POI的Icon</li>
-        <li class="btn" onclick="hideIcon()">隐藏POI的Icon</li>
+        <li class="btn function_disp_w_d" onclick="showText()">POI文字显示</li>
+        <li class="btn function_disp_w_d" onclick="showIcon()">POI的Icon显示</li>
+        <li class="btn" onclick="showPosition()">地点显示</li>
+        <li class="btn" onclick="showPositionLine()">线路显示</li>
         <!--
              116.041137,28.683057 方荫楼
              116.036857,28.68924 五食堂
@@ -92,6 +111,8 @@
         -->
     </ul>
     <div id="container"></div>
+    <div id="descript_position"></div>
+    <div id="sum_position"></div>
 </body>
 
 </html>
@@ -102,7 +123,8 @@
     //餐厅点坐标
     var marker_canteen = [];
     //poi文字、poi图标
-    var i = [0, 0];
+    var iii01 = [0, 0, 0, 0, 0];
+    var polyline;
 
     function loadJScript() {
         var script = document.createElement('script');
@@ -110,12 +132,68 @@
         script.src = 'https://api.map.baidu.com/api?type=webgl&v=1.0&ak=4ZdIV1KFQG8EqpNgn0c2OYdrVIGQnMTH&callback=init';
         document.body.appendChild(script);
     }
-
+    window.onload = loadJScript; // 异步加载地图
     function init() {
         var static_point = new BMapGL.Point(116.038525, 28.68618);
         map = new BMapGL.Map('container'); // 创建Map实例
         map.enableScrollWheelZoom(); // 启用滚轮放大缩小
         map.centerAndZoom(static_point, 16);
+        // 创建折线
+        polyline = new BMapGL.Polyline([
+            new BMapGL.Point(116.041137, 28.683057),
+            new BMapGL.Point(116.036857, 28.68924),
+            new BMapGL.Point(116.037881, 28.690136),
+            new BMapGL.Point(116.032747, 28.687644)
+                //  116.041137,28.683057 方荫楼
+                //  116.036857,28.68924 五食堂
+                //  116.037881,28.690136 一食堂
+                //  116.032747,28.687644 三食堂  
+                //  116.032548,28.688138  三栋饭卡充值办理，问题解决
+        ], {
+            strokeColor: 'blue',
+            strokeWeight: 2,
+            strokeOpacity: 0.5
+        });
+        // 批量绑定事件
+        var clickEvts = ['click', 'dblclick', 'rightclick'];
+        var moveEvts = ['mouseover', 'mouseout'];
+        var overlays = [polyline];
+
+        for (let i = 0; i < clickEvts.length; i++) {
+            const event = clickEvts[i];
+            for (let j = 0; j < overlays.length; j++) {
+                const overlay = overlays[j];
+                overlay.addEventListener(event, e => {
+                    switch (event) {
+                        case 'click':
+                            var res = overlay.toString() +  '被单击!';
+                            break;
+                        case 'dbclick':
+                            var res = overlay.toString() + '被双击!';
+                            break;
+                        case 'rightclick':
+                            var res = overlay.toString() + '被右击!';
+                    }
+                    alert(res);
+                });
+            }
+        }
+        for (let i = 0; i < moveEvts.length; i++) {
+            const event = moveEvts[i];
+            for (let j = 1; j < overlays.length; j++) {
+                const overlay = overlays[j];
+                overlay.addEventListener(event, e => {
+                    switch (event) {
+                        case 'mouseover':
+                            overlay.setFillColor('#6f6cd8')
+                            break;
+                        case 'mouseout':
+                            overlay.setFillColor('#fff');
+                            break;
+                    }
+                });
+            }
+        }
         //添加比例尺
         var scaleCtrl = new BMapGL.ScaleControl();
         map.addControl(scaleCtrl);
@@ -151,6 +229,19 @@
         map.addContextMenu(menu);
         //显示icon、文字
         showIcon();
+        showText();
+        //镂空图形
+        var bd = new BMapGL.Boundary();
+        bd.get('南昌市', function (rs) {
+            // console.log('外轮廓：', rs.boundaries[0]);
+            // console.log('内镂空：', rs.boundaries[1]);
+            var hole = new BMapGL.Polygon(rs.boundaries, {
+                fillColor: 'red',
+                fillOpacity: 0.0
+            });
+            map.addOverlay(hole);
+        });
+
         //获取定位
         navigator.geolocation.getCurrentPosition(function (position) {
             // 坐标转换
@@ -169,6 +260,7 @@
         });
 
     }
+   
 
     // 坐标转换
     function convertor() {
@@ -180,20 +272,56 @@
     }
     translateCallback = function (data) {
         if (data.status === 0) {
-            var marker = new BMapGL.Marker(data.points[0]);
+            // 创建小车图标
+            var myIcon = new BMapGL.Icon("./img/1.png", new BMapGL.Size(52, 26));
+            var marker = new BMapGL.Marker(data.points[0], {
+                icon: myIcon,
+                enableDragging: true,
+            });
             ggPoint = data.points[0];
             map.addOverlay(marker);
             var label = new BMapGL.Label("转换后的百度坐标（正确）", {
                 offset: new BMapGL.Size(20, -10)
             });
             marker.setLabel(label); //添加百度label
-            // map.centerAndZoom(data.points[0], 16);
-            // map.setCenter(data.points[0]);
+             
+            // 创建图文信息窗口
+            var sContent = `
+                <div>
+                    <h4 style='margin:0 0 5px 0;'>天安门</h4>
+                    <img style='float:right;margin:0 4px 22px' id='imgDemo' src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1607689593112&di=c64c7fa131bff2f5caef27ada0ab9e1d&imgtype=0&src=http%3A%2F%2Fandroid-wallpapers.25pp.com%2Ffs01%2F2015%2F01%2F16%2F1%2F0_fb62a937483f05de07512842d3496144_900x675.jpg' width='139' height='104'/>
+                    <p style='margin:0;line-height:1.5;font-size:13px;text-indent:2em'>
+                        天安门坐落在中国北京市中心,故宫的南侧,与天安门广场隔长安街相望,是清朝皇城的大门...
+                    </p>
+                </div>
+                `;
+            var infoWindow = new BMapGL.InfoWindow(sContent);
+            // marker添加点击事件
+            marker.addEventListener('click', function () {
+                this.openInfoWindow(infoWindow);
+                // 图片加载完毕重绘infoWindow
+                document.getElementById('imgDemo').onload = function () {
+                    infoWindow.redraw(); // 防止在网速较慢时生成的信息框高度比图片总高度小，导致图片部分被隐藏
+                };
+            });
+            // 创建信息窗口
+            // var opts = {
+            //     width: 200,
+            //     height: 100,
+            //     title: '故宫博物院'
+            // };
+            // var infoWindow = new BMapGL.InfoWindow('地址：北京市东城区王府井大街88号乐天银泰百货八层', opts);
+            // // 点标记添加点击事件
+            // marker.addEventListener('click', function () {
+            //     map.openInfoWindow(infoWindow, ggPoint); // 开启信息窗口
+            // });
+            // 获取标记点的坐标
+            // alert(marker.getPosition(ggPoint).lat)
         }
     }
 
     function showText() {
-        if (i[0] % 2 == 0) {
+        if (iii01[0] % 2 == 0) {
             map.setDisplayOptions({
                 poiText: false
             })
@@ -202,13 +330,13 @@
                 poiText: true
             })
         }
-        i[0]++;
+        iii01[0]++;
 
     }
 
     function showIcon() {
 
-        if (i[1] % 2 == 0) {
+        if (iii01[1] % 2 == 0) {
             map.setDisplayOptions({
                 poiIcon: false
             })
@@ -217,26 +345,41 @@
                 poiIcon: true
             })
         }
-        i[1]++;
+        iii01[1]++;
     }
 
     function showPosition() {
-        marker_canteen[0] = 1;
-        marker_canteen.push(new BMapGL.Marker(new BMapGL.Point(116.041137, 28.683057)));
-        marker_canteen.push(new BMapGL.Marker(new BMapGL.Point(116.036857, 28.68924)));
-        marker_canteen.push(new BMapGL.Marker(new BMapGL.Point(116.037881, 28.690136)));
-        marker_canteen.push(new BMapGL.Marker(new BMapGL.Point(116.032747, 28.687644)));
-        console.log(marker_canteen);
-        // 在地图上添加点标记
-        for (var i = 0; i < marker_canteen.length; i++) {
-            map.addOverlay(marker_canteen[i]);
+        if (iii01[2] % 2 == 0) {
+            marker_canteen.push(new BMapGL.Marker(new BMapGL.Point(116.041137, 28.683057)));
+            marker_canteen.push(new BMapGL.Marker(new BMapGL.Point(116.036857, 28.68924)));
+            marker_canteen.push(new BMapGL.Marker(new BMapGL.Point(116.037881, 28.690136)));
+            marker_canteen.push(new BMapGL.Marker(new BMapGL.Point(116.032747, 28.687644)));
+             // 在地图上添加点标记
+             for (var i = 0; i < marker_canteen.length; i++) {
+                map.addOverlay(marker_canteen[i]);
+            }
+        } else {
+            for(var i = 0; i < marker_canteen.length; i++) {
+                map.removeOverlay(marker_canteen[i]);
+            }
+            // map.removeOverlay();
+            marker_canteen = [];
+            // 
+           
         }
+        iii01[2]++;
     }
 
-    function hidePosition() {
-        marker_canteen = [];
-        map.clearOverlays();
-        map.addOverlay(new BMapGL.Marker(ggPoint));
+    function showPositionLine() {
+        if (iii01[3] % 2 == 0) {
+            map.addOverlay(polyline); 
+        } else {
+            map.removeOverlay(polyline)
+        }
+        iii01[3]++;
+        
     }
-    window.onload = loadJScript; // 异步加载地图
+
+    
+   
 </script>
