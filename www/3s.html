@@ -159,9 +159,9 @@
         var moveEvts = ['mouseover', 'mouseout'];
         var overlays = [polyline];
 
-        for (let i = 0; i < clickEvts.length; i++) {
+        for (var i = 0; i < clickEvts.length; i++) {
             const event = clickEvts[i];
-            for (let j = 0; j < overlays.length; j++) {
+            for (var j = 0; j < overlays.length; j++) {
                 const overlay = overlays[j];
                 overlay.addEventListener(event, e => {
                     switch (event) {
@@ -178,9 +178,9 @@
                 });
             }
         }
-        for (let i = 0; i < moveEvts.length; i++) {
+        for (var i = 0; i < moveEvts.length; i++) {
             const event = moveEvts[i];
-            for (let j = 1; j < overlays.length; j++) {
+            for (var j = 1; j < overlays.length; j++) {
                 const overlay = overlays[j];
                 overlay.addEventListener(event, e => {
                     switch (event) {
