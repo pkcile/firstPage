@@ -27,11 +27,10 @@
 					teach_overview.style.display = "none";
 					teach_detail.style.display = "block";
 				}
-
 			}
 	</script>
 	<style type="text/css">
-		body{
+		body {
 			/* background-color: #E5DEFA; */
 			background-image: url(./img/bg.jpg);
 			background-repeat: no-repeat;
@@ -47,28 +46,39 @@
 		}
 		
 		/* v2ex */
-		/* .leftBar{
+		/* .leftBar {
 			float: left;
 			width: 0;
 		}
-		.rightBar{
+		.rightBar {
 			float: right;
 			width: 270px;
 			margin-right: 20px;
 		}
-		.mainBar{
+		.mainBar {
 			width: auto; 
 			width: 700px;
 			margin: 0 310px 0 20px;
 		}
 	 */
+	 .teach-overview-item-main{
+		 line-height: 25px;
+		 letter-spacing: .03em;
+	 }
+	 .teach-comments {
+		 font-weight: 400;
+		 font-size: 14px;
+		 color: #867c7c;
+		 /* color: #0092EE; */
+	 }
+	 
 	</style>
 </head>
 
 <body>
 	<div class="content">
-		<div class="leftBar"></div>
-		<div class="rightBar"></div>
+		<!-- <div class="leftBar"></div>
+		<div class="rightBar"></div> -->
 		<div class="mainBar">
 			<!-- 教程页 -->
 			<div class="teach-item">
@@ -79,7 +89,7 @@
 				<div class="teach-overview" id="teach-overview">
 					<div class="teach-overview-item">
 						<div class="teach-overview-item-head">
-							实验内容
+							实验主要内容
 						</div>
 						<div class="teach-overview-item-main">
 							安装Windows10操作系统
@@ -87,17 +97,46 @@
 					</div>
 					<div class="teach-overview-item">
 						<div class="teach-overview-item-head">
-							实验资源
+							实验大概流程
 						</div>
 						<div class="teach-overview-item-main">
-							一台X64/86电脑
+							1.利用U盘启动盘制作软件，将U盘制作为启动盘启动工具
 							<br>
-							一个闲置U盘，建议8G及以上内存
+							2.将下载好的windows10/8/7系统文件，拷到制作的U盘里的任意位置
+							<br>
+							3.打开电脑后，进入电脑的启动选择界面，直接选择该U盘；或进入BIOS界面，进而选择该U盘	
+							<br>
+							4.开机选择U盘后，然后进入PE系统后，即利用PE系统内的硬盘格式工具
 						</div>
 					</div>
 					<div class="teach-overview-item">
 						<div class="teach-overview-item-head">
-						（注释：未写完）*教程未完成~😢
+							实验硬件资源
+						</div>
+						<div class="teach-overview-item-main">
+							1.一台非苹果的电脑
+							<br>
+							2.一个闲置U盘
+							<span class="teach-comments">建议8G及以上内存，制作启动U盘几百兆（Ｍ）就够了，但如果空间大，可以放好几个系统版本镜像（ISO文件）</span>
+						</div>
+					</div>
+					<div class="teach-overview-item">
+						<div class="teach-overview-item-head">
+							实验软件资源
+						</div>
+						<div class="teach-overview-item-main">
+							1.一个制作启动Ｕ盘的软件 
+							<span class="teach-comments">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;推荐大白菜，类似的还有老毛桃之类的软件</span>
+							<br>
+							2.一个下载系统镜像的网站
+							<span class="teach-comments">推荐MSDN I Tell You, 微软巨硬的官方下载链接没那么好找但也能找到</span>
+							
+						</div>
+					</div>
+					<div class="teach-overview-item">
+						<div class="teach-overview-item-head">
+						<!-- （注释：未写完）*教程未完成~😢 -->
+						实验结果总结
 						</div>
 						<div class="teach-overview-item-main">
 							要有勇气走出第一步

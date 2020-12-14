@@ -120,6 +120,7 @@ a{
  .menu > ul > li{
     display: inline-block;
     vertical-align: top;
+    /* 所有主流浏览器都支持 min-width 属性 */
     min-width: 10em;
     text-align: left;
  }
@@ -135,7 +136,6 @@ a{
     list-style: none;
     text-align: left;
     font-size: .813em;
-    /* animation: showMenu .3s ease-out; */
     list-style-type: none;
  }
  .menu > ul > li a{

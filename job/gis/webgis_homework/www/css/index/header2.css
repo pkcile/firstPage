@@ -146,7 +146,6 @@ a{
     list-style: none;
     text-align: left;
     font-size: .813em;
-    /* animation: showMenu .3s ease-out; */
     list-style-type: none;
  }
  .menu > ul > li a{
