@@ -10,6 +10,7 @@
     background-color: #F5F5F5;
     font-size: 16px;
     border: 1px solid #DDDDDD;
+
 }
 .card-teach-header-item{
     padding: 13px;
@@ -31,6 +32,7 @@
     color: #1a73e8;
     font-weight: 500;
     font-size: 15px;
+    cursor: pointer;
 }
 /* 卡片子内容 */
 .card-detail-item {

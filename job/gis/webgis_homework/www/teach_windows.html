@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="utf-8">
 	<title>windows10的安装</title>
@@ -10,24 +11,24 @@
 	<link rel="stylesheet" href="./css/teach/teach_main.css" charset="utf-8">
 	<script>
 		window.onload = function () {
-				// 实验链接-隐藏
-				var lab_overview_link = document.getElementById("lab-overview-link");
-				var lab_book_link = document.getElementById("lab-book-link");
-				// 点击第一个导航链接
-				lab_overview_link.onclick = function() {
-					var teach_overview = document.getElementById("teach-overview");
-					var teach_detail = document.getElementById("teach-detail");
-					teach_overview.style.display = "block";
-					teach_detail.style.display = "none";
-				}
-				// 点击第二个导航链接
-				lab_book_link.onclick = function() {
-					var teach_overview = document.getElementById("teach-overview");
-					var teach_detail = document.getElementById("teach-detail");
-					teach_overview.style.display = "none";
-					teach_detail.style.display = "block";
-				}
+			// 实验链接-隐藏
+			var lab_overview_link = document.getElementById("lab-overview-link");
+			var lab_book_link = document.getElementById("lab-book-link");
+			// 点击第一个导航链接
+			lab_overview_link.onclick = function () {
+				var teach_overview = document.getElementById("teach-overview");
+				var teach_detail = document.getElementById("teach-detail");
+				teach_overview.style.display = "block";
+				teach_detail.style.display = "none";
 			}
+			// 点击第二个导航链接
+			lab_book_link.onclick = function () {
+				var teach_overview = document.getElementById("teach-overview");
+				var teach_detail = document.getElementById("teach-detail");
+				teach_overview.style.display = "none";
+				teach_detail.style.display = "block";
+			}
+		}
 	</script>
 	<style type="text/css">
 		body {
@@ -38,13 +39,14 @@
 			background-color: #29944C;
 			/* 暴露出问题 */
 		}
+
 		/* 页面主体 */
 		.content {
 			max-width: 1100px;
 			min-width: 600px;
 			margin: 0 auto;
 		}
-		
+
 		/* v2ex */
 		/* .leftBar {
 			float: left;
@@ -61,17 +63,17 @@
 			margin: 0 310px 0 20px;
 		}
 	 */
-	 .teach-overview-item-main{
-		 line-height: 25px;
-		 letter-spacing: .03em;
-	 }
-	 .teach-comments {
-		 font-weight: 400;
-		 font-size: 14px;
-		 color: #867c7c;
-		 /* color: #0092EE; */
-	 }
-	 
+		.teach-overview-item-main {
+			line-height: 25px;
+			letter-spacing: .03em;
+		}
+
+		.teach-comments {
+			font-weight: 400;
+			font-size: 14px;
+			color: #867c7c;
+			/* color: #0092EE; */
+		}
 	</style>
 </head>
 
@@ -104,7 +106,7 @@
 							<br>
 							2.将下载好的windows10/8/7系统文件，拷到制作的U盘里的任意位置
 							<br>
-							3.打开电脑后，进入电脑的启动选择界面，直接选择该U盘；或进入BIOS界面，进而选择该U盘	
+							3.打开电脑后，进入电脑的启动选择界面，直接选择该U盘；或进入BIOS界面，进而选择该U盘
 							<br>
 							4.开机选择U盘后，然后进入PE系统后，即可利用桌面的“大白菜一键装机”程序，选择你要将操作系统装在那个盘上，执行安装就好了
 							<br>
@@ -127,25 +129,26 @@
 							实验软件资源
 						</div>
 						<div class="teach-overview-item-main">
-							1.一个制作启动Ｕ盘的软件 
-							<span class="teach-comments">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;推荐大白菜，类似的还有老毛桃之类的软件</span>
+							1.一个制作启动Ｕ盘的软件
+							<span
+								class="teach-comments">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;推荐大白菜，类似的还有老毛桃之类的软件</span>
 							<br>
 							2.一个下载系统镜像的网站
 							<span class="teach-comments">推荐MSDN I Tell You, 微软巨硬的官方下载链接没那么好找但也能找到</span>
-							
+
 						</div>
 					</div>
 					<div class="teach-overview-item">
 						<div class="teach-overview-item-head">
-						<!-- （注释：未写完）*教程未完成~😢 -->
-						实验结果总结
+							<!-- （注释：未写完）*教程未完成~😢 -->
+							实验结果总结
 						</div>
 						<div class="teach-overview-item-main">
 							要有勇气走出第一步
 						</div>
 					</div>
 				</div>
-				<div class="teach-detail" id="teach-detail"  style="display: none;">
+				<div class="teach-detail" id="teach-detail" style="display: none;">
 					<div class="teach-detail-content" id="teach-detail-content">
 						<div class="teach-detail-content-head">目录</div>
 						<div class="teach-detail-content-close">
@@ -162,11 +165,11 @@
 								<div class="card-teach-header-item">
 									安装windows系统
 									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-									<a href="javascript:;"  id="process_picture">[步骤截图]</a>
+									<a href="javascript:;" id="process_picture">[步骤截图]</a>
 								</div>
 							</div>
 							<div class="card-teach-detail-main-step">
-								<div class="card-detail-card-header" >
+								<div class="card-detail-card-header">
 									<div class="card-detail-card-header-item">
 										步骤1：U盘启动盘制作
 									</div>
@@ -183,7 +186,8 @@
 												<a href="http://www.winbaicai.com/" target="blank">[链接]</a>
 											</div>
 											<div class="card-detail-card-detail" style="display: none;">
-												<div class="card-detail-card-detail-img"><img src="./img/card/1_system/1-1.png" alt=""></div>
+												<div class="card-detail-card-detail-img"><img
+														src="./img/card/1_system/1.png" alt=""></div>
 											</div>
 										</div>
 										<div class="card-detail-card-group">
@@ -194,7 +198,7 @@
 											</div>
 											<div class="card-detail-card-detail" style="display: none;">
 												<div class="card-detail-card-detail-img">
-													<img src="./img/card/1_system/2-1.png" alt="">
+													<img src="./img/card/1_system/2.png" alt="">
 												</div>
 											</div>
 										</div>
@@ -208,12 +212,13 @@
 												2.1 插入U盘后，按照默认模式，直接一键制作成USB启动盘即可
 											</div>
 											<div class="card-detail-card-detail" style="display: none;">
-												<div class="card-detail-card-detail-img"><img src="./img/card/1_system/2-2.png" alt=""></div>
+												<div class="card-detail-card-detail-img"><img
+														src="./img/card/1_system/3.png" alt=""></div>
 											</div>
 										</div>
 									</div>
 								</div>
-							
+
 							</div>
 							<div class="card-teach-detail-main-step">
 								<div class="card-detail-card-header">
@@ -234,7 +239,7 @@
 											</div>
 											<div class="card-detail-card-detail" style="display: none;">
 												<div class="card-detail-card-detail-img">
-													<img src="./img/card/1_system/2-3.png" alt="">
+													<img src="./img/card/1_system/4.png" alt="">
 												</div>
 											</div>
 										</div>
@@ -258,13 +263,10 @@
 											<div class="card-detail-card-descript">
 												2.1.将下载好的windows10文件复制到U盘即可
 											</div>
-											<div class="card-detail-card-detail" style="display: none;">
-												<div class="card-detail-card-detail-img"><img src="./img/bg.jpg" alt=""></div>
-											</div>
 										</div>
 									</div>
 								</div>
-							
+
 							</div>
 							<div class="card-teach-detail-main-step">
 								<div class="card-detail-card-header">
@@ -281,34 +283,36 @@
 											<div class="card-detail-card-descript">
 												1.1 电脑关机后，电脑插入U盘
 											</div>
-											<div class="card-detail-card-detail" style="display: none;">
+											<!-- <div class="card-detail-card-detail" style="display: none;">
 												<div class="card-detail-card-detail-img"><img src="./img/bg.jpg" alt=""></div>
-											</div>
+											</div> -->
 										</div>
 										<div class="card-detail-card-group">
 											<div class="card-detail-card-descript">
 												1.2 查询你的电脑对应的启动快捷键
 											</div>
-											<div class="card-detail-card-detail">
-												<div class="card-detail-card-detail-img"></div>
+											<div class="card-detail-card-detail" style="display: none;">
+												<div class="card-detail-card-detail-img">
+													<img src="./img/card/1_system/5.jpg" alt="">
+												</div>
 											</div>
 										</div>
 										<div class="card-detail-card-group">
 											<div class="card-detail-card-descript">
 												1.3 开机，待电脑进入系统前，连续点击键盘中的启动快捷键
-											</div>
-											<div class="card-detail-card-detail">
-												<div class="card-detail-card-detail-img"></div>
+												<div class="card-detail-card-group">
+													<div class="card-detail-card-descript">
+														1.4 进入启动首选项后，选择你的U盘
+													</div>
+													<div class="card-detail-card-detail" style="display: none;">
+														<div class="card-detail-card-detail-img">
+															<img src="./img/card/1_system/6.jpg" alt="">
+														</div>
+													</div>
+												</div>
 											</div>
 										</div>
-										<div class="card-detail-card-group">
-											<div class="card-detail-card-descript">
-												1.4 进入启动首选项后，选择你的U盘
-											</div>
-											<div class="card-detail-card-detail">
-												<div class="card-detail-card-detail-img"></div>
-											</div>
-										</div>
+
 									</div>
 									<div class="card-detail-item">
 										<div class="card-detail-item-header">
@@ -316,22 +320,28 @@
 										</div>
 										<div class="card-detail-card-group">
 											<div class="card-detail-card-descript">
+												2.1 进入PE界面后,来我们看接下来的操作视频😂
 											</div>
 											<div class="card-detail-card-detail" style="display: none;">
-												<div class="card-detail-card-detail-img"><img src="./img/bg.jpg" alt=""></div>
+												<div class="card-detail-card-detail-img">
+													<video controls="controls"
+														poster="http://www.zfengit.com/Public/upload/article/2017/11-16/5a0d5c3e15892.jpg">
+														<source
+															src="http://down.winbaicai.com:88/portal/20181208/7acc4c0990dcb5ed7443736c894686b3.mp4">
+														<source src="./video/喜刷刷.mp4">
+													</video>
+												</div>
 											</div>
 										</div>
+
 									</div>
 								</div>
-								
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>	
-		</div>
-			
-	</div>
+
+			</div>
 
 </body>
 <script>
@@ -339,48 +349,46 @@
 	var number_picture = 0;
 	//关闭目录
 	var content_close_button = document.getElementById("content-close");
-	content_close_button.onclick = function(){
+	content_close_button.onclick = function () {
 		var teach_detail_content = document.getElementById("teach-detail-content");
 		teach_detail_content.style.display = "none";
 	}
 	//打开关闭目录内容
 	var card_detail_content = document.getElementsByClassName("card-detail-card-header");
 	// alert(card_detail_content[0].innerHTML)
-	for(var i = 0; i < card_detail_content.length; i++) {
-        (function (arg) {
-            card_detail_content[i].onclick = function () { 
-				if(number_content % 2 == 0) {
+	for (var i = 0; i < card_detail_content.length; i++) {
+		(function (arg) {
+			card_detail_content[i].onclick = function () {
+				if (number_content % 2 == 0) {
 					var detail_card = document.getElementsByClassName("card-detail-card-main");
 					detail_card[arg].style.display = "none";
-				}
-				else {
-					var detail_card =  document.getElementsByClassName("card-detail-card-main");
+				} else {
+					var detail_card = document.getElementsByClassName("card-detail-card-main");
 					detail_card[arg].style.display = "block";
 				}
 				number_content++;
-            }
-        })(i);
+			}
+		})(i);
 	}
 	//过程截图展示
-		var process_picture = document.getElementById("process_picture");
-		process_picture.onclick = function () {
-			var picture_detail = document.getElementsByClassName("card-detail-card-detail");
+	var process_picture = document.getElementById("process_picture");
+	process_picture.onclick = function () {
+		var picture_detail = document.getElementsByClassName("card-detail-card-detail");
 
-			if (number_picture % 2 == 0) {
-				for (var i = 0; i < picture_detail.length; i++) {
-					picture_detail[i].style.display = "block";
-					// alert(i);
-				}
-				number_picture++;
+		if (number_picture % 2 == 0) {
+			for (var i = 0; i < picture_detail.length; i++) {
+				picture_detail[i].style.display = "block";
+				// alert(i);
 			}
-			else {
-				for (var i = 0; i < picture_detail.length; i++) {
-					picture_detail[i].style.display = "none";
-					// alert(i);
-				}
-				number_picture++;
+			number_picture++;
+		} else {
+			for (var i = 0; i < picture_detail.length; i++) {
+				picture_detail[i].style.display = "none";
+				// alert(i);
 			}
-		
+			number_picture++;
+		}
+
 	}
 </script>
 
