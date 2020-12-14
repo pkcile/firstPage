@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="file" type="file" οnchange="fileChange" />
+    进度：<span id="progress"></span>
+    <div id="box"></div>
+</body>
+<script>
+    var file = document.getElementById('file');
+    file.onchange = function (e) {
+        var files = e.target.files;
+        console.log(files);
+        console.log("\n");
+        console.log(files[0]);
+        //这个files就是获取的file文件的一个数组。之后你可以使用任何方式来操作它。
+        var file = files[0]; //比如这个file是图片
+    }
+    var file = document.getElementById('file');
+    var output = document.getElementById('box');
+    var progress = document.getElementById('progress');
+    //onchange事件
+    file.onchange = function (e) {
+        console.log(e);
+        var files = e.target.files;
+        var file0 = files[0];
+        console.log(file0.size, file0.name, file0.type);
+        //fileReader对象
+        var fileReader = new FileReader();
+        var type = 'default';
+        //判断文件类型
+        if (/image/.test(file0.type)) {
+            fileReader.readAsDataURL(file0);
+            type = 'image';
+        } else {
+            fileReader.readAsText(file0, 'utf-8');
+            type = 'text';
+        }
+        //文件加载出错
+        fileReader.onerror = function () {
+            output.innerHTML = 'Could not read file, error code is ' + fileReader.error.code;
+        };
+        //加载成功后
+        fileReader.onload = function () {
+            console.log('onload')
+            var html = '';
+            switch (type) {
+                case 'image':
+                    html = '<img src=\"' + fileReader.result + '\">';
+                    break;
+                case 'text':
+                    html = fileReader.result;
+                    break;
+            }
+            output.innerHTML = html;
+            console.log(html);
+            
+        };
+        //进度条进度
+        fileReader.onprogress = function (event) {
+            if (event.lengthComputable) {
+                progress.innerHTML = event.loaded + '/' + event.total;
+                
+            }
+        }
+    }
+</script>
+
+</html>

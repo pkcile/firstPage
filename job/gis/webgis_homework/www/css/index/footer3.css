@@ -8,7 +8,7 @@
     width: 17%;
     float: left;
     height: 13em;
-    background-color: #E5DEFA;
+    background-color: #D6E7FD;
     /* cbf3ff */
 }
 
@@ -24,7 +24,7 @@
     width: 58%;
     float: left;
     height: 13em;
-    background-color: #E5DEFA;
+    background-color: #D6E7FD;
 
 }
 
@@ -51,7 +51,7 @@
 .footer_info .infor-link li {
     line-height: 2.2em;
     padding: 0 .2em;
-    background-color: rgba(92,57,153,.9);
+    background-color:#006BAF;
     border-radius: .3em;
 
 }
@@ -66,7 +66,7 @@
 
 .infor-link-style,
 .update-infor {
-    color: #5C3999;
+    color: #006BAF;
 }
 
 /* foot infor End */
@@ -75,7 +75,7 @@
     width: 25%;
     float: left;
     height: 13em;
-    background-color: #E5DEFA;
+    background-color: #D6E7FD;
     /* FFE4C4 */
 }
 
@@ -106,7 +106,7 @@
 
 }
 .footer_icon .footer_theme a:hover{
-    background-color: #5C3999;
+    background-color: #006BAF;
     color: #fff;
 
 }

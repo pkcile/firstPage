@@ -120,7 +120,7 @@ a{
  .menu > ul > li{
     display: inline-block;
     vertical-align: top;
-    min-width: 10em;
+    min-width: 15em;
     text-align: left;
  }
  .menu > ul > li > ul{

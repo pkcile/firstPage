@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://pv.sohu.com/cityjson?ie=utf-8"></script>
+    <script src="https://api.map.baidu.com/location/ip?ak=0QDaLukGIKr22SwQKTWNxGSz&ip=182.139.133.135" id="test"></script>
+    <!-- pv.sohu.com -->
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="myAnchor">8888</div>
+    <div id="test1">777</div>
+    <button onclick="gettest()">test</button>
+</body>
+<script>
+    $.getJSON("http://ip-api.com/json/?lang=zh-CN", function (data) {
+        // console.log(data.city);
+        var ip_api = [];
+        ip_api[0] = data.city;
+        ip_api[1] = data.query;
+        ip_api[2] = data.lat;
+        ip_api[3] = data.lon;
+        for(var i = 0; i < ip_api.length; i++) {
+            console.log(ip_api[i]);
+        }
+    })
+</script>
+
+</html>

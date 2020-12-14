@@ -73,10 +73,10 @@
                     <nav class="navigation">
                         <!-- 靠右 -->
                         <ul id="navigation-font-size">
-                            <li><a href="javascript:;" title="返回首页">返回首页</a></li>
-                            <li><a href="javascript:;" title="网站导航">网站导读</a></li>
-                            <!-- <li><a href="javascript:;" target="_blank" title="留言">留言</a></li> -->
-                            <li><a href="./index_en.html" title="English version">English</a></li>
+                            <li><a href="javascript:;" onclick="next_time_ok();" title="返回首页">返回首页</a></li>
+                            <li><a href="javascript:;" onclick="next_time_ok();" title="网站导航">网站导读</a></li>
+                            <!-- <li><a href="javascript:;" onclick="next_time_ok();" target="_blank" title="留言">留言</a></li> -->
+                            <li><a href="javascript:;" onclick="next_time_ok();"  title="English version">English</a></li>
                             <li><a href="http://pkcile.cn/www/feed/rss.xml" class="rss" title="RSS订阅">RSS</a></li>
                         </ul>
                         <div id="navigator-ip-infor">
@@ -108,10 +108,11 @@
                 <ul>
                     <li><a href="#" title="安装下载" class="menu-nav-item">安装下载</a>
                         <ul class="menu-nav-item-list" style="display: none;">
-                            <li><a href="javascript:;" title="window安装">window安装与使用</a></li>
-                            <li><a href="javascript:;" title="linux软件安装">mysql的安装与使用</a></li>
-                            <li><a href="javascript:;" title="linux软件安装">wordpress安装与使用</a></li>
-                            <li><a href="javascript:;" title="linux软件安装">前端相关软件下载</a></li>
+                            <li><a href="javascript:;"  onclick="next_time_ok();" title="window安装">window安装与使用</a></li>
+                            <li><a href="javascript:;"  onclick="next_time_ok();" title="linux软件安装">mysql的安装与使用</a></li>
+                            <li><a href="javascript:;"  onclick="next_time_ok();" title="linux软件安装">wordpress安装与使用</a></li>
+                            <li><a href="javascript:;"  onclick="next_time_ok();" title="windows软件安装">WNMP成套环境下载</a></li>
+                            <li><a href="javascript:;"  onclick="next_time_ok();" title="windows软件安装">前端相关软件下载</a></li>
                             <!-- <li><a href="javascript:;" title="软件1">前端开发软件下载</a></li>
                             <li><a href="javascript:;" title="软件2">开发环境软件下载</a></li>
                             <li><a href="javascript:;" title="软件2">日常必备软件下载</a></li>
@@ -120,36 +121,32 @@
                     </li>
                     <li><a href="#" title="hello world" class="menu-nav-item">使用分享</a>
                         <ul class="menu-nav-item-list" style="display: none;">
-                            <li><a href="javascript:;" title="window安装">git&github的使用</a></li>
-                            <li><a href="javascript:;" title="window安装">RSS的简单使用</a></li>
-                            <li><a href="javascript:;" title="window安装">bat脚本的使用</a></li>
-                            <li><a href="javascript:;" title="该网页的制作">该网页的制作流程</a></li>
-                            <li><a href="javascript:;" title="window安装">window使用技巧</a></li>
-                            <li><a href="javascript:;" title="window安装">“计算机”桌面图标显示</a></li>
-                            <li><a href="javascript:;" title="window安装">“小任务栏”显示设置</a></li>
+                            <li><a href="./teach_github.html" title="window安装">git&github的使用</a></li>
+                            <li><a href="./feed/rss.xml" target="blank" title="模仿他们写的即可">RSS的简单使用</a></li>
+                            <li><a href="javascript:;"   target="blank" onclick="next_time_ok();" title="window安装">bat脚本的使用</a></li>
+                            <li><a href="javascript:;"   target="blank" onclick="next_time_ok();" title="window安装">window使用技巧</a></li>
+                            <li><a href="javascript:;"   target="blank" onclick="next_time_ok();" title="window安装">“计算机”桌面图标显示</a></li>
+                            <li><a href="javascript:;"   target="blank" onclick="next_time_ok();" title="window安装">“小任务栏”显示设置</a></li>
+                            <li><a href="javascript:;"   target="blank" onclick="next_time_ok();" title="该网页的制作">该网页的制作流程</a></li>
                           
+                        </ul>
+                    </li>
+                    <!-- base64事情/编码??? -->
+                    <!-- <li><a href="#" title="其他" class="menu-nav-item">留言测试</a>
+                        <ul class="menu-nav-item-list" style="display: none;">
+                        </ul>
+                    </li> -->
+                    <li><a href="#" title="其他" class="menu-nav-item">引用汇总</a>
+                        <ul class="menu-nav-item-list" style="display: none;">
+                            <li><a href="https://gaz.ncl.edu.tw/" target="blank"  title="引用链接">模仿链接1：台湾小清新</a></li>
+                            <li><a href="https://cloud.tencent.com/developer/labs"  target="blank" title="引用链接">模仿链接2：腾讯实验卡片</a></li>
+                            <li><a href="https://pc.qq.com" target="blank" title="引用链接">模仿链接3：腾讯软件管家</a></li>
+                            <li><a href="http://alg.xjegi.com/CN/10.12118/j.issn.1000-6060.2020.04.01" target="blank" title="引用链接">模仿链接4：干旱区地理</a></li>
                         </ul>
                     </li>
                     <li >
                         <a href="#" title="网址推荐" class="menu-nav-item">导航推荐</a>
                         <ul class="menu-nav-item-list" style="display: none;">
-                        </ul>
-                    </li>
-                    <!-- base64事情/编码 -->
-                    <li><a href="#" title="其他" class="menu-nav-item">留言测试</a>
-                        <ul class="menu-nav-item-list" style="display: none;">
-                            <li><a href="https://gaz.ncl.edu.tw/" title="引用链接">模仿链接1：台湾小清新</a></li>
-                            <li><a href="https://cloud.tencent.com/developer/labs" title="引用链接">模仿链接2：腾讯实验卡片</a></li>
-                            <li><a href="https://pc.qq.com" title="引用链接">模仿链接3：腾讯软件管家</a></li>
-                            <li><a href="http://alg.xjegi.com/CN/10.12118/j.issn.1000-6060.2020.04.01" title="引用链接">模仿链接4：干旱区地理</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#" title="其他" class="menu-nav-item">引用汇总</a>
-                        <ul class="menu-nav-item-list" style="display: none;">
-                            <li><a href="https://gaz.ncl.edu.tw/" title="引用链接">模仿链接1：台湾小清新</a></li>
-                            <li><a href="https://cloud.tencent.com/developer/labs" title="引用链接">模仿链接2：腾讯实验卡片</a></li>
-                            <li><a href="https://pc.qq.com" title="引用链接">模仿链接3：腾讯软件管家</a></li>
-                            <li><a href="http://alg.xjegi.com/CN/10.12118/j.issn.1000-6060.2020.04.01" title="引用链接">模仿链接4：干旱区地理</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -326,8 +323,10 @@
                 <div class="download_card">
                     <div class="download_card_inner">
                         <div class="download_img">
-                            <div class="download_img_inner" style="background-image: url(./img/software/git_1.png);">
-                            </div>
+                            <a href="https://www.baidu.com" style="cursor: pointer;">
+                                <div class="download_img_inner" style="background-image: url(./img/software/git_1.png);">
+                                </div>
+                            </a> 
                             <!-- https://git-scm.com/images/branching-illustration@2x.png -->
                         </div>
                         <div class="download_information">
@@ -344,8 +343,11 @@
                 <div class="download_card">
                     <div class="download_card_inner">
                         <div class="download_img">
-                            <div class="download_img_inner" style="background-image: url(./img/software/chrome_1.jpg);">
-                            </div>
+                            <a href="https://www.baidu.com" style="cursor: pointer;">
+                                <div class="download_img_inner" style="background-image: url(./img/software/chrome_1.jpg);">
+                                </div>
+                            </a>
+                            
                         </div>
                         <div class="download_information">
                             <div class="download_name">Chrome</div>
@@ -361,8 +363,11 @@
                 <div class="download_card">
                     <div class="download_card_inner">
                         <div class="download_img">
-                            <div class="download_img_inner"
-                                style="background-image: url(./img/software/firefox_1.jpg);"></div>
+                            <a href="https://www.baidu.com" style="cursor: pointer;">
+                                <div class="download_img_inner" style="background-image: url(./img/software/firefox_1.jpg);">
+                                </div>
+                            </a>
+                           
                         </div>
                         <div class="download_information">
                             <div class="download_name">firefox</div>
@@ -378,8 +383,11 @@
                 <div class="download_card">
                     <div class="download_card_inner">
                         <div class="download_img">
-                            <div class="download_img_inner" style="background-image: url(./img/software/vscode_1.png);">
-                            </div>
+                            <a href="https://www.baidu.com" style="cursor: pointer;">
+                                <div class="download_img_inner" style="background-image: url(./img/software/vscode_1.png);">
+                                </div>
+                            </a>
+                           
                         </div>
                         <div class="download_information">
                             <div class="download_name">VScode</div>
@@ -392,6 +400,170 @@
                         </div>
                     </div>
                 </div>
+                <!------------------------------------------------------------------------------------------------------------>
+                <div class="download_card">
+                    <div class="download_card_inner">
+                        <div class="download_img">
+                            <a href="https://www.baidu.com" style="cursor: pointer;">
+                                <div class="download_img_inner" style="background-image: url(./img/software/8.png);">
+                                </div>
+                            </a>
+                            
+                        </div>
+                        <div class="download_information">
+                            <div class="download_name">capture</div>
+                            <div class="download_time">2020-12-15</div>
+                            <div class="download_description">付费，取色、截屏、录屏</div>
+                            <a href="https://dl.softmgr.qq.com/original/Picture/FSCaptureSetup94.exe"
+                                class="download_hide">
+                                <span>高速下载</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="download_card">
+                    <div class="download_card_inner">
+                        <div class="download_img">
+                            <a href="https://www.baidu.com" style="cursor: pointer;">
+                                <div class="download_img_inner" style="background-image: url(./img/software/9.png);">
+                                </div>
+                            </a>
+                           
+                        </div>
+                        <div class="download_information">
+                            <div class="download_name">HBrake</div>
+                            <div class="download_time">2020-12-15</div>
+                            <div class="download_description">可帮你把视频瘦身的软件</div>
+                            <a href="https://sm.myapp.com/original/multimedia/HandBrake-1.0.7-x86_64-Win_GUI.exe"
+                                class="download_hide">
+                                <span>高速下载</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="download_card">
+                    <div class="download_card_inner">
+                        <div class="download_img">
+                            <a href="https://www.baidu.com" style="cursor: pointer;">
+                                <div class="download_img_inner" style="background-image: url(./img/software/11.png);">
+                                </div>
+                            </a>
+                           
+                        </div>
+                        <div class="download_information">
+                            <div class="download_name">格式工厂</div>
+                            <div class="download_time">2020-12-15</div>
+                            <div class="download_description">开源好用的编辑器，插件丰富</div>
+                            <a href="https://dl.softmgr.qq.com/original/multimedia/FormatFactory_5.5.0.0_qqpc_setup.exe"
+                                class="download_hide">
+                                <span>高速下载</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="download_card">
+                    <div class="download_card_inner">
+                        <div class="download_img">
+                            <a href="https://www.baidu.com" style="cursor: pointer;">
+                                <div class="download_img_inner" style="background-image: url(./img/software/5.png);">
+                                </div>
+                            </a>
+                            
+                        </div>
+                        <div class="download_information">
+                            <div class="download_name">Tuner</div>
+                            <div class="download_time">2020-12-15</div>
+                            <div class="download_description">图片瘦身，不损坏exif</div>
+                            <a href="https://dl.softmgr.qq.com/original/Picture/imagetuner_7.0.exe"
+                                class="download_hide">
+                                <span>高速下载</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="download_card">
+                    <div class="download_card_inner">
+                        <div class="download_img">
+                            <a href="https://www.baidu.com" style="cursor: pointer;">
+                                <div class="download_img_inner" style="background-image: url(./img/software/12.png);">
+                                </div>
+                            </a>
+                            
+                        </div>
+                        <div class="download_information">
+                            <div class="download_name">WPS</div>
+                            <div class="download_time">2020-12-15</div>
+                            <div class="download_description">开源好用的编辑器，插件丰富</div>
+                            <a href="https://pacakge.cache.wpscdn.cn/wps/download/W.P.S.10228.12012.2019.exe"
+                                class="download_hide">
+                                <span>高速下载</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+              
+                <div class="download_card">
+                    <div class="download_card_inner">
+                        <div class="download_img">
+                            <a href="https://www.baidu.com" style="cursor: pointer;">
+                                <div class="download_img_inner" style="background-image: url(./img/software/6.png);">
+                                </div>
+                            </a>
+                        </div>
+                        <div class="download_information">
+                            <div class="download_name">Caesium</div>
+                            <div class="download_time">2020-12-15</div>
+                            <div class="download_description">把图片瘦身，可能损坏exif</div>
+                            <a href="https://sm.myapp.com/original/Picture/caesium-1.7.0-win.exe"
+                                class="download_hide">
+                                <span>高速下载</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="download_card">
+                    <div class="download_card_inner">
+                        <div class="download_img">
+                            <a href="https://www.baidu.com" style="cursor: pointer;">
+                                <div class="download_img_inner" style="background-image: url(./img/software/7.png);">
+                                </div>
+                            </a>
+                            
+                        </div>
+                        <div class="download_information">
+                            <div class="download_name">IDM</div>
+                            <div class="download_time">2020-12-15</div>
+                            <div class="download_description">下载器，下载USGS影像</div>
+                            <a href="https://dl.softmgr.qq.com/original/Download/idman638build15.exe"
+                                class="download_hide">
+                                <span>高速下载</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+               
+               
+                <div class="download_card">
+                    <div class="download_card_inner">
+                        <div class="download_img">
+                            <a href="https://www.baidu.com" style="cursor: pointer;">
+                                <div class="download_img_inner" style="background-image: url(./img/software/10.png);">
+                                </div>
+                            </a>
+                           
+                        </div>
+                        <div class="download_information">
+                            <div class="download_name">UPUPW</div>
+                            <div class="download_time">2020-12-15</div>
+                            <div class="download_description">wnmp环境轻松使用</div>
+                            <a href="https://www.upupw.net/nphp70/n167.html"
+                                class="download_hide">
+                                <span>高速下载</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- <div class="main-line" style="width: 100%; float: left; background-color: #bfa; height: 2px;"></div> -->
                 <!-- main End -->
             </div>
@@ -403,19 +575,20 @@
                 <ul class="main-top2-tools">
                     <li>
                         <ul>
-                            <li> 1.软件安装教程</li>
-                            <li>本网页的核心内容，内容需要逐步的去积累，样式也需要不断的去优化</li>
+                            <li> 1.软件安装</li>
+                            <li>软件安装下载有套路</li>
                         </ul>
                     </li>
                     <li>
                         <ul>
                             <li>2.经验分享</li>
-                            <li> 由于时间的限制，没有较多的时间处理这个内容</li>
+                            <li>经验分享编写花时间</li>
                         </ul>
                     </li>
                     <li>
                         <ul>
                             <li>3.软件搜索</li>
+                            <li>软件高速下载找腾讯</li>
                             <li>
                                 <input type="text" id="input_software_name" value="FastStone Capture">
                             </li>
@@ -479,11 +652,10 @@
                             <a href="mailto:wangpengkun2012@hotmail.com?subject=The%20subject%20of%20the%20email&body=hello%0D%0Awelcome%20to%20my%20site%0D%0A%0D%0A%0D%0A"
                                 class="infor-emailName infor-link-style">wangpengkun2012@hotmail.com</a>
                             <!--
-                                                                        &cc=pkcile@qq.com
-                                                                        &bcc=pkcile@hotmail.com
-                                                                        wangpengkun2012@hotmail.com
-                                                                    -->
-
+                                &cc=pkcile@qq.com
+                                &bcc=pkcile@hotmail.com
+                                wangpengkun2012@hotmail.com
+                            -->
                         </span>
                     </li>
                     <li>
@@ -574,12 +746,6 @@
         var second = obj.getSeconds();
         var test = 1;
         month = month + 1;
-        // 两位数转换
-        // month = transform_bit(month);
-        // day = transform_bit(day);
-        // hour = transform_bit(hour);
-        // minute = transform_bit(minute);
-        // second = transform_bit(second);
         //获取起始时间结点
         var time_start = document.getElementById("update-infor-start");
         //获取计算天数结点
@@ -716,53 +882,8 @@
         document.getElementById("ip-infor-city").innerHTML = data.city;
         document.getElementById("ip-infor-lat").innerHTML = "[" + data.lat;
         document.getElementById("ip-infor-lon").innerHTML = "," + data.lon + "]";
-    })
+    });
+    function next_time_ok() {
+        alert("下次一定！😁")
+    }
 </script>
-
-
-<!---------测试-------
-
-    知识梳理：
-    1.::before
-    2.cookie
-    3.icon
-    4.随机生成不同颜色背景
-    5.map映射
-    6.获取时间倒计时
-    7.适应移动端
-    8.RSS添加
-    9.json的使用
-    10.ul的使用
-    11.em的使用
-    12.a标签title的作用
-    13.表格的使用
-    14.点击换样式文件
-    15.黄页：
-
-    内容：
-
-    1.git的注册
-    2.仓库的创建
-    3.githhub Page的创建、及使用，个性化域名
-    4.利用git对github/gitee的推送、常见的git命令、连接两个仓库、提高速度
-    5.window平台，利用脚本来定时推送，更新内容
-    6.windows使用技巧
-
-    1.服务器的购买
-    2.域名的购买
-    3.wordpress\论坛的使用
-
-    1em = 16px
-
-    news
-    四年一度的美国选举
-    闲暇时光
-    news老特准备下岗了
-    老特准备
-
-
-
-
-
-
-    -->

@@ -1,0 +1,57 @@
+参考样式网站：
+https://gaz.ncl.edu.tw/
+https://cloud.tencent.com/developer/labs/
+https://developers.google.com/earth-engine/
+
+参考内容：
+大白菜
+微软
+腾讯
+
+GIS
+当一个专业学的大而广，可能面临学不到适应社会的内容
+当一个专业学的局限而细致的，可能面临，这门领域不为所用的境遇
+
+遥感影像的下载
+
+
+
+<!---------测试-------
+
+    知识梳理：
+    1.::before
+    2.cookie
+    3.icon
+    4.随机生成不同颜色背景
+    5.map映射
+    6.获取时间倒计时
+    7.适应移动端
+    8.RSS添加
+    9.json的使用
+    10.ul的使用
+    11.em的使用
+    12.a标签title的作用
+    13.表格的使用
+    14.点击换样式文件
+    15.黄页：
+
+    内容：
+
+    1.git的注册
+    2.仓库的创建
+    3.githhub Page的创建、及使用，个性化域名
+    4.利用git对github/gitee的推送、常见的git命令、连接两个仓库、提高速度
+    5.window平台，利用脚本来定时推送，更新内容
+    6.windows使用技巧
+
+    1.服务器的购买
+    2.域名的购买
+    3.wordpress\论坛的使用
+
+    1em = 16px
+
+    news
+    四年一度的美国选举
+    闲暇时光
+    news老特准备下岗了
+    老特准备
