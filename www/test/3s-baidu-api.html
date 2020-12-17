@@ -100,7 +100,7 @@
     }
 
     function init() {
-        var static_point = new BMapGL.Point(116.038525, 28.68618);
+        var static_point = new BMapGL.Point(12956065.745643467, 4827224.223988174);
         map = new BMapGL.Map('container'); // 创建Map实例
         map.enableScrollWheelZoom(); // 启用滚轮放大缩小
         map.centerAndZoom(static_point, 16);
@@ -139,6 +139,12 @@
         }
         map.addContextMenu(menu);
 
+        map.addEventListener("click", function (e) {
+        // e.point.lng
+        // e.point.lat
+       alert(e.point.lng + "-" + e.point.lat);
+
+    });
         //获取定位
         navigator.geolocation.getCurrentPosition(function (position) {
             // 坐标转换

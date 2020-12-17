@@ -10,16 +10,18 @@
     <!-- <link rel="stylesheet" href="./style.json"> -->
     <style>
         body,
-        html{
+        html {
             overflow: hidden;
             width: 100%;
             height: 100%;
             margin: 0;
             font-family: "微软雅黑";
         }
+
         #container {
-           width: 100%;
-           height: 77%;
+            width: 100%;
+            /* height: 77%; */
+            height: 95%;
         }
 
         /* 地图尾部标注 */
@@ -36,7 +38,7 @@
             left: 20px !important;
         }
 
-        /* 显示隐藏POI控件 */
+        /* 显示按钮样式 */
         ul li,
         ul {
             list-style: none;
@@ -52,7 +54,6 @@
             border-radius: 5px;
             background-color: rgba(265, 265, 265, 0.9);
             box-shadow: 0 2px 6px 0 rgba(27, 142, 236, 0.5);
-            /* margin: 15px; */
         }
 
         .btn {
@@ -80,16 +81,30 @@
         }
 
         /* 地点描述 */
-        #descript_position{
-        height: 18%;
-        width: 100%;
-        background-color: #bfa;
+        #descript_position {
+            overflow: hidden;
+            height: 0%;
+            width: 100%;
+            background-color: #bfa;
         }
-        /*地点汇总*/
-        #sum_position{
-        height: 5%;
-        width: 100%;
-        background-color: #fcd;
+
+        /* 地点汇总*/
+        #sum_position {
+            height: 5%;
+            width: 100%;
+            text-align: center;
+            cursor: pointer;
+            background-color: #f7dec3;
+            /* background-color: #FFECBA; */
+            /* background-color: #AEDCFC; */
+            /* background-color: #fcd; */
+            /* cursor: progress; */
+            /* cursor: s-resize; */
+        }
+
+        #sum_position_center {
+            text-align: center;
+            line-height: 2em;
         }
     </style>
     <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=4ZdIV1KFQG8EqpNgn0c2OYdrVIGQnMTH">
@@ -103,6 +118,7 @@
         <li class="btn function_disp_w_d" onclick="showIcon()">POI的Icon显示</li>
         <li class="btn" onclick="showPosition()">地点显示</li>
         <li class="btn" onclick="showPositionLine()">线路显示</li>
+        <li class="btn" onclick="showPositionYourself()">你的位置</li>
         <!--
              116.041137,28.683057 方荫楼
              116.036857,28.68924 五食堂
@@ -111,8 +127,50 @@
         -->
     </ul>
     <div id="container"></div>
-    <div id="descript_position"></div>
-    <div id="sum_position"></div>
+    <div id="descript_position">test</div>
+    <div id="sum_position" onclick="show_descript_position()">
+        <div id="sum_position_center" onclick="">
+            <span id="sum_position_center_words" onclick="test()">共有0个线索</span>
+        </div>
+    </div>
+    <script>
+        var i = 5;
+
+        function show_descript_position() {
+            // 地图
+            var center_container = document.getElementById("container");
+            // 内容介绍
+            var descript_position = document.getElementById("descript_position");
+            //总结
+            var sum_position = document.getElementById("sum_position");
+            if (descript_position.style.height == "0%") {
+                // descript_position.style.display = "block";
+                descript_position.style.height = "18%";
+                center_container.style.height = "77%";
+            } else {
+                center_container.style.height = "95%";
+                descript_position.style.height = "0%";
+            }
+
+        }
+
+        function test(e) {
+            // 如何消除事件传递
+            // alert(9999);
+            stop_event_fun(e);
+
+        }
+
+        function stop_event_fun(e) {
+            if (e && e.stopPropagation) {
+                //即为非IE浏览器
+                e.stopPropagation();
+            } else {
+                //IE方式取消事件冒泡    
+                window.event.cancelBubble = true;
+            }
+        }
+    </script>
 </body>
 
 </html>
@@ -144,11 +202,11 @@
             new BMapGL.Point(116.036857, 28.68924),
             new BMapGL.Point(116.037881, 28.690136),
             new BMapGL.Point(116.032747, 28.687644)
-                //  116.041137,28.683057 方荫楼
-                //  116.036857,28.68924 五食堂
-                //  116.037881,28.690136 一食堂
-                //  116.032747,28.687644 三食堂  
-                //  116.032548,28.688138  三栋饭卡充值办理，问题解决
+            //  116.041137,28.683057 方荫楼
+            //  116.036857,28.68924 五食堂
+            //  116.037881,28.690136 一食堂
+            //  116.032747,28.687644 三食堂  
+            //  116.032548,28.688138  三栋饭卡充值办理，问题解决
         ], {
             strokeColor: 'blue',
             strokeWeight: 2,
@@ -166,7 +224,7 @@
                 overlay.addEventListener(event, e => {
                     switch (event) {
                         case 'click':
-                            var res = overlay.toString() +  '被单击!';
+                            var res = overlay.toString() + '被单击!';
                             break;
                         case 'dbclick':
                             var res = overlay.toString() + '被双击!';
@@ -260,7 +318,7 @@
         });
 
     }
-   
+
 
     // 坐标转换
     function convertor() {
@@ -284,7 +342,7 @@
                 offset: new BMapGL.Size(20, -10)
             });
             marker.setLabel(label); //添加百度label
-             
+
             // 创建图文信息窗口
             var sContent = `
                 <div>
@@ -354,32 +412,81 @@
             marker_canteen.push(new BMapGL.Marker(new BMapGL.Point(116.036857, 28.68924)));
             marker_canteen.push(new BMapGL.Marker(new BMapGL.Point(116.037881, 28.690136)));
             marker_canteen.push(new BMapGL.Marker(new BMapGL.Point(116.032747, 28.687644)));
-             // 在地图上添加点标记
-             for (var i = 0; i < marker_canteen.length; i++) {
+            // 在地图上添加点标记
+            for (var i = 0; i < marker_canteen.length; i++) {
                 map.addOverlay(marker_canteen[i]);
             }
         } else {
-            for(var i = 0; i < marker_canteen.length; i++) {
+            for (var i = 0; i < marker_canteen.length; i++) {
                 map.removeOverlay(marker_canteen[i]);
             }
             // map.removeOverlay();
             marker_canteen = [];
             // 
-           
+
         }
         iii01[2]++;
     }
 
     function showPositionLine() {
         if (iii01[3] % 2 == 0) {
-            map.addOverlay(polyline); 
+            map.addOverlay(polyline);
         } else {
             map.removeOverlay(polyline)
         }
         iii01[3]++;
-        
+
     }
 
-    
-   
+    function showPositionYourself() {
+        // var geolocation = new BMap.Geolocation();
+        // geolocation.getCurrentPosition(function (r) {
+        //     if (this.getStatus() == BMAP_STATUS_SUCCESS) {
+        //         var mk = new BMap.Marker(r.point);
+        //         map.addOverlay(mk);
+        //         // map.panTo(r.point);
+        //         map.setZoom(20);
+        //         map.setCenter(r);
+        //         // alert('您的位置：' + r.point.lng + ',' + r.point.lat);
+        //     } else {
+        //         alert('failed' + this.getStatus());
+        //     }
+        // }, {
+        //     enableHighAccuracy: true
+        // })
+        // var pointtest = new 
+        // map.setCenter(marker_canteen[1]); // 设置地图中心点
+
+
+        //获取定位
+        navigator.geolocation.getCurrentPosition(function (position) {
+            // 坐标转换
+            ggPoint = new BMapGL.Point(position.coords.longitude, position.coords.latitude);
+
+            // 标注
+            var marker = new BMapGL.Marker(ggPoint);
+            map.addOverlay(marker);
+            var label = new BMapGL.Label("转换后的百度坐标（不正确）", {
+                offset: new BMapGL.Size(20, -10)
+            });
+            marker.setLabel(label); //添加百度label
+            // 坐标转换并显示
+            var convertor = new BMap.Convertor();
+            var pointArr = [];
+            pointArr.push(ggPoint);
+            convertor.translate(pointArr, 1, 5, translateCallback2);
+        });
+        translateCallback2 = function (data) {
+            if (data.status === 0) {
+                console.log(data);
+                ggPointest = data.points[0];
+                // map.setCenter(ggPointest);
+                map.centerAndZoom(ggPointest, 19);
+                // map.setCenter(ggPointest);
+                // map.setZoom(20);
+            }
+        }
+
+        // 比例图标需要更新
+    }
 </script>

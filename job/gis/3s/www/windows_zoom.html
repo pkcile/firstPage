@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=" utf-8">
+    <title>无标题文档</title>
+    <script type="text/javascript">
+        function detectZoom() {
+            var ratio = 0,
+                screen = window.screen,
+                ua = navigator.userAgent.toLowerCase();
+
+            if (window.devicePixelRatio !== undefined) {
+                ratio = window.devicePixelRatio;
+            } else if (ua.indexOf('msie')) {
+                if (screen.deviceXDPI && screen.logicalXDPI) {
+                    ratio = screen.deviceXDPI / screen.logicalXDPI;
+                    alert(ratio)
+                }
+            } else if (window.outerWidth !== undefined && window.innerWidth !== undefined) {
+                ratio = window.outerWidth / window.innerWidth;
+            }
+
+            if (ratio) {
+                ratio = Math.round(ratio * 100);
+            }
+
+            return ratio;
+        };
+        window.onload = function () {
+            var obt = document.getElementById("bt");
+            obt.onclick = function () {
+                alert(detectZoom());
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div>按住ctrl键，然后滚动鼠标中键就可以进行缩放。</div>
+    <input type="button" id="bt" value="查看效果" />
+</body>
+
+</html>

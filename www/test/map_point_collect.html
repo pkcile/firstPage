@@ -1,0 +1,129 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+
+
+
+    <style type="text/css">
+        body,
+        html {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            font-family: "微软雅黑";
+        }
+
+        #allmap {
+            height: 500px;
+            width: 100%;
+            padding-top: 10px;
+        }
+
+        #r-result {
+            width: 100%;
+            font-size: 14px;
+        }
+
+        .gray-bg {
+            background-color: #ffffff;
+        }
+    </style>
+    <script type="text/javascript" src="//api.map.baidu.com/api?v=2.0&ak=4ZdIV1KFQG8EqpNgn0c2OYdrVIGQnMTH"></script>
+    <title>城市名定位</title>
+</head>
+
+<body class="gray-bg">
+    <div class="">
+        <div class="row" style="padding:10px;">
+
+            <div class="col-sm-12">
+                地址: <input id="txtaddress" type="text" style="width:300px; margin-right:10px;" /><input type="button"
+                    value="查询" onclick="theLocation()" />
+                经度:<input type="text" id="jd" style="width:100px; margin-right:10px;" />
+                纬度:<input type="text" id="wd" style="width:100px; margin-right:10px;" /><input type="button" value="确认"
+                    onclick="Determine()" />
+            </div>
+        </div>
+
+        <div class="row" style="padding:10px;">
+            <div class="col-sm-12" id="allmap"></div>
+        </div>
+
+    </div>
+
+
+
+</body>
+
+</html>
+<script type="text/javascript">
+    // 百度地图API功能
+    var map = new BMap.Map("allmap");
+    var point = new BMap.Point(116.331398, 39.897445);
+    map.centerAndZoom('广州', 11);
+    //点击返回
+    var geoc = new BMap.Geocoder();
+    map.addEventListener("click", function (e) {
+        var pt = e.point;
+        var input = document.getElementById('wd');
+        var input2 = document.getElementById('jd');
+        var address = document.getElementById("txtaddress");
+        //返回坐标
+        input.value = pt.lng;
+        input2.value = pt.lat;
+        //点击坐标返回地址
+        // geoc.getLocation(pt, function (rs) {
+        //     var addComp = rs.addressComponents;
+        //     var addresstext = "";
+        //     if (addComp.province == addComp.city) {
+        //         addresstext = (addComp.province + addComp.district + addComp.street + addComp
+        //             .streetNumber);
+        //     } else {
+        //         addresstext = (addComp.province + addComp.city + addComp.district + addComp.street +
+        //             addComp.streetNumber);
+        //     }
+        //     address.value = addresstext;
+        // });
+
+
+    });
+
+
+
+    map.addControl(new BMap.NavigationControl());
+
+
+    var local = new BMap.LocalSearch(map, {
+        renderOptions: {
+            map: map
+        }
+    });
+
+    function theLocation() {
+        var address = document.getElementById("txtaddress").value;
+        if (address != "") {
+            local.search(address);
+        }
+    }
+    //确定选择
+    function Determine() {
+        var wd = document.getElementById('wd');
+        var jd = document.getElementById('jd');
+        var address = document.getElementById("txtaddress");
+        if (!wd.value || !jd.value || !address.value) {
+            alert('请确定地址信息');
+            return false;
+        }
+        //alert(address.value + "*" + wd.value + "*" + jd.value);
+        window.opener.document.getElementById("txtAddress").value = address.value;
+        window.opener.document.getElementById("Hidlatitude").value = wd.value;
+        window.opener.document.getElementById("Hidlongitude").value = jd.value;
+
+
+        window.opener = null;
+        window.open('', '_self');
+        window.close();
+    }
+</script>
