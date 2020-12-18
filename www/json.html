@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+    
+</body>
+<script>
+    $.getJSON("position_line.json", function (data) {
+        console.log(data.line[0][1]);
+    })
+    //  116.041137,28.683057 方荫楼
+    //  116.036857,28.68924 五食堂
+    //  116.037881,28.690136 一食堂
+    //  116.032747,28.687644 三食堂  
+    //  116.032548,28.688138  三栋饭卡充值办理，问题解决
+</script>
+</html>

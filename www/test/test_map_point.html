@@ -27,7 +27,8 @@
             background-color: #ffffff;
         }
     </style>
-    <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=4ZdIV1KFQG8EqpNgn0c2OYdrVIGQnMTH"></script>
+    <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=4ZdIV1KFQG8EqpNgn0c2OYdrVIGQnMTH">
+    </script>
     <script src="https://api.map.baidu.com/api?type=webgl&v=1.0&ak=4ZdIV1KFQG8EqpNgn0c2OYdrVIGQnMTH"></script>
     <title>城市名定位</title>
 </head>
@@ -37,11 +38,10 @@
         <div class="row" style="padding:10px;">
 
             <div class="col-sm-12">
-                地址: <input id="txtaddress" type="text" style="width:300px; margin-right:10px;" /><input type="button"
-                    value="查询" onclick="theLocation()" />
                 经度:<input type="text" id="jd" style="width:100px; margin-right:10px;" />
                 纬度:<input type="text" id="wd" style="width:100px; margin-right:10px;" /><input type="button" value="确认"
                     onclick="Determine()" />
+                <textarea id="textTest" name="textarea" rows="5" cols="30" placeholder="Comment text." value="testestst"></textarea>
             </div>
         </div>
 
@@ -57,13 +57,14 @@
 
 </html>
 <script type="text/javascript">
-    // 百度地图API功能
+    var arrayLng = [];
+    var arrayLat = [];
+
     var map = new BMap.Map("allmap");
-    
-    
     var point = new BMap.Point(116.038406, 28.687672);
-    map.centerAndZoom(point, 17);
     var marker = new BMap.Marker(point);
+    map.centerAndZoom(point, 23);
+    map.enableScrollWheelZoom(); // 启用滚轮放大缩小
     map.addOverlay(marker);
     //点击返回
     // var geoc = new BMap.Geocoder();
@@ -72,25 +73,15 @@
         var pt = e.point;
         var input = document.getElementById('wd');
         var input2 = document.getElementById('jd');
-        var address = document.getElementById("txtaddress");
+        var textTest = document.getElementById('textTest');
         //返回坐标
-        input.value = pt.lng;
-        input2.value = pt.lat;
+        arrayLng.push(pt.lng);
+        arrayLat.push(pt.lat);
+        // input.value = pt.lng;
+        // input2.value = pt.lat;
+        // console.log(arrayLng + arrayLat + "\n");
+        textTest.innerHTML += "[" +pt.lng + "," + pt.lat + "]" + ",\n";
     });
 
     map.addControl(new BMap.NavigationControl());
-
-
-    var local = new BMap.LocalSearch(map, {
-        renderOptions: {
-            map: map
-        }
-    });
-
-    function theLocation() {
-        var address = document.getElementById("txtaddress").value;
-        if (address != "") {
-            local.search(address);
-        }
-    }
 </script>

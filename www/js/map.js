@@ -252,12 +252,48 @@
  }
 
  function showPositionLine() {
-     if (iii01[3] % 2 == 0) {
-         map.addOverlay(polyline);
-     } else {
-         map.removeOverlay(polyline)
-     }
-     iii01[3]++;
+     $.getJSON("position_line.json", function (data) {
+         // console.log(data.line[0][1]);
+        console.log(data.line.length);
+         var arrX = [28.683067, 28.68924];
+         var arrY = [116.041137, 116.036857];
+        console.log(data.line[0][0] + "-" +data.line[0][1]);
+         var polylinePointsArray = [];
+         for (i = 0; i < data.line.length; i++) {
+             // var x = DropDownList_x.options[i].value;
+             // var y = DropDownList_y.options[i].value;
+             polylinePointsArray[i] = new BMapGL.Point(data.line[i][0], data.line[i][1]);
+         }
+         console.log(polylinePointsArray);
+         polyline = new BMapGL.Polyline(polylinePointsArray, {
+             strokeColor: "blue",
+             strokeWeight: 3,
+             strokeOpacity: 0.5
+         })
+         polyline2 = new BMapGL.Polyline(polylinePointsArray
+             // for(var i = 0; i < arrX.length; i++) {
+
+             // }
+             // new BMapGL.Point(116.041137, 28.683057),
+             // new BMapGL.Point(116.036857, 28.68924),
+             // new BMapGL.Point(116.037881, 28.690136),
+             // new BMapGL.Point(116.032747, 28.687644)
+           
+
+             , {
+                 strokeColor: 'blue',
+                 strokeWeight: 2,
+                 strokeOpacity: 0.5
+             });
+         if (iii01[3] % 2 == 0) {
+             map.addOverlay(polyline2);
+         } else {
+             map.removeOverlay(polyline2)
+         }
+         iii01[3]++;
+
+     })
+
 
  }
 
