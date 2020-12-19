@@ -252,7 +252,7 @@
  }
 
  function showPositionLine() {
-     $.getJSON("position_line.json", function (data) {
+     $.getJSON("./json/position_line.json", function (data) {
          // console.log(data.line[0][1]);
         console.log(data.line.length);
          var arrX = [28.683067, 28.68924];
