@@ -5,7 +5,9 @@
  var marker_canteen = [];
  //poi文字、poi图标
  var iii01 = [0, 0, 0, 0, 0];
- var polyline;
+ var polylinePointsArray = [];
+ var polyline2;
+
 
  function loadJScript() {
      var script = document.createElement('script');
@@ -140,6 +142,20 @@
          convertor();
      });
 
+     $.getJSON("./json/position_line.json", function (data) {
+        for (i = 0; i < data.line.length; i++) {
+            polylinePointsArray[i] = new BMapGL.Point(data.line[i][0], data.line[i][1]);
+        }
+        polyline2 = new BMapGL.Polyline(polylinePointsArray, {
+            strokeColor: 'blue',
+            strokeWeight: 2,
+            strokeOpacity: 0.5
+        });
+        // map.addOverlay(polyline2);
+        // map.removeOverlay(polyline2);
+       
+    });
+
  }
 
 
@@ -153,18 +169,38 @@
  }
  translateCallback = function (data) {
      if (data.status === 0) {
+        // 绘制圆
+        var circle = new BMapGL.Circle(data.points[0], 40, {
+            strokeColor: 'blue',
+            fillColor: '#AEDCFC',
+            strokeWeight: 1,
+            strokeOpacity: 0.5,
+            fillOpacity : 0.4
+            });
+            map.addOverlay(circle);
+
          // 创建小车图标
-         var myIcon = new BMapGL.Icon("./img/1.png", new BMapGL.Size(52, 26));
+         var myIcon = new BMapGL.Icon("./img/1.svg", new BMapGL.Size(32, 32));
          var marker = new BMapGL.Marker(data.points[0], {
              icon: myIcon,
-             enableDragging: true,
+            //  可拖拽
+            //  enableDragging: true,
          });
          ggPoint = data.points[0];
          map.addOverlay(marker);
-         var label = new BMapGL.Label("转换后的百度坐标（正确）", {
+         var label1 = new BMapGL.Label("你的位置大概在半径50m内", {
              offset: new BMapGL.Size(20, -10)
          });
-         marker.setLabel(label); //添加百度label
+         // label样式修改
+        label1.enableMassClear = true;
+		label1.setStyle({
+			borderRadius: '5px',
+			borderColor: '#ababab',
+			padding: '3px 10px',
+			fontSize: '12px',
+			color: '#757676'
+		});
+         marker.setLabel(label1); //添加百度label
 
          // 创建图文信息窗口
          var sContent = `
@@ -252,49 +288,13 @@
  }
 
  function showPositionLine() {
-     $.getJSON("./json/position_line.json", function (data) {
-         // console.log(data.line[0][1]);
-        console.log(data.line.length);
-         var arrX = [28.683067, 28.68924];
-         var arrY = [116.041137, 116.036857];
-        console.log(data.line[0][0] + "-" +data.line[0][1]);
-         var polylinePointsArray = [];
-         for (i = 0; i < data.line.length; i++) {
-             // var x = DropDownList_x.options[i].value;
-             // var y = DropDownList_y.options[i].value;
-             polylinePointsArray[i] = new BMapGL.Point(data.line[i][0], data.line[i][1]);
-         }
-         console.log(polylinePointsArray);
-         polyline = new BMapGL.Polyline(polylinePointsArray, {
-             strokeColor: "blue",
-             strokeWeight: 3,
-             strokeOpacity: 0.5
-         })
-         polyline2 = new BMapGL.Polyline(polylinePointsArray
-             // for(var i = 0; i < arrX.length; i++) {
-
-             // }
-             // new BMapGL.Point(116.041137, 28.683057),
-             // new BMapGL.Point(116.036857, 28.68924),
-             // new BMapGL.Point(116.037881, 28.690136),
-             // new BMapGL.Point(116.032747, 28.687644)
-           
-
-             , {
-                 strokeColor: 'blue',
-                 strokeWeight: 2,
-                 strokeOpacity: 0.5
-             });
-         if (iii01[3] % 2 == 0) {
-             map.addOverlay(polyline2);
-         } else {
-             map.removeOverlay(polyline2)
-         }
-         iii01[3]++;
-
-     })
-
-
+     if (iii01[3] % 2 == 0) {
+        map.addOverlay(polyline2);
+     } 
+     else {
+        map.removeOverlay(polyline2);
+     }
+     iii01[3]++;
  }
 
  function showPositionYourself() {
@@ -325,6 +325,7 @@
          // 标注
          var marker = new BMapGL.Marker(ggPoint);
          map.addOverlay(marker);
+        
          var label = new BMapGL.Label("转换后的百度坐标（不正确）", {
              offset: new BMapGL.Size(20, -10)
          });
