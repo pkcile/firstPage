@@ -10,30 +10,122 @@
     <!-- <link rel="stylesheet" href="./style.json"> -->
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/map.css">
+    <!-- font -->
+    <link rel="stylesheet" href="./css/font/iconfont.css">
     <style>
-        .convert-textarea {
-            margin: 0px;
-            height: 100px;
-            width: 494px;
-        }
-
-        .btn-tool {
+        body,
+        html {
             overflow: hidden;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            font-family: "微软雅黑";
+        }
+        #container {
+            width: 100%;
+            height: 93%;
+        }
+        /* 显示按钮样式 */
+        ul li,
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
         }
 
-        .btn-button-infor {
+
+        .map-wrap {
+            width: 100%;
+            position: absolute;
+            top: 0px;
+            border-radius: 5px;
+            /* background-color: rgba(174, 220, 252, 0.6); */
+            background-color: rgba(80, 175, 238, 0.9);
+            box-shadow: 0 2px 8px 0 rgba(247,222,195, 0.9);
+            z-index: 999;
+            padding: .1em 0 .1em 0;
+        }
+
+        .map-keywoards {
+            text-align: center;
+            color: white;
+            font-size: 1.1em;
+        }
+
+        .map-keywoards li {
+            display: inline-block;
+            width: 13em;
+            line-height: 2.4em;
+            border-bottom: .1em dotted white;
+            /* border-bottom: .1em solid red; */
+            /* border-radius: .2em; */
+            /* padding: 0 6em 0 6em; */
+            margin: 0 2em 0 2em;
+
+        }
+
+        .map-tools {
             position: relative;
         }
 
-        .button-infor-inner {
+        .map-tool-infor {
             position: absolute;
             top: 0;
             right: 0;
         }
-        .button-infor-inner li {
+
+        .map-tool-infor li {
             padding: 1em 1em 0 0;
             cursor: pointer;
         }
+        .map-tool-icon {
+            font-size: 1.5em;
+        }
+        .map-tool-icon:hover {
+            color: purple;
+            font-weight: 800;
+        }
+
+
+        /* 地点描述 */
+        #descript_position {
+            overflow: hidden;
+            height: 0%;
+            width: 100%;
+            background-color: #FAFAFA;
+        }
+
+        /* 地点汇总*/
+        #sum_position {
+            height: 7%;
+            width: 100%;
+            text-align: center;
+            cursor: pointer;
+            background-color: #f7dec3;
+            letter-spacing: .1em;
+            /* background-color: #FFECBA; */
+            /* background-color: #AEDCFC; */
+            /* background-color: #fcd; */
+            /* cursor: progress; */
+            /* cursor: s-resize; */
+        }
+
+        #sum_position_center {
+            text-align: center;
+            line-height: 3.2em;
+        }
+
+        #sum_position_center_words:hover {
+            color: #009F72;
+            /* text-decoration: dotted; */
+            /* text-decoration: underline; */
+            /* cursor: crosshair; */
+            cursor: url(../img/user/cur888.png) 4 12, auto;
+        }
+
+
+
+       
     </style>
     <!-- jQuery -->
     <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -47,13 +139,20 @@
 </head>
 
 <body>
-    <ul class="btn-wrap">
-        <ul class="btn-tool">
-            <li class="btn function_disp_w_d" onclick="showText()">POI文字显示</li>
+    <ul class="map-wrap">
+        <ul class="map-keywoards">
+            <!-- <li class="btn function_disp_w_d" onclick="showText()">POI文字显示</li>
             <li class="btn function_disp_w_d" onclick="showIcon()">POI的Icon显示</li>
             <li class="btn" onclick="showPosition()">地点显示</li>
             <li class="btn" onclick="showPositionLine()">线路显示</li>
-            <li class="btn" onclick="showPositionYourself()">你的位置</li>
+            <li class="btn" onclick="showPositionYourself()">你的位置</li> -->
+
+            <li class="point_story btn">饮食</li>
+            <li class="line_story btn">休闲</li>
+            <li class="line_story btn">地名</li>
+            <li class="line_story btn">行程</li>
+            <li class="line_story btn">工具</li>
+
         </ul>
         <!--
              116.041137,28.683057 方荫楼
@@ -61,34 +160,34 @@
              116.037881,28.690136 一食堂
              116.032747,28.687644 三食堂         
         -->
-        <ul class="btn-button-infor">
-            <ul class="button-infor-inner">
+        <ul class="map-tools">
+            <ul class="map-tool-infor">
                 <li onclick="showPositionYourself()">
-                    <span title="位置显示">位置</span>
-                </li>
-                <li onclick="showText()">
-                    <span title="文字显示">文字</span>
-                </li>
-                <li onclick="showIcon()">
-                    <span title="文字显示">图标</span>
-                </li>
-                <li onclick="map_left()">
-                    <span title="文字显示">左旋</span>
-                </li>
-                <li onclick="map_right()">
-                    <span title="文字显示">右旋</span>
-                </li>
-                <li onclick="map_up()">
-                    <span title="文字显示">上视</span>
-                </li>
-                <li onclick="map_down()">
-                    <span title="文字显示">下视</span>
-                </li>
-                <li onclick="map_left()">
-                    <span title="文字显示">复位</span>
-                </li>
-                
-                
+                    <span title="位置显示" class="iconfont map-tool-icon">&#xf005a;</span>
+                </li> 
+                <li onclick="showText()"> 
+                    <span title="文字显示" class="iconfont map-tool-icon">&#xe67f;</span>
+                </li> 
+                <li onclick="showIcon()"> 
+                    <span title="文字显示" class="iconfont map-tool-icon">&#xe613;</span>
+                </li> 
+                <li onclick="map_left()"> 
+                    <span title="文字显示" class="iconfont map-tool-icon">&#xe727;</span>
+                </li> 
+                <li onclick="map_right()"> 
+                    <span title="文字显示" class="iconfont map-tool-icon">&#xe728;</span>
+                </li> 
+                <li onclick="map_up()"> 
+                    <span title="文字显示" class="iconfont map-tool-icon">&#xe682;</span>
+                </li> 
+                <li onclick="map_down()"> 
+                    <span title="文字显示" class="iconfont map-tool-icon">&#xe689;</span>
+                </li> 
+                <!-- <li onclick="map_left()"> 
+                    <span title="文字显示" class="iconfont ">复位</span>
+                </li> --> 
+
+
             </ul>
         </ul>
     </ul>
@@ -106,26 +205,30 @@
     </div>
     <script>
         function test() {
-         map_left_right += 10;
-         map_down_up += 10;
-         map.setHeading(map_left_right);
-         map.setTilt(map_down_up);
+            map_left_right += 10;
+            map_down_up += 10;
+            map.setHeading(map_left_right);
+            map.setTilt(map_down_up);
         }
+
         function map_left() {
-         map_left_right += 10;
-         map.setHeading(map_left_right);
+            map_left_right += 10;
+            map.setHeading(map_left_right);
         }
+
         function map_right() {
-         map_left_right -= 10;
-         map.setHeading(map_left_right);
+            map_left_right -= 10;
+            map.setHeading(map_left_right);
         }
+
         function map_up() {
-         map_down_up += 10;
-         map.setTilt(map_down_up);
+            map_down_up += 10;
+            map.setTilt(map_down_up);
         }
+
         function map_down() {
-         map_down_up -= 10;
-         map.setTilt(map_down_up);
+            map_down_up -= 10;
+            map.setTilt(map_down_up);
         }
     </script>
     <!-- 页面显示 -->
@@ -141,10 +244,10 @@
             var sum_position = document.getElementById("sum_position");
             if (descript_position.style.height == "0%") {
                 // descript_position.style.display = "block";
-                descript_position.style.height = "18%";
-                center_container.style.height = "77%";
+                descript_position.style.height = "30%";
+                center_container.style.height = "63%";
             } else {
-                center_container.style.height = "95%";
+                center_container.style.height = "93%";
                 descript_position.style.height = "0%";
             }
 

@@ -1,0 +1,79 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "36539",
+      "name": "锁定位置",
+      "font_class": "suodingweizhi",
+      "unicode": "f005a",
+      "unicode_decimal": 983130
+    },
+    {
+      "icon_id": "3216108",
+      "name": "左",
+      "font_class": "icon--",
+      "unicode": "e727",
+      "unicode_decimal": 59175
+    },
+    {
+      "icon_id": "3216109",
+      "name": "右",
+      "font_class": "icon--1",
+      "unicode": "e728",
+      "unicode_decimal": 59176
+    },
+    {
+      "icon_id": "4685691",
+      "name": "上",
+      "font_class": "Group-",
+      "unicode": "e682",
+      "unicode_decimal": 59010
+    },
+    {
+      "icon_id": "7550203",
+      "name": "下",
+      "font_class": "xia",
+      "unicode": "e689",
+      "unicode_decimal": 59017
+    },
+    {
+      "icon_id": "14421725",
+      "name": "文字",
+      "font_class": "wenzi_huaban1",
+      "unicode": "e67f",
+      "unicode_decimal": 59007
+    },
+    {
+      "icon_id": "15226163",
+      "name": "地图定位",
+      "font_class": "ditudingwei",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    },
+    {
+      "icon_id": "15407499",
+      "name": "学校",
+      "font_class": "xuexiao",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
+      "icon_id": "16323307",
+      "name": "位置",
+      "font_class": "weizhi",
+      "unicode": "e69a",
+      "unicode_decimal": 59034
+    },
+    {
+      "icon_id": "17711816",
+      "name": "学校",
+      "font_class": "xuexiao1",
+      "unicode": "e825",
+      "unicode_decimal": 59429
+    }
+  ]
+}

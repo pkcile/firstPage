@@ -174,15 +174,15 @@
  }
  translateCallback = function (data) {
      if (data.status === 0) {
-        // 绘制圆
-        var circle = new BMapGL.Circle(data.points[0], 40, {
-            strokeColor: 'blue',
-            fillColor: '#AEDCFC',
-            strokeWeight: 1,
-            strokeOpacity: 0.5,
-            fillOpacity : 0.4
-            });
-            map.addOverlay(circle);
+        // // 绘制圆
+        // var circle = new BMapGL.Circle(data.points[0], 40, {
+        //     strokeColor: 'blue',
+        //     fillColor: '#AEDCFC',
+        //     strokeWeight: 1,
+        //     strokeOpacity: 0.5,
+        //     fillOpacity : 0.4
+        //     });
+        // map.addOverlay(circle);
 
          // 创建小车图标
          var myIcon = new BMapGL.Icon("./img/1.svg", new BMapGL.Size(32, 32));
@@ -334,7 +334,17 @@
          var label = new BMapGL.Label("转换后的百度坐标（不正确）", {
              offset: new BMapGL.Size(20, -10)
          });
-         marker.setLabel(label); //添加百度label
+         // 绘制圆
+        var circle = new BMapGL.Circle(ggPoint, 40, {
+            strokeColor: 'blue',
+            fillColor: '#AEDCFC',
+            strokeWeight: 1,
+            strokeOpacity: 0.5,
+            fillOpacity : 0.4
+            });
+         map.addOverlay(circle);
+         //添加百度label
+         marker.setLabel(label); 
          // 坐标转换并显示
          var convertor = new BMap.Convertor();
          var pointArr = [];
