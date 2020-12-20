@@ -63,28 +63,28 @@
         -->
         <ul class="btn-button-infor">
             <ul class="button-infor-inner">
-                <li onclick="test();">
+                <li onclick="showPositionYourself()">
                     <span title="位置显示">位置</span>
                 </li>
-                <li>
+                <li onclick="showText()">
                     <span title="文字显示">文字</span>
                 </li>
-                <li>
+                <li onclick="showIcon()">
                     <span title="文字显示">图标</span>
                 </li>
-                <li>
+                <li onclick="map_left()">
                     <span title="文字显示">左旋</span>
                 </li>
-                <li>
+                <li onclick="map_right()">
                     <span title="文字显示">右旋</span>
                 </li>
-                <li>
+                <li onclick="map_up()">
                     <span title="文字显示">上视</span>
                 </li>
-                <li>
+                <li onclick="map_down()">
                     <span title="文字显示">下视</span>
                 </li>
-                <li>
+                <li onclick="map_left()">
                     <span title="文字显示">复位</span>
                 </li>
                 
@@ -104,6 +104,31 @@
             <span id="sum_position_center_words" onclick="test()">共有0个线索</span>
         </div>
     </div>
+    <script>
+        function test() {
+         map_left_right += 10;
+         map_down_up += 10;
+         map.setHeading(map_left_right);
+         map.setTilt(map_down_up);
+        }
+        function map_left() {
+         map_left_right += 10;
+         map.setHeading(map_left_right);
+        }
+        function map_right() {
+         map_left_right -= 10;
+         map.setHeading(map_left_right);
+        }
+        function map_up() {
+         map_down_up += 10;
+         map.setTilt(map_down_up);
+        }
+        function map_down() {
+         map_down_up -= 10;
+         map.setTilt(map_down_up);
+        }
+    </script>
+    <!-- 页面显示 -->
     <script>
         var i = 5;
 
@@ -144,14 +169,3 @@
 </body>
 
 </html>
-<script>
-    function test() {
-        // alert(666);
-     
-     map.setHeading(map_left_right + 10);
-     map.setTilt(map_down_up + 10);
-     map_left_right += 10;
-     map_down_up += 10;
-
-    }
-</script>
