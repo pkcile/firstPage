@@ -1,6 +1,9 @@
  //位置信息
  var ggPoint;
  var map;
+ //视角
+ var map_down_up = 0;
+ var map_left_right = 0;
  //餐厅点坐标
  var marker_canteen = [];
  //poi文字、poi图标
@@ -19,8 +22,10 @@
  function init() {
      var static_point = new BMapGL.Point(116.038525, 28.68618);
      map = new BMapGL.Map('container'); // 创建Map实例
-     map.enableScrollWheelZoom(); // 启用滚轮放大缩小
+     map.enableScrollWheelZoom(true);// 启用滚轮放大缩小
      map.centerAndZoom(static_point, 16);
+     map.setHeading(map_left_right);
+     map.setTilt(map_down_up);
      // 创建折线
      polyline = new BMapGL.Polyline([
          new BMapGL.Point(116.041137, 28.683057),
@@ -83,8 +88,8 @@
      var zoomCtrl = new BMapGL.ZoomControl();
      map.addControl(zoomCtrl);
      // 添加3D控件
-     var navi3DCtrl = new BMapGL.NavigationControl3D();
-     map.addControl(navi3DCtrl);
+    //  var navi3DCtrl = new BMapGL.NavigationControl3D();
+    //  map.addControl(navi3DCtrl);
      //设置地图显示元素
      map.setDisplayOptions({
          poi: true //是否显示POI信息 

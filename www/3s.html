@@ -12,30 +12,40 @@
     <link rel="stylesheet" href="./css/map.css">
     <style>
         .convert-textarea {
-            margin: 0px; 
-            height: 100px; 
+            margin: 0px;
+            height: 100px;
             width: 494px;
         }
+
         .btn-tool {
             overflow: hidden;
         }
+
         .btn-button-infor {
             position: relative;
         }
+
         .button-infor-inner {
             position: absolute;
             top: 0;
             right: 0;
         }
+        .button-infor-inner li {
+            padding: 1em 1em 0 0;
+            cursor: pointer;
+        }
     </style>
     <!-- jQuery -->
     <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <!-- baidu -->
-    <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=4ZdIV1KFQG8EqpNgn0c2OYdrVIGQnMTH"></script>
-    <script type="text/javascript" src="https://api.map.baidu.com/api?type=webgl&v=1.0&ak=4ZdIV1KFQG8EqpNgn0c2OYdrVIGQnMTH"></script>
+    <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=4ZdIV1KFQG8EqpNgn0c2OYdrVIGQnMTH">
+    </script>
+    <script type="text/javascript"
+        src="https://api.map.baidu.com/api?type=webgl&v=1.0&ak=4ZdIV1KFQG8EqpNgn0c2OYdrVIGQnMTH"></script>
     <!-- main -->
-    <script type="text/javascript" src="./js/map.js" ></script>
+    <script type="text/javascript" src="./js/map.js"></script>
 </head>
+
 <body>
     <ul class="btn-wrap">
         <ul class="btn-tool">
@@ -44,7 +54,7 @@
             <li class="btn" onclick="showPosition()">地点显示</li>
             <li class="btn" onclick="showPositionLine()">线路显示</li>
             <li class="btn" onclick="showPositionYourself()">你的位置</li>
-        </ul> 
+        </ul>
         <!--
              116.041137,28.683057 方荫楼
              116.036857,28.68924 五食堂
@@ -53,16 +63,39 @@
         -->
         <ul class="btn-button-infor">
             <ul class="button-infor-inner">
-                <li>test1</li>
-                <li>test1</li>
-                <li>test1</li>
+                <li onclick="test();">
+                    <span title="位置显示">位置</span>
+                </li>
+                <li>
+                    <span title="文字显示">文字</span>
+                </li>
+                <li>
+                    <span title="文字显示">图标</span>
+                </li>
+                <li>
+                    <span title="文字显示">左旋</span>
+                </li>
+                <li>
+                    <span title="文字显示">右旋</span>
+                </li>
+                <li>
+                    <span title="文字显示">上视</span>
+                </li>
+                <li>
+                    <span title="文字显示">下视</span>
+                </li>
+                <li>
+                    <span title="文字显示">复位</span>
+                </li>
+                
+                
             </ul>
         </ul>
     </ul>
     <ul>
 
     </ul>
-  
+
     <div id="container">
     </div>
     <div id="descript_position">test</div>
@@ -107,13 +140,18 @@
                 window.event.cancelBubble = true;
             }
         }
-
-       
-
     </script>
 </body>
 
 </html>
 <script>
-   
+    function test() {
+        // alert(666);
+     
+     map.setHeading(map_left_right + 10);
+     map.setTilt(map_down_up + 10);
+     map_left_right += 10;
+     map_down_up += 10;
+
+    }
 </script>
