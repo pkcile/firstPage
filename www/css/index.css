@@ -73,5 +73,12 @@ body,
 
         #sum_position_center {
             text-align: center;
-            line-height: 2em;
+            line-height: 2.3em;
+        }
+        #sum_position_center_words:hover {
+            color: #009F72;
+            /* text-decoration: dotted; */
+            /* text-decoration: underline; */
+            /* cursor: crosshair; */
+            cursor: url(../img/user/cur888.png) 4 12, auto;
         }

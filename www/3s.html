@@ -16,6 +16,17 @@
             height: 100px; 
             width: 494px;
         }
+        .btn-tool {
+            overflow: hidden;
+        }
+        .btn-button-infor {
+            position: relative;
+        }
+        .button-infor-inner {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
     </style>
     <!-- jQuery -->
     <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -25,22 +36,35 @@
     <!-- main -->
     <script type="text/javascript" src="./js/map.js" ></script>
 </head>
-
 <body>
-    <ul class="btn-wrap" style="z-index: 99;">
-        <li class="btn function_disp_w_d" onclick="showText()">POI文字显示</li>
-        <li class="btn function_disp_w_d" onclick="showIcon()">POI的Icon显示</li>
-        <li class="btn" onclick="showPosition()">地点显示</li>
-        <li class="btn" onclick="showPositionLine()">线路显示</li>
-        <li class="btn" onclick="showPositionYourself()">你的位置</li>
+    <ul class="btn-wrap">
+        <ul class="btn-tool">
+            <li class="btn function_disp_w_d" onclick="showText()">POI文字显示</li>
+            <li class="btn function_disp_w_d" onclick="showIcon()">POI的Icon显示</li>
+            <li class="btn" onclick="showPosition()">地点显示</li>
+            <li class="btn" onclick="showPositionLine()">线路显示</li>
+            <li class="btn" onclick="showPositionYourself()">你的位置</li>
+        </ul> 
         <!--
              116.041137,28.683057 方荫楼
              116.036857,28.68924 五食堂
              116.037881,28.690136 一食堂
              116.032747,28.687644 三食堂         
         -->
+        <ul class="btn-button-infor">
+            <ul class="button-infor-inner">
+                <li>test1</li>
+                <li>test1</li>
+                <li>test1</li>
+            </ul>
+        </ul>
     </ul>
-    <div id="container"></div>
+    <ul>
+
+    </ul>
+  
+    <div id="container">
+    </div>
     <div id="descript_position">test</div>
     <div id="sum_position" onclick="show_descript_position()">
         <div id="sum_position_center" onclick="">
