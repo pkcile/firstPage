@@ -83,7 +83,7 @@
         }
 
         .map-tool-infor li {
-            padding: 1em 1em 0 0;
+            padding: .5em 1em .5em 1em;
             cursor: pointer;
         }
         .map-tool-icon {
@@ -121,15 +121,9 @@
 
         #sum_position_center_words:hover {
             color: #009F72;
-            /* text-decoration: dotted; */
-            /* text-decoration: underline; */
-            /* cursor: crosshair; */
             cursor: url(../img/user/cur888.png) 4 12, auto;
         }
-
-
-
-       
+   
     </style>
     <!-- jQuery -->
     <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -173,23 +167,23 @@
                     <span title="文字显示" class="iconfont map-tool-icon">&#xe67f;</span>
                 </li> 
                 <li onclick="showIcon()"> 
-                    <span title="文字显示" class="iconfont map-tool-icon">&#xe613;</span>
+                    <span title="图标显示" class="iconfont map-tool-icon">&#xe613;</span>
                 </li> 
                 <li onclick="map_left()"> 
-                    <span title="文字显示" class="iconfont map-tool-icon">&#xe727;</span>
+                    <span title="向左旋转" class="iconfont map-tool-icon">&#xe727;</span>
                 </li> 
                 <li onclick="map_right()"> 
-                    <span title="文字显示" class="iconfont map-tool-icon">&#xe728;</span>
+                    <span title="向右旋转" class="iconfont map-tool-icon">&#xe728;</span>
                 </li> 
-                <li onclick="map_up()"> 
-                    <span title="文字显示" class="iconfont map-tool-icon">&#xe682;</span>
+                <!-- <li onclick="map_up()"> 
+                    <span title="视角向上" class="iconfont map-tool-icon">&#xe682;</span>
                 </li> 
                 <li onclick="map_down()"> 
-                    <span title="文字显示" class="iconfont map-tool-icon">&#xe689;</span>
+                    <span title="视角向下" class="iconfont map-tool-icon">&#xe689;</span>
                 </li> 
-                <!-- <li onclick="map_left()"> 
+                <li onclick="map_left()"> 
                     <span title="文字显示" class="iconfont ">复位</span>
-                </li> --> 
+                </li>  -->
 
 
             </ul>
@@ -238,7 +232,6 @@
     <!-- 页面显示 -->
     <script>
         var i = 5;
-
         function show_descript_position() {
             // 地图
             var center_container = document.getElementById("container");

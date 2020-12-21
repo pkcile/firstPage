@@ -6,6 +6,12 @@
  var map_left_right = 0;
  //餐厅点坐标
  var marker_canteen = [];
+ //位置图标、位置标注
+ var current_marker;
+ var current_label;
+ var false_marker;
+ var false_label;
+ var circle_current_marker;
  //poi文字、poi图标
  var iii01 = [0, 0, 0, 0, 0, 0, 0];
  var polylinePointsArray = [];
@@ -37,6 +43,8 @@
          //  116.037881,28.690136 一食堂
          //  116.032747,28.687644 三食堂  
          //  116.032548,28.688138  三栋饭卡充值办理，问题解决
+         //  学生会在哪里
+         //  学校建行
      ], {
          strokeColor: 'blue',
          strokeWeight: 2,
@@ -121,8 +129,6 @@
      //镂空图形
      var bd = new BMapGL.Boundary();
      bd.get('南昌市', function (rs) {
-         // console.log('外轮廓：', rs.boundaries[0]);
-         // console.log('内镂空：', rs.boundaries[1]);
          var hole = new BMapGL.Polygon(rs.boundaries, {
              fillColor: 'red',
              fillOpacity: 0.0
@@ -137,12 +143,13 @@
          // map.centerAndZoom(ggPoint, 16);
 
          // 标注
-         var marker = new BMapGL.Marker(ggPoint);
-         map.addOverlay(marker);
-         var label = new BMapGL.Label("转换后的百度坐标（不正确）", {
+         false_marker = new BMapGL.Marker(ggPoint);
+         map.addOverlay(false_marker);
+         false_label = new BMapGL.Label("转换后的百度坐标（不正确）", {
              offset: new BMapGL.Size(20, -10)
          });
-         marker.setLabel(label); //添加百度label
+         false_marker.setLabel(false_label); //添加百度label
+         map.removeOverlay(false_label);
          // 坐标转换并显示
          convertor();
      });
@@ -155,10 +162,7 @@
             strokeColor: 'blue',
             strokeWeight: 2,
             strokeOpacity: 0.5
-        });
-        // map.addOverlay(polyline2);
-        // map.removeOverlay(polyline2);
-       
+        });     
     });
 
  }
@@ -174,38 +178,41 @@
  }
  translateCallback = function (data) {
      if (data.status === 0) {
-        // // 绘制圆
-        // var circle = new BMapGL.Circle(data.points[0], 40, {
-        //     strokeColor: 'blue',
-        //     fillColor: '#AEDCFC',
-        //     strokeWeight: 1,
-        //     strokeOpacity: 0.5,
-        //     fillOpacity : 0.4
-        //     });
-        // map.addOverlay(circle);
 
          // 创建小车图标
          var myIcon = new BMapGL.Icon("./img/1.svg", new BMapGL.Size(32, 32));
-         var marker = new BMapGL.Marker(data.points[0], {
+         current_marker = new BMapGL.Marker(data.points[0], {
              icon: myIcon,
             //  可拖拽
             //  enableDragging: true,
          });
          ggPoint = data.points[0];
-         map.addOverlay(marker);
-         var label1 = new BMapGL.Label("你的位置大概在半径50m内", {
+         map.addOverlay(current_marker);
+         current_label = new BMapGL.Label("你的位置大概在半径50m内", {
              offset: new BMapGL.Size(20, -10)
          });
          // label样式修改
-        label1.enableMassClear = true;
-		label1.setStyle({
+         current_label.enableMassClear = true;
+         current_label.setStyle({
 			borderRadius: '5px',
 			borderColor: '#ababab',
 			padding: '3px 10px',
 			fontSize: '12px',
 			color: '#757676'
 		});
-         marker.setLabel(label1); //添加百度label
+        current_marker.setLabel(current_label); //添加百度label
+         // 绘制圆
+         circle_current_marker = new BMapGL.Circle(ggPoint, 40, {
+            strokeColor: 'blue',
+            fillColor: '#AEDCFC',
+            strokeWeight: 1,
+            strokeOpacity: 0.5,
+            fillOpacity : 0.4
+            });
+        // map.addOverlay(circle_current_marker);
+        map.addOverlay(current_marker);
+        map.removeOverlay(circle_current_marker);
+        map.removeOverlay(current_label);
 
          // 创建图文信息窗口
          var sContent = `
@@ -219,26 +226,13 @@
              `;
          var infoWindow = new BMapGL.InfoWindow(sContent);
          // marker添加点击事件
-         marker.addEventListener('click', function () {
+         current_marker.addEventListener('click', function () {
              this.openInfoWindow(infoWindow);
              // 图片加载完毕重绘infoWindow
              document.getElementById('imgDemo').onload = function () {
                  infoWindow.redraw(); // 防止在网速较慢时生成的信息框高度比图片总高度小，导致图片部分被隐藏
              };
          });
-         // 创建信息窗口
-         // var opts = {
-         //     width: 200,
-         //     height: 100,
-         //     title: '故宫博物院'
-         // };
-         // var infoWindow = new BMapGL.InfoWindow('地址：北京市东城区王府井大街88号乐天银泰百货八层', opts);
-         // // 点标记添加点击事件
-         // marker.addEventListener('click', function () {
-         //     map.openInfoWindow(infoWindow, ggPoint); // 开启信息窗口
-         // });
-         // 获取标记点的坐标
-         // alert(marker.getPosition(ggPoint).lat)
      }
  }
 
@@ -286,7 +280,6 @@
          }
          // map.removeOverlay();
          marker_canteen = [];
-         // 
 
      }
      iii01[2]++;
@@ -303,48 +296,18 @@
  }
 
  function showPositionYourself() {
-     // var geolocation = new BMap.Geolocation();
-     // geolocation.getCurrentPosition(function (r) {
-     //     if (this.getStatus() == BMAP_STATUS_SUCCESS) {
-     //         var mk = new BMap.Marker(r.point);
-     //         map.addOverlay(mk);
-     //         // map.panTo(r.point);
-     //         map.setZoom(20);
-     //         map.setCenter(r);
-     //         // alert('您的位置：' + r.point.lng + ',' + r.point.lat);
-     //     } else {
-     //         alert('failed' + this.getStatus());
-     //     }
-     // }, {
-     //     enableHighAccuracy: true
-     // })
-     // var pointtest = new 
-     // map.setCenter(marker_canteen[1]); // 设置地图中心点
-
-
-     //获取定位
+     //显示坐标
+     map.removeOverlay(current_marker);
+     map.addOverlay(current_label);
+     map.addOverlay(circle_current_marker);
+     ggPoint = {};
+     current_marker = {};
+     current_label = {};
+     circle_current_marker = {};
+     console.log(circle_current_marker);
+     //获取定位                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
      navigator.geolocation.getCurrentPosition(function (position) {
-         // 坐标转换
-         ggPoint = new BMapGL.Point(position.coords.longitude, position.coords.latitude);
-
-         // 标注
-         var marker = new BMapGL.Marker(ggPoint);
-         map.addOverlay(marker);
-        
-         var label = new BMapGL.Label("转换后的百度坐标（不正确）", {
-             offset: new BMapGL.Size(20, -10)
-         });
-         // 绘制圆
-        var circle = new BMapGL.Circle(ggPoint, 40, {
-            strokeColor: 'blue',
-            fillColor: '#AEDCFC',
-            strokeWeight: 1,
-            strokeOpacity: 0.5,
-            fillOpacity : 0.4
-            });
-         map.addOverlay(circle);
-         //添加百度label
-         marker.setLabel(label); 
+         ggPoint = new BMapGL.Point(position.coords.longitude, position.coords.latitude); 
          // 坐标转换并显示
          var convertor = new BMap.Convertor();
          var pointArr = [];
@@ -353,13 +316,62 @@
      });
      translateCallback2 = function (data) {
          if (data.status === 0) {
-             console.log(data);
-             ggPointest = data.points[0];
-             // map.setCenter(ggPointest);
-             map.centerAndZoom(ggPointest, 19);
-             // map.setCenter(ggPointest);
-             // map.setZoom(20);
-         }
+            // 创建小车图标
+            var myIcon = new BMapGL.Icon("./img/1.svg", new BMapGL.Size(32, 32));
+            current_marker = new BMapGL.Marker(data.points[0], {
+                icon: myIcon,
+            });
+            ggPoint = data.points[0];
+            map.addOverlay(current_marker);
+            current_label = new BMapGL.Label("你的位置大概在半径50m内", {
+                offset: new BMapGL.Size(20, -10)
+            });
+            // label样式修改
+            current_label.enableMassClear = true;
+            current_label.setStyle({
+               borderRadius: '5px',
+               borderColor: '#ababab',
+               padding: '3px 10px',
+               fontSize: '12px',
+               color: '#757676'
+           });
+           current_marker.setLabel(current_label); //添加百度label
+            // 绘制圆
+            circle_current_marker = new BMapGL.Circle(ggPoint, 40, {
+               strokeColor: 'blue',
+               fillColor: '#AEDCFC',
+               strokeWeight: 1,
+               strokeOpacity: 0.5,
+               fillOpacity : 0.4
+               });
+           map.addOverlay(current_marker);
+        //    map.removeOverlay(circle_current_marker);
+        //    map.removeOverlay(current_label);
+   
+            // 创建图文信息窗口
+            var sContent = `
+                <div>
+                    <h4 style='margin:0 0 5px 0;'>天安门</h4>
+                    <img style='float:right;margin:0 4px 22px' id='imgDemo' src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1607689593112&di=c64c7fa131bff2f5caef27ada0ab9e1d&imgtype=0&src=http%3A%2F%2Fandroid-wallpapers.25pp.com%2Ffs01%2F2015%2F01%2F16%2F1%2F0_fb62a937483f05de07512842d3496144_900x675.jpg' width='139' height='104'/>
+                    <p style='margin:0;line-height:1.5;font-size:13px;text-indent:2em'>
+                        天安门坐落在中国北京市中心,故宫的南侧,与天安门广场隔长安街相望,是清朝皇城的大门...
+                    </p>
+                </div>
+                `;
+            var infoWindow = new BMapGL.InfoWindow(sContent);
+            // marker添加点击事件
+            current_marker.addEventListener('click', function () {
+                this.openInfoWindow(infoWindow);
+                // 图片加载完毕重绘infoWindow
+                document.getElementById('imgDemo').onload = function () {
+                    infoWindow.redraw(); // 防止在网速较慢时生成的信息框高度比图片总高度小，导致图片部分被隐藏
+                };
+            });
+            // ggPoint = data.points[0];
+            map.centerAndZoom(ggPoint, 19);
+            // alert(666);
+            // console.log(ggPoint);
+        }
      }
 
      // 比例图标需要更新
@@ -374,5 +386,4 @@
         map_tool_infor.style.display = "none";
      }
      iii01[5]++;
-     console.log(iii01[5])
  }
