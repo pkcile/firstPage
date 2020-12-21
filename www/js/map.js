@@ -7,7 +7,7 @@
  //餐厅点坐标
  var marker_canteen = [];
  //poi文字、poi图标
- var iii01 = [0, 0, 0, 0, 0];
+ var iii01 = [0, 0, 0, 0, 0, 0, 0];
  var polylinePointsArray = [];
  var polyline2;
 
@@ -363,4 +363,16 @@
      }
 
      // 比例图标需要更新
+ }
+
+ function toolOpenClose() {
+     var map_tool_infor = document.getElementById("map-tool-infor");
+     if(iii01[5]%2==0) {
+        map_tool_infor.style.display = "block";
+     }
+     else {
+        map_tool_infor.style.display = "none";
+     }
+     iii01[5]++;
+     console.log(iii01[5])
  }

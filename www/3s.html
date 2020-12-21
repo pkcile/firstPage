@@ -44,6 +44,9 @@
             box-shadow: 0 2px 8px 0 rgba(247,222,195, 0.9);
             z-index: 999;
             padding: .1em 0 .1em 0;
+            -moz-user-select:none;
+            -webkit-user-select:none;
+            user-select:none;
         }
 
         .map-keywoards {
@@ -61,7 +64,12 @@
             /* border-radius: .2em; */
             /* padding: 0 6em 0 6em; */
             margin: 0 2em 0 2em;
+            cursor: pointer;
 
+        }
+        .map-keywoards li:hover {
+            text-decoration: underline 3px solid red;
+            color: black;
         }
 
         .map-tools {
@@ -82,8 +90,8 @@
             font-size: 1.5em;
         }
         .map-tool-icon:hover {
-            color: purple;
-            font-weight: 800;
+            color: rgb(230, 81, 230);
+            font-weight: 900;
         }
 
 
@@ -102,12 +110,8 @@
             text-align: center;
             cursor: pointer;
             background-color: #f7dec3;
+            /* background-color: rgba(80, 175, 238, 0.9); */
             letter-spacing: .1em;
-            /* background-color: #FFECBA; */
-            /* background-color: #AEDCFC; */
-            /* background-color: #fcd; */
-            /* cursor: progress; */
-            /* cursor: s-resize; */
         }
 
         #sum_position_center {
@@ -151,7 +155,7 @@
             <li class="line_story btn">休闲</li>
             <li class="line_story btn">地名</li>
             <li class="line_story btn">行程</li>
-            <li class="line_story btn">工具</li>
+            <li class="line_story btn" onclick="toolOpenClose()">工具</li>
 
         </ul>
         <!--
@@ -161,7 +165,7 @@
              116.032747,28.687644 三食堂         
         -->
         <ul class="map-tools">
-            <ul class="map-tool-infor">
+            <ul class="map-tool-infor" id="map-tool-infor" style="display: none;">
                 <li onclick="showPositionYourself()">
                     <span title="位置显示" class="iconfont map-tool-icon">&#xf005a;</span>
                 </li> 
