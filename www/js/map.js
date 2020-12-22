@@ -177,8 +177,7 @@
      convertor.translate(pointArr, 1, 5, translateCallback);
  }
  translateCallback = function (data) {
-     if (data.status === 0) {
-
+     if (data.status === 0) { 
          // 创建小车图标
          var myIcon = new BMapGL.Icon("./img/1.svg", new BMapGL.Size(32, 32));
          current_marker = new BMapGL.Marker(data.points[0], {
@@ -217,10 +216,11 @@
          // 创建图文信息窗口
          var sContent = `
              <div>
-                 <h4 style='margin:0 0 5px 0;'>天安门</h4>
-                 <img style='float:right;margin:0 4px 22px' id='imgDemo' src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1607689593112&di=c64c7fa131bff2f5caef27ada0ab9e1d&imgtype=0&src=http%3A%2F%2Fandroid-wallpapers.25pp.com%2Ffs01%2F2015%2F01%2F16%2F1%2F0_fb62a937483f05de07512842d3496144_900x675.jpg' width='139' height='104'/>
+                 <h4 style='margin:0 0 5px 0;'>你好啊</h4>
+                 <img style='float:right;margin:0 4px 22px' id='imgDemo' src='https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farticle%2F5e36477770bbac53ed4463f17daff48fd5e516fb.gif&refer=http%3A%2F%2Fi0.hdslb.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1611211486&t=4dabc8a2db54a243c3062b28a5229b6d' width='139' height='104'/>
                  <p style='margin:0;line-height:1.5;font-size:13px;text-indent:2em'>
-                     天安门坐落在中国北京市中心,故宫的南侧,与天安门广场隔长安街相望,是清朝皇城的大门...
+                     今天不爽，今天不爽，今天不爽；成就感，成就感，成就感；未来，未来，未来
+                     <p style="text-align: right;">2020-12-22</p>
                  </p>
              </div>
              `;
@@ -351,10 +351,10 @@
             // 创建图文信息窗口
             var sContent = `
                 <div>
-                    <h4 style='margin:0 0 5px 0;'>天安门</h4>
-                    <img style='float:right;margin:0 4px 22px' id='imgDemo' src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1607689593112&di=c64c7fa131bff2f5caef27ada0ab9e1d&imgtype=0&src=http%3A%2F%2Fandroid-wallpapers.25pp.com%2Ffs01%2F2015%2F01%2F16%2F1%2F0_fb62a937483f05de07512842d3496144_900x675.jpg' width='139' height='104'/>
+                    <h4 style='margin:0 0 5px 0;'>位置</h4>
+                    <img style='float:right;margin:0 4px 22px' id='imgDemo' src='https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fhiphotos.baidu.com%2Ffeed%2Fpic%2Fitem%2F728da9773912b31bee73674c8a18367adab4e1bc.jpg&refer=http%3A%2F%2Fhiphotos.baidu.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1611211005&t=8d9a2f38059d2b18b28dc833b47b6b12' width='139' height='104'/>
                     <p style='margin:0;line-height:1.5;font-size:13px;text-indent:2em'>
-                        天安门坐落在中国北京市中心,故宫的南侧,与天安门广场隔长安街相望,是清朝皇城的大门...
+                        你的位置，貌似有点误差，浏览器定位理解万岁...
                     </p>
                 </div>
                 `;
