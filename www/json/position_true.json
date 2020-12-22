@@ -5,7 +5,7 @@
         {
            "location": [116.03682,28.68926],
            "infor": "清真食堂",
-           "icon": "./img/1.svg",
+           "icon": "./img/kinds/carteen.png",
            "content_infor":
            {
                 "h4": "清真食堂",
@@ -21,7 +21,7 @@
         {
             "location": [116.032787,28.687613],
             "infor": "三食堂",
-            "icon": "./img/1.svg" ,
+            "icon": "./img/kinds/carteen.png",
             "content_infor":
            {
                 "h4": "三食堂",
@@ -37,7 +37,7 @@
         {
             "location": [116.036735,28.69035],
             "infor": "一食堂",
-            "icon": "./img/1.svg" ,
+            "icon": "./img/kinds/carteen.png",
             "content_infor":
            {
                 "h4": "一食堂",

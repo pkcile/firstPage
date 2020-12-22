@@ -150,8 +150,8 @@
 
             <li class="point_story btn" onclick="guideFood()">饮食</li>
             <li class="line_story btn" onclick="test01()">休闲</li>
-            <li class="line_story btn">地名</li>
-            <li class="line_story btn">行程</li>
+            <li class="line_story btn" onclick="test01()">地名</li>
+            <li class="line_story btn" onclick="showPositionLine()">行程</li>
             <li class="line_story btn" onclick="toolOpenClose()">工具</li>
 
         </ul>
@@ -208,10 +208,11 @@
         //饮食测试
         var marker_test = [];
         var marker_click_infor = [];
+        var myIcon = [];
         var obj_test = [];
         $.getJSON("./json/position_true.json", function (data) {
                 for (var i = 0; i < data.line.length; i++) {
-                    obj_test[i] = data.line[0];
+                    obj_test[i] = data.line[i];
                 }
         });
         function guideFood() {
@@ -222,11 +223,16 @@
             console.log(obj_test.length);
             for(var i = 0; i < obj_test.length; i++) {
                 //位置图标
-                var myIcon = new BMapGL.Icon(obj_test[i].icon, new BMapGL.Size(32, 32));
+                myIcon[i] = new BMapGL.Icon(obj_test[i].icon, new BMapGL.Size(32, 32));
                 marker_test[i] = new BMapGL.Marker(new BMapGL.Point(obj_test[i].location[0], obj_test[i].location[1]), {
-                    icon: myIcon,
+                    icon: myIcon[i],
                 });
                 map.addOverlay(marker_test[i]);
+                console.log(i);
+                console.log(obj_test[i].location[0] + "-" + obj_test[i].location[1]);
+                console.log(obj_test[0].location[0] + "-" + obj_test[0].location[1]);
+                console.log(obj_test[1].location[0] + "-" + obj_test[1].location[1]);
+                console.log(obj_test[2].location[0] + "-" + obj_test[2].location[1]);
                 //图标点击显示信息
                 // 创建图文信息窗口
                 var sContent = `
@@ -258,12 +264,18 @@
             }
             console.log(marker_test);
             //3.添加详情HTML
+            console.log(obj_test[0].location[0] + "-" + obj_test[0].location[1]);
+            console.log(obj_test[1].location[0] + "-" + obj_test[1].location[1]);
+            console.log(obj_test[2].location[0] + "-" + obj_test[2].location[1]);
+            console.log(obj_test);
         }
 
         function test01() {
             for(var i = 0; i < marker_test.length; i++) {
                 map.removeOverlay(marker_test[i]);
             }
+            alert("待写~");
+            
             
         }
 
