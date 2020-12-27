@@ -131,10 +131,8 @@
     <!-- jQuery -->
     <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <!-- baidu -->
-    <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=4ZdIV1KFQG8EqpNgn0c2OYdrVIGQnMTH">
-    </script>
-    <script type="text/javascript"
-        src="https://api.map.baidu.com/api?type=webgl&v=1.0&ak=4ZdIV1KFQG8EqpNgn0c2OYdrVIGQnMTH"></script>
+    <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=4ZdIV1KFQG8EqpNgn0c2OYdrVIGQnMTH"></script>
+    <script type="text/javascript" src="https://api.map.baidu.com/api?type=webgl&v=1.0&ak=4ZdIV1KFQG8EqpNgn0c2OYdrVIGQnMTH"></script>
     <!-- main -->
     <script type="text/javascript" src="./js/map.js"></script>
 </head>
@@ -220,7 +218,7 @@
             map.centerAndZoom(new BMapGL.Point(obj_test[0].location[0], obj_test[0].location[1]), 19);
 
              //2.添加坐标点位图像、及信息
-            console.log(obj_test.length);
+            // console.log(obj_test.length);
             for(var i = 0; i < obj_test.length; i++) {
                 //位置图标
                 myIcon[i] = new BMapGL.Icon(obj_test[i].icon, new BMapGL.Size(32, 32));
@@ -228,11 +226,11 @@
                     icon: myIcon[i],
                 });
                 map.addOverlay(marker_test[i]);
-                console.log(i);
-                console.log(obj_test[i].location[0] + "-" + obj_test[i].location[1]);
-                console.log(obj_test[0].location[0] + "-" + obj_test[0].location[1]);
-                console.log(obj_test[1].location[0] + "-" + obj_test[1].location[1]);
-                console.log(obj_test[2].location[0] + "-" + obj_test[2].location[1]);
+                // console.log(i);
+                // console.log(obj_test[i].location[0] + "-" + obj_test[i].location[1]);
+                // console.log(obj_test[0].location[0] + "-" + obj_test[0].location[1]);
+                // console.log(obj_test[1].location[0] + "-" + obj_test[1].location[1]);
+                // console.log(obj_test[2].location[0] + "-" + obj_test[2].location[1]);
                 //图标点击显示信息
                 // 创建图文信息窗口
                 var sContent = `
@@ -256,18 +254,19 @@
                 // marker添加点击事件
                 marker_test[i].addEventListener('click', function () {
                     this.openInfoWindow(infoWindow);
+                    alert(i);
                     // 图片加载完毕重绘infoWindow
                     // document.getElementById('imgDemo').onload = function () {
                     //     infoWindow.redraw(); // 防止在网速较慢时生成的信息框高度比图片总高度小，导致图片部分被隐藏
                     // };
                 });
             }
-            console.log(marker_test);
+            // console.log(marker_test[i] + "-" + i);
             //3.添加详情HTML
-            console.log(obj_test[0].location[0] + "-" + obj_test[0].location[1]);
-            console.log(obj_test[1].location[0] + "-" + obj_test[1].location[1]);
-            console.log(obj_test[2].location[0] + "-" + obj_test[2].location[1]);
-            console.log(obj_test);
+            // console.log(obj_test[0].location[0] + "-" + obj_test[0].location[1]);
+            // console.log(obj_test[1].location[0] + "-" + obj_test[1].location[1]);
+            // console.log(obj_test[2].location[0] + "-" + obj_test[2].location[1]);
+            // console.log(obj_test);
         }
 
         function test01() {
