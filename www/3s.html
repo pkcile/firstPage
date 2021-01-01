@@ -208,17 +208,17 @@
         var marker_click_infor = [];
         var myIcon = [];
         var obj_test = [];
+        var sContent = [];
         $.getJSON("./json/position_true.json", function (data) {
                 for (var i = 0; i < data.line.length; i++) {
                     obj_test[i] = data.line[i];
                 }
         });
         function guideFood() {
-             //1.地图移动位置        
+            //1.地图移动位置        
             map.centerAndZoom(new BMapGL.Point(obj_test[0].location[0], obj_test[0].location[1]), 19);
 
-             //2.添加坐标点位图像、及信息
-            // console.log(obj_test.length);
+            //2.添加坐标点位图像、及信息
             for(var i = 0; i < obj_test.length; i++) {
                 //位置图标
                 myIcon[i] = new BMapGL.Icon(obj_test[i].icon, new BMapGL.Size(32, 32));
@@ -226,14 +226,9 @@
                     icon: myIcon[i],
                 });
                 map.addOverlay(marker_test[i]);
-                // console.log(i);
-                // console.log(obj_test[i].location[0] + "-" + obj_test[i].location[1]);
-                // console.log(obj_test[0].location[0] + "-" + obj_test[0].location[1]);
-                // console.log(obj_test[1].location[0] + "-" + obj_test[1].location[1]);
-                // console.log(obj_test[2].location[0] + "-" + obj_test[2].location[1]);
                 //图标点击显示信息
-                // 创建图文信息窗口
-                var sContent = `
+                //创建图文信息窗口
+                sContent[i] = `
                 <div>
                     <h4 style='margin:0 0 5px 0; padding-left: 15px;'>`+ 
                         obj_test[i].content_infor.h4 +
@@ -250,8 +245,9 @@
                     `</p>` +
                 `</div>
                 `;
-                var infoWindow = new BMapGL.InfoWindow(sContent);
+                var infoWindow = new BMapGL.InfoWindow(sContent[i]);
                 // marker添加点击事件
+                console.log(i);
                 marker_test[i].addEventListener('click', function () {
                     this.openInfoWindow(infoWindow);
                     alert(i);
@@ -261,12 +257,7 @@
                     // };
                 });
             }
-            // console.log(marker_test[i] + "-" + i);
             //3.添加详情HTML
-            // console.log(obj_test[0].location[0] + "-" + obj_test[0].location[1]);
-            // console.log(obj_test[1].location[0] + "-" + obj_test[1].location[1]);
-            // console.log(obj_test[2].location[0] + "-" + obj_test[2].location[1]);
-            // console.log(obj_test);
         }
 
         function test01() {
