@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-
 <head>
     <meta charset="utf-8">
     <title>3S集成</title>
@@ -136,7 +135,6 @@
     <!-- main -->
     <script type="text/javascript" src="./js/map.js"></script>
 </head>
-
 <body>
     <ul class="map-wrap">
         <ul class="map-keywoards">
@@ -207,8 +205,9 @@
         var marker_test = [];
         var marker_click_infor = [];
         var myIcon = [];
+        //数组存储json数据
         var obj_test = [];
-        var sContent = [];
+        //读入位置点
         $.getJSON("./json/position_true.json", function (data) {
                 for (var i = 0; i < data.line.length; i++) {
                     obj_test[i] = data.line[i];
@@ -220,6 +219,7 @@
 
             //2.添加坐标点位图像、及信息
             for(var i = 0; i < obj_test.length; i++) {
+                // alert(i);
                 //位置图标
                 myIcon[i] = new BMapGL.Icon(obj_test[i].icon, new BMapGL.Size(32, 32));
                 marker_test[i] = new BMapGL.Marker(new BMapGL.Point(obj_test[i].location[0], obj_test[i].location[1]), {
@@ -228,7 +228,7 @@
                 map.addOverlay(marker_test[i]);
                 //图标点击显示信息
                 //创建图文信息窗口
-                sContent[i] = `
+                var sContent = `
                 <div>
                     <h4 style='margin:0 0 5px 0; padding-left: 15px;'>`+ 
                         obj_test[i].content_infor.h4 +
@@ -245,12 +245,13 @@
                     `</p>` +
                 `</div>
                 `;
-                var infoWindow = new BMapGL.InfoWindow(sContent[i]);
+                // alert(sContent);
+                var infoWindow = new BMapGL.InfoWindow(sContent);
+                // console.log("infowindow" + infoWindow + i);
+                console.log(infoWindow);
                 // marker添加点击事件
-                console.log(i);
-                marker_test[i].addEventListener('click', function () {
+                marker_test[0].addEventListener('click', function () {
                     this.openInfoWindow(infoWindow);
-                    alert(i);
                     // 图片加载完毕重绘infoWindow
                     // document.getElementById('imgDemo').onload = function () {
                     //     infoWindow.redraw(); // 防止在网速较慢时生成的信息框高度比图片总高度小，导致图片部分被隐藏
@@ -260,14 +261,60 @@
             //3.添加详情HTML
         }
 
+        //测试功能
         function test01() {
-            for(var i = 0; i < marker_test.length; i++) {
-                map.removeOverlay(marker_test[i]);
+             //1.地图移动位置        
+             map.centerAndZoom(new BMapGL.Point(obj_test[0].location[0], obj_test[0].location[1]), 19);
+             //2.显示
+             for (var i = 0; i < obj_test.length; i++) {
+                var p = obj_test[i].location;
+                var contents = obj_test[i].infor;
+                var marker = new BMapGL.Marker(new BMapGL.Point(p[0], p[1]));
+                map.addOverlay(marker);
+                j = i + 1;
+                // var content = j + data.contents[i].title;
+                console.log("content", contents);
+                var label = new BMapGL.Label(contents, {offset: new window.BMapGL.Size(10, -24) });
+                label.enableMassClear = true;
+                label.setStyle({
+                    borderRadius: '10px',
+                    borderColor: '#ababab',
+                    padding: '3px 20px',
+                    fontSize: '12px',
+                    color: '#757676'
+                });
+                marker.setLabel(label);
+                // addClickHandler(1, 1);
+                addClickHandler(contents, marker);
             }
-            alert("待写~");
-            
-            
         }
+        function addClickHandler(contents, marker) {
+            marker.addEventListener("click", function (e) {
+                openInfo(contents, e)
+                // alert(666);
+            }
+            );
+            // marker.removeEventListener("click", function (e) {
+            //     // openInfo(contents, e)
+            //     alert(666);
+            // }
+            // );
+        }
+        function openInfo(contents, e) {
+            alert("test");
+            // var p = e.target;
+            // var point = new BMapGL.Point(p.getPosition().lng, p.getPosition().lat);
+            // // console.log("test");
+            // console.log(point);
+            // var message = "地址66666：" + contents.address;
+            // var opts = {
+            //     title: contents.title
+            // }
+            // var infoWindow = new BMapGL.InfoWindow(message, opts);  // 创建信息窗口对象
+            // map.openInfoWindow(infoWindow, point); //开启信息窗口
+        }
+
+        
 
         function map_left() {
             map_left_right += 10;

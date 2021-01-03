@@ -9,7 +9,7 @@
            "content_infor":
            {
                 "h4": "清真食堂",
-                "img_src": "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farticle%2F5e36477770bbac53ed4463f17daff48fd5e516fb.gif&refer=http%3A%2F%2Fi0.hdslb.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1611211486&t=4dabc8a2db54a243c3062b28a5229b6d",
+                "img_src": "../img/kinds/carteen.png",
                 "paragraph":
                 [
                     "日常吃饭地点，这里的干煸炒面不错，一般会有点辣"             
@@ -17,16 +17,15 @@
                 "date": "2020-11-22"
 
            }
-        }
-        ,
+        },
         {
             "location": [116.032787,28.687613],
             "infor": "三食堂",
-            "icon": "./img/kinds/setting.png",
+            "icon": "../img/kinds/setting.png",
             "content_infor":
            {
                 "h4": "三食堂",
-                "img_src": "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farticle%2F5e36477770bbac53ed4463f17daff48fd5e516fb.gif&refer=http%3A%2F%2Fi0.hdslb.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1611211486&t=4dabc8a2db54a243c3062b28a5229b6d",
+                "img_src": "../img/kinds/carteen.png",
                 "paragraph":
                 [
                     "你好啊"                 
