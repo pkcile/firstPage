@@ -1,0 +1,38 @@
+{
+    "total": 3,
+    "line":
+    [
+        {
+           "location": [116.03682,28.68926],
+           "infor": "清真食堂",
+           "icon": "./img/kinds/carteen.png",
+           "content_infor":
+           {
+                "h4": "清真食堂",
+                "img_src": "../img/kinds/carteen.png",
+                "paragraph":
+                [
+                    "日常吃饭地点，这里的干煸炒面不错，一般会有点辣"             
+                ],
+                "date": "2020-11-22"
+
+           }
+        },
+        {
+            "location": [116.032787,28.687613],
+            "infor": "三食堂",
+            "icon": "../img/kinds/setting.png",
+            "content_infor":
+           {
+                "h4": "三食堂",
+                "img_src": "../img/kinds/carteen.png",
+                "paragraph":
+                [
+                    "你好啊"                 
+                ],
+                "date": "2020-11-22"
+
+           }
+        }
+    ]
+}

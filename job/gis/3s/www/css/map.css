@@ -1,0 +1,13 @@
+/* 地图尾部标注 */
+.BMap_cpyCtrl span {
+    display: none !important;
+}
+
+.anchorBL img {
+    display: none;
+}
+
+/* 调整比例尺位置 */
+.BMap_scaleCtrl.BMap_noprint.anchorBL {
+    left: 20px !important;
+}
