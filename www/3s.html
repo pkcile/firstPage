@@ -6,9 +6,10 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <!-- page-css -->
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/map.css">
-    <!-- font -->
+    <!-- font-icon -->
     <link rel="stylesheet" href="./css/font/iconfont.css">
     <style>
         body,
@@ -19,7 +20,6 @@
             margin: 0;
             font-family: "微软雅黑";
         }
-
         #container {
             width: 100%;
             height: 93%;
@@ -33,13 +33,12 @@
             margin: 0;
         }
 
-
+        /* 导航 */
         .map-wrap {
             width: 100%;
             position: absolute;
             top: 0px;
             border-radius: 5px;
-            /* background-color: rgba(174, 220, 252, 0.6); */
             background-color: rgba(80, 175, 238, 0.9);
             box-shadow: 0 2px 8px 0 rgba(247, 222, 195, 0.9);
             z-index: 999;
@@ -49,54 +48,45 @@
             user-select: none;
         }
 
+        /* 导航栏 */
         .map-keywoards {
             text-align: center;
             color: white;
             font-size: 1.1em;
         }
-
         .map-keywoards li {
             display: inline-block;
-            width: 13em;
+            width: 12em;
             line-height: 2.4em;
             border-bottom: .1em dotted white;
-            /* border-bottom: .1em solid red; */
-            /* border-radius: .2em; */
-            /* padding: 0 6em 0 6em; */
-            margin: 0 2em 0 2em;
+            margin: 0 1em 0 1em;
             cursor: pointer;
-
         }
-
         .map-keywoards li:hover {
             text-decoration: underline 3px solid red;
             color: black;
         }
 
+        /* 图层管理工具 */
         .map-tools {
             position: relative;
         }
-
         .map-tool-infor {
             position: absolute;
             top: 0;
             right: 0;
         }
-
         .map-tool-infor li {
             padding: .5em 1em .5em 1em;
             cursor: pointer;
         }
-
         .map-tool-icon {
             font-size: 1.5em;
         }
-
         .map-tool-icon:hover {
             color: rgb(230, 81, 230);
             font-weight: 900;
         }
-
 
         /* 地点描述 */
         #descript_position {
@@ -116,12 +106,10 @@
             /* background-color: rgba(80, 175, 238, 0.9); */
             letter-spacing: .1em;
         }
-
         #sum_position_center {
             text-align: center;
             line-height: 3.2em;
         }
-
         #sum_position_center_words:hover {
             color: #009F72;
             cursor: url(../img/user/cur888.png) 4 12, auto;
@@ -137,26 +125,16 @@
 </head>
 <body>
     <ul class="map-wrap">
-        <ul class="map-keywoards">
-            <!-- <li class="btn function_disp_w_d" onclick="showText()">POI文字显示</li>
-            <li class="btn function_disp_w_d" onclick="showIcon()">POI的Icon显示</li>
-            <li class="btn" onclick="showPosition()">地点显示</li>
-            <li class="btn" onclick="showPositionLine()">线路显示</li>
-            <li class="btn" onclick="showPositionYourself()">你的位置</li> -->
 
+        <ul class="map-keywoards">
             <li class="point_story btn" onclick="guideFood()">饮食</li>
             <li class="line_story btn" onclick="test01()">休闲</li>
             <li class="line_story btn" onclick="test01()">地名</li>
             <li class="line_story btn" onclick="showPositionLine()">行程</li>
-            <li class="line_story btn" onclick="toolOpenClose()">工具</li>
+            <li class="line_story btn" onclick="toolOpenClose()">图层</li>
+            <li class="line_story btn" onclick="test()">工具</li>
 
         </ul>
-        <!--
-             116.041137,28.683057 方荫楼
-             116.036857,28.68924 五食堂
-             116.037881,28.690136 一食堂
-             116.032747,28.687644 三食堂         
-        -->
         <ul class="map-tools">
             <ul class="map-tool-infor" id="map-tool-infor" style="display: none;">
                 <li onclick="showPositionYourself()">
@@ -174,17 +152,6 @@
                 <li onclick="map_right()">
                     <span title="向右旋转" class="iconfont map-tool-icon">&#xe728;</span>
                 </li>
-                <!-- <li onclick="map_up()"> 
-                    <span title="视角向上" class="iconfont map-tool-icon">&#xe682;</span>
-                </li> 
-                <li onclick="map_down()"> 
-                    <span title="视角向下" class="iconfont map-tool-icon">&#xe689;</span>
-                </li> 
-                <li onclick="map_left()"> 
-                    <span title="文字显示" class="iconfont ">复位</span>
-                </li>  -->
-
-
             </ul>
         </ul>
     </ul>
@@ -204,62 +171,59 @@
         //饮食测试
         var marker_test = [];
         var marker_click_infor = [];
+        //点对应的图标参数
         var myIcon = [];
-        //数组存储json数据
+        //数组存储json数据,obj_test数组存放所有食堂相关的点位
         var obj_test = [];
         //读入位置点
         $.getJSON("./json/position_true.json", function (data) {
                 for (var i = 0; i < data.line.length; i++) {
                     obj_test[i] = data.line[i];
                 }
+                console.log(obj_test);
         });
         function guideFood() {
             //1.地图移动位置        
             map.centerAndZoom(new BMapGL.Point(obj_test[0].location[0], obj_test[0].location[1]), 19);
-
             //2.添加坐标点位图像、及信息
             for(var i = 0; i < obj_test.length; i++) {
-                // alert(i);
-                //位置图标
+                //点位置显示
                 myIcon[i] = new BMapGL.Icon(obj_test[i].icon, new BMapGL.Size(32, 32));
                 marker_test[i] = new BMapGL.Marker(new BMapGL.Point(obj_test[i].location[0], obj_test[i].location[1]), {
                     icon: myIcon[i],
                 });
                 map.addOverlay(marker_test[i]);
-                //图标点击显示信息
-                //创建图文信息窗口
-                var sContent = `
-                <div>
-                    <h4 style='margin:0 0 5px 0; padding-left: 15px;'>`+ 
-                        obj_test[i].content_infor.h4 +
-                    `</h4>
-                    <img style='float:right;margin:0 4px 22px' id='imgDemo' src='` + 
-                        obj_test[i].content_infor.img_src +
-                        `' width='139' height='104'/>` + 
-
-                    `<p style='margin:0;line-height:1.5em;font-size:13px;text-indent:2em; width: 400px'>` +
-                        obj_test[i].content_infor.paragraph[0] +
-                    `</p>` +
-                    `<p style="text-align: right; padding-right: 160px;">`+
-                        obj_test[i].content_infor.date +
-                    `</p>` +
-                `</div>
-                `;
-                // alert(sContent);
-                var infoWindow = new BMapGL.InfoWindow(sContent);
-                // console.log("infowindow" + infoWindow + i);
-                console.log(infoWindow);
-                // marker添加点击事件
-                marker_test[0].addEventListener('click', function () {
-                    this.openInfoWindow(infoWindow);
-                    // 图片加载完毕重绘infoWindow
-                    // document.getElementById('imgDemo').onload = function () {
-                    //     infoWindow.redraw(); // 防止在网速较慢时生成的信息框高度比图片总高度小，导致图片部分被隐藏
-                    // };
-                });
+                // 点点击事件
+                marker_click(marker_test[i], obj_test[i]);
             }
-            //3.添加详情HTML
         }
+        //添加点击事件
+        function marker_click(marker, content) {
+            marker.addEventListener('click', function() {
+                openInfoImage(marker, content);
+            })
+        }
+        //图片框显示
+        function openInfoImage(marker, content) {
+            // console.log(marker.l);
+            console.log(marker.latLng.lat);
+            // var p = e.target;
+            // var point = new BMapGL.Point(p.getPosition().lng, p.getPosition().lat);
+            // console.log("contents" + contents.infor);
+            // var message = "地址：" + contents.infor;
+            // var opts = {
+            //     title: contents.title
+            // }
+            // var infoWindow = new BMapGL.InfoWindow(message, opts);  // 创建信息窗口对象
+            // map.openInfoWindow(infoWindow, point); //开启信息窗口
+            // console.log(content.infor);
+        }
+
+
+
+
+
+
 
         //测试功能
         function test01() {
@@ -267,14 +231,12 @@
              map.centerAndZoom(new BMapGL.Point(obj_test[0].location[0], obj_test[0].location[1]), 19);
              //2.显示
              for (var i = 0; i < obj_test.length; i++) {
-                var p = obj_test[i].location;
-                var contents = obj_test[i].infor;
-                var marker = new BMapGL.Marker(new BMapGL.Point(p[0], p[1]));
+                var contents = obj_test[i];
+                //位置显示
+                var marker = new BMapGL.Marker(new BMapGL.Point(obj_test[i].location[0], obj_test[i].location[1]));
                 map.addOverlay(marker);
-                j = i + 1;
-                // var content = j + data.contents[i].title;
-                console.log("content", contents);
-                var label = new BMapGL.Label(contents, {offset: new window.BMapGL.Size(10, -24) });
+                //标签显示
+                var label = new BMapGL.Label(contents.infor, {offset: new window.BMapGL.Size(10, -24) });
                 label.enableMassClear = true;
                 label.setStyle({
                     borderRadius: '10px',
@@ -284,38 +246,32 @@
                     color: '#757676'
                 });
                 marker.setLabel(label);
-                // addClickHandler(1, 1);
+                //添加标签点击事件
                 addClickHandler(contents, marker);
             }
         }
+        //标记点点击后的事件
         function addClickHandler(contents, marker) {
             marker.addEventListener("click", function (e) {
                 openInfo(contents, e)
-                // alert(666);
             }
             );
-            // marker.removeEventListener("click", function (e) {
-            //     // openInfo(contents, e)
-            //     alert(666);
-            // }
-            // );
         }
+        //弹窗事件
         function openInfo(contents, e) {
-            alert("test");
-            // var p = e.target;
-            // var point = new BMapGL.Point(p.getPosition().lng, p.getPosition().lat);
-            // // console.log("test");
-            // console.log(point);
-            // var message = "地址66666：" + contents.address;
-            // var opts = {
-            //     title: contents.title
-            // }
-            // var infoWindow = new BMapGL.InfoWindow(message, opts);  // 创建信息窗口对象
-            // map.openInfoWindow(infoWindow, point); //开启信息窗口
+            var p = e.target;
+            var point = new BMapGL.Point(p.getPosition().lng, p.getPosition().lat);
+            console.log("contents" + contents.infor);
+            var message = "地址：" + contents.infor;
+            var opts = {
+                title: contents.title
+            }
+            var infoWindow = new BMapGL.InfoWindow(message, opts);  // 创建信息窗口对象
+            map.openInfoWindow(infoWindow, point); //开启信息窗口
         }
 
         
-
+        //视图位置移动
         function map_left() {
             map_left_right += 10;
             map.setHeading(map_left_right);
@@ -339,7 +295,6 @@
     <!-- 页面显示 -->
     <script>
         var i = 5;
-
         function show_descript_position() {
             // 地图
             var center_container = document.getElementById("container");
