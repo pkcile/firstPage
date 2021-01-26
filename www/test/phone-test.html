@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = ["Android", "iPhone",
+                "SymbianOS", "Windows Phone",
+                "iPad", "iPod"
+            ];
+            var flag = true;
+            // console.log(userAgentInfo);
+            // console.log(userAgentInfo.indexOf("Windows Phone"));
+            // console.log(userAgentInfo);
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            // if(flag==)
+            console.log(flag);
+            return flag;
+        }
+        console.log(IsPC());
+        if(IsPC()==true) {
+            // alert("you are using windows")
+        }
+        else {
+            // alert("you are using un");
+        }
+    </script>
+</body>
+
+</html>

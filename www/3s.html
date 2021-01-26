@@ -135,17 +135,16 @@
     <!-- main -->
     <script type="text/javascript" src="./js/map.js"></script>
 </head>
-
 <body>
     <ul class="map-wrap">
 
         <ul class="map-keywoards">
-            <li class="point_story btn" onclick="guideFood()">饮食</li>
-            <li class="line_story btn" onclick="test01()">休闲</li>
+            <li class="point_story btn mobilehide" onclick="guideFood()">饮食</li>
+            <li class="line_story btn mobilehide" onclick="test01()">休闲</li>
             <li class="line_story btn" onclick="test01()">地名</li>
             <li class="line_story btn" onclick="showPositionLine()">行程</li>
             <li class="line_story btn" onclick="toolOpenClose()">图层</li>
-            <li class="line_story btn" onclick="test()">工具</li>
+            <li class="line_story btn mobilehide" onclick="test()">工具</li>
 
         </ul>
         <ul class="map-tools">
@@ -174,7 +173,11 @@
 
     <div id="container">
     </div>
-    <div id="descript_position" style="text-align: center;">测试中，待处理……</div>
+    <div id="descript_position" style="text-align: center;">
+        <!-- 测试中，待处理…… -->
+        <div class="descipt_position_part" style="width: 200px; height: 200px;margin: 0 auto; background-color: #bfa;"></div>
+        <div class="descipt_position_part"></div>
+    </div>
     <div id="sum_position" onclick="show_descript_position()">
         <div id="sum_position_center" onclick="">
             <span id="sum_position_center_words" onclick="test()">共有0个线索</span>
@@ -368,5 +371,6 @@
         })();
     </script>
 </body>
-
+  <!-- phone/windows apart -->
+  <script type="text/javascript" src="./js/phoneIdenty.js"></script>
 </html>
