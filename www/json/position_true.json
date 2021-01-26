@@ -9,7 +9,7 @@
            "content_infor":
            {
                 "h4": "清真食堂",
-                "img_src": "../img/kinds/carteen.png",
+                "img_src": "./img/kinds/carteen.png",
                 "paragraph":
                 [
                     "日常吃饭地点，这里的干煸炒面不错，一般会有点辣"             
@@ -19,18 +19,50 @@
            }
         },
         {
+            "location": [116.0367,28.690341],
+            "infor": "一食堂",
+            "icon": "./img/kinds/carteen.png",
+            "content_infor":
+            {
+                 "h4": "一食堂",
+                 "img_src": "./img/kinds/carteen.png",
+                 "paragraph":
+                 [
+                     "18年即大一上学期经常在一食堂朋友圈哪里吃饭，那个窗口的饭挺便宜的；最近不怎么在这里吃了，但早饭还是经常在这里买"             
+                 ],
+                 "date": "2021-01-26-15：04"
+ 
+            }
+         },
+         {
+            "location": [116.037499,28.689569],
+            "infor": "四食堂",
+            "icon": "./img/kinds/carteen.png",
+            "content_infor":
+            {
+                 "h4": "四食堂",
+                 "img_src": "./img/kinds/carteen.png",
+                 "paragraph":
+                 [
+                     "2020年9月份，四食堂在某一天所有商家突然的就关门了，据说是因为房租问题；大一上学期，早上经常在四食堂买白萝卜包子，还挺好吃，有的时候顺便找个座位买一杯椰奶喝"             
+                 ],
+                 "date": "2021-01-26-15：04"
+ 
+            }
+         },
+        {
             "location": [116.032787,28.687613],
             "infor": "三食堂",
-            "icon": "../img/kinds/setting.png",
+            "icon": "./img/kinds/carteen.png",
             "content_infor":
            {
                 "h4": "三食堂",
-                "img_src": "../img/kinds/setting.png",
+                "img_src": "./img/kinds/setting.png",
                 "paragraph":
                 [
-                    "你好啊"                 
+                    "大三上学期，兰州拉面，经常光顾的地方；若是那天吃饭时间晚了，一般都会去那里；那里的韭菜鸡蛋盖浇面、西红柿鸡蛋炒拉面挺好吃的，牛肉拉面碗挺大的，呵呵呵"                 
                 ],
-                "date": "2020-11-22"
+                "date": "2020-01-26-15：08"
 
            }
         }

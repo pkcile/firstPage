@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="utf-8">
     <title>3S集成</title>
@@ -20,6 +21,7 @@
             margin: 0;
             font-family: "微软雅黑";
         }
+
         #container {
             width: 100%;
             height: 93%;
@@ -54,6 +56,7 @@
             color: white;
             font-size: 1.1em;
         }
+
         .map-keywoards li {
             display: inline-block;
             width: 12em;
@@ -62,6 +65,7 @@
             margin: 0 1em 0 1em;
             cursor: pointer;
         }
+
         .map-keywoards li:hover {
             text-decoration: underline 3px solid red;
             color: black;
@@ -71,18 +75,22 @@
         .map-tools {
             position: relative;
         }
+
         .map-tool-infor {
             position: absolute;
             top: 0;
             right: 0;
         }
+
         .map-tool-infor li {
             padding: .5em 1em .5em 1em;
             cursor: pointer;
         }
+
         .map-tool-icon {
             font-size: 1.5em;
         }
+
         .map-tool-icon:hover {
             color: rgb(230, 81, 230);
             font-weight: 900;
@@ -106,23 +114,28 @@
             /* background-color: rgba(80, 175, 238, 0.9); */
             letter-spacing: .1em;
         }
+
         #sum_position_center {
             text-align: center;
             line-height: 3.2em;
         }
+
         #sum_position_center_words:hover {
             color: #009F72;
-            cursor: url(../img/user/cur888.png) 4 12, auto;
+            cursor: url(./img/user/cur888.png) 4 12, auto;
         }
     </style>
     <!-- jQuery -->
     <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <!-- baidu -->
-    <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=4ZdIV1KFQG8EqpNgn0c2OYdrVIGQnMTH"></script>
-    <script type="text/javascript" src="https://api.map.baidu.com/api?type=webgl&v=1.0&ak=4ZdIV1KFQG8EqpNgn0c2OYdrVIGQnMTH"></script>
+    <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=4ZdIV1KFQG8EqpNgn0c2OYdrVIGQnMTH">
+    </script>
+    <script type="text/javascript"
+        src="https://api.map.baidu.com/api?type=webgl&v=1.0&ak=4ZdIV1KFQG8EqpNgn0c2OYdrVIGQnMTH"></script>
     <!-- main -->
     <script type="text/javascript" src="./js/map.js"></script>
 </head>
+
 <body>
     <ul class="map-wrap">
 
@@ -177,16 +190,17 @@
         var obj_test = [];
         //读入位置点
         $.getJSON("./json/position_true.json", function (data) {
-                for (var i = 0; i < data.line.length; i++) {
-                    obj_test[i] = data.line[i];
-                }
-                console.log(obj_test);
+            for (var i = 0; i < data.line.length; i++) {
+                obj_test[i] = data.line[i];
+            }
+            console.log(obj_test);
         });
+
         function guideFood() {
             //1.地图移动位置        
             map.centerAndZoom(new BMapGL.Point(obj_test[0].location[0], obj_test[0].location[1]), 19);
             //2.添加坐标点位图像、及信息
-            for(var i = 0; i < obj_test.length; i++) {
+            for (var i = 0; i < obj_test.length; i++) {
                 //点位置显示
                 myIcon[i] = new BMapGL.Icon(obj_test[i].icon, new BMapGL.Size(32, 32));
                 marker_test[i] = new BMapGL.Marker(new BMapGL.Point(obj_test[i].location[0], obj_test[i].location[1]), {
@@ -199,63 +213,76 @@
         }
         //添加点击事件
         function marker_click(marker, content) {
-            marker.addEventListener('click', function() {
+            marker.addEventListener('click', function () {
                 openInfoImage(marker, content);
             })
         }
         //图片框显示
         function openInfoImage(marker, content) {
-            // console.log(marker.l);
-            console.log(marker.latLng.lat);
-            // var p = e.target;
-            // var point = new BMapGL.Point(p.getPosition().lng, p.getPosition().lat);
-            // console.log("contents" + contents.infor);
-            // var message = "地址：" + contents.infor;
-            // var opts = {
-            //     title: contents.title
-            // }
-            // var infoWindow = new BMapGL.InfoWindow(message, opts);  // 创建信息窗口对象
-            // map.openInfoWindow(infoWindow, point); //开启信息窗口
-            // console.log(content.infor);
+            // 创建图文信息窗口
+            var sContent = `
+                <div>
+                    <h4 style='margin:0 0 5px 0; padding-left: 15px;'>`+ 
+                        content.content_infor.h4 +
+                    `</h4>
+                    <img style='float:right;margin:0 4px 22px' id='imgDemo' src='` + 
+                        content.content_infor.img_src +
+                        `' width='139' height='104'/>` + 
+
+                    `<p style='margin:0;line-height:1.5em;font-size:13px;text-indent:2em; width: 400px'>` +
+                        content.content_infor.paragraph[0] +
+                    `</p>` +
+                    `<p style="text-align: right; padding-right: 160px;">`+
+                        content.content_infor.date +
+                    `</p>` +
+                `</div>
+                `;
+
+            var infoWindow = new BMapGL.InfoWindow(sContent);
+            console.log(infoWindow.content);
+            console.log(infoWindow);
+
+            // marker添加点击事件
+            marker.openInfoWindow(infoWindow);
+            // 图片加载完毕重绘infoWindow
+            document.getElementById('imgDemo').onload = function () {
+                infoWindow.redraw(); // 防止在网速较慢时生成的信息框高度比图片总高度小，导致图片部分被隐藏
+            };
         }
-
-
-
-
-
-
 
         //测试功能
         function test01() {
-             //1.地图移动位置        
-             map.centerAndZoom(new BMapGL.Point(obj_test[0].location[0], obj_test[0].location[1]), 19);
-             //2.显示
-             for (var i = 0; i < obj_test.length; i++) {
-                var contents = obj_test[i];
-                //位置显示
-                var marker = new BMapGL.Marker(new BMapGL.Point(obj_test[i].location[0], obj_test[i].location[1]));
-                map.addOverlay(marker);
-                //标签显示
-                var label = new BMapGL.Label(contents.infor, {offset: new window.BMapGL.Size(10, -24) });
-                label.enableMassClear = true;
-                label.setStyle({
-                    borderRadius: '10px',
-                    borderColor: '#ababab',
-                    padding: '3px 20px',
-                    fontSize: '12px',
-                    color: '#757676'
-                });
-                marker.setLabel(label);
-                //添加标签点击事件
-                addClickHandler(contents, marker);
-            }
+            alert("待测试");
+            // //1.地图移动位置        
+            // map.centerAndZoom(new BMapGL.Point(obj_test[0].location[0], obj_test[0].location[1]), 19);
+            // //2.显示
+            // for (var i = 0; i < obj_test.length; i++) {
+            //     var contents = obj_test[i];
+            //     //位置显示
+            //     var marker = new BMapGL.Marker(new BMapGL.Point(obj_test[i].location[0], obj_test[i].location[1]));
+            //     map.addOverlay(marker);
+            //     //标签显示
+            //     var label = new BMapGL.Label(contents.infor, {
+            //         offset: new window.BMapGL.Size(10, -24)
+            //     });
+            //     label.enableMassClear = true;
+            //     label.setStyle({
+            //         borderRadius: '10px',
+            //         borderColor: '#ababab',
+            //         padding: '3px 20px',
+            //         fontSize: '12px',
+            //         color: '#757676'
+            //     });
+            //     marker.setLabel(label);
+            //     //添加标签点击事件
+            //     addClickHandler(contents, marker);
+            // }
         }
         //标记点点击后的事件
         function addClickHandler(contents, marker) {
             marker.addEventListener("click", function (e) {
                 openInfo(contents, e)
-            }
-            );
+            });
         }
         //弹窗事件
         function openInfo(contents, e) {
@@ -266,11 +293,11 @@
             var opts = {
                 title: contents.title
             }
-            var infoWindow = new BMapGL.InfoWindow(message, opts);  // 创建信息窗口对象
+            var infoWindow = new BMapGL.InfoWindow(message, opts); // 创建信息窗口对象
             map.openInfoWindow(infoWindow, point); //开启信息窗口
         }
 
-        
+
         //视图位置移动
         function map_left() {
             map_left_right += 10;
@@ -295,6 +322,7 @@
     <!-- 页面显示 -->
     <script>
         var i = 5;
+
         function show_descript_position() {
             // 地图
             var center_container = document.getElementById("container");
@@ -332,11 +360,11 @@
     <!-- 访问统计 -->
     <script>
         var _hmt = _hmt || [];
-        (function() {
-          var hm = document.createElement("script");
-          hm.src = "https://hm.baidu.com/hm.js?aecc3f51d34ef8f846d5633c43d7988c";
-          var s = document.getElementsByTagName("script")[0]; 
-          s.parentNode.insertBefore(hm, s);
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?aecc3f51d34ef8f846d5633c43d7988c";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
         })();
     </script>
 </body>
