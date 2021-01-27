@@ -26,145 +26,150 @@
  }
  window.onload = loadJScript; // 异步加载地图
  function init() {
-     var static_point = new BMapGL.Point(116.038525, 28.68618);
-     map = new BMapGL.Map('container'); // 创建Map实例
-     map.enableScrollWheelZoom(true);// 启用滚轮放大缩小
-     map.centerAndZoom(static_point, 16);
-     map.setHeading(map_left_right);
-     map.setTilt(map_down_up);
-     // 创建折线
-     polyline = new BMapGL.Polyline([
-         new BMapGL.Point(116.041137, 28.683057),
-         new BMapGL.Point(116.036857, 28.68924),
-         new BMapGL.Point(116.037881, 28.690136),
-         new BMapGL.Point(116.032747, 28.687644)
-         //  116.041137,28.683057 方荫楼
-         //  116.036857,28.68924 五食堂
-         //  116.037881,28.690136 一食堂
-         //  116.032747,28.687644 三食堂  
-         //  116.032548,28.688138  三栋饭卡充值办理，问题解决
-         //  学生会在哪里
-         //  学校建行
-     ], {
-         strokeColor: 'blue',
-         strokeWeight: 2,
-         strokeOpacity: 0.5
-     });
-     // 批量绑定事件
-     var clickEvts = ['click', 'dblclick', 'rightclick'];
-     var moveEvts = ['mouseover', 'mouseout'];
-     var overlays = [polyline];
-
-     for (var i = 0; i < clickEvts.length; i++) {
-         const event = clickEvts[i];
-         for (var j = 0; j < overlays.length; j++) {
-             const overlay = overlays[j];
-             overlay.addEventListener(event, e => {
-                 switch (event) {
-                     case 'click':
-                         var res = overlay.toString() + '被单击!';
-                         break;
-                     case 'dbclick':
-                         var res = overlay.toString() + '被双击!';
-                         break;
-                     case 'rightclick':
-                         var res = overlay.toString() + '被右击!';
-                 }
-                 alert(res);
-             });
-         }
-     }
-     for (var i = 0; i < moveEvts.length; i++) {
-         const event = moveEvts[i];
-         for (var j = 1; j < overlays.length; j++) {
-             const overlay = overlays[j];
-             overlay.addEventListener(event, e => {
-                 switch (event) {
-                     case 'mouseover':
-                         overlay.setFillColor('#6f6cd8')
-                         break;
-                     case 'mouseout':
-                         overlay.setFillColor('#fff');
-                         break;
-                 }
-             });
-         }
-     }
-     //添加比例尺
-     var scaleCtrl = new BMapGL.ScaleControl();
-     map.addControl(scaleCtrl);
-     var zoomCtrl = new BMapGL.ZoomControl();
-     map.addControl(zoomCtrl);
-     // 添加3D控件
-    //  var navi3DCtrl = new BMapGL.NavigationControl3D();
-    //  map.addControl(navi3DCtrl);
-     //设置地图显示元素
-     map.setDisplayOptions({
-         poi: true //是否显示POI信息 
-     })
-     //自定义样式
-     // map.setMapStyleV2({styleJson:styleJson});
-     //添加右键功能
-     var menu = new BMapGL.ContextMenu();
-     var txtMenuItem = [{
-             text: '放大一级',
-             callback: function () {
-                 map.zoomIn();
-             }
-         },
-         {
-             text: '缩小一级',
-             callback: function () {
-                 map.zoomOut();
-             }
-         }
-     ];
-     for (var i = 0; i < txtMenuItem.length; i++) {
-         menu.addItem(new BMapGL.MenuItem(txtMenuItem[i].text, txtMenuItem[i].callback, 100));
-     }
-     map.addContextMenu(menu);
-     //显示icon、文字
-     showIcon();
-     showText();
-     //镂空图形
-     var bd = new BMapGL.Boundary();
-     bd.get('南昌市', function (rs) {
-         var hole = new BMapGL.Polygon(rs.boundaries, {
-             fillColor: 'red',
-             fillOpacity: 0.0
-         });
-         map.addOverlay(hole);
-     });
-
-     //获取定位
-     navigator.geolocation.getCurrentPosition(function (position) {
-         // 坐标转换
-         ggPoint = new BMapGL.Point(position.coords.longitude, position.coords.latitude);
-         // map.centerAndZoom(ggPoint, 16);
-
-         // 标注
-         false_marker = new BMapGL.Marker(ggPoint);
-         map.addOverlay(false_marker);
-         false_label = new BMapGL.Label("转换后的百度坐标（不正确）", {
-             offset: new BMapGL.Size(20, -10)
-         });
-         false_marker.setLabel(false_label); //添加百度label
-         map.removeOverlay(false_label);
-         // 坐标转换并显示
-         convertor();
-     });
-
-     $.getJSON("./json/position_line.json", function (data) {
-        for (i = 0; i < data.line.length; i++) {
-            polylinePointsArray[i] = new BMapGL.Point(data.line[i][0], data.line[i][1]);
-        }
-        polyline2 = new BMapGL.Polyline(polylinePointsArray, {
+     try{
+        var static_point = new BMapGL.Point(116.038525, 28.68618);
+        map = new BMapGL.Map('container'); // 创建Map实例
+        map.enableScrollWheelZoom(true);// 启用滚轮放大缩小
+        map.centerAndZoom(static_point, 16);
+        map.setHeading(map_left_right);
+        map.setTilt(map_down_up);
+        // 创建折线
+        polyline = new BMapGL.Polyline([
+            new BMapGL.Point(116.041137, 28.683057),
+            new BMapGL.Point(116.036857, 28.68924),
+            new BMapGL.Point(116.037881, 28.690136),
+            new BMapGL.Point(116.032747, 28.687644)
+            //  116.041137,28.683057 方荫楼
+            //  116.036857,28.68924 五食堂
+            //  116.037881,28.690136 一食堂
+            //  116.032747,28.687644 三食堂  
+            //  116.032548,28.688138  三栋饭卡充值办理，问题解决
+            //  学生会在哪里
+            //  学校建行
+        ], {
             strokeColor: 'blue',
             strokeWeight: 2,
             strokeOpacity: 0.5
-        });     
-    });
-
+        });
+        // 批量绑定事件
+        var clickEvts = ['click', 'dblclick', 'rightclick'];
+        var moveEvts = ['mouseover', 'mouseout'];
+        var overlays = [polyline];
+   
+        for (var i = 0; i < clickEvts.length; i++) {
+            const event = clickEvts[i];
+            for (var j = 0; j < overlays.length; j++) {
+                const overlay = overlays[j];
+                overlay.addEventListener(event, e => {
+                    switch (event) {
+                        case 'click':
+                            var res = overlay.toString() + '被单击!';
+                            break;
+                        case 'dbclick':
+                            var res = overlay.toString() + '被双击!';
+                            break;
+                        case 'rightclick':
+                            var res = overlay.toString() + '被右击!';
+                    }
+                    alert(res);
+                });
+            }
+        }
+        for (var i = 0; i < moveEvts.length; i++) {
+            const event = moveEvts[i];
+            for (var j = 1; j < overlays.length; j++) {
+                const overlay = overlays[j];
+                overlay.addEventListener(event, e => {
+                    switch (event) {
+                        case 'mouseover':
+                            overlay.setFillColor('#6f6cd8')
+                            break;
+                        case 'mouseout':
+                            overlay.setFillColor('#fff');
+                            break;
+                    }
+                });
+            }
+        }
+        //添加比例尺
+        var scaleCtrl = new BMapGL.ScaleControl();
+        map.addControl(scaleCtrl);
+        var zoomCtrl = new BMapGL.ZoomControl();
+        map.addControl(zoomCtrl);
+        // 添加3D控件
+       //  var navi3DCtrl = new BMapGL.NavigationControl3D();
+       //  map.addControl(navi3DCtrl);
+        //设置地图显示元素
+        map.setDisplayOptions({
+            poi: true //是否显示POI信息 
+        })
+        //自定义样式
+        // map.setMapStyleV2({styleJson:styleJson});
+        //添加右键功能
+        var menu = new BMapGL.ContextMenu();
+        var txtMenuItem = [{
+                text: '放大一级',
+                callback: function () {
+                    map.zoomIn();
+                }
+            },
+            {
+                text: '缩小一级',
+                callback: function () {
+                    map.zoomOut();
+                }
+            }
+        ];
+        for (var i = 0; i < txtMenuItem.length; i++) {
+            menu.addItem(new BMapGL.MenuItem(txtMenuItem[i].text, txtMenuItem[i].callback, 100));
+        }
+        map.addContextMenu(menu);
+        //显示icon、文字
+        showIcon();
+        showText();
+        //镂空图形
+        var bd = new BMapGL.Boundary();
+        bd.get('南昌市', function (rs) {
+            var hole = new BMapGL.Polygon(rs.boundaries, {
+                fillColor: 'red',
+                fillOpacity: 0.0
+            });
+            map.addOverlay(hole);
+        });
+   
+        //获取定位
+        navigator.geolocation.getCurrentPosition(function (position) {
+            // 坐标转换
+            ggPoint = new BMapGL.Point(position.coords.longitude, position.coords.latitude);
+            // map.centerAndZoom(ggPoint, 16);
+   
+            // 标注
+            false_marker = new BMapGL.Marker(ggPoint);
+            map.addOverlay(false_marker);
+            false_label = new BMapGL.Label("转换后的百度坐标（不正确）", {
+                offset: new BMapGL.Size(20, -10)
+            });
+            false_marker.setLabel(false_label); //添加百度label
+            map.removeOverlay(false_label);
+            // 坐标转换并显示
+            convertor();
+        });
+   
+        $.getJSON("./json/position_line.json", function (data) {
+           for (i = 0; i < data.line.length; i++) {
+               polylinePointsArray[i] = new BMapGL.Point(data.line[i][0], data.line[i][1]);
+           }
+           polyline2 = new BMapGL.Polyline(polylinePointsArray, {
+               strokeColor: 'blue',
+               strokeWeight: 2,
+               strokeOpacity: 0.5
+           });     
+       });
+         
+     }
+     catch (e){
+        alert("请通过本地服务器或远程服务器打开");
+     }
  }
 
 

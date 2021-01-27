@@ -14,6 +14,17 @@
     <link rel="stylesheet" href="./css/font/iconfont.css">
     <style>
         body,
+        html,
+        div,
+        li,
+        h1,
+        h2,
+        h3 {
+            margin: 0;
+            padding: 0;
+        }
+
+        body,
         html {
             overflow: hidden;
             width: 100%;
@@ -102,7 +113,54 @@
             height: 0%;
             width: 100%;
             background-color: #FAFAFA;
+            background-color: #bfa;
         }
+
+        /* 卡片 */
+
+        .descript_position_card {
+            height: 200px;
+            width: 85%;
+            margin: 10px auto;
+            background-color: #bfa;
+            overflow-y: scroll;
+            line-height: 1.2em;
+            letter-spacing: .05em;
+        }
+
+        .descript_position_card>h1 {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #1AA2FA;
+        }
+
+        .descript_position_card>.paragraph {
+            font-size: .8em;
+            font-weight: 500em;
+        }
+
+        .descript_position_card>h1,
+        .descript_position_card>.paragraph {
+            margin: 10px;
+        }
+
+        /* scroll */
+        .descript_position_card::-webkit-scrollbar {
+            width: 7px;
+            height: 15px;
+
+            background-color: rgb(216, 212, 212);
+        }
+        .descript_position_card::-webkit-scrollbar-track {
+            border-radius: 10px;
+            background-color: rgb(216, 212, 212);
+
+        }
+        .descript_position_card::-webkit-scrollbar-thumb  {
+            border-radius: 10px;
+            background-color: #60B6EF;
+        }
+    
 
         /* 地点汇总*/
         #sum_position {
@@ -135,6 +193,7 @@
     <!-- main -->
     <script type="text/javascript" src="./js/map.js"></script>
 </head>
+
 <body>
     <ul class="map-wrap">
 
@@ -144,7 +203,7 @@
             <li class="line_story btn" onclick="test01()">地名</li>
             <li class="line_story btn" onclick="showPositionLine()">行程</li>
             <li class="line_story btn" onclick="toolOpenClose()">图层</li>
-            <li class="line_story btn mobilehide" onclick="test()">工具</li>
+            <li class="line_story btn" onclick="test()">工具</li>
 
         </ul>
         <ul class="map-tools">
@@ -167,16 +226,46 @@
             </ul>
         </ul>
     </ul>
-    <ul>
-
-    </ul>
 
     <div id="container">
     </div>
-    <div id="descript_position" style="text-align: center;">
+    <div id="descript_position">
         <!-- 测试中，待处理…… -->
-        <div class="descipt_position_part" style="width: 200px; height: 200px;margin: 0 auto; background-color: #bfa;"></div>
-        <div class="descipt_position_part"></div>
+        <div class="descript_position_center">
+            <div class="descript_position_card">
+                <h1>标题测试</h1>
+                <div class="paragraph">
+                    《失控》，全名为《失控：机器、社会与经济的新生物学》（Out of Control: The New Biology of Machines, Social Systems, and the
+                    Economic World）。
+                    每次抱起这本大部头时，我都会产生“我这是在搞科研嘛”“我好牛逼啊居然看这玩意哈哈哈”“我擦这是什么啊我真是弱爆了”的错觉。
+                </div>
+                <div class="paragraph">
+                    《失控》，全名为《失控：机器、社会与经济的新生物学》（Out of Control: The New Biology of Machines, Social Systems, and the
+                    Economic World）。
+                    每次抱起这本大部头时，我都会产生“我这是在搞科研嘛”“我好牛逼啊居然看这玩意哈哈哈”“我擦这是什么啊我真是弱爆了”的错觉。
+                </div>
+                <div class="paragraph">
+                    《失控》，全名为《失控：机器、社会与经济的新生物学》（Out of Control: The New Biology of Machines, Social Systems, and the
+                    Economic World）。
+                    每次抱起这本大部头时，我都会产生“我这是在搞科研嘛”“我好牛逼啊居然看这玩意哈哈哈”“我擦这是什么啊我真是弱爆了”的错觉。
+                </div>
+                <div class="paragraph">
+                    《失控》，全名为《失控：机器、社会与经济的新生物学》（Out of Control: The New Biology of Machines, Social Systems, and the
+                    Economic World）。
+                    每次抱起这本大部头时，我都会产生“我这是在搞科研嘛”“我好牛逼啊居然看这玩意哈哈哈”“我擦这是什么啊我真是弱爆了”的错觉。
+                </div>
+                <div class="paragraph">
+                    《失控》，全名为《失控：机器、社会与经济的新生物学》（Out of Control: The New Biology of Machines, Social Systems, and the
+                    Economic World）。
+                    每次抱起这本大部头时，我都会产生“我这是在搞科研嘛”“我好牛逼啊居然看这玩意哈哈哈”“我擦这是什么啊我真是弱爆了”的错觉。
+                </div>
+                <div class="shudong" style="width: 100%; height: 100px; background-color: #009F72;">
+                    <input type="text">你的名字
+                    <input type="text">你的年龄
+                </div>
+            </div>
+        </div>
+
     </div>
     <div id="sum_position" onclick="show_descript_position()">
         <div id="sum_position_center" onclick="">
@@ -225,19 +314,19 @@
             // 创建图文信息窗口
             var sContent = `
                 <div>
-                    <h4 style='margin:0 0 5px 0; padding-left: 15px;'>`+ 
-                        content.content_infor.h4 +
-                    `</h4>
-                    <img style='float:right;margin:0 4px 22px' id='imgDemo' src='` + 
-                        content.content_infor.img_src +
-                        `' width='139' height='104'/>` + 
+                    <h4 style='margin:0 0 5px 0; padding-left: 15px;'>` +
+                content.content_infor.h4 +
+                `</h4>
+                    <img style='float:right;margin:0 4px 22px' id='imgDemo' src='` +
+                content.content_infor.img_src +
+                `' width='139' height='104'/>` +
 
-                    `<p style='margin:0;line-height:1.5em;font-size:13px;text-indent:2em; width: 400px'>` +
-                        content.content_infor.paragraph[0] +
-                    `</p>` +
-                    `<p style="text-align: right; padding-right: 160px;">`+
-                        content.content_infor.date +
-                    `</p>` +
+                `<p style='margin:0;line-height:1.5em;font-size:13px;text-indent:2em; width: 400px'>` +
+                content.content_infor.paragraph[0] +
+                `</p>` +
+                `<p style="text-align: right; padding-right: 160px;">` +
+                content.content_infor.date +
+                `</p>` +
                 `</div>
                 `;
 
@@ -299,7 +388,6 @@
             var infoWindow = new BMapGL.InfoWindow(message, opts); // 创建信息窗口对象
             map.openInfoWindow(infoWindow, point); //开启信息窗口
         }
-
 
         //视图位置移动
         function map_left() {
@@ -371,6 +459,7 @@
         })();
     </script>
 </body>
-  <!-- phone/windows apart -->
-  <script type="text/javascript" src="./js/phoneIdenty.js"></script>
+<!-- phone/windows apart -->
+<script type="text/javascript" src="./js/phoneIdenty.js"></script>
+
 </html>
