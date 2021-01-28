@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="utf-8">
     <title>3S集成</title>
@@ -116,6 +117,7 @@
         }
 
         /* 卡片 */
+
         .descript_position_card {
             height: 200px;
             width: 85%;
@@ -184,8 +186,10 @@
     <!-- jQuery -->
     <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <!-- baidu -->
-    <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=4ZdIV1KFQG8EqpNgn0c2OYdrVIGQnMTH"></script>
-    <script type="text/javascript" src="https://api.map.baidu.com/api?type=webgl&v=1.0&ak=4ZdIV1KFQG8EqpNgn0c2OYdrVIGQnMTH"></script>
+    <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=4ZdIV1KFQG8EqpNgn0c2OYdrVIGQnMTH">
+    </script>
+    <script type="text/javascript"
+        src="https://api.map.baidu.com/api?type=webgl&v=1.0&ak=4ZdIV1KFQG8EqpNgn0c2OYdrVIGQnMTH"></script>
     <!-- main -->
     <script type="text/javascript" src="./js/map.js"></script>
 </head>
@@ -194,9 +198,9 @@
     <ul class="map-wrap">
 
         <ul class="map-keywoards">
-            <li class="point_story btn" onclick="guideFood()">饮食</li>
+            <li class="point_story btn mobilehide" onclick="guideFood()">饮食</li>
             <li class="line_story btn mobilehide" onclick="test01()">休闲</li>
-            <li class="line_story btn mobilehide" onclick="test01()">地名</li>
+            <li class="line_story btn" onclick="test01()">地名</li>
             <li class="line_story btn" onclick="showPositionLine()">行程</li>
             <li class="line_story btn" onclick="toolOpenClose()">图层</li>
             <li class="line_story btn" onclick="test()">工具</li>
@@ -333,9 +337,9 @@
             // marker添加点击事件
             marker.openInfoWindow(infoWindow);
             // 图片加载完毕重绘infoWindow
-            // document.getElementById('imgDemo').onload = function () {
-            //     infoWindow.redraw(); // 防止在网速较慢时生成的信息框高度比图片总高度小，导致图片部分被隐藏
-            // };
+            document.getElementById('imgDemo').onload = function () {
+                infoWindow.redraw(); // 防止在网速较慢时生成的信息框高度比图片总高度小，导致图片部分被隐藏
+            };
         }
 
         //测试功能
@@ -444,8 +448,6 @@
             }
         }
     </script>
-    <!-- phone/windows apart -->
-    <script type="text/javascript" src="./js/phoneIdenty.js"></script>
     <!-- 访问统计 -->
     <script>
         var _hmt = _hmt || [];
@@ -457,6 +459,7 @@
         })();
     </script>
 </body>
-
+<!-- phone/windows apart -->
+<script type="text/javascript" src="./js/phoneIdenty.js"></script>
 
 </html>

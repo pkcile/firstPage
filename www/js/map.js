@@ -159,6 +159,7 @@
            for (i = 0; i < data.line.length; i++) {
                polylinePointsArray[i] = new BMapGL.Point(data.line[i][0], data.line[i][1]);
            }
+            //1.地图移动位置
            polyline2 = new BMapGL.Polyline(polylinePointsArray, {
                strokeColor: 'blue',
                strokeWeight: 2,
@@ -234,9 +235,9 @@
          current_marker.addEventListener('click', function () {
              this.openInfoWindow(infoWindow);
              // 图片加载完毕重绘infoWindow
-             document.getElementById('imgDemo').onload = function () {
-                 infoWindow.redraw(); // 防止在网速较慢时生成的信息框高度比图片总高度小，导致图片部分被隐藏
-             };
+             // document.getElementById('imgDemo').onload = function () {
+             //     infoWindow.redraw(); // 防止在网速较慢时生成的信息框高度比图片总高度小，导致图片部分被隐藏
+             // };
          });
      }
  }
@@ -293,6 +294,7 @@
  function showPositionLine() {
      if (iii01[3] % 2 == 0) {
         map.addOverlay(polyline2);
+        map.centerAndZoom(polylinePointsArray[0], 19);
      } 
      else {
         map.removeOverlay(polyline2);
