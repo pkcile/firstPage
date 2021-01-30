@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="utf-8">
     <title>3S集成</title>
@@ -156,21 +157,68 @@
             scrollbar-darkshadow-color: #0099dd;
             scrollbar-base-color: #0099dd; */
         }
+
         .descript_position_card::-webkit-scrollbar {
             width: 7px;
             height: 15px;
             background-color: rgb(216, 212, 212);
         }
+
         .descript_position_card::-webkit-scrollbar-track {
             border-radius: 10px;
             background-color: rgb(216, 212, 212);
 
         }
-        .descript_position_card::-webkit-scrollbar-thumb  {
+
+        .descript_position_card::-webkit-scrollbar-thumb {
             border-radius: 10px;
             background-color: #60B6EF;
         }
-    
+
+        /* 留言 */
+        .message_board_card {
+            width: 800px;
+            height: 800px;
+            background-color: aquamarine;
+            margin: 30px auto;
+        }
+
+        /*1.输入框*/
+        .text_box_card {
+            width: 100%;
+            height: 200px;
+            /*overflow-y: scroll;*/
+            background-color: #bba;
+        }
+
+        /*2.提交框*/
+        .text_submit_card {
+            width: 100%;
+            height: 100px;
+            background-color: rebeccapurple;
+            cursor: pointer;
+        }
+
+        /*3.列表框*/
+        .text_list_show_card {
+            width: 100%;
+            height: 400px;
+            background-color: #dad;
+        }
+
+        /*4.转换条*/
+        .text_item_change_card {
+            width: 100%;
+            height: 100px;
+            background-color: #cda;
+        }
+
+        .text_item_change_card ul {
+            list-style-type: none;
+            cursor: pointer;
+        }
+
+
 
         /* 地点汇总*/
         #sum_position {
@@ -196,8 +244,10 @@
     <!-- jQuery -->
     <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <!-- baidu -->
-    <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=4ZdIV1KFQG8EqpNgn0c2OYdrVIGQnMTH"></script>
-    <script type="text/javascript" src="https://api.map.baidu.com/api?type=webgl&v=1.0&ak=4ZdIV1KFQG8EqpNgn0c2OYdrVIGQnMTH"></script>
+    <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=4ZdIV1KFQG8EqpNgn0c2OYdrVIGQnMTH">
+    </script>
+    <script type="text/javascript"
+        src="https://api.map.baidu.com/api?type=webgl&v=1.0&ak=4ZdIV1KFQG8EqpNgn0c2OYdrVIGQnMTH"></script>
     <!-- main -->
     <script type="text/javascript" src="./js/map.js"></script>
 </head>
@@ -247,29 +297,28 @@
                     Economic World）。
                     每次抱起这本大部头时，我都会产生“我这是在搞科研嘛”“我好牛逼啊居然看这玩意哈哈哈”“我擦这是什么啊我真是弱爆了”的错觉。
                 </div>
-                <div class="paragraph">
-                    《失控》，全名为《失控：机器、社会与经济的新生物学》（Out of Control: The New Biology of Machines, Social Systems, and the
-                    Economic World）。
-                    每次抱起这本大部头时，我都会产生“我这是在搞科研嘛”“我好牛逼啊居然看这玩意哈哈哈”“我擦这是什么啊我真是弱爆了”的错觉。
-                </div>
-                <div class="paragraph">
-                    《失控》，全名为《失控：机器、社会与经济的新生物学》（Out of Control: The New Biology of Machines, Social Systems, and the
-                    Economic World）。
-                    每次抱起这本大部头时，我都会产生“我这是在搞科研嘛”“我好牛逼啊居然看这玩意哈哈哈”“我擦这是什么啊我真是弱爆了”的错觉。
-                </div>
-                <div class="paragraph">
-                    《失控》，全名为《失控：机器、社会与经济的新生物学》（Out of Control: The New Biology of Machines, Social Systems, and the
-                    Economic World）。
-                    每次抱起这本大部头时，我都会产生“我这是在搞科研嘛”“我好牛逼啊居然看这玩意哈哈哈”“我擦这是什么啊我真是弱爆了”的错觉。
-                </div>
-                <div class="paragraph">
-                    《失控》，全名为《失控：机器、社会与经济的新生物学》（Out of Control: The New Biology of Machines, Social Systems, and the
-                    Economic World）。
-                    每次抱起这本大部头时，我都会产生“我这是在搞科研嘛”“我好牛逼啊居然看这玩意哈哈哈”“我擦这是什么啊我真是弱爆了”的错觉。
-                </div>
-                <div class="shudong" style="width: 100%; height: 100px; background-color: #009F72;">
-                    <input type="text">你的名字
-                    <input type="text">你的年龄
+                <div class="message_board_card">
+                    <!-- 1.输入框 -->
+                    <div class="text_box_card">
+                        <textarea name="" cols="30" rows="10" id="text_box_card_input_label"
+                            style="width: 100%; height: 100%; font-weight: 500; font-size: 18px; "></textarea>
+                    </div>
+                    <!-- 2.提交框 -->
+                    <div class="text_submit_card" onclick="databaseInsert_demo()"></div>
+                    <!-- 3.列表框 -->
+                    <div class="text_list_show_card">
+                        <table style="width: 100%; height: 100%; background-color: #bfa; overflow-y: scroll"
+                            id="text_list_show_card_table">
+
+                        </table>
+                    </div>
+                    <!-- 4.转换条 -->
+                    <div class="text_item_change_card">
+                        <ul style="width: 100%; height: 100%;">
+                            <li style="width: 50%; height: 100%; float: left; background-color: #bbbbaa">上一条</li>
+                            <li style="width: 50%; height: 100%; float: left; background-color: #eda">下一条</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -280,6 +329,43 @@
             <span id="sum_position_center_words" onclick="test()">共有0个线索</span>
         </div>
     </div>
+    <script>
+        function databaseInsert_demo() {
+        console.log(document.getElementById("text_box_card_input_label").defaultValue + "test");
+        // var xmlhttp = null;
+        // str==""
+        // str==""
+        // if (str == "")
+        // {
+        //     document.getElementById("text_list_show_card_table").innerHTML = "";
+        //     return;
+        // }
+        if(document.getElementById("text_box_card_input_label").value == "") {
+            alert("空空空")
+            return;
+        }
+        if (window.XMLHttpRequest)
+        {
+            // IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+            xmlhttp = new XMLHttpRequest();
+        }
+        else
+        {
+            // IE6, IE5 浏览器执行代码
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange=function()
+        {
+            if (xmlhttp.readyState==4 && xmlhttp.status==200)
+            {
+                document.getElementById("text_list_show_card_table").innerHTML = xmlhttp.responseText;
+            }
+        }
+        xmlhttp.open("GET","https://www.pkcile.cn/message_board.php?message=" + document.getElementById("text_box_card_input_label").value, true);
+        xmlhttp.send();
+    }
+    </script>
+
     <script>
         //饮食测试
         var marker_test = [];
