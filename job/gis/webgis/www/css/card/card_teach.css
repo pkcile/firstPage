@@ -1,6 +1,5 @@
 /* 教程卡片 */
 .inner {
-    /* 270 300 */
     float: left;
     margin: 10px ;
     width: 250px;
@@ -8,6 +7,10 @@
     background: #fff; 
     border: 1px dotted #D7D7D7;
     cursor: pointer;
+}
+
+.inner:hover {
+    border: 1px solid blue;
 }
 
 /* 卡片状态 */

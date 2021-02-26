@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>card_sofware</title>
+    <link rel="stylesheet" href="https://s2.pstatp.com/cdn/expire-1-M/minireset.css/0.0.2/minireset.css">
+    <style>
+
+    /* ==========================================================================
+    teach_window card style
+    ========================================================================== */
+
+    /* card total */
+    .card-teach {
+        /* float: left; */
+        margin: 10px ;
+        width: 250px;
+        height: 278px;
+        background: #fff;
+        border: 1px dotted #D7D7D7;
+        cursor: pointer;
+    }
+
+    .card-teach:hover {
+        border: 1px solid blue;
+    }
+
+    /* card container that helps correct position */
+    .card-teach-container {
+        position: relative;
+        width: 100%;
+    }
+
+    /* logo mask */
+    .card-teach-container .logo-mask {
+        position: absolute;
+        width: 100%;
+        height: 144px;
+    }
+
+    /* logo bg */
+    .card-teach-container .logo-bg {
+        position: absolute;
+        width: 100%;
+        height: 144px;
+        /*background-image: url('./img/png/card-bg.png');*/
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20width%3D%22270%22%20height%3D%22144%22%20viewBox%3D%220%200%20270%20144%22%20version%3D%221.1%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20height%3D%22144%22%20width%3D%22270%22%20style%3D%22stroke%3A%20%2370d5dd%3B%20fill%3A%20%23dd524b%22/%3E%3C/svg%3E");
+    }
+
+    /* logo container? */
+    .card-teach-container .logo-container {
+        /* position: absolute; */
+        width: 100%;
+        height: 144px;
+        background-color: rgba(11, 22, 33, .4);
+        z-index: 1;
+    }
+
+    /*logo small center*/
+    .card-teach-container .logo {
+        /* background-image: url('../../img/svg/exp-cent-os.svg'); */
+        background-image: url("data:image/svg+xml;charset=utf8, %3Csvg%20width%3D%2250%22%20height%3D%2250%22%20viewBox%3D%220%200%2050%2050%22%20version%3D%221.1%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20height%3D%2250%22%20width%3D%2250%22%20style%3D%22stroke%3A%20%2370d5dd%3B%20fill%3A%20%23bfa%22/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        width: 144px;
+        height: 80px;
+        position: relative;
+        left: 3.3em;
+        top: 2em;
+    }
+
+    /* infor container */
+    .info-container {
+        width: 100%;
+        height: 136px;
+    }
+
+    /* infor title */
+    .info-container h3.title {
+        padding: 11px 5px 5px 14px;
+        font-weight: 500;
+        font-size: 16px;
+        color: #9C47A2;
+    }
+    .info-container .title:hover{
+        color: #7F9BB9;
+    }
+
+    /* infor owner */
+    .info-container p.owner {
+        padding:  5px 0 0 15px;
+        font-weight: 300;
+    }
+
+    /* infor icon container*/
+    .info-container .desc {
+        width: 100%;
+        height: 30px;
+        /* background-color: #baefff; */
+        margin: 30px 0 100px 0;
+    }
+
+    /* infor icon box */
+    .info-container .desc .desc-item {
+        float: left;
+        margin: 8px 20px 0 20px;
+    }
+
+    /* infor icon */
+    .info-container .icon-desc-item {
+        line-height: 18px;
+        color: #D7D7D7;
+        font-weight: 700;
+    }
+
+    /* a*/
+    a{
+        text-decoration: none;
+        color: #000;
+    }
+
+
+    /* ==========================================================================
+    card position
+    ========================================================================== */
+    .card-teach {
+        margin: 20px auto;
+    }
+</style>
+</head>
+
+<body>
+    <div class="center">
+        <!-- card total -->
+        <div class="card-teach">
+            <a href="javascript:;">
+                <div class="card-teach-container">
+                    <!-- logo mask -->
+                    <div class="logo-mask">
+                    </div>
+                    <!-- logo bg -->
+                    <div class="logo-bg"></div>
+                    <!-- logo small center -->
+                    <div class="logo-container">
+                        <div class="logo"></div>
+                    </div>
+                    <!-- card infor -->
+                    <div class="info-container">
+                        <h3 class="title">
+                            安装windows系统
+                        </h3>
+                        <p class="owner">
+                            <a href="javascript:;">大白菜</a>
+                        </p>
+                        <div class="desc">
+                            <div class="desc-item">
+                                <i class="iconfont icon-desc-item ">&#xe61c;</i>
+                                <span>开始</span>
+                            </div>
+                            <div class="desc-item">
+                                <i class="iconfont icon-desc-item">&#xe8ad;</i>
+                                <span>1h</span>
+                            </div>
+                            <div class="desc-item">
+                                <i class="iconfont icon-desc-item">&#xe68f;</i>
+                                <span>0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>
