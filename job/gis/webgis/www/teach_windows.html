@@ -1,24 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 
 <head>
 	<meta charset="utf-8">
 	<title>windows10的安装</title>
 	<!-- 重置样式表 -->
-	<link rel="stylesheet" type="text/css" href="./css/reset.css" / charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="./css/reset.css">
 	<!-- card_teach -->
-	<link rel="stylesheet" href="./css/teach/card_teach.css" charset="utf-8">
-	<link rel="stylesheet" href="./css/teach/teach_main.css" charset="utf-8">
-	<!-- 访问统计 -->
-	<script>
-		var _hmt = _hmt || [];
-		(function() {
-		  var hm = document.createElement("script");
-		  hm.src = "https://hm.baidu.com/hm.js?aecc3f51d34ef8f846d5633c43d7988c";
-		  var s = document.getElementsByTagName("script")[0]; 
-		  s.parentNode.insertBefore(hm, s);
-		})();
-	</script>
+	<link rel="stylesheet" href="./css/teach/card_teach.css">
+	<link rel="stylesheet" href="./css/teach/teach_main.css">
 	<script>
 		window.onload = function () {
 			// 实验链接-隐藏
@@ -40,7 +30,7 @@
 			}
 		}
 	</script>
-	<style type="text/css">
+	<style>
 		body {
 			/* background-color: #E5DEFA; */
 			background-image: url(./img/bg.jpg);
@@ -352,53 +342,56 @@
 				</div>
 
 			</div>
-
-</body>
-<script>
-	var number_content = 0;
-	var number_picture = 0;
-	//关闭目录
-	var content_close_button = document.getElementById("content-close");
-	content_close_button.onclick = function () {
-		var teach_detail_content = document.getElementById("teach-detail-content");
-		teach_detail_content.style.display = "none";
-	}
-	//打开关闭目录内容
-	var card_detail_content = document.getElementsByClassName("card-detail-card-header");
-	// alert(card_detail_content[0].innerHTML)
-	for (var i = 0; i < card_detail_content.length; i++) {
-		(function (arg) {
-			card_detail_content[i].onclick = function () {
-				if (number_content % 2 == 0) {
-					var detail_card = document.getElementsByClassName("card-detail-card-main");
-					detail_card[arg].style.display = "none";
-				} else {
-					var detail_card = document.getElementsByClassName("card-detail-card-main");
-					detail_card[arg].style.display = "block";
-				}
-				number_content++;
-			}
-		})(i);
-	}
-	//过程截图展示
-	var process_picture = document.getElementById("process_picture");
-	process_picture.onclick = function () {
-		var picture_detail = document.getElementsByClassName("card-detail-card-detail");
-
-		if (number_picture % 2 == 0) {
-			for (var i = 0; i < picture_detail.length; i++) {
-				picture_detail[i].style.display = "block";
-				// alert(i);
-			}
-			number_picture++;
-		} else {
-			for (var i = 0; i < picture_detail.length; i++) {
-				picture_detail[i].style.display = "none";
-				// alert(i);
-			}
-			number_picture++;
+		</div>
+	</div>
+	<script>
+		var number_content = 0;
+		var number_picture = 0;
+		//关闭目录
+		var content_close_button = document.getElementById("content-close");
+		content_close_button.onclick = function () {
+			var teach_detail_content = document.getElementById("teach-detail-content");
+			teach_detail_content.style.display = "none";
 		}
+		//打开关闭目录内容
+		var card_detail_content = document.getElementsByClassName("card-detail-card-header");
+		// alert(card_detail_content[0].innerHTML)
+		for (var i = 0; i < card_detail_content.length; i++) {
+			(function (arg) {
+				card_detail_content[i].onclick = function () {
+					if (number_content % 2 == 0) {
+						var detail_card = document.getElementsByClassName("card-detail-card-main");
+						detail_card[arg].style.display = "none";
+					} else {
+						var detail_card = document.getElementsByClassName("card-detail-card-main");
+						detail_card[arg].style.display = "block";
+					}
+					number_content++;
+				}
+			})(i);
+		}
+		
+		//过程截图展示
+		var process_picture = document.getElementById("process_picture");
+		process_picture.onclick = function () {
+			var picture_detail = document.getElementsByClassName("card-detail-card-detail");
+	
+			if (number_picture % 2 == 0) {
+				for (var i = 0; i < picture_detail.length; i++) {
+					picture_detail[i].style.display = "block";
+					// alert(i);
+				}
+				number_picture++;
+			} else {
+				for (var i = 0; i < picture_detail.length; i++) {
+					picture_detail[i].style.display = "none";
+					// alert(i);
+				}
+				number_picture++;
+			}
+	
+		}
+	</script>
+</body>
 
-	}
-</script>
 </html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="cn-zh">
+<html lang="zh-CN">
 
 <head>
     <meta charset="UTF-8">
@@ -409,7 +409,6 @@
                         </div>
                     </div>
                 </div>
-                <!------------------------------------------------------------------------------------------------------------>
                 <div class="download_card">
                     <div class="download_card_inner">
                         <div class="download_img">
@@ -721,188 +720,180 @@
         </div>
     </div>
     <!-- foot End -->
+    <script>
+        //导航栏点击
+        var nav = document.getElementsByClassName("menu-nav-item");
+        // 闭包
+        var number = 0;
+        for (var i = 0; i < nav.length; i++) {
+            (function (arg) {
+                nav[i].onclick = function () {
+                    var test = document.querySelectorAll(".menu-nav-item-list");
+                    if (number % 2 == 0) {
+                        test[arg].style.display = 'block';
+                    } else {
+                        test[arg].style.display = 'none';
+                    }
+                    number++;
+    
+                }
+            })(i);
+        }
+    
+        //时间计算并显示
+        function display() {
+            var obj = new Date();
+            var year = obj.getFullYear();
+            var month = obj.getMonth();
+            var day = obj.getDate();
+            var hour = obj.getHours();
+            var minute = obj.getMinutes();
+            var second = obj.getSeconds();
+            var test = 1;
+            month = month + 1;
+            //获取起始时间结点
+            var time_start = document.getElementById("update-infor-start");
+            //获取计算天数结点
+            var time_last = document.getElementById("update-infor-last");
+            var arr_time = time_start.innerHTML.split('-');
+            // 2019 9 12
+            // 2020 8 10
+            //粗略估计时间，以后精准估计，月差按30
+            //天数判断
+    
+            console.log(day);
+            if (arr_time[2] > day) {
+                month = month - 1;
+                day = day + 30 - arr_time[2];
+            } else {
+                day = day - arr_time[2];
+            }
+            //月份判断
+            if (arr_time[1] > month) {
+                year = year - 1;
+                month = month + 12 - arr_time[1];
+            } else {
+                month = month - arr_time[1];
+            }
+            //年份判断
+            year = year - arr_time[0];
+            console.log(day);
+            //写入span标签
+            time_last.innerHTML = year + "年" + month + "月" + day + "天";
+    
+        }
+        display();
+    
+        // card download 卡片下载效果出现、消失
+        var arr1 = document.getElementsByClassName("download_information");
+        // 闭包
+        for (var i = 0; i < arr1.length; i++) {
+            (function (arg) {
+                arr1[i].onmouseover = function () {
+                    var test = document.querySelectorAll(".download_information .download_hide span");
+                    test[arg].style.position = 'absolute';
+                }
+                arr1[i].onmouseout = function () {
+                    var test = document.querySelectorAll(".download_information .download_hide span");
+                    test[arg].style.position = 'static';
+                }
+            })(i);
+        }
+    
+        //main-2 软件搜索
+        var software_search = document.getElementById("software_search");
+        software_search.onclick = function () {
+            var input_software_name = document.getElementById("input_software_name");
+            window.location.href = "https://pc.qq.com/search.html#!keyword=" + input_software_name.value;
+        }
+    
+        // 点击调字体大小
+        function font_small_change() {
+            var navigation_font_size = document.getElementById("navigator_left");
+            navigation_font_size.style.fontSize = "1em";
+        }
+    
+        function font_medium_change() {
+            var navigation_font_size = document.getElementById("navigator_left");
+            navigation_font_size.style.fontSize = "1.2em";
+        }
+    
+        function font_large_change() {
+            var navigation_font_size = document.getElementById("navigator_left");
+            navigation_font_size.style.fontSize = "1.4em";
+        }
+    
+        // 点击调样式
+        function footer_theme1() {
+            var link_theme1 = document.getElementById("body_header");
+            var link_theme2 = document.getElementById("body_main");
+            var link_theme3 = document.getElementById("body_footer");
+            var navigator_ip_infor = document.getElementById("navigator-ip-infor");
+            var footer_logo_infor_link = document.getElementById("footer-logo-infor-link");
+            var footer_infor_infor_link = document.getElementById("footer-infor-infor-link");
+            var footer_infor_infor_ICP = document.getElementById("footer-infor-infor-ICP");
+            var foot_logo_img = document.getElementById("foot-logo-img");
+            
+            link_theme1.href = './css/index/header1.css';
+            link_theme2.href = './css/index/main1.css';
+            link_theme3.href = './css/index/footer1.css';
+            navigator_ip_infor.style = "display: none";
+            footer_logo_infor_link.style = "display: none";
+            footer_infor_infor_link.style = "display: block";
+            footer_infor_infor_ICP.style = "display: block";
+            foot_logo_img.style = "display: block";
+    
+        }
+    
+        function footer_theme2() {
+            var link_theme1 = document.getElementById("body_header");
+            var link_theme2 = document.getElementById("body_main");
+            var link_theme3 = document.getElementById("body_footer");
+            var navigator_ip_infor = document.getElementById("navigator-ip-infor");
+            var footer_logo_infor_link = document.getElementById("footer-logo-infor-link");
+            var footer_infor_infor_link = document.getElementById("footer-infor-infor-link");
+            var footer_infor_infor_ICP = document.getElementById("footer-infor-infor-ICP");
+            var foot_logo_img = document.getElementById("foot-logo-img");
+            link_theme1.href = './css/index/header2.css';
+            link_theme2.href = './css/index/main2.css';
+            link_theme3.href = './css/index/footer2.css';
+            navigator_ip_infor.style = "display: inline-block";
+            footer_logo_infor_link.style = "display: block";
+            footer_infor_infor_link.style = "display: none";
+            footer_infor_infor_ICP.style = "display: none";
+            foot_logo_img.style = "display: none";
+        }
+    
+        function footer_theme3() {
+            var link_theme1 = document.getElementById("body_header");
+            var link_theme2 = document.getElementById("body_main");
+            var link_theme3 = document.getElementById("body_footer");
+            var navigator_ip_infor = document.getElementById("navigator-ip-infor");
+            var footer_logo_infor_link = document.getElementById("footer-logo-infor-link");
+            var footer_infor_infor_link = document.getElementById("footer-infor-infor-link");
+            var footer_infor_infor_ICP = document.getElementById("footer-infor-infor-ICP");
+            var foot_logo_img = document.getElementById("foot-logo-img");
+            link_theme1.href = './css/index/header3.css';
+            link_theme2.href = './css/index/main3.css';
+            link_theme3.href = './css/index/footer3.css';
+            navigator_ip_infor.style = "display: none"
+            footer_logo_infor_link.style = "display: none";
+            footer_infor_infor_link.style = "display: block";
+            footer_infor_infor_ICP.style = "display: block";
+            foot_logo_img.style = "display: block";
+        }
+    
+        $.getJSON("http://ip-api.com/json/?lang=zh-CN", function (data) {
+            document.getElementById("ip-infor-city").innerHTML = data.city;
+            document.getElementById("ip-infor-lat").innerHTML = "[" + data.lat;
+            document.getElementById("ip-infor-lon").innerHTML = "," + data.lon + "]";
+        });
+    
+        function next_time_ok() {
+            alert("下次一定！😁")
+        }
+    </script>
 </body>
 
+
 </html>
-<script>
-    //导航栏点击
-    var nav = document.getElementsByClassName("menu-nav-item");
-    // 闭包
-    number = 0;
-    for (var i = 0; i < nav.length; i++) {
-        (function (arg) {
-            nav[i].onclick = function () {
-                var test = document.querySelectorAll(".menu-nav-item-list");
-                if (number % 2 == 0) {
-                    test[arg].style.display = 'block';
-                } else {
-                    test[arg].style.display = 'none';
-                }
-                number++;
-
-            }
-        })(i);
-    }
-
-    //时间计算并显示
-    function display() {
-        var obj = new Date();
-        var year = obj.getFullYear();
-        var month = obj.getMonth();
-        var day = obj.getDate();
-        var hour = obj.getHours();
-        var minute = obj.getMinutes();
-        var second = obj.getSeconds();
-        var test = 1;
-        month = month + 1;
-        //获取起始时间结点
-        var time_start = document.getElementById("update-infor-start");
-        //获取计算天数结点
-        var time_last = document.getElementById("update-infor-last");
-        var arr_time = time_start.innerHTML.split('-');
-        // 2019 9 12
-        // 2020 8 10
-        //粗略估计时间，以后精准估计，月差按30
-        //天数判断
-
-        console.log(day);
-        if (arr_time[2] > day) {
-            month = month - 1;
-            day = day + 30 - arr_time[2];
-        } else {
-            day = day - arr_time[2];
-        }
-        //月份判断
-        if (arr_time[1] > month) {
-            year = year - 1;
-            month = month + 12 - arr_time[1];
-        } else {
-            month = month - arr_time[1];
-        }
-        //年份判断
-        year = year - arr_time[0];
-        console.log(day);
-        //写入span标签
-        time_last.innerHTML = year + "年" + month + "月" + day + "天";
-
-    }
-    display();
-
-    // card download 卡片下载效果出现、消失
-    var arr1 = document.getElementsByClassName("download_information");
-    // 闭包
-    for (var i = 0; i < arr1.length; i++) {
-        (function (arg) {
-            arr1[i].onmouseover = function () {
-                var test = document.querySelectorAll(".download_information .download_hide span");
-                test[arg].style.position = 'absolute';
-            }
-            arr1[i].onmouseout = function () {
-                var test = document.querySelectorAll(".download_information .download_hide span");
-                test[arg].style.position = 'static';
-            }
-        })(i);
-    }
-
-    //main-2 软件搜索
-    var software_search = document.getElementById("software_search");
-    software_search.onclick = function () {
-        var input_software_name = document.getElementById("input_software_name");
-        window.location.href = "https://pc.qq.com/search.html#!keyword=" + input_software_name.value;
-    }
-
-    // 点击调字体大小
-    function font_small_change() {
-        var navigation_font_size = document.getElementById("navigator_left");
-        navigation_font_size.style.fontSize = "1em";
-    }
-
-    function font_medium_change() {
-        var navigation_font_size = document.getElementById("navigator_left");
-        navigation_font_size.style.fontSize = "1.2em";
-    }
-
-    function font_large_change() {
-        var navigation_font_size = document.getElementById("navigator_left");
-        navigation_font_size.style.fontSize = "1.4em";
-    }
-
-    // 点击调样式
-    function footer_theme1() {
-        var link_theme1 = document.getElementById("body_header");
-        var link_theme2 = document.getElementById("body_main");
-        var link_theme3 = document.getElementById("body_footer");
-        var navigator_ip_infor = document.getElementById("navigator-ip-infor");
-        var footer_logo_infor_link = document.getElementById("footer-logo-infor-link");
-        var footer_infor_infor_link = document.getElementById("footer-infor-infor-link");
-        var footer_infor_infor_ICP = document.getElementById("footer-infor-infor-ICP");
-        var foot_logo_img = document.getElementById("foot-logo-img");
-        
-        link_theme1.href = './css/index/header1.css';
-        link_theme2.href = './css/index/main1.css';
-        link_theme3.href = './css/index/footer1.css';
-        navigator_ip_infor.style = "display: none";
-        footer_logo_infor_link.style = "display: none";
-        footer_infor_infor_link.style = "display: block";
-        footer_infor_infor_ICP.style = "display: block";
-        foot_logo_img.style = "display: block";
-
-    }
-
-    function footer_theme2() {
-        var link_theme1 = document.getElementById("body_header");
-        var link_theme2 = document.getElementById("body_main");
-        var link_theme3 = document.getElementById("body_footer");
-        var navigator_ip_infor = document.getElementById("navigator-ip-infor");
-        var footer_logo_infor_link = document.getElementById("footer-logo-infor-link");
-        var footer_infor_infor_link = document.getElementById("footer-infor-infor-link");
-        var footer_infor_infor_ICP = document.getElementById("footer-infor-infor-ICP");
-        var foot_logo_img = document.getElementById("foot-logo-img");
-        link_theme1.href = './css/index/header2.css';
-        link_theme2.href = './css/index/main2.css';
-        link_theme3.href = './css/index/footer2.css';
-        navigator_ip_infor.style = "display: inline-block";
-        footer_logo_infor_link.style = "display: block";
-        footer_infor_infor_link.style = "display: none";
-        footer_infor_infor_ICP.style = "display: none";
-        foot_logo_img.style = "display: none";
-    }
-
-    function footer_theme3() {
-        var link_theme1 = document.getElementById("body_header");
-        var link_theme2 = document.getElementById("body_main");
-        var link_theme3 = document.getElementById("body_footer");
-        var navigator_ip_infor = document.getElementById("navigator-ip-infor");
-        var footer_logo_infor_link = document.getElementById("footer-logo-infor-link");
-        var footer_infor_infor_link = document.getElementById("footer-infor-infor-link");
-        var footer_infor_infor_ICP = document.getElementById("footer-infor-infor-ICP");
-        var foot_logo_img = document.getElementById("foot-logo-img");
-        link_theme1.href = './css/index/header3.css';
-        link_theme2.href = './css/index/main3.css';
-        link_theme3.href = './css/index/footer3.css';
-        navigator_ip_infor.style = "display: none"
-        footer_logo_infor_link.style = "display: none";
-        footer_infor_infor_link.style = "display: block";
-        footer_infor_infor_ICP.style = "display: block";
-        foot_logo_img.style = "display: block";
-    }
-
-    $.getJSON("http://ip-api.com/json/?lang=zh-CN", function (data) {
-        document.getElementById("ip-infor-city").innerHTML = data.city;
-        document.getElementById("ip-infor-lat").innerHTML = "[" + data.lat;
-        document.getElementById("ip-infor-lon").innerHTML = "," + data.lon + "]";
-    });
-    function next_time_ok() {
-        alert("下次一定！😁")
-    }
-</script>
- <!-- 访问统计 -->
- <script>
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?aecc3f51d34ef8f846d5633c43d7988c";
-      var s = document.getElementsByTagName("script")[0]; 
-      s.parentNode.insertBefore(hm, s);
-    })();
-</script>
