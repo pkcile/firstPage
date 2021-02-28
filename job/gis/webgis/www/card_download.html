@@ -10,61 +10,60 @@
         background-color: #EDF1F7;
     }
 
-    /* 下载卡片 */
     .download_card{
         width: 220px;
         height: 203px;
         overflow: hidden;
-        margin: 2em auto;
+        margin: 100px auto;
     }
-    .download_card_inner{
-        width: 100%;
-        height: 100%;
+
+    /* limit width using with absolute */
+    .download_card_inner {
         position: relative;
     }
-    /* 卡片照片 */
+    
+    /* adjust image */
     .download_img_inner{
-        width: 100%;
         height: 140px;
-        background-color: #fcbdf0;
-        background-image: url(https://pc3.gtimg.com/softmgr/picture/web/banner/ac4f91ae41cda43113f855d70743e6a3.png);
+        /* background-image: url(https://pc3.gtimg.com/softmgr/picture/web/banner/ac4f91ae41cda43113f855d70743e6a3.png); */
+        background-image: url('https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3693413752,4293348821&fm=26&gp=0.jpg');
         background-repeat: no-repeat;
-        background-size: contain;
+        background-position: 0% 75%;
+        /* background-size: contain; */
+        background-size: auto 300px;
     }
-    /* 卡片信息背景 */
+
     .download_information{
         background-color: #fff;
     }
-    /* 卡片下载名称 */
+
     .download_name{
         display: inline-block;
         line-height: 20px;
         padding: 12px 0 5px 8px;
         font-size: 14px;
-
     }
-    /* 卡片时间 */
+
     .download_time{
-        display: inline-block;
+        float: right;
         line-height: 20px;
         color: #8D9A92;
-        padding: 12px 0 5px 90px;
+        padding: 12px 10px 5px 0px;
         font-size: 12px;
     }
-    /* 卡片描述 */
+
     .download_description{
         padding: 0 0 12px 8px;
         line-height: 14px;
         color: #8D9A92;
         font-size: 12px;
     }
-    /* 卡片隐藏 */
-    .download_card span{
+
+    .download_hide span{
         width: 100%;
         line-height: 63px;
         text-align: center;
         background-color: #52ED9A;
-        position: absolute;
         font-size: 17px;
         color: #fff;
         font-weight: 600;
@@ -73,7 +72,7 @@
     }
 </style>
 <body>
-    <div class="download_card" id="download_card1">
+    <div class="download_card">
         <div class="download_card_inner">
             <div class="download_img">
                 <div class="download_img_inner"></div>
@@ -94,7 +93,7 @@
                 <div class="download_img_inner"></div>
             </div>
             <div class="download_information">
-                <div class="download_name">QQ</div>
+                <div class="download_name">QQ111111</div>
                 <div class="download_time">2020-11-10</div>
                 <div class="download_description">免费的即时通讯平台，带来更多沟通</div>
                 <a href="" class="download_hide">
