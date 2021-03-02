@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1,maximum-scale=1">
+    <title>Title</title>
+</head>
+<style>
+    html, body, div, ul, li, textarea {
+        margin: 0;
+        padding: 0;
+    }
+
+    /* 留言 */
+    .message_board_card {
+        width: 85%;
+        height: 19em;
+        background-color: aquamarine;
+        margin: 30px auto;
+    }
+
+    /*1.输入框*/
+    .text_box_card {
+        width: 100%;
+        height: 5em;
+        /*overflow-y: scroll;*/
+        background-color: #bba;
+    }
+
+    /*2.提交框*/
+    .text_submit_card {
+        width: 100%;
+        height: 3em;
+        background-color: rebeccapurple;
+        cursor: pointer;
+    }
+
+    /*3.列表框*/
+    .text_list_show_card {
+        width: 100%;
+        height: 8em;
+        background-color: #dad;
+        overflow-y: scroll;
+    }
+
+    /*4.转换条*/
+    .text_item_change_card {
+        width: 100%;
+        height: 3em;
+        background-color: #cda;
+    }
+
+    .text_item_change_card ul {
+        list-style-type: none;
+        cursor: pointer;
+    }
+
+</style>
+<body>
+    <div class="message_board_card">
+        <!-- 1.输入框 -->
+        <div class="text_box_card">
+            <textarea name="" cols="30" rows="10" id="text_box_card_input_label" style="width: 100%; height: 100%; font-weight: 500; font-size: 18px; "></textarea>
+        </div>
+        <!-- 2.提交框 -->
+        <div class="text_submit_card" onclick="databaseInsert_demo()"></div>
+        <!-- 3.评论列表框 -->
+        <div class="text_list_show_card">
+            <table style="width: 100%; height: 100%; background-color: #bfa; overflow-y: scroll" id="text_list_show_card_table">
+            </table>
+        </div>
+        <!-- 4.转换条 -->
+        <div class="text_item_change_card">
+            <ul style="width: 100%; height: 100%;">
+                <li style="width: 50%; height: 100%; float: left; background-color: #bbbbaa">上一条</li>
+                <li style="width: 50%; height: 100%; float: left; background-color: #eda">下一条</li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script>
+    window.onload = function() {
+        function test() {
+            alert("test")
+        }
+
+    }
+    function databaseInsert_demo() {
+        console.log(document.getElementById("text_box_card_input_label").value + "test");
+        // var xmlhttp = null;
+        // str==""
+        // str==""
+        // if (str == "")
+        // {
+        //     document.getElementById("text_list_show_card_table").innerHTML = "";
+        //     return;
+        // }
+        if(document.getElementById("text_box_card_input_label").value == "") {
+            alert("空空空")
+            return;
+        }
+        if (window.XMLHttpRequest)
+        {
+            // IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+            xmlhttp = new XMLHttpRequest();
+        }
+        else
+        {
+            // IE6, IE5 浏览器执行代码
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange=function()
+        {
+            if (xmlhttp.readyState==4 && xmlhttp.status==200)
+            {
+                document.getElementById("text_list_show_card_table").innerHTML = xmlhttp.responseText;
+            }
+        }
+        xmlhttp.open("GET","https://www.pkcile.cn/message_board.php?message=" + document.getElementById("text_box_card_input_label").value, true);
+        xmlhttp.send();
+    }
+
+
+</script>
+</html>

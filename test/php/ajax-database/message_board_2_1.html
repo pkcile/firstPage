@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>留言板测试</title>
+    <style>
+        /*禁止选中*/
+        body {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -o-user-select: none;
+            user-select: none;
+        }
+
+        img {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* message_box---start */
+        .message_box  div {
+            /*border: 1px solid blueviolet;*/
+        }
+
+        .message_box {
+            width: 1024px;
+            /*border: 1px solid red;*/
+            margin: 0 auto;
+        }
+
+        .message_box .user_infor {
+            height: 32px;
+            /*background-color: #bfa;*/
+            padding: 10px;
+        }
+
+        .message_box .user_infor .user_image {
+            float: left;
+            height: 32px;
+            width: 32px;
+            /*background-color: #bbbbaa;*/
+            /*border: 1px solid blue;*/
+        }
+
+         .user_name {
+            float: left;
+            line-height: 32px;
+            /*width: 100px;*/
+            padding-left: 5px;
+            /*background-color: #bbbbaa;*/
+            /*border: 1px solid blue;*/
+        }
+
+        .user_device_infor {
+            width: 1024px;
+            margin: 0 auto;
+            height: 25px;
+            padding: 5px 10px;
+        }
+
+        .user_device_infor .user_comment_time span {
+            line-height: 20px;
+        }
+
+        .user_comment_infor .user_comment_item {
+            margin: 10px;
+        }
+
+        .user_button_on_off {
+            height: 30px;
+            background-color: #ffc;
+        }
+
+        .user_button_on_off span {
+            display: block;
+            float: right;
+            width: 100px;
+            line-height: 30px;
+            text-align: center;
+            margin: 5px;
+            cursor: pointer;
+            /*background-color: #bfa;*/
+        }
+
+        .user_button_on_off span:hover {
+            color: #235675;
+        }
+        /* message_box---end */
+
+        /* reply_box--- start */
+        .reply_box  div {
+            /*border: #8b0000 1px solid;*/
+        }
+
+        .reply_box {
+            width: 1024px;
+            margin: 20px auto;
+            /*padding-left: 10px;*/
+        }
+
+        .reply_content_titles {
+            font-size: 1em;
+            line-height: 2em;
+        }
+
+        .reply_content_input_items {
+            width: 200px;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        .reply_content_comment textarea {
+            width: 400px;
+            height: 100px;
+        }
+
+        .reply_infor {
+            line-height: 50px;
+        }
+
+        .to_user {
+            font-size: 1.1em;
+            font-weight: 600;
+        }
+
+        .cancel_reply {
+            color: #5a5b5c;
+            font-size: 0.9em;
+        }
+
+        .note_for_reply {
+            font-size: 0.9em;
+        }
+
+        .reply_forsure {
+            font-size: 0.9em;
+            line-height: 2em;
+        }
+
+        .reply_forsure_button {
+            width: 400px;
+            line-height: 40px;
+            text-align: center;
+            text-align: -moz-center;
+            text-align: -webkit-center;
+            color: white;
+            background-color: #5A5B5C;
+        }
+        /* reply_box--- end */
+
+
+    </style>
+    <script>
+
+    </script>
+</head>
+<body id="body_test">
+    <div id="test_test_test01">
+        <div class="message_box" style="display: block">
+            <div class="user_infor">
+                <div class="user_image">
+                    <img src="https://1.gravatar.com/avatar/a7504a3e4788015bcdb28dcb74347045?s=32" alt="用户头像">
+                </div>
+                <div class="user_name">
+                    <a href="http://www.v2ex.com" target="_blank" class="user_name_link_email">pkcile</a>
+                </div>
+            </div>
+            <div class="user_device_infor">
+                <div class="user_comment_time"><span>September 17，2008</span></div>
+                <!--            <div class="user_IP"><span>192.168.1.1</span></div>-->
+                <!--            <div class="user_where"><span>河北，邯郸</span></div>-->
+                <!--            <div class="user_platform"><span>via andorid</span></div>-->
+            </div>
+            <div class="user_comment_infor">
+                <div class="user_comment_item">
+                    老同学好久不见甚是想念，回来后记得叫上我来吃顿饭
+                </div>
+            </div>
+            <div class="user_button_on_off">
+                <span>开关</span>
+            </div>
+            <!--        <div class="user_test_brother" style="width: 100%; height: 100px; background-color: #bfa;">4444</div>-->
+        </div>
+        <div class="reply_box" style="display: none">
+            <div class="reply_infor">
+                <div class="reply_to_user">
+                    <span class="to_user">Reply to cloudy</span>
+                    <span class="cancel_reply">Cancel reply</span>
+                </div>
+                <div class="reply_note">
+                    <span class="note_for_reply">Your email address will not be published. Required fields are marked*</span>
+                </div>
+            </div>
+            <div class="reply_content">
+                <div class="reply_content_comment">
+                    <span class="reply_content_titles reply_content_comment_title">Comment</span>
+                    <div>
+                        <textarea name=""  cols="30" rows="5" class="reply_content_comment_item"></textarea>
+                    </div>
+                </div>
+                <div class="reply_content_name">
+                    <span class="reply_content_titles reply_content_name_title">Name*</span>
+                    <div>
+                        <input type="text" class="reply_content_input_name">
+                    </div>
+                </div>
+                <div class="reply_content_email">
+                    <span class="reply_content_titles reply_content_email_title">Email*</span>
+                    <div>
+                        <input type="text" class="reply_content_input_email">
+                    </div>
+                </div>
+                <div class="reply_content_website">
+                    <span class="reply_content_titles reply_content_website_title">Website*</span>
+                    <div>
+                        <input type="text" class="reply_content_input_website">
+                    </div>
+                </div>
+
+            </div>
+            <div class="reply_forsure">
+                <div class="reply_forsure_note">
+                    <div class="reply_forsure_note_item">
+                        <input type="checkbox" class="reply_forsure_save">
+                        <span class="reply_forsure_save_infor">Save my name, email, and website in this browser for the next time I comment.</span>
+                    </div>
+                    <div class="reply_forsure_note_item">
+                        <input type="checkbox" class="reply_forsure_notice">
+                        <span class="reply_forsure_save_notice">Notify me via e-mail if anyone answers my comment.</span>
+                    </div>
+                </div>
+                <div class="reply_forsure_button">
+                    <span class="reply_forsure_button_infor">Post Comment</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--
+        用户信息：用户名、网站网址；                                          头像、pkcile
+        获取信息：时间、地点IP、设备；                                        September 17，2008，at 1:08 am，via andorid，in HanDan，HeBei
+        评论内容：                                                        老同学好久不见甚是想念，回来后记得叫上我来吃顿饭
+        回复模块：评论内容Comment、用户名User-name、邮箱Email、网站网址Website   reply；display: none
+    -->
+
+
+</body>
+
+<script>
+    window.onload = function () {
+        // 查询信息
+        (function select_update() {
+            if (window.XMLHttpRequest) {
+                // IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+                xmlhttp = new XMLHttpRequest();
+            } else {
+                // IE6, IE5 浏览器执行代码
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    document.getElementById("test_test_test01").innerHTML = xmlhttp.responseText;
+                }
+            }
+            xmlhttp.open("GET", "message_board_test.php", true);
+            xmlhttp.send();
+            // alert(666);
+            // console.log(666);
+
+            // 执行关闭操作
+            message_close();
+        })();
+        message_close();
+        function message_close() {
+            // 打开关闭目录内容
+            var card_detail_content = document.getElementsByClassName("user_button_on_off");
+            console.log(card_detail_content.length);
+            for (var i = 0; i < card_detail_content.length; i++) {
+                console.log(card_detail_content.length);
+                (function (arg) {
+                    card_detail_content[arg].onclick = function () {
+                        // console.log(card_detail_content[arg]);
+                        var detail_card = document.getElementsByClassName("reply_box");
+                        if (detail_card[arg].style.display == "none") {
+                            detail_card[arg].style.display = "block";
+                        } else {
+                            detail_card[arg].style.display = "none";
+                        }
+                    }
+                })(i);
+            }
+        }
+    }
+</script>
+
+<script>
+    // 查询信息
+    (function select_update() {
+        if (window.XMLHttpRequest) {
+            // IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            // IE6, IE5 浏览器执行代码
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                document.getElementById("test_test_test01").innerHTML = xmlhttp.responseText;
+            }
+        }
+        xmlhttp.open("GET", "message_board_test.php", true);
+        xmlhttp.send();
+        // alert(666);
+        // console.log(666);
+
+        // 执行关闭操作
+        message_close();
+    })();
+    message_close();
+    function message_close() {
+        // 打开关闭目录内容
+        var card_detail_content = document.getElementsByClassName("user_button_on_off");
+        console.log(card_detail_content.length);
+        for (var i = 0; i < card_detail_content.length; i++) {
+            console.log(card_detail_content.length);
+            (function (arg) {
+                card_detail_content[arg].onclick = function () {
+                    // console.log(card_detail_content[arg]);
+                    var detail_card = document.getElementsByClassName("reply_box");
+                    if (detail_card[arg].style.display == "none") {
+                        detail_card[arg].style.display = "block";
+                    } else {
+                        detail_card[arg].style.display = "none";
+                    }
+                }
+            })(i);
+        }
+    }
+</script>
+<script>
+
+
+    // 获取textarea、name、email、website信息
+    var reply_forsure_button_infor_test = document.getElementsByClassName("reply_forsure_button_infor");
+    var reply_content_comment_item_test = document.getElementsByClassName("reply_content_comment_item");
+    var reply_content_name = document.getElementsByClassName("reply_content_input_name");
+    var reply_content_email = document.getElementsByClassName("reply_content_input_email");
+    var reply_content_website = document.getElementsByClassName("reply_content_input_website");
+
+    for (var i = 0; i < reply_forsure_button_infor_test.length; i++) {
+        (function (arg) {
+            reply_forsure_button_infor_test[arg].onclick = function () {
+                // 传输数据
+                post_comment_test(reply_content_comment_item_test[arg].value, reply_content_name[arg].value, reply_content_email[arg].value, reply_content_website[arg].value);
+
+            }
+        })(i);
+    }
+
+    // ajax 传输数据
+    function post_comment_test(comment, name, email, website) {
+        if (window.XMLHttpRequest)
+        {
+            // IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+            xmlhttp=new XMLHttpRequest();
+        }
+        else
+        {
+            // IE6, IE5 浏览器执行代码
+            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange=function()
+        {
+            if (xmlhttp.readyState==4 && xmlhttp.status==200)
+            {
+                document.getElementById("test_test_test01").innerHTML=xmlhttp.responseText;
+            }
+        }
+        xmlhttp.open("GET","message_board_test.php?comment="+ comment + "&name=" + name + "&email=" + email + "&website=" + website,true);
+        xmlhttp.send();
+    }
+</script>
+</html>
