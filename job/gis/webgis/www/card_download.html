@@ -35,8 +35,8 @@
 
     .download_card{
         width: 220px;
-        height: 203px;
-        /* overflow: hidden; */
+        height: 225px;
+        overflow: hidden;
         margin: 100px auto;
     }
 
@@ -55,42 +55,48 @@
         background-size: auto 300px;
     }
 
-    .download_information{
+    .download_information {
         background-color: #fff;
     }
 
-    .download_name{
-        display: inline-block;
-        line-height: 20px;
-        padding: 12px 0 5px 8px;
+    .download_name_time {
+        height: 35px;
+        background-color: #ffa;
+    }
+
+    .download_name {
+        float: left;
+        line-height: 35px;
+        padding-left: 10px;
         font-size: 14px;
     }
 
-    .download_time{
+    .download_time {
         float: right;
-        line-height: 20px;
+        line-height: 35px;
+        padding-right: 10px;
         color: #8D9A92;
-        padding: 12px 10px 5px 0px;
         font-size: 12px;
+        
     }
 
-    .download_description{
+    .download_description {
         width: 100%;
         height: 50px;
-        background-color: #52ED9A;
+        /* background-color: #52ED9A; */
         overflow: hidden;
     }
 
     .download_description_inner {
-        padding: 0 0 12px 8px;
+        padding: 10px;
         line-height: 18px;
         color: #8D9A92;
         font-size: 12px; 
     }
 
-    .download_hide span{
+    .download_hide span {
         width: 100%;
-        line-height: 63px;
+        line-height: 85px;
         text-align: center;
         background-color: #52ED9A;
         font-size: 17px;
@@ -98,6 +104,7 @@
         font-weight: 600;
         top: 140px;
         position: static;
+        /* position: absolute; */
     }
 </style>
 <body>
@@ -106,8 +113,10 @@
             <div class="download_img">
             </div>
             <div class="download_information">
-                <div class="download_name">QQ</div>
-                <div class="download_time">2020-11-10</div>
+                <div class="download_name_time">
+                    <div class="download_name">QQ</div>
+                    <div class="download_time">2020-11-10</div>
+                </div>
                 <div class="download_description">
                     <div class="download_description_inner">
                         免费的即时通讯平台，带来更多沟通1234567890abcdefghijklmn0pqr 1111111222222111111stuvwxyz
@@ -124,8 +133,10 @@
             <div class="download_img">
             </div>
             <div class="download_information">
-                <div class="download_name">QQ111111</div>
-                <div class="download_time">2020-11-10</div>
+                <div class="download_name_time">
+                    <div class="download_name">QQ111111</div>
+                    <div class="download_time">2020-11-10</div>
+                </div>
                 <div class="download_description">
                     <div class="download_description_inner">
                         免费的即时通讯平台，带来更多沟通你好啊我是王朋坤，我想给你带来快乐快乐，大家都开心，大家都开心才对啊；大家都开心，大家都开心才对啊；大家都开心，大家都开心才对啊
@@ -139,19 +150,19 @@
     </div>
 </body>
 <script>
-    // var arr1 = document.getElementsByClassName("download_information");
-    // // 闭包
-    // for(var i = 0; i < arr1.length; i++) {
-    //     (function (arg) {
-    //         arr1[i].onmouseover = function () { 
-    //             var test =  document.querySelectorAll(".download_information .download_hide span");
-    //             test[arg].style.position = 'absolute';        
-    //         }
-    //         arr1[i].onmouseout = function () { 
-    //             var test =  document.querySelectorAll(".download_information .download_hide span");
-    //             test[arg].style.position = 'static';        
-    //         }
-    //     })(i);
-    // }
+    var arr1 = document.getElementsByClassName("download_information");
+    // 闭包
+    for(var i = 0; i < arr1.length; i++) {
+        (function (arg) {
+            arr1[i].onmouseover = function () { 
+                var test =  document.querySelectorAll(".download_information .download_hide span");
+                test[arg].style.position = 'absolute';        
+            }
+            arr1[i].onmouseout = function () { 
+                var test =  document.querySelectorAll(".download_information .download_hide span");
+                test[arg].style.position = 'static';        
+            }
+        })(i);
+    }
 </script>
 </html>
