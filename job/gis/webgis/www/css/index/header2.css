@@ -1,4 +1,4 @@
-/* 头部深色样式 */
+ /* 头部深色样式 */
 .header{
     position: relative;
     z-index: 99;
@@ -71,6 +71,18 @@
     font-weight: bold
 }
  /* 导航条 End */
+
+ #navigator-ip-infor {
+    display: inline-block;
+}
+
+#navigator-ip-infor div {
+    float: left;
+}
+
+#ip-infor-city {
+    padding-left: 1em;
+}
 
 /* 字体大小 Start */
 .font_size{

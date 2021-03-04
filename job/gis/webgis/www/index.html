@@ -2,15 +2,15 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="webgis期中作业，个人网页制作尝试，测试，test" />
-    <meta name="keywords" content="homework,share,get,test,feel good" />
+    <meta name="description" content="webgis middle work, personal page test, test" />
+    <meta name="keywords" content="homework, share, get, test, feel good" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>安装导航|下载导航|经验分享</title>
+    <title>install guid | experience | skill</title>
     <style>
     </style>
-    <!-- 标题图标 -->
+    <!-- title icon -->
     <link rel="icon" href="./img/user/favicon-20201108032646692.ico" type="image/x-icon" id="page_favionc">
-    <!-- 重置样式表 -->
+    <!-- reset normal form -->
     <link rel="stylesheet" type="text/css" href="./css/reset.css" />
     <!-- index page -->
     <!-- body -->
@@ -32,16 +32,6 @@
     <!-- jquery -->
     <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <style>
-        
-        #navigator-ip-infor {
-            display: inline-block;
-        }
-        #navigator-ip-infor div {
-            float: left;
-        }
-        #ip-infor-city {
-            padding-left: 1em;
-        }
     </style>
 </head>
 <body>
@@ -49,7 +39,6 @@
     <div class="header" style="display: block;">
         <div class="container">
             <h1>
-                <!-- <a href="javascript:;"><img src="./img/taiwan/logo.png" alt="test_img" /></a> -->
             </h1>
             <div class="navigator_test">
                 <!-- navigation Start -->
@@ -59,11 +48,11 @@
                         <ul id="navigation-font-size">
                             <li><a href="javascript:;" onclick="next_time_ok();" title="返回首页">返回首页</a></li>
                             <li><a href="javascript:;" onclick="next_time_ok();" title="网站导航">网站导读</a></li>
-                            <li><a href="javascript:;" onclick="next_time_ok();"  title="English version">English</a></li>
+                            <!-- <li><a href="javascript:;" onclick="next_time_ok();"  title="English version">English</a></li> -->
                             <li><a href="http://pkcile.cn/www/feed/rss.xml" class="rss" title="RSS订阅">RSS</a></li>
                         </ul>
                         <div id="navigator-ip-infor">
-                            <div id="ip-infor-city">在学校</div>
+                            <div id="ip-infor-city">IP</div>
                             <div id="ip-infor-lat">[28.6895</div>
                             <div id="ip-infor-lon">,115.8935]</div>
                         </div>
@@ -138,7 +127,7 @@
                     <a href="./teach_windows.html">
                         <div class="lab-gly-experiment-summary">
                             <!-- 背景色 -->
-                            <div class="logo-mask" style="">
+                            <div class="logo-mask">
                             </div>
                             <!-- 背景图片 -->
                             <div class="logo-bg"></div>
@@ -472,8 +461,7 @@
                             </a>
                         </div>
                     </div>
-                </div>
-              
+                </div>           
                 <div class="download_card">
                     <div class="download_card_inner">
                         <div class="download_img">
@@ -512,9 +500,7 @@
                             </a>
                         </div>
                     </div>
-                </div>
-               
-               
+                </div>  
                 <div class="download_card">
                     <div class="download_card_inner">
                         <div class="download_img">
@@ -535,8 +521,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- <div class="main-line" style="width: 100%; float: left; background-color: #bfa; height: 2px;"></div> -->
                 <!-- main End -->
             </div>
         </div>
@@ -848,7 +832,7 @@
         }
     
         $.getJSON("http://ip-api.com/json/?lang=zh-CN", function (data) {
-            document.getElementById("ip-infor-city").innerHTML = data.city;
+            document.getElementById("ip-infor-city").innerHTML = "IP " + data.city;
             document.getElementById("ip-infor-lat").innerHTML = "[" + data.lat;
             document.getElementById("ip-infor-lon").innerHTML = "," + data.lon + "]";
         });
