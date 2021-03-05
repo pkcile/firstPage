@@ -1,45 +1,69 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="keyword" content="mine, pkcile, web, gis, mood, care, orderliness">
+    <meta charset="utf-8">
+    <meta name="keyword" content="mine">
     <meta name="author" content="pkcile">
     <meta name="description" content="this site is the tool of testing items, studying knowledge, recording my life.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <!-- 访问统计 -->
-    <script>
-    </script>
-    <script>
-        // location.href = './job/gis/3s/www/3s.html';
-        //location.href = './www/3s.html';
-    </script>
     <title>pkcile</title>
     <style>
-        body{
-            font-size: 1em;
+        html, body, div, a , p {
+            margin: 0;
+            padding: 0;
         }
-        .center-ul{
-            width: 15em;
-            margin: 4% auto;
-            list-style-type: none;
+
+        body {
+            font-family:  'Segoe UI', sans-serif;
+            font-size: calc(10px + 0.33vw);
+            -webkit-font-smoothing: antialiased;
+            padding: 5vh 10vw;
+            color: #121314;
         }
-        .center-ul a{
+
+        p {
+            padding-bottom: 1em;
+            font-size: 1.6em;
+
+        }
+        p:nth-of-type(1) {
+           font-weight: 600;
+        }
+
+        p:nth-of-type(2) {
+            font-weight: 400;
+        }
+
+        p:nth-of-type(3) {
+            font-weight: 400;
+        }
+
+        p a {
             text-decoration: none;
+            color: purple;
         }
-        .center-ul a:hover{
-            text-decoration: underline;
+        a:hover {
+            color: #bfa;
+            color: rosybrown;
         }
+
     </style>
 
 </head>
 
 <body>
-    <ul class="center-ul" style="display: none;">
-        <li >
-			欢迎你的到来
-        </li>
-    </ul>
-    <h1>欢迎你的到来</h1>
+    <p ="top">
+        Hi, my name is Pengkun Wang.
+    </p>
+    <p id="middle">
+        Now I am a student majoring in Geographic Information Science.
+        This semester I'm preparing to be a font-end engineer.
+        I also want to review some of the code that I have completed in an immature state.
+        So, I plan to update my two repositories named '<a href="https://github.com/pkcile/firstPage" target="_blank" >firstPage</a>' and '<a href="https://github.com/pkcile/c-review" target="_blank" >c-review</a>' in this term.
+    </p>
+    <p id="bottom">
+        Good luck to you and me.
+    </p>
 </body>
 
 </html>
