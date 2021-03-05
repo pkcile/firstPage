@@ -38,14 +38,30 @@
             font-weight: 400;
         }
 
-        p a {
+        a {
             text-decoration: none;
             color: purple;
+            position: relative;
         }
-        a:hover {
-            color: #bfa;
-            color: rosybrown;
+
+        a:after {
+            content: '';
+            top: 80%;
+            position: absolute;
+            z-index: -1;
+            left: -0.1em;
+            right: -0.1em;
+            bottom: 0;
+            background-color: rgba(166, 79, 192, 0.5);
+            transition: top 200ms cubic-bezier(0, 0.8, 0.13, 1);
         }
+
+        a:hover:after {
+            top: 0%;
+            background-color: rgba(255, 254, 251, 0.5);
+        }
+
+
 
     </style>
 
