@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .test01 {
+            width: 200px;
+            height: 100px;
+            margin: 10px auto 0 auto;
+            background-color: #bfa;
+        }
+
+        .test02 {
+            width: 200px;
+            height: 40px;
+            background-color: rebeccapurple;
+            margin: 0px auto;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="test01"></div>
+    <div class="test02"></div>
+    <div class="test01"></div>
+    <div class="test02"></div>
+    <div class="test01"></div>
+    <div class="test02"></div>
+    <div class="test01"></div>
+    <div class="test02"></div>
+</body>
+<script>
+    //打开关闭目录内容
+    var card_detail_content = document.getElementsByClassName("test02");
+    for (var i = 0; i < card_detail_content.length; i++) {
+        (function (arg) {
+            card_detail_content[i].onclick = function () {
+                var detail_card = document.getElementsByClassName("test01");
+                if (detail_card[arg].style.display == "none") {
+                    detail_card[arg].style.display = "block";
+                } else {
+                    detail_card[arg].style.display = "none";
+                }
+            }
+        })(i);
+    }
+
+
+</script>
+</html>
