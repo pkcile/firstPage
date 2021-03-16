@@ -27,39 +27,6 @@
     {
         "meta_data":
         {
-            "article_id": 2,
-            "font-family": "sans-serif",
-            "font-size": "24px",
-            "line-height": "30px",
-            "background-color": "#bfa",
-            "background-img": "https://www.tuchuang.com/bg.img"
-        },
-        "article_header": {
-            "first": "Wang",
-            "last": "Pengkun",
-            "time": "2021-03-16"
-        },
-        "article_title": "article title test",
-        "article_main": 
-        [
-            {
-                "p": "第一个段落",
-                "img": ["https://www.baidu.com/test1.img", "https://www.baidu.com/test2.img"]
-            },
-            {
-                "p": "第二个段落",
-                "img": ["https://www.baidu.com/test3.img"]
-            },
-            {
-                "p": "第三个段落",
-                "img": ["https://www.baidu.com/test4.img"]
-            }
-        ],
-        "article_footer": "article footer test"
-    },
-    {
-        "meta_data":
-        {
             "article_id": 1,
             "font-family": "sans-serif",
             "font-size": "24px",
@@ -67,58 +34,17 @@
             "background-color": "#bfa",
             "background-img": "https://www.tuchuang.com/bg.img"
         },
-        "article_header_title": "article title test",
+        "article_header_title": "文章标题: test1",
         "article_header_infor": {
-            "first": "Wang",
-            "last": "Pengkun",
-            "time": "2021-03-16"
+            "first": "p",
+            "last": "kcile",
+            "time": "2021-03-17"
         },
         "article_main": 
         [
             {
-                "p": "第一个段落",
-                "img": ["https://www.baidu.com/test1.img", "https://www.baidu.com/test2.img"]
-            },
-            {
-                "p": "第二个段落",
-                "img": ["https://www.baidu.com/test3.img"]
-            },
-            {
-                "p": "第三个段落",
-                "img": ["https://www.baidu.com/test4.img"]
-            }
-        ],
-        "article_footer": "article footer test"
-    },
-    {
-        "meta_data":
-        {
-            "article_id": 2,
-            "font-family": "sans-serif",
-            "font-size": "24px",
-            "line-height": "30px",
-            "background-color": "#bfa",
-            "background-img": "https://www.tuchuang.com/bg.img"
-        },
-        "article_header": {
-            "first": "Wang",
-            "last": "Pengkun",
-            "time": "2021-03-16"
-        },
-        "article_title": "article title test",
-        "article_main": 
-        [
-            {
-                "p": "第一个段落",
-                "img": ["https://www.baidu.com/test1.img", "https://www.baidu.com/test2.img"]
-            },
-            {
-                "p": "第二个段落",
-                "img": ["https://www.baidu.com/test3.img"]
-            },
-            {
-                "p": "第三个段落",
-                "img": ["https://www.baidu.com/test4.img"]
+                "p": "第一自然段: 测试1",
+                "img": ["http://5b0988e595225.cdn.sohucs.com/images/20181027/1759989e205f418794c3a5df5f8fd448.jpeg"]
             }
         ],
         "article_footer": "article footer test"

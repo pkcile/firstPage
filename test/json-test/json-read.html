@@ -37,6 +37,10 @@
             padding: 0px 10px 5px 0;
         }
 
+        .article-header-infor .lastname {
+            padding-right: 5px;
+        }
+
         .article-main {
             clear: both;
         }
@@ -69,52 +73,6 @@
      -->
      <div id="h1_test">  
      </div>
-     <div id="article_template" style="display: none;">
-        <div class="article">
-            <div class="article-header">
-               <div class="article-header-title">
-                   文章标题: IT简报
-                </div>
-                <div class="article-header-infor">
-                       <span class="firstname">王</span>
-                       <span class="lastname">朋坤&nbsp;</span>
-                       <span class="time">2021-03-16</span>
-                </div>
-            </div> 
-            <div class="article-main">
-                <div class="article-main-item">
-                   <p>第一自然段: 2018-10-27, 来自github的消息。微软已经成功完成了对GitHub的收购。</p>
-                   <img src="http://5b0988e595225.cdn.sohucs.com/images/20181027/1759989e205f418794c3a5df5f8fd448.jpeg" alt="333">
-                </div>
-            </div>
-            <div class="article-footer">
-               结尾：报道人王朋坤报道完毕！
-            </div>
-        </div>
-     </div>
- 
-
-    <div class="article" style="display: none;">
-        <div class="article-header">
-           <div class="article-header-title">
-               文章标题: IT简报
-            </div>
-            <div class="article-header-infor">
-                   <span class="firstname">王</span>
-                   <span class="lastname">朋坤&nbsp;</span>
-                   <span class="time">2021-03-16</span>
-            </div>
-        </div> 
-        <div class="article-main">
-            <div class="article-main-item">
-               <p>第一自然段: 2018-10-27, 来自github的消息。微软已经成功完成了对GitHub的收购。</p>
-               <img src="http://5b0988e595225.cdn.sohucs.com/images/20181027/1759989e205f418794c3a5df5f8fd448.jpeg" alt="333">
-            </div>
-        </div>
-        <div class="article-footer">
-           结尾：报道人王朋坤报道完毕！
-        </div>
-    </div>
 </body>
 <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 <script>
@@ -130,12 +88,61 @@
                 //head
                 let article_header = document.createElement('div');
                 article_header.className = "article-header";
+                //header-title
+                let article_header_title = document.createElement('div');
+                // article_header_title.innerHTML = "文章标题: IT简报";
+                article_header_title.innerHTML = data[i].article_header_title;
+                article_header_title.className = "article-header-title";
+                //header-infor
+                let article_header_infor = document.createElement('div');
+                article_header_infor.className = "article-header-infor";
+                //article_infor_first
+                let article_header_infor_firstname = document.createElement('span');
+                article_header_infor_firstname.className = "firstname";
+                // article_header_infor_firstname.innerHTML = "王";
+                article_header_infor_firstname.innerHTML =  data[i].article_header_infor.first;
+                //article_infor_last
+                let article_header_infor_lastname = document.createElement('span');
+                article_header_infor_lastname.className = "lastname";
+                // article_header_infor_lastname.innerHTML = "朋坤";
+                article_header_infor_lastname.innerHTML =  data[i].article_header_infor.last;
+                //article_infor_time
+                let article_header_infor_time = document.createElement('span');
+                article_header_infor_time.className = "time";
+                // article_header_infor_time.innerHTML = "2021-03-16";
+                article_header_infor_time.innerHTML =  data[i].article_header_infor.time;
+                //article_infor append
+                article_header_infor.appendChild(article_header_infor_firstname);
+                article_header_infor.appendChild(article_header_infor_lastname);
+                article_header_infor.appendChild(article_header_infor_time);
+                //head append
+                article_header.appendChild(article_header_title);
+                article_header.appendChild(article_header_infor);
+                
                 //main
                 let article_main = document.createElement('div');
                 article_main.className = "article-main";
+                //article-main-item *循环
+                let article_main_item = document.createElement('div');
+                article_main_item.className = "article-main-item";
+                //main append *循环
+                article_main.appendChild(article_main_item);
+                //article-main-item-p *循环？
+                let article_main_item_p = document.createElement('p');
+                // article_main_item_p.innerHTML = "第一自然段: 2018-10-27, 来自github的消息。微软已经成功完成了对GitHub的收购";
+                article_main_item_p.innerHTML =  data[i].article_main[0].p;
+                //article-main-item-img *循环？
+                let article_main_item_img = document.createElement('img');
+                // article_main_item_img.src = "http://5b0988e595225.cdn.sohucs.com/images/20181027/1759989e205f418794c3a5df5f8fd448.jpeg";
+                article_main_item_img.src = data[i].article_main[0].img[0];
+                //article-main-item append
+                article_main_item.appendChild(article_main_item_p);
+                article_main_item.appendChild(article_main_item_img);
                 //footer
                 let article_footer = document.createElement('div');
                 article_footer.className = "article-footer";
+                // article_footer.innerHTML = "结尾：报道人王朋坤报道完毕！";
+                article_footer.innerHTML = data[i].article_footer;
                 //append Child
                 article.appendChild(article_header);
                 article.appendChild(article_main);
