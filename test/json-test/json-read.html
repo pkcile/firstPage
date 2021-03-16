@@ -118,31 +118,35 @@
 </body>
 <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 <script>
-    let test_node = document.getElementById("article_template").firstChild;
-    // getElementById()
-
-
-
-
-
-
-
-
-    // // let data_article = null;
-    // let div_test = document.getElementById("h1_test");
-    // $.getJSON(
-    //     "./article_copy.json",
-    //     function (data) {
-    //         // alert(data.length);
-    //         for(let i = 0; i < data.length; i++) {
-    //             //head
-    //             // div_test.innerHTML += data[i].article_header.first;
-    //             //main
-    //             //foot
-    //         }
-    //     }
-    // );
-    // console.log(data_article);
+    // let data_article = null;
+    let div_test = document.getElementById("h1_test");
+    $.getJSON(
+        "./article_copy.json",
+        function (data) {
+            for(let i = 0; i < data.length; i++) {
+                //create article
+                let article = document.createElement('div');
+                article.className = "article";
+                //head
+                let article_header = document.createElement('div');
+                article_header.className = "article-header";
+                //main
+                let article_main = document.createElement('div');
+                article_main.className = "article-main";
+                //footer
+                let article_footer = document.createElement('div');
+                article_footer.className = "article-footer";
+                //append Child
+                article.appendChild(article_header);
+                article.appendChild(article_main);
+                article.appendChild(article_footer);
+                //test append child
+                console.log(article);
+                div_test.appendChild(article);
+                //test data
+            }
+        }
+    );
 
 </script>
 </html>
