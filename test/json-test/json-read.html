@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html, body, div, p {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            font-size: 16px;
+        }
+
+        .article {
+            width: 300px;
+            background-color: #efd6adb0;
+            margin: 10px auto;
+            /* overflow: hidden; */
+            font-weight: 400;
+        }
+
+        .article-header-title {
+            text-align: center;
+            line-height: 1.6rem;
+            font-size: 1rem;
+            font-weight: 400;
+            padding: 5px 0 5px 0;
+        }
+
+        .article-header-infor {
+            float: right;
+            font-size: .7rem;
+            padding: 0px 10px 5px 0;
+        }
+
+        .article-main {
+            clear: both;
+        }
+
+        .article-main p {
+            line-height: 20px;
+            padding: 5px 10px;
+            font-size: .9rem;
+        }
+
+        .article-main img {
+            width: 280px;
+            padding: 10px;
+        }
+
+        .article-footer {
+            padding: 5px 10px;
+            line-height: 16px;
+            font-size: .8rem;
+            font-weight: 300;
+        }
+
+    </style>
+
+</head>
+<body>
+    <!-- 
+        json内容获取:
+            1.jquery引入
+     -->
+     <div id="h1_test">  
+     </div>
+     <div id="article_template" style="display: none;">
+        <div class="article">
+            <div class="article-header">
+               <div class="article-header-title">
+                   文章标题: IT简报
+                </div>
+                <div class="article-header-infor">
+                       <span class="firstname">王</span>
+                       <span class="lastname">朋坤&nbsp;</span>
+                       <span class="time">2021-03-16</span>
+                </div>
+            </div> 
+            <div class="article-main">
+                <div class="article-main-item">
+                   <p>第一自然段: 2018-10-27, 来自github的消息。微软已经成功完成了对GitHub的收购。</p>
+                   <img src="http://5b0988e595225.cdn.sohucs.com/images/20181027/1759989e205f418794c3a5df5f8fd448.jpeg" alt="333">
+                </div>
+            </div>
+            <div class="article-footer">
+               结尾：报道人王朋坤报道完毕！
+            </div>
+        </div>
+     </div>
+ 
+
+    <div class="article" style="display: none;">
+        <div class="article-header">
+           <div class="article-header-title">
+               文章标题: IT简报
+            </div>
+            <div class="article-header-infor">
+                   <span class="firstname">王</span>
+                   <span class="lastname">朋坤&nbsp;</span>
+                   <span class="time">2021-03-16</span>
+            </div>
+        </div> 
+        <div class="article-main">
+            <div class="article-main-item">
+               <p>第一自然段: 2018-10-27, 来自github的消息。微软已经成功完成了对GitHub的收购。</p>
+               <img src="http://5b0988e595225.cdn.sohucs.com/images/20181027/1759989e205f418794c3a5df5f8fd448.jpeg" alt="333">
+            </div>
+        </div>
+        <div class="article-footer">
+           结尾：报道人王朋坤报道完毕！
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+    let test_node = document.getElementById("article_template").firstChild;
+    // getElementById()
+
+
+
+
+
+
+
+
+    // // let data_article = null;
+    // let div_test = document.getElementById("h1_test");
+    // $.getJSON(
+    //     "./article_copy.json",
+    //     function (data) {
+    //         // alert(data.length);
+    //         for(let i = 0; i < data.length; i++) {
+    //             //head
+    //             // div_test.innerHTML += data[i].article_header.first;
+    //             //main
+    //             //foot
+    //         }
+    //     }
+    // );
+    // console.log(data_article);
+
+</script>
+</html>
